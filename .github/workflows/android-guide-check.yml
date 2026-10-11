@@ -27,6 +27,11 @@ jobs:
         with:
           gradle-version: '9.3.1'
           cache-read-only: false
+      - name: Reuse preview signing key
+        uses: actions/cache@v4
+        with:
+          path: debug.keystore
+          key: fayroz-preview-debug-key-v1
       - name: Create temporary CI debug key
         run: |
           if [ ! -f debug.keystore ]; then
@@ -34,6 +39,40 @@ jobs:
           fi
       - name: Unit tests and debug compilation
         run: gradle --no-daemon :app:testDebugUnitTest :app:assembleDebug --stacktrace
+      - name: Configure independent mobile preview
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          build = Path("app/build.gradle.kts")
+          content = build.read_text()
+          old = 'applicationId = "com.aistudio.fayrozguide.kpzmva"'
+          assert content.count(old) == 1
+          content = content.replace(old, 'applicationId = "com.aistudio.fayrozguide.kpzmva.preview"')
+          content = content.replace('versionName = "1.0"', 'versionName = "1.1-preview"')
+          build.write_text(content)
+          strings = Path("app/src/main/res/values/strings.xml")
+          content, count = re.subn(r'(<string name="app_name">).*?(</string>)', r'\1FAYROZ Guide - Test\2', strings.read_text())
+          assert count == 1
+          strings.write_text(content)
+          PY
+      - name: Build and verify mobile APK
+        run: |
+          gradle --no-daemon :app:assembleDebug --stacktrace
+          APK=app/build/outputs/apk/debug/app-debug.apk
+          test "$(apkanalyzer manifest application-id "$APK")" = "com.aistudio.fayrozguide.kpzmva.preview"
+          "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose --print-certs "$APK"
+          mkdir -p delivery
+          cp "$APK" delivery/FAYROZ-Finishing-Guide-v1.1-test.apk
+          cd delivery
+          sha256sum FAYROZ-Finishing-Guide-v1.1-test.apk > SHA256.txt
+      - name: Preserve installable APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: FAYROZ-Finishing-Guide-test-apk
+          path: delivery/
+          if-no-files-found: error
+          retention-days: 30
       - name: Preserve test results
         if: always()
         uses: actions/upload-artifact@v4
