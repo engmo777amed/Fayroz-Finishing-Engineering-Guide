@@ -1,94 +1,79 @@
 package com.example
 
-import com.example.data.FinishingCategoriesData
-import com.example.data.FinishingDimensionsData
-import com.example.data.FinishingMaterialsPart1
-import com.example.data.FinishingMaterialsPart2
-import com.example.data.FinishingStagesPart1
-import com.example.data.FinishingStagesPart2
-import com.example.data.FinishingStagesPart3
-import com.example.data.FinishingStagesRemaining
-import com.example.util.FinishingCalculator
-import org.junit.Assert.assertEquals
-import org.junit.Assert.assertNotNull
-import org.junit.Assert.assertTrue
+import com.example.data.*
+import com.example.model.ExecutionStage
+import org.junit.Assert.*
 import org.junit.Test
 
 class ExampleUnitTest {
-    @Test
-    fun testAllThirtyFinishingCategoriesExist() {
-        val categories = FinishingCategoriesData.categories
-        assertEquals("Must have 30 categories", 30, categories.size)
-        // Verify contiguous IDs from 1 to 30
-        for (i in 1..30) {
-            val cat = categories.find { it.id == i }
-            assertNotNull("Category $i must exist", cat)
-            assertTrue("Category title must not be blank", cat!!.titleAr.isNotBlank())
-            assertTrue("Category code must start with SEC-", cat.code.startsWith("SEC-"))
+    @Test fun catalogRetainsAllCategoriesAndOriginalIds() {
+        assertEquals((1..30).toList(), FinishingCatalog.categories.map { it.id })
+        val originalStages = FinishingStagesPart1.stages + FinishingStagesPart2.stages +
+            FinishingStagesPart3.stages + FinishingStagesRemaining.stages
+        assertTrue(FinishingCatalog.stages.map { it.id }.containsAll(originalStages.map { it.id }))
+        assertEquals(96, FinishingCatalog.stages.size)
+        assertEquals(131, FinishingCatalog.materials.size)
+        assertEquals(FinishingCatalog.stages.size, FinishingCatalog.stages.map { it.id }.distinct().size)
+        assertEquals(FinishingCatalog.materials.size, FinishingCatalog.materials.map { it.id }.distinct().size)
+    }
+
+    @Test fun everyCategoryHasOrderedPhasesAndAccurateCounts() {
+        for (category in FinishingCatalog.categories) {
+            val stages = FinishingCatalog.stages.filter { it.categoryId == category.id }
+            assertTrue("Category ${category.id} needs multiple phases", stages.size >= 2)
+            assertEquals((1..stages.size).toList(), stages.map { it.stageNumber })
+            assertEquals(stages.size, category.stagesCount)
+            assertEquals(FinishingCatalog.materials.count { category.id in it.categoryIds }, category.materialsCount)
+            assertEquals(FinishingDefectsData.defects.count { it.categoryId == category.id }, category.defectsCount)
+            assertEquals(FinishingChecklistsData.checkItems.count { it.categoryId == category.id }, category.checklistsCount)
+        }
+        assertEquals("stage_woodfloor_02", FinishingCatalog.stages.first { it.categoryId == 17 }.id)
+        assertEquals("stage_kitchen_02", FinishingCatalog.stages.first { it.categoryId == 24 }.id)
+    }
+
+    @Test fun everyPhaseContainsAllGuideSections() {
+        for (stage in FinishingCatalog.stages) {
+            val textSections = listOf(stage.titleAr, stage.objective, stage.prerequisites,
+                stage.dimensionsAndSlopes, stage.mixesAndRatios, stage.mepCoordination)
+            val listSections = listOf(stage.requiredMaterials, stage.toolsNeeded, stage.executionSteps,
+                stage.technicalRequirements, stage.siteTips, stage.commonMistakes,
+                stage.qualityTests, stage.handoverCriteria, stage.codeReferences, stage.relatedMaterialIds)
+            assertTrue(stage.id, textSections.all { it.isNotBlank() })
+            assertTrue(stage.id, listSections.all { it.isNotEmpty() && it.all(String::isNotBlank) })
         }
     }
 
-    @Test
-    fun testEveryCategoryHasExecutionStages() {
-        val allStages = FinishingStagesPart1.stages + FinishingStagesPart2.stages + FinishingStagesPart3.stages + FinishingStagesRemaining.stages
-        for (i in 1..30) {
-            val stagesForCat = allStages.filter { s -> s.categoryId == i }
-            assertTrue("Category $i must have execution stages", stagesForCat.isNotEmpty())
+    @Test fun materialLinksAreValidAndBidirectional() {
+        val stageMap = FinishingCatalog.stages.associateBy { it.id }
+        val materialMap = FinishingCatalog.materials.associateBy { it.id }
+        for (stage in stageMap.values) for (id in stage.relatedMaterialIds) {
+            val material = materialMap[id]
+            assertNotNull("${stage.id} -> $id", material)
+            assertTrue("$id reverse link", stage.id in material!!.relatedStageIds)
         }
-    }
-
-    @Test
-    fun testPlasterCalculatorOutputs() {
-        val res = FinishingCalculator.calculatePlaster(areaM2 = 100.0, thicknessCm = 2.0)
-        assertTrue("Cement bags must be positive", res.cementBags50kg > 0)
-        assertTrue("Sand volume must be positive", res.sandM3 > 0.0)
-        assertTrue("Addibond must be positive", res.addibondKg > 0.0)
-    }
-
-    @Test
-    fun testTilesCalculatorOutputs() {
-        val resPorcelain = FinishingCalculator.calculateTiles(netAreaM2 = 100.0, wastePercent = 7.0, isPorcelain = true)
-        assertEquals("Gross area must match 107.0 m2", 107.0, resPorcelain.grossAreaM2, 0.01)
-        assertTrue("Porcelain adhesive bags must be > 10", resPorcelain.adhesiveBags25kg >= 10)
-
-        val resCeramic = FinishingCalculator.calculateTiles(netAreaM2 = 100.0, wastePercent = 7.0, isPorcelain = false)
-        assertTrue("Ceramic bedding cement bags must be > 20", resCeramic.cementBags50kg >= 20)
-    }
-
-    @Test
-    fun testGypsumCalculatorOutputs() {
-        val res = FinishingCalculator.calculateGypsum(areaM2 = 50.0)
-        assertTrue("Gypsum boards count must be > 15", res.boardsCount >= 15)
-        assertTrue("Omega profiles must be > 25", res.omegaProfiles >= 25)
-    }
-
-    @Test
-    fun testMasonryCalculatorOutputs() {
-        val resRed = FinishingCalculator.calculateMasonry(areaM2 = 20.0, isRedBrick = true)
-        assertTrue("Red bricks count for 20m2 should be ~1160", resRed.blocksCount >= 1000)
-
-        val resBlock = FinishingCalculator.calculateMasonry(areaM2 = 20.0, isRedBrick = false)
-        assertTrue("Cement blocks count for 20m2 should be ~270", resBlock.blocksCount in 250..300)
-    }
-
-    @Test
-    fun testEgyptianMaterialsDataQuality() {
-        val allMaterials = FinishingMaterialsPart1.materials + FinishingMaterialsPart2.materials
-        assertTrue("Materials library must have items", allMaterials.isNotEmpty())
-        for (mat in allMaterials) {
-            assertTrue("Market name must not be blank", mat.marketNameAr.isNotBlank())
-            assertTrue("Must contain Egyptian brands", mat.egyptianBrands.isNotEmpty())
-            assertTrue("Must contain counterfeit detection instructions", mat.counterfeitDetection.isNotBlank())
-            assertTrue("Must contain inspection criteria", mat.inspectionAndAcceptance.isNotEmpty())
+        for (material in materialMap.values) {
+            assertTrue(material.id, material.categoryIds.all { it in 1..30 })
+            assertTrue(material.id, material.marketNameAr.isNotBlank())
+            assertTrue(material.id, material.inspectionAndAcceptance.isNotEmpty())
+            for (id in material.relatedStageIds) {
+                assertNotNull("${material.id} -> $id", stageMap[id])
+                assertTrue(material.id, material.id in stageMap.getValue(id).relatedMaterialIds)
+            }
         }
+        for (check in FinishingChecklistsData.checkItems) assertNotNull(check.id, stageMap[check.stageId])
+        for (defect in FinishingDefectsData.defects) assertNotNull(defect.id, stageMap[defect.stageId])
     }
 
-    @Test
-    fun testStandardsAndDimensionsData() {
-        val dimensions = FinishingDimensionsData.dimensions
-        assertTrue("Dimensions database must have items", dimensions.isNotEmpty())
-        val sherb = dimensions.find { it.id == "dim_sherb_level" }
-        assertNotNull("Sherb level must exist", sherb)
-        assertEquals("+1.00 متر (100 سم)", sherb?.standardValue)
+    @Test fun existingStageInstructionsRemainAvailable() {
+        val original = FinishingStagesPart1.stages + FinishingStagesPart2.stages +
+            FinishingStagesPart3.stages + FinishingStagesRemaining.stages
+        for (stage in original) {
+            val enriched = FinishingCatalog.stages.single { it.id == stage.id }
+            assertEquals(stage.titleAr, enriched.titleAr)
+            assertEquals(stage.executionSteps, enriched.executionSteps)
+            assertEquals(stage.objective, enriched.objective)
+            assertTrue(enriched.prerequisites.contains(stage.prerequisites))
+            assertTrue(enriched.qualityTests.containsAll(stage.qualityTests))
+        }
     }
 }

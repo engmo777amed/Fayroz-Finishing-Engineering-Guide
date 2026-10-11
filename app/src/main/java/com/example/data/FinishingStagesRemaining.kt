@@ -28,7 +28,7 @@ object FinishingStagesRemaining {
             commonMistakes = listOf("تثبيت الشبك بعد الطرطشة أو إهمال تركيبه فوق شقوق خراطيم الكهرباء مما يسبب شروخاً تنميلية حتمية."),
             qualityTests = listOf("فحص ثبات الشبك بالشد باليد", "فحص نظافة المسطحات من الزيوت"),
             handoverCriteria = listOf("المسار مغطى بالكامل بالشبك ومثبت بإحكام دون أي رخاوة."),
-            codeReferences = listOf("الكود المصري لأعمال البياض ECP 203"),
+            codeReferences = listOf("مواصفة المشروع للبياض ونشرة المنتج"),
             relatedMaterialIds = listOf("mat_fiber_mesh", "mat_addibond_65")
         ),
 
@@ -280,7 +280,7 @@ object FinishingStagesRemaining {
             commonMistakes = listOf("جلي الرخام قبل جفاف المونة السفلية تماماً (يلزم الانتظار 10-15 يوماً) مما يسبب تفكك وتطبيل الألواح."),
             qualityTests = listOf("فحص استواء السطح بالقدة 3م", "فحص لمعان وانعكاس الضوء كالمرآة"),
             handoverCriteria = listOf("سطح موحد تماماً كلوح زجاجي واحد دون أي تسنين ملموس، والفواصل مسقية بإتقان."),
-            codeReferences = listOf("الكود المصري لأعمال الرخام والأحجار ECP 203"),
+            codeReferences = listOf("مواصفة المشروع للأحجار وتفاصيل التثبيت"),
             relatedMaterialIds = listOf("mat_portland_cement")
         ),
 
@@ -365,7 +365,7 @@ object FinishingStagesRemaining {
             commonMistakes = listOf("تطبيق الجرافيتو فوق محارة رطبة أو غير مستوية مما يبرز التموجات تحت ضوء الشمس المائل."),
             qualityTests = listOf("فحص تجانس النقشة بالعين من مسافة 5 أمتار", "فحص التصاق المادة بالسطح"),
             handoverCriteria = listOf("لون ونقشة موحدة على كامل الواجهة وخلو المسطح من أي لحامات جافة."),
-            codeReferences = listOf("الكود المصري لأعمال البياض الخارجي ECP 203"),
+            codeReferences = listOf("مواصفة المشروع للبياض الخارجي ونشرة المنتج"),
             relatedMaterialIds = listOf("mat_water_sealer")
         ),
 

@@ -25,7 +25,6 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Assignment
 import androidx.compose.material.icons.filled.Bolt
 import androidx.compose.material.icons.filled.Bookmark
-import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.filled.Category
 import androidx.compose.material.icons.filled.ChevronLeft
 import androidx.compose.material.icons.filled.FormatListNumbered
@@ -88,7 +87,6 @@ fun HomeScreen(
             title = "FAYROZ FINISHING GUIDE",
             subtitle = "الموسوعة الهندسية لأعمال التشطيبات",
             onSearchClick = { onNavigate(Screen.Search) },
-            onCalculatorClick = { onNavigate(Screen.Calculator) },
             onBookmarkClick = { onNavigate(Screen.Bookmarks) }
         )
 
@@ -152,7 +150,7 @@ fun HomeScreen(
                                 }
                                 Spacer(modifier = Modifier.width(8.dp))
                                 Text(
-                                    text = "30 قسماً هندسياً معتمداً",
+                                    text = "30 قسماً لأعمال التشطيبات",
                                     color = FayrozTurquoiseLight,
                                     fontSize = 12.sp,
                                     fontWeight = FontWeight.Medium
@@ -166,7 +164,7 @@ fun HomeScreen(
                                 fontWeight = FontWeight.Bold
                             )
                             Text(
-                                text = "وفق الكود المصري ومواصفات وخامات السوق المحلي",
+                                text = "مراحل تنفيذ وخامات واختبارات استلام للموقع",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = Color.White.copy(alpha = 0.85f)
                             )
@@ -210,7 +208,7 @@ fun HomeScreen(
 
             // The 4 Primary Entrances (الأربعة مداخل الأساسية)
             item {
-                SectionHeader(title = "المداخل الأساسية للموسوعة", count = 4)
+                SectionHeader(title = "المداخل الأساسية للموسوعة", count = 2)
             }
 
             item {
@@ -237,34 +235,6 @@ fun HomeScreen(
                         modifier = Modifier.weight(1f),
                         onClick = { onNavigate(Screen.MaterialsLibrary) },
                         testTag = "entrance_materials"
-                    )
-                }
-            }
-
-            item {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(10.dp)
-                ) {
-                    PrimaryEntranceCard(
-                        title = "الاستلامات وقوائم الفحص",
-                        subtitle = "استلامات QA/QC وتقارير الموقع",
-                        icon = Icons.Default.Assignment,
-                        badgeText = "Checklists",
-                        accentColor = FayrozTurquoiseLight,
-                        modifier = Modifier.weight(1f),
-                        onClick = { onNavigate(Screen.InspectionHub) },
-                        testTag = "entrance_inspections"
-                    )
-                    PrimaryEntranceCard(
-                        title = "المشاكل والعيوب",
-                        subtitle = "دليل علاج وتفادي العيوب",
-                        icon = Icons.Default.Warning,
-                        badgeText = "التشخيص والإصلاح",
-                        accentColor = Color(0xFFEF4444),
-                        modifier = Modifier.weight(1f),
-                        onClick = { onNavigate(Screen.TroubleshootingList) },
-                        testTag = "entrance_defects"
                     )
                 }
             }
@@ -360,15 +330,6 @@ fun HomeScreen(
                         testTag = "tool_dimensions"
                     )
                     SecondaryToolCard(
-                        title = "حاسبة التشطيبات",
-                        subtitle = "حساب كميات المونة والمواد",
-                        icon = Icons.Default.Calculate,
-                        color = FayrozTurquoise,
-                        modifier = Modifier.weight(1f),
-                        onClick = { onNavigate(Screen.Calculator) },
-                        testTag = "tool_calculator"
-                    )
-                    SecondaryToolCard(
                         title = "المفضلة",
                         subtitle = "البنود المحفوظة",
                         icon = Icons.Default.Bookmark,
@@ -413,7 +374,7 @@ fun HomeScreen(
                                 fontWeight = FontWeight.Bold
                             )
                             Text(
-                                text = "30 قسماً كاملاً • خطوات تنفيذ • استلامات • كشف الغش التجاري • مراجع كودية",
+                                text = "${repository.allCategories.size} قسماً • ${repository.allStages.size} مرحلة • ${repository.allMaterials.size} خامة",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = Color.White.copy(alpha = 0.75f)
                             )

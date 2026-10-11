@@ -76,7 +76,7 @@ object FinishingChecklistsData {
             method = "معاينة تركيب الشبك بعرض 20 سم فوق الفواصل وتمديدات الكهرباء",
             toolUsed = "شريط قياس ومعاينة بالعين واللمس",
             acceptanceCriterion = "الشبك مشدود ومثبت بمسامير ووردات كل 25 سم زجزاج بنصفين متساويين (10 سم بكل جانب)",
-            technicalReference = "الكود المصري لأعمال البياض ECP 203"
+            technicalReference = "مواصفة المشروع للبياض ونشرة المنتج"
         ),
         QualityCheckItem(
             id = "chk_pls_02",
@@ -98,7 +98,7 @@ object FinishingChecklistsData {
             method = "توجيه خطوط الليزر ومطابقة ميزان الخيط والزاوية الحديدية الكبيرة 90°",
             toolUsed = "ميزان ليزر 360° وزاوية حديد 100×100 سم",
             acceptanceCriterion = "رأسية صفر خطأ، تعامد الأركان 90°، تطابق توازي الحوائط المتقابلة",
-            technicalReference = "الكود المصري ECP 203"
+            technicalReference = "مواصفة المشروع المعتمدة"
         ),
         QualityCheckItem(
             id = "chk_pls_04",
@@ -109,7 +109,7 @@ object FinishingChecklistsData {
             method = "فحص استواء البطانة بالقدة 3م وكبس المونة بين الأوتار دون ريجة أو تموجات",
             toolUsed = "قدة ألومنيوم 3م وكشاف إضاءة مائل",
             acceptanceCriterion = "فراغ نفاذ الضوء أقل من 2 مم، وخلو كامل المسطح من الجبس أو السواقط",
-            technicalReference = "الكود المصري لأعمال البياض ECP 203"
+            technicalReference = "مواصفة المشروع للبياض ونشرة المنتج"
         ),
         QualityCheckItem(
             id = "chk_pls_05",
@@ -131,7 +131,7 @@ object FinishingChecklistsData {
             method = "معاينة سطح التخشين باللمس والضوء المائل لكشف التسويس والحفر والريجة",
             toolUsed = "كشاف ليد مائل ورابونة فحص",
             acceptanceCriterion = "ملمس ناعم متجانس خالي من الثقوب والتكتلات والشروخ الشعرية",
-            technicalReference = "أصول الصناعة المعمارية والكود ECP 203"
+            technicalReference = "أصول التنفيذ ومواصفة المشروع"
         ),
         QualityCheckItem(
             id = "chk_pls_07",
@@ -153,7 +153,7 @@ object FinishingChecklistsData {
             method = "معاينة استقامة العراميس الأفقية وميول جلسات الشبابيك وتجويف قطرة المطر",
             toolUsed = "ميزان ليزر وشريط قياس وميزان مياه",
             acceptanceCriterion = "أفقية تامة للعراميس، ميول جلسات ≥ 5% للخارج، وتجويف قطرة مطر سليم 2×2 سم",
-            technicalReference = "الكود المصري للبياض الخارجي ECP 203"
+            technicalReference = "مواصفة المشروع للبياض الخارجي"
         ),
         QualityCheckItem(
             id = "chk_pls_09",
@@ -164,7 +164,7 @@ object FinishingChecklistsData {
             method = "النقر المنتظم بمطرقة فحص خفيفة على كامل المسطح والأركان وحول علب الكهرباء",
             toolUsed = "مطرقة خشبية/بلاستيكية فحص خفيفة وطباشير تعليم",
             acceptanceCriterion = "صوت صلب رنان بنسبة 100%؛ وانعدام أي صوت طبلة أجوف (تكسير فوري لأي تطبيل)",
-            technicalReference = "دليل مهندس الجودة QA/QC والكود ECP 203"
+            technicalReference = "دليل الجودة ومواصفة المشروع"
         ),
         QualityCheckItem(
             id = "chk_pls_10",
@@ -233,11 +233,11 @@ object FinishingChecklistsData {
             id = "chk_plm_02",
             categoryId = 7,
             stageId = "stage_plumbing_01",
-            titleAr = "اختبار كبس شبكة التغذية بالباروميتر عند 15-20 بار لمدة 24 ساعة",
+            titleAr = "اختبار كبس شبكة التغذية بالباروميتر طبق ضغط وزمن وإجراء اختبار النظام المعتمدين",
             phase = InspectionPhase.AFTER,
             method = "ملء الشبكة بالماء وتفريغ الهواء ورفع الضغط ومراقبة قراءة الباروميتر المعاير",
             toolUsed = "طلمبة كبس هيدروليكية مع باروميتر معاير وشهادة معايرة",
-            acceptanceCriterion = "ثبات الضغط عند 15-20 بار طوال 24 ساعة دون أي انخفاض واعتماد شهادة الضمان",
+            acceptanceCriterion = "مطابقة الضغط والأزمنة وتغير القراءات لإجراء المصنع مع عدم وجود تسريب وتوثيق الاختبار",
             technicalReference = "المواصفات الألمانية DIN 8077/8078 والكود المصري ECP 102"
         ),
 
@@ -335,7 +335,7 @@ object FinishingChecklistsData {
             method = "وضع القدة 3م في كافة الاتجاهات وتمرير اليد فوق فواصل البلاط",
             toolUsed = "قدة ألومنيوم 3م وفيلر قياس الخلوص",
             acceptanceCriterion = "فراغ تحت القدة أقل من 1 مم، التسنين بين البلاطات صفر مم، الفواصل مستقيمة 2-3 مم",
-            technicalReference = "الكود المصري للأرضيات والتشطيبات ECP 203"
+            technicalReference = "مواصفة المشروع للأرضيات ونشرة نظام التركيب"
         ),
         QualityCheckItem(
             id = "chk_cer_03",
@@ -370,7 +370,7 @@ object FinishingChecklistsData {
         QualityCheckItem(
             id = "chk_wood_01",
             categoryId = 17,
-            stageId = "stage_wood_floor_01",
+            stageId = "stage_woodfloor_01",
             titleAr = "فاصل التمدد المحيطي 10 مم وجفاف الأرضية الخرسانية",
             phase = InspectionPhase.BEFORE,
             method = "قياس رطوبة الأرضية الخرسانية وفحص صلايب التباعد حول الحوائط",

@@ -166,21 +166,14 @@ fun CategoryDetailScreen(
             when (selectedTab) {
                 0 -> StagesTabContent(
                     stages = stages,
-                    onStageClick = { onNavigate(Screen.StageDetail(it.id)) },
-                    onStartInspection = { stageId ->
-                        viewModel.startInspection(stageId, categoryId)
-                    }
+                    onStageClick = { onNavigate(Screen.StageDetail(it.id)) }
                 )
                 1 -> MaterialsTabContent(
                     materials = materials,
                     onMaterialClick = { onNavigate(Screen.MaterialDetail(it.id)) }
                 )
                 2 -> InspectionsTabContent(
-                    checkItems = checkItems,
-                    onStartInspection = {
-                        val stageId = stages.firstOrNull()?.id ?: "general_$categoryId"
-                        viewModel.startInspection(stageId, categoryId)
-                    }
+                    checkItems = checkItems
                 )
                 3 -> DefectsTabContent(
                     defects = defects,
@@ -197,8 +190,7 @@ fun CategoryDetailScreen(
 @Composable
 fun StagesTabContent(
     stages: List<ExecutionStage>,
-    onStageClick: (ExecutionStage) -> Unit,
-    onStartInspection: (String) -> Unit
+    onStageClick: (ExecutionStage) -> Unit
 ) {
     if (stages.isEmpty()) {
         EmptyTabNotice("جاري إدراج مراحل تفصيلية إضافية لهذا البند...")
@@ -220,8 +212,7 @@ fun StagesTabContent(
         items(stages) { stage ->
             StageCardItem(
                 stage = stage,
-                onClick = { onStageClick(stage) },
-                onStartInspection = { onStartInspection(stage.id) }
+                onClick = { onStageClick(stage) }
             )
         }
         item {
@@ -233,8 +224,7 @@ fun StagesTabContent(
 @Composable
 fun StageCardItem(
     stage: ExecutionStage,
-    onClick: () -> Unit,
-    onStartInspection: () -> Unit
+    onClick: () -> Unit
 ) {
     Card(
         onClick = onClick,
@@ -303,26 +293,6 @@ fun StageCardItem(
                     fontWeight = FontWeight.Bold
                 )
 
-                Button(
-                    onClick = onStartInspection,
-                    shape = RoundedCornerShape(8.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = FayrozNavy),
-                    modifier = Modifier.testTag("btn_inspect_${stage.id}")
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.PlayArrow,
-                        contentDescription = "استلام",
-                        tint = FayrozGold,
-                        modifier = Modifier.size(16.dp)
-                    )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text(
-                        text = "استلام فوري",
-                        fontSize = 11.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = Color.White
-                    )
-                }
             }
         }
     }
@@ -427,8 +397,7 @@ fun MaterialCardItem(
 
 @Composable
 fun InspectionsTabContent(
-    checkItems: List<QualityCheckItem>,
-    onStartInspection: () -> Unit
+    checkItems: List<QualityCheckItem>
 ) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
@@ -436,26 +405,6 @@ fun InspectionsTabContent(
     ) {
         item {
             Spacer(modifier = Modifier.height(10.dp))
-            Button(
-                onClick = onStartInspection,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .testTag("start_category_inspection_btn"),
-                shape = RoundedCornerShape(10.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = FayrozTurquoise)
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Assignment,
-                    contentDescription = null,
-                    tint = FayrozNavyCard
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(
-                    text = "بدء استلام هندسي وتسجيل تقرير الموقع",
-                    fontWeight = FontWeight.Bold,
-                    color = FayrozNavyCard
-                )
-            }
         }
 
         items(checkItems) { item ->

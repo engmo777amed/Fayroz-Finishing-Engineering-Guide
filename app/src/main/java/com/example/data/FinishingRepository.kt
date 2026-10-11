@@ -3,7 +3,6 @@ package com.example.data
 import android.content.Context
 import com.example.data.local.AppDatabase
 import com.example.data.local.BookmarkEntity
-import com.example.data.local.InspectionReportEntity
 import com.example.model.ExecutionStage
 import com.example.model.FinishingCategory
 import com.example.model.MaterialCard
@@ -25,25 +24,13 @@ data class SearchResult(
 
 class FinishingRepository(context: Context) {
     private val db = AppDatabase.getDatabase(context)
-    private val inspectionDao = db.inspectionDao()
     private val bookmarkDao = db.bookmarkDao()
 
-    val allCategories: List<FinishingCategory> = FinishingCategoriesData.categories
+    val allCategories: List<FinishingCategory> = FinishingCatalog.categories
 
-    val allStages: List<ExecutionStage> = 
-        FinishingStagesPart1.stages + FinishingStagesPart2.stages + FinishingStagesPart3.stages + FinishingStagesRemaining.stages
+    val allStages: List<ExecutionStage> = FinishingCatalog.stages
 
-    val allMaterials: List<MaterialCard> = 
-        FinishingMaterialsPart1.materials + 
-        FinishingMaterialsPart2.materials + 
-        FinishingMaterialsPart3.materials + 
-        FinishingMaterialsPart4.materials + 
-        FinishingMaterialsPart5.materials +
-        FinishingMaterialsPart6.materials +
-        FinishingMaterialsPart7.materials +
-        FinishingMaterialsPart8.materials +
-        FinishingMaterialsPart9.materials +
-        FinishingMaterialsPart10.materials
+    val allMaterials: List<MaterialCard> = FinishingCatalog.materials
 
     val allDefects: List<TroubleshootingDefect> = FinishingDefectsData.defects
 
@@ -106,6 +93,9 @@ class FinishingRepository(context: Context) {
         val matchedStages = allStages.filter {
             normalizeArabic(it.titleAr).contains(q) ||
             normalizeArabic(it.objective).contains(q) ||
+            it.executionSteps.any { step -> normalizeArabic(step).contains(q) } ||
+            it.technicalRequirements.any { requirement -> normalizeArabic(requirement).contains(q) } ||
+            it.qualityTests.any { test -> normalizeArabic(test).contains(q) } ||
             normalizeArabic(it.dimensionsAndSlopes).contains(q) ||
             normalizeArabic(it.mixesAndRatios).contains(q) ||
             it.siteTips.any { tip -> normalizeArabic(tip).contains(q) } ||
@@ -158,19 +148,6 @@ class FinishingRepository(context: Context) {
             .replace("ـ", "") // Tatweel
             .replace(Regex("[\u064B-\u065F]"), "")
     }
-
-    // Reports persistence
-    fun getAllInspectionReports(): Flow<List<InspectionReportEntity>> =
-        inspectionDao.getAllReports()
-
-    suspend fun getInspectionReportById(id: Long): InspectionReportEntity? =
-        inspectionDao.getReportById(id)
-
-    suspend fun saveInspectionReport(report: InspectionReportEntity): Long =
-        inspectionDao.insertReport(report)
-
-    suspend fun deleteInspectionReport(id: Long) =
-        inspectionDao.deleteReportById(id)
 
     // Bookmarks persistence
     fun getAllBookmarks(): Flow<List<BookmarkEntity>> =

@@ -19,7 +19,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.BookmarkBorder
-import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -55,7 +54,6 @@ fun FayrozTopBar(
     showBackButton: Boolean = false,
     onBackClick: () -> Unit = {},
     onSearchClick: (() -> Unit)? = null,
-    onCalculatorClick: (() -> Unit)? = null,
     onBookmarkClick: (() -> Unit)? = null,
     isBookmarked: Boolean = false,
     onToggleBookmark: (() -> Unit)? = null
@@ -150,14 +148,14 @@ fun FayrozTopBar(
                 }
             }
 
-            if (onCalculatorClick != null) {
+            if (onBookmarkClick != null) {
                 IconButton(
-                    onClick = onCalculatorClick,
-                    modifier = Modifier.size(40.dp).testTag("top_bar_calc_btn")
+                    onClick = onBookmarkClick,
+                    modifier = Modifier.size(40.dp).testTag("top_bar_bookmarks_btn")
                 ) {
                     Icon(
-                        imageVector = Icons.Default.Calculate,
-                        contentDescription = "حاسبة التشطيبات",
+                        imageVector = Icons.Default.Bookmark,
+                        contentDescription = "المفضلة",
                         tint = FayrozGold
                     )
                 }

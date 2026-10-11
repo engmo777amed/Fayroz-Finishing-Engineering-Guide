@@ -15,8 +15,8 @@ object FinishingDimensionsData {
             standardValue = "+1.00 متر (100 سم)",
             tolerance = "± 1 مم بميزان الليزر والخرطوم",
             applicationCondition = "يقاس رأسياً من ظهر بلاط التشطيب النهائي للوحدة، وينقل لجميع الغرف والأبواب",
-            referenceType = DimensionRefType.EGYPTIAN_CODE,
-            referenceSource = "الكود المصري للبناء ECP 203 - أصول المساحة الميدانية",
+            referenceType = DimensionRefType.BEST_PRACTICE,
+            referenceSource = "ممارسة موقع: خط الشرب المعماري طبق منسوب المشروع",
             practicalNotes = "المرجع الأساسي لضبط جميع مناسيب الأبواب والشبابيك والكهرباء والسباكة والأسقف المعلقة؛ أي خطأ في الشرب يخرب مناسيب الشقة بالكامل."
         ),
         TechnicalDimension(
@@ -34,9 +34,9 @@ object FinishingDimensionsData {
             id = "dim_lintel_bearing",
             categoryId = 1,
             itemTitle = "طول ركوب الأعتاب الخرسانية المسلحة فوق الفتحات (Lintel Bearing Length)",
-            standardValue = "20 سم إلى 25 سم من كل جانب على أكتاف المباني الحاملة",
-            tolerance = "الحد الأدنى 20 سم صافي",
-            applicationCondition = "فوق جميع فتحات الأبواب والشبابيك مع تسليح 2 إلى 3 أسياخ قطر 10 أو 12 مم",
+            standardValue = "طول الركوب والتسليح وقطاع العتب طبق تفاصيل المصمم؛ 20-25 سم أمثلة لبعض الفتحات وليست حدًا عامًا",
+            tolerance = "طبق تفصيلة المصمم ومواصفة المشروع",
+            applicationCondition = "يعتمد على البحر والحمل ونوع القاطع ومقاومة المباني؛ لا يحدد تسليح موحد لكل الفتحات",
             referenceType = DimensionRefType.EGYPTIAN_CODE,
             referenceSource = "الكود المصري للبناء ECP 204",
             practicalNotes = "ركوب العتب أقل من 15 سم يسبب شروخاً قطرية مائلة عند زوايا الفتحات بسبب تركيز الإجهادات فوق الطوب."
@@ -52,8 +52,8 @@ object FinishingDimensionsData {
             standardValue = "الحوائط: 1.5 سم إلى 2.5 سم | الأسقف: 1.0 سم إلى 1.5 سم",
             tolerance = "لا يقل عن 1.5 سم على الحوائط ولا يزيد عن 3.0 سم في الوجه الواحد",
             applicationCondition = "في حال زاد البياض عن 3 سم يلزم التدبيس بشبك فايبر أو سلك بقلاوة مجلفن ومسامير صلب",
-            referenceType = DimensionRefType.EGYPTIAN_CODE,
-            referenceSource = "الكود المصري لأعمال البياض الداخلي والخارجي ECP 203",
+            referenceType = DimensionRefType.BEST_PRACTICE,
+            referenceSource = "مواصفة المشروع لأعمال البياض الداخلي والخارجي ونشرة نظام البياض",
             practicalNotes = "السقف الخرساني لا يسمح بزيادة سمك البياض فيه عن 1.5 سم نهائياً لتفادي خطر سقوط كتل البياض بالوزن الذاتي."
         ),
         TechnicalDimension(
@@ -63,8 +63,8 @@ object FinishingDimensionsData {
             standardValue = "تباعد البؤج: 1.5 م إلى 2.0 م أفقياً | استواء القدة: تفاوت لا يزيد عن 2 مم على قدة 3 أمتار",
             tolerance = "تفاوت استواء المحارة أقصاه 2 مم تحت قدة 3م",
             applicationCondition = "لتسهيل مس المونة بالقدة الألومنيوم 2.5م بين الوترين دون ترييح بالمنتصف",
-            referenceType = DimensionRefType.EGYPTIAN_CODE,
-            referenceSource = "الكود المصري للبياض ECP 203",
+            referenceType = DimensionRefType.BEST_PRACTICE,
+            referenceSource = "مواصفة المشروع للبياض",
             practicalNotes = "تربيع الغرف بالبؤج (الأكسات والأوتار) يتم بتطابق وترين متساويين في الغرفة بنسبة خطأ صفر."
         ),
 
@@ -79,7 +79,7 @@ object FinishingDimensionsData {
             tolerance = "± 0.2 سم/م",
             applicationCondition = "باتجاه البيبة (الجاليتراب) في الحمامات، ونحو مزاريب الصرف في الأسطح والشرفات",
             referenceType = DimensionRefType.EGYPTIAN_CODE,
-            referenceSource = "الكود المصري للأعمال الصحية ECP 102 وكود التشطيبات ECP 203",
+            referenceSource = "مخطط التركيبات الصحية ومواصفة التشطيب المعتمدان",
             practicalNotes = "الميول الأقل من 1% تسبب ركود برك المياه؛ والميول الأكبر من 2% تسبب شعوراً بعدم الاتزان وانزلاق الأواني والأجهزة."
         ),
 

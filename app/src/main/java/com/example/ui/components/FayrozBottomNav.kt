@@ -41,7 +41,6 @@ fun FayrozBottomNav(
         val isHome = currentScreen is Screen.Home
         val isStages = currentScreen is Screen.CategoriesList || currentScreen is Screen.CategoryDetail || currentScreen is Screen.StageDetail
         val isMaterials = currentScreen is Screen.MaterialsLibrary || currentScreen is Screen.MaterialDetail
-        val isInspections = currentScreen is Screen.InspectionHub || currentScreen is Screen.ActiveInspection || currentScreen is Screen.ViewReport
         val isDefects = currentScreen is Screen.TroubleshootingList || currentScreen is Screen.DefectDetail
 
         NavigationBarItem(
@@ -87,21 +86,6 @@ fun FayrozBottomNav(
                 unselectedTextColor = Color.White.copy(alpha = 0.6f)
             ),
             modifier = Modifier.testTag("nav_item_materials")
-        )
-
-        NavigationBarItem(
-            selected = isInspections,
-            onClick = { onNavigate(Screen.InspectionHub) },
-            icon = { Icon(Icons.Default.Assignment, contentDescription = "الاستلامات") },
-            label = { Text("الاستلامات", fontSize = 11.sp) },
-            colors = NavigationBarItemDefaults.colors(
-                selectedIconColor = FayrozNavy,
-                selectedTextColor = FayrozTurquoiseLight,
-                indicatorColor = FayrozTurquoise,
-                unselectedIconColor = Color.White.copy(alpha = 0.6f),
-                unselectedTextColor = Color.White.copy(alpha = 0.6f)
-            ),
-            modifier = Modifier.testTag("nav_item_inspections")
         )
 
         NavigationBarItem(

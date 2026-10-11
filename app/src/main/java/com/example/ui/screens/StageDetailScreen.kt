@@ -141,29 +141,6 @@ fun StageDetailScreen(
                             style = MaterialTheme.typography.bodyMedium,
                             color = Color.White
                         )
-                        Spacer(modifier = Modifier.height(12.dp))
-                        Button(
-                            onClick = {
-                                viewModel.startInspection(stage.id, stage.categoryId)
-                            },
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .testTag("stage_launch_inspection_btn"),
-                            shape = RoundedCornerShape(10.dp),
-                            colors = ButtonDefaults.buttonColors(containerColor = FayrozTurquoise)
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.PlayArrow,
-                                contentDescription = null,
-                                tint = FayrozNavy
-                            )
-                            Spacer(modifier = Modifier.width(8.dp))
-                            Text(
-                                text = "بدء استلام واستخراج تقرير فحص QA/QC",
-                                color = FayrozNavy,
-                                fontWeight = FontWeight.Bold
-                            )
-                        }
                     }
                 }
             }
@@ -205,9 +182,7 @@ fun StageDetailScreen(
                     }
 
                     // Linked Materials from Database
-                    val matchedMaterials = repository.allMaterials.filter { 
-                        it.relatedStageIds.contains(stage.id) || it.categoryIds.contains(stage.categoryId) 
-                    }.take(3)
+                    val matchedMaterials = repository.getMaterialsByIds(stage.relatedMaterialIds)
                     if (matchedMaterials.isNotEmpty()) {
                         Spacer(modifier = Modifier.height(10.dp))
                         Text(
@@ -406,6 +381,21 @@ fun StageDetailScreen(
                         color = MaterialTheme.colorScheme.primary,
                         fontSize = 13.sp
                     )
+                    if (stage.technicalRequirements.isNotEmpty()) {
+                        Text(
+                            text = "الاشتراطات الفنية:",
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                        stage.technicalRequirements.forEach { requirement ->
+                            Text(
+                                text = "• $requirement",
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.onSurface
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(8.dp))
+                    }
                     stage.qualityTests.forEach { test ->
                         Text(
                             text = "✓ $test",
@@ -434,7 +424,7 @@ fun StageDetailScreen(
             // Code References (الأكواد والمراجع الهندسية)
             item {
                 DetailSectionCard(
-                    title = "المراجع والأكواد الهندسية المعتمدة",
+                    title = "المراجع والمواصفات الفنية",
                     icon = Icons.Default.MenuBook,
                     accentColor = FayrozNavyCard
                 ) {

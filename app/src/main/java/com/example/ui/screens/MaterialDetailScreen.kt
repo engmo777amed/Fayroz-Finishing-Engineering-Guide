@@ -171,6 +171,25 @@ fun MaterialDetailScreen(
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = "الأنواع المتاحة: ${material.availableTypes.joinToString(" • ")}",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = "الاستخدامات: ${material.usages.joinToString(" • ")}",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = "المميزات والعيوب: ${material.prosAndCons}",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+
                     Spacer(modifier = Modifier.height(6.dp))
                     Text(
                         text = "المكونات والخصائص: ${material.componentsAndProperties}",
@@ -198,6 +217,13 @@ fun MaterialDetailScreen(
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = "درجات الجودة: ${material.qualityGrades}",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
                         text = "المواصفات القياسية:",
