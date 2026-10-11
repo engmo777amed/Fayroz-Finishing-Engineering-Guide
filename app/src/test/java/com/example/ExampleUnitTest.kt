@@ -25,7 +25,7 @@ class ExampleUnitTest {
             assertEquals(stages.size, category.stagesCount)
             assertEquals(FinishingCatalog.materials.count { category.id in it.categoryIds }, category.materialsCount)
             assertEquals(FinishingDefectsData.defects.count { it.categoryId == category.id }, category.defectsCount)
-            assertEquals(FinishingChecklistsData.checkItems.count { it.categoryId == category.id }, category.checklistsCount)
+            assertEquals(FinishingCatalog.checklistItems.count { it.categoryId == category.id }, category.checklistsCount)
         }
         assertEquals("stage_woodfloor_02", FinishingCatalog.stages.first { it.categoryId == 17 }.id)
         assertEquals("stage_kitchen_02", FinishingCatalog.stages.first { it.categoryId == 24 }.id)
@@ -60,7 +60,7 @@ class ExampleUnitTest {
                 assertTrue(material.id, material.id in stageMap.getValue(id).relatedMaterialIds)
             }
         }
-        for (check in FinishingChecklistsData.checkItems) assertNotNull(check.id, stageMap[check.stageId])
+        for (check in FinishingCatalog.checklistItems) assertNotNull(check.id, stageMap[check.stageId])
         for (defect in FinishingDefectsData.defects) assertNotNull(defect.id, stageMap[defect.stageId])
     }
 

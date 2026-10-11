@@ -3,6 +3,8 @@ package com.example.data
 import com.example.model.ExecutionStage
 import com.example.model.FinishingCategory
 import com.example.model.MaterialCard
+import com.example.model.QualityCheckItem
+import com.example.model.InspectionPhase
 
 /** Pure, immutable catalog shared by the repository and integrity tests. Original IDs stay stable. */
 object FinishingCatalog {
@@ -120,12 +122,26 @@ object FinishingCatalog {
         material.copy(relatedStageIds = stages.filter { material.id in it.relatedMaterialIds }.map { it.id })
     }
 
+    // Read-only inspection guidance for phases absent from the original checklists.
+    val checklistItems: List<QualityCheckItem> = FinishingChecklistsData.checkItems +
+        stages.filter { stage -> FinishingChecklistsData.checkItems.none { it.stageId == stage.id } }
+            .map { stage ->
+                QualityCheckItem(
+                    id = "check_guide_${stage.id}", categoryId = stage.categoryId, stageId = stage.id,
+                    titleAr = stage.titleAr, phase = InspectionPhase.AFTER,
+                    method = stage.qualityTests.joinToString("\n"),
+                    toolUsed = stage.toolsNeeded.joinToString(" • "),
+                    acceptanceCriterion = stage.handoverCriteria.joinToString("\n"),
+                    technicalReference = stage.codeReferences.joinToString("\n")
+                )
+            }
+
     val categories: List<FinishingCategory> = FinishingCategoriesData.categories.map { category ->
         category.copy(
             stagesCount = stages.count { it.categoryId == category.id },
             materialsCount = materials.count { category.id in it.categoryIds },
             defectsCount = FinishingDefectsData.defects.count { it.categoryId == category.id },
-            checklistsCount = FinishingChecklistsData.checkItems.count { it.categoryId == category.id }
+            checklistsCount = checklistItems.count { it.categoryId == category.id }
         )
     }
 }

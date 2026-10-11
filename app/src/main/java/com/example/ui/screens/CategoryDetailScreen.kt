@@ -204,7 +204,7 @@ fun StagesTabContent(
         item {
             Spacer(modifier = Modifier.height(10.dp))
             Text(
-                text = "مراحل التنفيذ الميدانية مرتبة بالتسلسل الفعلي بالموقع:",
+                text = "مراحل التنفيذ الميدانية؛ اختَر ما ينطبق على النظام المعتمد واتبع الأعمال السابقة لكل مرحلة:",
                 style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
@@ -436,6 +436,12 @@ fun InspectionsTabContent(
                             color = MaterialTheme.colorScheme.onSurface
                         )
                     }
+                    Spacer(modifier = Modifier.height(6.dp))
+                    Text(
+                        text = "طريقة الفحص: ${item.method}",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
                     Spacer(modifier = Modifier.height(6.dp))
                     Text(
                         text = "معيار القبول: ${item.acceptanceCriterion}",

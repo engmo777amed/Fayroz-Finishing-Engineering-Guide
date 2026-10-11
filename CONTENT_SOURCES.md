@@ -2,7 +2,9 @@
 
 The guide keeps its 30 categories, existing stage IDs, Compose screens, Cairo fonts, colors, and Room schema. The catalog adds 58 field phases and 58 material cards: 96 stages and 131 materials in total. Existing instructions remain available; incorrect references and unconditional product limits are corrected in their original records.
 
-Each phase uses the existing objective, prerequisites, materials/tools, execution, dimensions, mixes, technical requirements, MEP coordination, tips, mistakes, testing, handover, and reference fields. Types, quality grades, uses, and advantages/disadvantages now appear inside the existing material cards. Related-material links use explicit stage relationships in both directions.
+Each phase uses the existing objective, prerequisites, materials/tools, execution, dimensions, mixes, technical requirements, MEP coordination, tips, mistakes, testing, handover, and reference fields. Missing checklist phases reuse their own quality tests and handover criteria as read-only guidance, and the existing cards now display the inspection method. Alternative systems are selected from project requirements rather than layered automatically.
+
+Types, quality grades, uses, and advantages/disadvantages now appear inside the existing material cards. Related-material links use explicit stage relationships in both directions.
 
 ## Primary reference entry points
 
@@ -28,6 +30,8 @@ Each phase uses the existing objective, prerequisites, materials/tools, executio
 These are reference sources and entry points, not proof that every legacy figure is a current Egyptian code requirement. New text distinguishes project drawings and manufacturer instructions from practical site guidance. Brand examples do not certify local stock availability.
 
 ## Corrections and scope
+
+The first compilation exposed two existing references to a missing MODERATE defect-severity enum. The value and its existing badge styling are supplied so those records can compile.
 
 - ECP 203 was incorrectly named as a plaster, flooring, paint and carpentry code. Those references now point to the relevant project/system specification; the concrete reference remains.
 - A fixed 15–20 bar / 24-hour plumbing test is replaced with the selected system's approved test procedure and component ratings.

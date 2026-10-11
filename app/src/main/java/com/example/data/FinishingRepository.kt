@@ -34,7 +34,7 @@ class FinishingRepository(context: Context) {
 
     val allDefects: List<TroubleshootingDefect> = FinishingDefectsData.defects
 
-    val allChecklistItems: List<QualityCheckItem> = FinishingChecklistsData.checkItems
+    val allChecklistItems: List<QualityCheckItem> = FinishingCatalog.checklistItems
 
     val allDimensions: List<TechnicalDimension> = FinishingDimensionsData.dimensions
 

@@ -194,6 +194,7 @@ fun SeverityBadge(severity: DefectSeverity) {
     val (bg, fg) = when (severity) {
         DefectSeverity.CRITICAL -> Pair(StatusFail.copy(alpha = 0.15f), StatusFail)
         DefectSeverity.MAJOR -> Pair(FayrozGold.copy(alpha = 0.15f), FayrozGold)
+        DefectSeverity.MODERATE -> Pair(FayrozGold.copy(alpha = 0.15f), FayrozGold)
         DefectSeverity.MINOR -> Pair(FayrozTurquoise.copy(alpha = 0.15f), FayrozTurquoise)
     }
 
