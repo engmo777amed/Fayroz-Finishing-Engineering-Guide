@@ -6,13 +6,19 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class ExampleUnitTest {
+    @Test fun allNumberedContentAdditionsArePresent() {
+        assertEquals((6..112).map { "stage_review_$it" }.toSet(), FinishingCatalog.stages.filter { it.id.startsWith("stage_review_") }.map { it.id }.toSet())
+        assertTrue(FinishingCatalog.stages.count { it.categoryId == 7 } >= 26)
+        assertEquals(6, FinishingCatalog.stages.count { it.id.startsWith("stage_review_") && it.categoryId == 23 })
+    }
+
     @Test fun catalogRetainsAllCategoriesAndOriginalIds() {
         assertEquals((1..30).toList(), FinishingCatalog.categories.map { it.id })
         val originalStages = FinishingStagesPart1.stages + FinishingStagesPart2.stages +
             FinishingStagesPart3.stages + FinishingStagesRemaining.stages
         assertTrue(FinishingCatalog.stages.map { it.id }.containsAll(originalStages.map { it.id }))
-        assertEquals(96, FinishingCatalog.stages.size)
-        assertEquals(131, FinishingCatalog.materials.size)
+        assertEquals(203, FinishingCatalog.stages.size)
+        assertEquals(243, FinishingCatalog.materials.size)
         assertEquals(FinishingCatalog.stages.size, FinishingCatalog.stages.map { it.id }.distinct().size)
         assertEquals(FinishingCatalog.materials.size, FinishingCatalog.materials.map { it.id }.distinct().size)
     }
@@ -72,7 +78,7 @@ class ExampleUnitTest {
             assertEquals(stage.titleAr, enriched.titleAr)
             assertEquals(stage.executionSteps, enriched.executionSteps)
             assertEquals(stage.objective, enriched.objective)
-            assertTrue(enriched.prerequisites.contains(stage.prerequisites))
+            assertEquals(stage.prerequisites, enriched.prerequisites)
             assertTrue(enriched.qualityTests.containsAll(stage.qualityTests))
         }
     }

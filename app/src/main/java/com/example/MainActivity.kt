@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.collectAsState
@@ -52,6 +53,7 @@ fun FayrozAppRoot(
     viewModel: FinishingViewModel = viewModel()
 ) {
     val currentScreen by viewModel.currentScreen.collectAsState()
+    val screenStates = rememberSaveableStateHolder()
 
     // Handle back button for sub-screens
     BackHandler(enabled = currentScreen !is Screen.Home) {
@@ -81,6 +83,7 @@ fun FayrozAppRoot(
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
+            screenStates.SaveableStateProvider(currentScreen.stateKey()) {
             when (val screen = currentScreen) {
                 is Screen.Home -> {
                     HomeScreen(
@@ -164,6 +167,15 @@ fun FayrozAppRoot(
                     )
                 }
             }
+            }
         }
     }
+}
+
+internal fun Screen.stateKey(): String = when (this) {
+    is Screen.CategoryDetail -> "category:$categoryId"
+    is Screen.StageDetail -> "stage:$stageId"
+    is Screen.MaterialDetail -> "material:$materialId"
+    is Screen.DefectDetail -> "defect:$defectId"
+    else -> this.toString()
 }

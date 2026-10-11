@@ -32,6 +32,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -58,7 +59,7 @@ fun CategoriesScreen(
     onBack: () -> Unit
 ) {
     val repository = viewModel.repository
-    var filterText by remember { mutableStateOf("") }
+    var filterText by rememberSaveable { mutableStateOf("") }
 
     val filteredList = remember(filterText) {
         if (filterText.isBlank()) {
@@ -117,7 +118,7 @@ fun CategoriesScreen(
             Spacer(modifier = Modifier.height(10.dp))
 
             LazyColumn(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxSize().testTag("categories_list"),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 items(filteredList) { cat ->

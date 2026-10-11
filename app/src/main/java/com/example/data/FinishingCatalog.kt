@@ -8,6 +8,9 @@ import com.example.model.InspectionPhase
 
 /** Pure, immutable catalog shared by the repository and integrity tests. Original IDs stay stable. */
 object FinishingCatalog {
+    private val mergedMaterialIds = setOf("mat_corner_bead_galvanized", "mat_ready_mix_plaster", "mat_tile_leveling_clips_and_wedges", "mat_concealed_toilet_cistern_flushing_system")
+    fun canonicalMaterialId(id: String): String = materialAliases[id] ?: id
+
     private val originalStages = FinishingStagesPart1.stages + FinishingStagesPart2.stages +
         FinishingStagesPart3.stages + FinishingStagesRemaining.stages
     private val addedStages = FinishingStagesExpansion1.stages +
@@ -15,8 +18,14 @@ object FinishingCatalog {
         FinishingStagesExpansion3.stages +
         FinishingStagesExpansion4.stages +
         FinishingStagesExpansion5.stages +
-        FinishingStagesExpansion6.stages
-    private val rawMaterials = FinishingMaterialsPart1.materials +
+        FinishingStagesExpansion6.stages +
+        FinishingStagesReview1.stages +
+        FinishingStagesReview2.stages +
+        FinishingStagesReview3.stages +
+        FinishingStagesReview4.stages +
+        FinishingStagesReview5.stages +
+        FinishingStagesReview6.stages
+    private val unmergedMaterials = FinishingMaterialsPart1.materials +
         FinishingMaterialsPart2.materials +
         FinishingMaterialsPart3.materials +
         FinishingMaterialsPart4.materials +
@@ -30,7 +39,16 @@ object FinishingCatalog {
         FinishingMaterialsExpansion2.materials +
         FinishingMaterialsExpansion3.materials +
         FinishingMaterialsExpansion4.materials +
-        FinishingMaterialsExpansion5.materials + FinishingMaterialsExpansion6.materials
+        FinishingMaterialsExpansion5.materials + FinishingMaterialsExpansion6.materials +
+        FinishingMaterialsReview1.materials +
+        FinishingMaterialsReview2.materials +
+        FinishingMaterialsReview3.materials +
+        FinishingMaterialsReview4.materials +
+        FinishingMaterialsReview5.materials +
+        FinishingMaterialsReview6.materials +
+        FinishingMaterialsReview7.materials
+
+    private val rawMaterials = unmergedMaterials.filter { it.id !in mergedMaterialIds }
 
     private val aliases = mapOf(
         "stage_facades_01" to "stage_facade_01",
@@ -53,6 +71,11 @@ object FinishingCatalog {
     )
 
     private val materialAliases = mapOf(
+        "mat_corner_bead_galvanized" to "mat_corner_bead_galv",
+        "mat_ready_mix_plaster" to "mat_drymix_plaster",
+        "mat_tile_leveling_clips_and_wedges" to "mat_tile_leveling_clips",
+        "mat_concealed_toilet_cistern_flushing_system" to "mat_concealed_cistern_frame",
+
         "mat_cement_block_solid" to "mat_solid_cement_brick",
         "mat_galvanized_ties" to "mat_brick_ties_galv",
         "mat_fiber_mesh" to "mat_fiber_mesh_160",
@@ -86,21 +109,7 @@ object FinishingCatalog {
         29 to listOf("stage_qa_tests_02", "stage_qa_tests_01", "stage_qa_tests_03")
     )
 
-    private val stagesWithNotes: List<ExecutionStage> = originalStages.map { stage ->
-        val notes = FinishingFieldNotes.byCategory.getValue(stage.categoryId)
-        stage.copy(
-            prerequisites = append(stage.prerequisites, notes.prerequisites),
-            toolsNeeded = (stage.toolsNeeded + notes.tools).distinct(),
-            dimensionsAndSlopes = append(stage.dimensionsAndSlopes, notes.dimensions),
-            mixesAndRatios = append(stage.mixesAndRatios, notes.mixes),
-            mepCoordination = append(stage.mepCoordination, notes.coordination),
-            siteTips = (stage.siteTips + notes.tips).distinct(),
-            commonMistakes = (stage.commonMistakes + notes.mistakes).distinct(),
-            qualityTests = (stage.qualityTests + notes.tests).distinct(),
-            handoverCriteria = (stage.handoverCriteria + notes.acceptance).distinct(),
-            codeReferences = (stage.codeReferences + notes.reference).distinct()
-        )
-    } + addedStages
+    private val stagesWithNotes: List<ExecutionStage> = originalStages + addedStages
 
     val stages: List<ExecutionStage> = stagesWithNotes.groupBy { it.categoryId }
         .toSortedMap().values.flatMap { categoryStages ->
@@ -123,7 +132,18 @@ object FinishingCatalog {
     }
 
     // Read-only inspection guidance for phases absent from the original checklists.
-    val checklistItems: List<QualityCheckItem> = FinishingChecklistsData.checkItems +
+    val checklistItems: List<QualityCheckItem> = FinishingChecklistsData.checkItems.map { check ->
+        val stage = stages.first { it.id == check.stageId }
+        check.copy(
+            method = when (check.phase) {
+                InspectionPhase.BEFORE -> stage.prerequisites
+                InspectionPhase.DURING -> stage.technicalRequirements.joinToString("\n")
+                InspectionPhase.AFTER -> stage.qualityTests.joinToString("\n")
+            },
+            acceptanceCriterion = stage.handoverCriteria.joinToString("\n"),
+            technicalReference = stage.codeReferences.joinToString("\n")
+        )
+    } +
         stages.filter { stage -> FinishingChecklistsData.checkItems.none { it.stageId == stage.id } }
             .map { stage ->
                 QualityCheckItem(

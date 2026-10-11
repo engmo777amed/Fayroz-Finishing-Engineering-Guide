@@ -54,10 +54,10 @@ class FinishingRepository(context: Context) {
         allMaterials.filter { it.categoryIds.contains(categoryId) }
 
     fun getMaterialById(id: String): MaterialCard? =
-        allMaterials.find { it.id == id }
+        allMaterials.find { it.id == FinishingCatalog.canonicalMaterialId(id) }
 
     fun getMaterialsByIds(ids: List<String>): List<MaterialCard> =
-        allMaterials.filter { ids.contains(it.id) }
+        ids.mapNotNull(::getMaterialById).distinctBy { it.id }
 
     // Checklists
     fun getChecklistItemsByCategoryId(categoryId: Int): List<QualityCheckItem> =

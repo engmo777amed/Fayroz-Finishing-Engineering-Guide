@@ -45,6 +45,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -82,7 +84,8 @@ fun CategoryDetailScreen(
     val repository = viewModel.repository
     val category = repository.getCategoryById(categoryId) ?: return
 
-    var selectedTab by remember { mutableIntStateOf(initialTab) }
+    var selectedTab by rememberSaveable(categoryId) { mutableIntStateOf(initialTab) }
+    val tabStates = rememberSaveableStateHolder()
     val stages = remember(categoryId) { repository.getStagesByCategoryId(categoryId) }
     val materials = remember(categoryId) { repository.getMaterialsByCategoryId(categoryId) }
     val checkItems = remember(categoryId) { repository.getChecklistItemsByCategoryId(categoryId) }
@@ -163,6 +166,7 @@ fun CategoryDetailScreen(
                 .fillMaxSize()
                 .padding(horizontal = 14.dp)
         ) {
+            tabStates.SaveableStateProvider(selectedTab) {
             when (selectedTab) {
                 0 -> StagesTabContent(
                     stages = stages,
@@ -182,6 +186,7 @@ fun CategoryDetailScreen(
                 4 -> DimensionsTabContent(
                     dimensions = dimensions
                 )
+            }
             }
         }
     }
