@@ -8,7 +8,9 @@ import org.junit.Test
 class ExampleUnitTest {
     @Test fun allNumberedContentAdditionsArePresent() {
         assertEquals((6..112).map { "stage_review_$it" }.toSet(), FinishingCatalog.stages.filter { it.id.startsWith("stage_review_") }.map { it.id }.toSet())
-        assertTrue(FinishingCatalog.stages.count { it.categoryId == 7 } >= 26)
+        assertEquals(25, FinishingCatalog.stages.count { it.categoryId == 7 })
+        assertEquals((6..27).map { "stage_review_$it" }.toSet(),
+            FinishingCatalog.stages.filter { it.categoryId == 7 && it.id.startsWith("stage_review_") }.map { it.id }.toSet())
         assertEquals(6, FinishingCatalog.stages.count { it.id.startsWith("stage_review_") && it.categoryId == 23 })
     }
 
