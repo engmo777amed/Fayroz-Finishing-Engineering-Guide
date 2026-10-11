@@ -13,7 +13,7 @@ object FinishingStagesExpansion3 {
             prerequisites = "اكتمال كابلات مرقمة وخالية من التلف؛ اعتماد باتش بانل وكيستون مطابقين لفئة الكابل.\nاعتماد مخطط نقاط الداتا والكاميرات والإنتركم والدش؛ تحديد التغذية والراك والتهوية والمواسير المنفصلة.",
             requiredMaterials = listOf("كابلات نت داتا كات 6 نحاس نقي شيلدد وغير شيلدد (Cat6 UTP / FTP Pure Copper)", "كيستون ووش داتا وباتش بانل", "سويتش شبكة PoE"),
             toolsNeeded = listOf("عدة إنهاء كابل مطابقة لنوع الطرف", "فاحص Wiremap أو جهاز اعتماد شبكة حسب المواصفة", "عدة إنهاء كابل وأداة كبس مناسبة", "فاحص شبكات وإعدادات جهاز التسجيل"),
-            executionSteps = listOf("رتب أطوال خدمة الكابلات داخل الراك دون شد أو انحناءات حادة.", "انهِ الأزواج بنفس ترتيب T568 المعتمد في الطرفين مع تقليل فك الجدل. [القيم الواردة مثال يتأكد من ملاءمته في التصميم ودليل المنتج؛ القبول وفق المواصفة المعتمدة.]", "ركب المخارج والباتش بانل والكابلات القصيرة ثم رقّم كل منفذ.", "راجع التغذية والتهوية ومجموع قدرات PoE في السويتش.", "اختبر ترتيب الأسلاك ثم أداء الوصلات بالأداة الملائمة لمتطلبات المشروع."),
+            executionSteps = listOf("رتب أطوال خدمة الكابلات داخل الراك دون شد أو انحناءات حادة.", "انهِ الأزواج بنفس ترتيب T568 المعتمد في الطرفين مع تقليل فك الجدل.", "ركب المخارج والباتش بانل والكابلات القصيرة ثم رقّم كل منفذ.", "راجع التغذية والتهوية ومجموع قدرات PoE في السويتش.", "اختبر ترتيب الأسلاك ثم أداء الوصلات بالأداة الملائمة لمتطلبات المشروع."),
             dimensionsAndSlopes = "طول وصلة النحاس وهيئة التوصيل وحدود الانحناء حسب فئة الكابل؛ راجع قدرة PoE الإجمالية وليس عدد منافذ السويتش فقط.",
             mixesAndRatios = "لا توجد خلطة؛ كل موصل وكابل يجب أن يطابق النظام، ولا تجمع كابل نحاس خالص وكابل CCA باعتبارهما مكافئين.",
             technicalRequirements = listOf("كل نقطة مرقمة وتعمل دون تشويش، والتسجيل يسترجع بنجاح.", "تسليم إعدادات النظام لصاحب المشروع بطريقة مؤمنة."),
@@ -22,7 +22,7 @@ object FinishingStagesExpansion3 {
             commonMistakes = listOf("خلط T568A وT568B دون قصد أو استخدام كيستون لا يطابق نوع الكابل.", "خلط ترتيب الأطراف أو فك جدل الأزواج لمسافة كبيرة.", "ترك كلمات مرور المصنع أو تركيب كاميرا دون اختبار مجال الرؤية ليلًا."),
             qualityTests = listOf("اختبار جميع الروابط وليس عينة أول منفذ.", "توثيق كل نقطة ومسارها وسرعتها المطلوبة."),
             handoverCriteria = listOf("كل نقطة بيانات مرقمة ومطابقة لفحص التوصيل أو اعتماد الفئة المطلوبة بالمشروع.", "كل نقطة مرقمة وتعمل دون تشويش، والتسجيل يسترجع بنجاح.", "تسليم إعدادات النظام لصاحب المشروع بطريقة مؤمنة."),
-            codeReferences = listOf("دعم وتركيب كاميرات Axis: https://help.axis.com/en-us", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("Fluke مستويات اختبار الكابلات: https://www.flukenetworks.com/knowledge-base/cableiq/verification-qualification-and-certification", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_cat6_utp_cable", "mat_rj45_keystone_patchpanel", "mat_poe_switch")
         ),
         ExecutionStage(
@@ -43,7 +43,7 @@ object FinishingStagesExpansion3 {
             commonMistakes = listOf("ترك حساب المصنع أو تجربة الكاميرا نهارًا فقط أو تجاهل تبريد جهاز التسجيل.", "خلط ترتيب الأطراف أو فك جدل الأزواج لمسافة كبيرة.", "ترك كلمات مرور المصنع أو تركيب كاميرا دون اختبار مجال الرؤية ليلًا."),
             qualityTests = listOf("تسجيل واسترجاع مقطع واختبار إنتركم وجرس.", "التعافي بعد انقطاع الطاقة واختبار المستخدمين."),
             handoverCriteria = listOf("الكاميرات والنداء والتحكم تؤدي السيناريوهات المعتمدة، مع حفظ إعدادات الوصول وتسليمها للمسؤول.", "كل نقطة مرقمة وتعمل دون تشويش، والتسجيل يسترجع بنجاح.", "تسليم إعدادات النظام لصاحب المشروع بطريقة مؤمنة."),
-            codeReferences = listOf("دعم وتركيب كاميرات Axis: https://help.axis.com/en-us", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("Fluke مستويات اختبار الكابلات: https://www.flukenetworks.com/knowledge-base/cableiq/verification-qualification-and-certification", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_cat6_utp_cable", "mat_junction_box_ip65", "mat_led_dimmer", "mat_poe_switch", "mat_cctv_camera_nvr")
         ),
         ExecutionStage(
@@ -64,7 +64,7 @@ object FinishingStagesExpansion3 {
             commonMistakes = listOf("استخدام أكسجين للاختبار أو تفريغ الهواء بالفريون.", "طرد الهواء بالفريون بدل تفريغ وقياس فاكيوم صحيح.", "ثني نحاس بعنف أو إخفاء فلير غير مختبر فوق سقف مغلق."),
             qualityTests = listOf("ضغط وتسرب وثبات فاكيوم طبق المصنع.", "فحص الوصلات بعد التشغيل."),
             handoverCriteria = listOf("نجاح اختبار التسرب والتفريغ والتوصيل وفق وحدة التكييف، دون اهتزاز أو تثبيت غير سليم.", "لا تسريب فريون أو تكثيف خارج المصرف مع تثبيت هادئ للوحدات.", "الفلتر والدرايف والمحابس قابلة للصيانة."),
-            codeReferences = listOf("Daikin دليل تركيب وحدات سبليت: https://my.daikin.eu/content/dam/document-library/installation-manuals/ac/split/ftxf-f/FTXF20-42F_Installation%20manual_3PEN748643-9M_English.pdf", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("Daikin أدلة الموديلات: https://www.daikin.eu/en_us/support-and-manuals.html ؛ استخدم دليل الموديل المركب.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_copper_ac_pipes", "mat_pipe_support_insulation", "mat_ac_mounts")
         ),
         ExecutionStage(
@@ -85,7 +85,7 @@ object FinishingStagesExpansion3 {
             commonMistakes = listOf("تعليق دكت ثقيل بالشاسيه أو مخرج طرد يعيد الهواء للوحدة.", "طرد الهواء بالفريون بدل تفريغ وقياس فاكيوم صحيح.", "ثني نحاس بعنف أو إخفاء فلير غير مختبر فوق سقف مغلق."),
             qualityTests = listOf("اختبار ماء وارتفاع صرف المضخة.", "قياس تدفق هواء وتشغيل الضوضاء والاهتزاز."),
             handoverCriteria = listOf("تصريف تكاثف وتهوية وتشغيل التكييف سليم، والأجزاء المحتاجة صيانة يمكن الوصول إليها.", "لا تسريب فريون أو تكثيف خارج المصرف مع تثبيت هادئ للوحدات.", "الفلتر والدرايف والمحابس قابلة للصيانة."),
-            codeReferences = listOf("Daikin دليل تركيب وحدات سبليت: https://my.daikin.eu/content/dam/document-library/installation-manuals/ac/split/ftxf-f/FTXF20-42F_Installation%20manual_3PEN748643-9M_English.pdf", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("Daikin أدلة الموديلات: https://www.daikin.eu/en_us/support-and-manuals.html ؛ استخدم دليل الموديل المركب.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_drywall_inspection_access_panel", "mat_ac_condensate_pipe")
         ),
         ExecutionStage(
@@ -106,7 +106,7 @@ object FinishingStagesExpansion3 {
             commonMistakes = listOf("ملء اختراق الحريق بفوم عادي أو استبدال رشاش بمعامل تدفق مختلف.", "دهان الرشاش أو نقل الكاشف لمجرد تماثل ديكور السقف.", "تجربة نظام إطفاء دون إخطار وإجراء اختبار معتمد."),
             qualityTests = listOf("اختبار الشبكة وفق خطة مهندس الحريق.", "مطابقة كل اختراق لتفصيلة النظام ومكوناته."),
             handoverCriteria = listOf("شبكة إطفاء وختم اختراقات مطابقان للتصميم واختباراته والنظام المقاوم للحريق قبل الإخفاء.", "النظام يعمل طبق السيناريوهات المعتمدة دون عوائق أو اختراقات غير معالجة.", "تسليم الاختبارات وتعليمات التشغيل للجهة المسؤولة."),
-            codeReferences = listOf("تعليمات رشاشات Tyco المعتمدة للموديل: https://www.tyco-fire.com/products-and-solutions/sprinklers-nozzles-and-accessories", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("مخطط الحريق المعتمد ونشرة الرشاش والكاشف واللوحة ونظام سد الاختراق المستخدم.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_fire_sprinkler_pendant", "mat_firestop_system")
         ),
         ExecutionStage(
@@ -127,7 +127,7 @@ object FinishingStagesExpansion3 {
             commonMistakes = listOf("تجربة كاشف بلهب أو دخان غير مخصص أو ترك منطقة معزولة بعد الاختبار.", "دهان الرشاش أو نقل الكاشف لمجرد تماثل ديكور السقف.", "تجربة نظام إطفاء دون إخطار وإجراء اختبار معتمد."),
             qualityTests = listOf("كل نقطة كشف ونداء ومخرج تحكم.", "حالة فقد التغذية والبطاريات وفق تعليمات النظام."),
             handoverCriteria = listOf("كل نقطة إنذار ومخرج تحكم تعمل طبق مصفوفة السبب والنتيجة وخطة الاختبار المعتمدة.", "النظام يعمل طبق السيناريوهات المعتمدة دون عوائق أو اختراقات غير معالجة.", "تسليم الاختبارات وتعليمات التشغيل للجهة المسؤولة."),
-            codeReferences = listOf("تعليمات رشاشات Tyco المعتمدة للموديل: https://www.tyco-fire.com/products-and-solutions/sprinklers-nozzles-and-accessories", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("مخطط الحريق المعتمد ونشرة الرشاش والكاشف واللوحة ونظام سد الاختراق المستخدم.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_fire_alarm_devices")
         ),
         ExecutionStage(
@@ -148,7 +148,7 @@ object FinishingStagesExpansion3 {
             commonMistakes = listOf("تغطية عزل جديد بلاصق غير متوافق أو غلق زاوية متحركة بروبة صلبة.", "لصق نقطي يترك فراغات أو العمل فوق قشرة لاصق جافة.", "تعويض فرق منسوب كبير بلاصق طبقة رقيقة أو غسل الفواصل بماء زائد."),
             qualityTests = listOf("تماسك واستواء الحائط وفروق الحواف.", "اختبار مياه حول الزوايا والمخارج بعد المعالجة."),
             handoverCriteria = listOf("بلاط الحائط ثابت ومستقيم بفواصل منتظمة وتفاصيل زوايا وصرف متوافقة مع العزل.", "تغطية تثبيت جيدة وميول صحيحة وفواصل نظيفة مستمرة.", "عدم وجود بلاطات مكسورة أو حواف حادة أو فروق لون غير معتمدة."),
-            codeReferences = listOf("سيكا مصر SikaCeram-30 وتعليمات التطبيق: https://egy.sika.com/en/construction/tiling/sikaceram-30.html", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("SikaCeram-30 مثال منتج، لا تعمم تصنيفه وحدوده: https://egy.sika.com/en/construction/tiling/sikaceram-30.html", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_tile_adhesive_c2te", "mat_tile_leveling_clips", "mat_tile_spacers")
         ),
         ExecutionStage(
@@ -169,7 +169,7 @@ object FinishingStagesExpansion3 {
             commonMistakes = listOf("ملء فاصل التمدد بروبة أو استخدام حمض لتنظيف بلاط وحجر دون اعتماد.", "لصق نقطي يترك فراغات أو العمل فوق قشرة لاصق جافة.", "تعويض فرق منسوب كبير بلاصق طبقة رقيقة أو غسل الفواصل بماء زائد."),
             qualityTests = listOf("امتلاء الفواصل وتجانس اللون.", "سلامة فواصل الحركة والتصريف والنظافة."),
             handoverCriteria = listOf("فواصل الروبة ممتلئة ونظيفة وفواصل الحركة مرنة ومستمرة دون جسور مونة صلبة.", "تغطية تثبيت جيدة وميول صحيحة وفواصل نظيفة مستمرة.", "عدم وجود بلاطات مكسورة أو حواف حادة أو فروق لون غير معتمدة."),
-            codeReferences = listOf("سيكا مصر SikaCeram-30 وتعليمات التطبيق: https://egy.sika.com/en/construction/tiling/sikaceram-30.html", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("SikaCeram-30 مثال منتج، لا تعمم تصنيفه وحدوده: https://egy.sika.com/en/construction/tiling/sikaceram-30.html", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_epoxy_tile_grout", "mat_tile_expansion_joints_and_t_profiles", "mat_cementitious_grout")
         ),
         ExecutionStage(
@@ -190,7 +190,7 @@ object FinishingStagesExpansion3 {
             commonMistakes = listOf("تعليق عتبة على نقط مونة أو قطع حجر صناعي جافًا داخل مكان مغلق.", "تثبيت كسوة ثقيلة باللاصق فقط دون اعتماد النظام.", "ملء فراغات الحجر بمواد تغير اللون أو غسيل رخام بمنظف حمضي."),
             qualityTests = listOf("المنسوب والميول والحركة حول الباب والشباك.", "تماسك الحجر وسلامة حافته ولونه."),
             handoverCriteria = listOf("الحجر والفتحات والبروزات مدعومة طبق التفصيلة، مع ثبات العتبات وميلها المطلوب.", "ألواح ثابتة دون شروخ أو بقع جديدة مع فواصل نظيفة.", "نهايات سليمة وحماية أثناء باقي الأعمال."),
-            codeReferences = listOf("وثائق Cosentino للتصميم والتركيب: https://www.cosentino.com/professional/technical-documentation/", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("دليل نوع الحجر ونظام التثبيت والحماية؛ Cosentino: https://www.cosentino.com/professional/technical-documentation/", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_polyester_marble_mastic_jolly", "mat_stone_nonstaining_sealant")
         ),
         ExecutionStage(
@@ -211,7 +211,7 @@ object FinishingStagesExpansion3 {
             commonMistakes = listOf("جلي يخفض مناسيب المصارف أو تلميع حجر صناعي بمواد غير مجازة.", "تثبيت كسوة ثقيلة باللاصق فقط دون اعتماد النظام.", "ملء فراغات الحجر بمواد تغير اللون أو غسيل رخام بمنظف حمضي."),
             qualityTests = listOf("تجانس اللون واللمعة ونظافة الفواصل.", "تجربة منظف وحماية وعدم تغير لون الحجر."),
             handoverCriteria = listOf("سطح الحجر سليم ونظيف بدرجة التشطيب المطلوبة ومحمي دون بقع أو تلف حواف.", "ألواح ثابتة دون شروخ أو بقع جديدة مع فواصل نظيفة.", "نهايات سليمة وحماية أثناء باقي الأعمال."),
-            codeReferences = listOf("وثائق Cosentino للتصميم والتركيب: https://www.cosentino.com/professional/technical-documentation/", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("دليل نوع الحجر ونظام التثبيت والحماية؛ Cosentino: https://www.cosentino.com/professional/technical-documentation/", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_stone_sealer_cleaner", "mat_surface_protection")
         )
     )

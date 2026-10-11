@@ -22,7 +22,7 @@ object FinishingStagesExpansion2 {
             commonMistakes = listOf("توصيل صرف جهاز إلى خط دون سيفون حيث يلزم أو ترك ماسورة مفتوحة بالموقع.", "لحام زائد يسد قطر المواسير أو اختبار التغذية بالهواء دون إجراء معتمد.", "دفن وصلة بها تسريب أو ربط صرف دون تهوية أو مانع روائح."),
             qualityTests = listOf("تجربة تدفق من أكثر من جهاز وفحص التسريب.", "فحص استمرارية التهوية وسهولة فتح التسليك."),
             handoverCriteria = listOf("أقطار وميول وتهوية ونقاط تسليك الصرف مطابقة للمخطط، دون تسريب أو اتصال يسبب روائح.", "شبكة ثابتة محمية دون تسريب وذات مسارات يمكن صيانتها.", "صور ومقاسات مواقع الخدمات المخفية محفوظة قبل الغلق."),
-            codeReferences = listOf("Wavin دليل تركيب PP-R: https://mediahub.wavin.com/m/137bdffed37c5680/original/PP-RC-PP-RCT-Pipe-Systems-Installation-Manual.pdf", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("مخطط التغذية والصرف ودليل المصنع للنظام أو الجهاز المحدد؛ دليل PPR لا يطبق على الصرف أو الطلمبات.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_pvc_drain_pipes_4inch", "mat_floor_drain_trap", "mat_backwater_sewer_check_valve", "mat_drain_waterproof_flange", "mat_pvc_drain_fittings")
         ),
         ExecutionStage(
@@ -43,7 +43,7 @@ object FinishingStagesExpansion2 {
             commonMistakes = listOf("اختبار بضغط عشوائي مرتفع أو تعميم نجاح التغذية على الصرف.", "لحام زائد يسد قطر المواسير أو اختبار التغذية بالهواء دون إجراء معتمد.", "دفن وصلة بها تسريب أو ربط صرف دون تهوية أو مانع روائح."),
             qualityTests = listOf("قراءات الضغط وفحص الوصلات حسب إجراء معتمد.", "تدفق وغسيل وصرف دون تسريب."),
             handoverCriteria = listOf("نجاح الاختبارات وفق إجراء النظام، وغسيل التغذية وحماية المخارج وتسجيل المسارات قبل الغلق.", "شبكة ثابتة محمية دون تسريب وذات مسارات يمكن صيانتها.", "صور ومقاسات مواقع الخدمات المخفية محفوظة قبل الغلق."),
-            codeReferences = listOf("Wavin دليل تركيب PP-R: https://mediahub.wavin.com/m/137bdffed37c5680/original/PP-RC-PP-RCT-Pipe-Systems-Installation-Manual.pdf", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("مخطط التغذية والصرف ودليل المصنع للنظام أو الجهاز المحدد؛ دليل PPR لا يطبق على الصرف أو الطلمبات.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_ppr_pipes_20", "mat_pvc_drain_pipes_4inch")
         ),
         ExecutionStage(
@@ -64,7 +64,7 @@ object FinishingStagesExpansion2 {
             commonMistakes = listOf("استخدام السيلانت بدل جوان ناقص أو شد مسامير الخزف حتى يتشرخ.", "تحميل المرحاض المعلق على الكسوة بدل الشاسيه.", "تبديل طقم داخل خلاط دفن بآخر غير متوافق أو إخفاء محبس الخدمة."),
             qualityTests = listOf("اختبار ملء وصرف وطرد وتسرب.", "ثبات الأداة وسهولة الوصول للمحبس والسيفون."),
             handoverCriteria = listOf("كل أداة ثابتة وتعمل وتصرف دون تسريب عند التوصيل أو التشغيل أو السيفون.", "أجهزة ثابتة وسهلة التشغيل دون تسريب أو ارتداد روائح.", "اكتمال الإكسسوارات وتوفر الصيانة وقطع الغيار."),
-            codeReferences = listOf("تعليمات Geberit للأنظمة الدفن وفتحة الصيانة: https://cdn.data.geberit.com/documents/966.027.00.0_03.pdf", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("دليل الجهاز الصحي والشاسيه أو الخلاط للموديل المركب.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_brass_angle_valve_filter", "mat_ss_flexible_braided_hoses", "mat_basin_trap", "mat_thermostatic_mixer")
         ),
         ExecutionStage(
@@ -85,7 +85,7 @@ object FinishingStagesExpansion2 {
             commonMistakes = listOf("سد فتحة الإصلاح أو تركيب جزء نهائي من علامة لا يطابق جسم الدفن.", "تحميل المرحاض المعلق على الكسوة بدل الشاسيه.", "تبديل طقم داخل خلاط دفن بآخر غير متوافق أو إخفاء محبس الخدمة."),
             qualityTests = listOf("عدم تسرب جسم الدفن وتشغيل الطرد والخلاط.", "إمكانية فتح الخدمة وفك الجزء المطلوب دون تكسير."),
             handoverCriteria = listOf("يمكن الوصول للمحبس وآلية الدفن وصيانتهما من الفتحة المحددة دون تكسير التشطيب.", "أجهزة ثابتة وسهلة التشغيل دون تسريب أو ارتداد روائح.", "اكتمال الإكسسوارات وتوفر الصيانة وقطع الغيار."),
-            codeReferences = listOf("تعليمات Geberit للأنظمة الدفن وفتحة الصيانة: https://cdn.data.geberit.com/documents/966.027.00.0_03.pdf", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("دليل الجهاز الصحي والشاسيه أو الخلاط للموديل المركب.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_concealed_cistern_frame", "mat_concealed_toilet_cistern_flushing_system")
         ),
         ExecutionStage(
@@ -106,7 +106,7 @@ object FinishingStagesExpansion2 {
             commonMistakes = listOf("وصلة مخفية داخل الماسورة أو تجريد يجرح شعيرات النحاس.", "وصلات مخفية داخل المواسير أو سحب قوي يجرح العازل.", "استخدام اللون الأرضي كفازة أو إجراء اختبارات مع أجهزة حساسة متصلة."),
             qualityTests = listOf("مقاومة العزل واستمرارية الحماية مع فصل الأجهزة الحساسة.", "مطابقة ترقيم الدائرة من اللوحة إلى آخر نقطة."),
             handoverCriteria = listOf("أسلاك الدوائر سليمة ومرقمة مع موصل حماية مستمر ووصلات داخل علب متاحة للصيانة.", "دوائر محددة ومؤمنة دون نحاس مكشوف أو وصلات غير قابلة للوصول.", "تطابق الحماية والأسلاك مع جدول الأحمال."),
-            codeReferences = listOf("دليل التركيبات الكهربائية شنايدر مصر: https://www.se.com/eg/en/work/products/product-launch/electrical-installation-guide/", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("Schneider دليل التركيبات الكهربائية: https://www.electrical-installation.org/", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_elsweedy_wires", "mat_wago_wire_connectors", "mat_cable_ferrules_glands")
         ),
         ExecutionStage(
@@ -127,7 +127,7 @@ object FinishingStagesExpansion2 {
             commonMistakes = listOf("تركيب وش ديكوري فوق علبة غير ثابتة أو اعتبار البريزة الثنائية بديلًا عن التأريض.", "وصلات مخفية داخل المواسير أو سحب قوي يجرح العازل.", "استخدام اللون الأرضي كفازة أو إجراء اختبارات مع أجهزة حساسة متصلة."),
             qualityTests = listOf("اختبار القطبية واستمرارية الأرضي والتحكم.", "اختبار وظيفي مع حمل مناسب ومراجعة الثبات."),
             handoverCriteria = listOf("قطبية ومقاومة عزل واستمرارية وحماية الدوائر ناجحة، والأوشاش ثابتة دون نحاس مكشوف.", "دوائر محددة ومؤمنة دون نحاس مكشوف أو وصلات غير قابلة للوصول.", "تطابق الحماية والأسلاك مع جدول الأحمال."),
-            codeReferences = listOf("دليل التركيبات الكهربائية شنايدر مصر: https://www.se.com/eg/en/work/products/product-launch/electrical-installation-guide/", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("Schneider دليل التركيبات الكهربائية: https://www.electrical-installation.org/", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_modular_wiring_accessories")
         ),
         ExecutionStage(
@@ -148,7 +148,7 @@ object FinishingStagesExpansion2 {
             commonMistakes = listOf("جمع نيوترال وأرضي في لوحة فرعية عشوائيًا أو إخفاء وصلة تحتاج اختبار.", "تبديل نيوترال دائرتين أو جمع الأرضي والنيوترال في نقطة غير مسموحة.", "إضافة قاطع أكبر لتفادي الفصل دون مراجعة السلك والحمل."),
             qualityTests = listOf("قياس مقاومة التأريض بالطريقة الملائمة.", "قياس استمرارية موصل الحماية والربط."),
             handoverCriteria = listOf("استمرارية موصلات الحماية وربطها واختبار مقاومة التأريض مطابقة لتصميم النظام.", "لوحة مغلقة مع غطاء الأجزاء الحية وملصقات واضحة.", "نجاح الاختبارات وعدم سخونة أو فصل غير مبرر تحت الحمل."),
-            codeReferences = listOf("Schneider Electrical Installation Guide: https://www.se.com/eg/en/work/products/product-launch/electrical-installation-guide/", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("Schneider دليل حماية وتأريض التركيبات: https://www.electrical-installation.org/", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_earthing_copper_rod_and_accessories")
         ),
         ExecutionStage(
@@ -169,7 +169,7 @@ object FinishingStagesExpansion2 {
             commonMistakes = listOf("رفع سعة قاطع لعلاج فصل متكرر قبل تشخيص الدائرة.", "تبديل نيوترال دائرتين أو جمع الأرضي والنيوترال في نقطة غير مسموحة.", "إضافة قاطع أكبر لتفادي الفصل دون مراجعة السلك والحمل."),
             qualityTests = listOf("وظيفة RCD وأمان القطبية واستمرارية الأرضي.", "مراجعة التشغيل تحت الأحمال وعدم سخونة الأطراف."),
             handoverCriteria = listOf("نتائج اختبارات اللوحة والحماية وترقيم الدوائر صحيحة دون خلط نيوترال أو أجزاء حية مكشوفة.", "لوحة مغلقة مع غطاء الأجزاء الحية وملصقات واضحة.", "نجاح الاختبارات وعدم سخونة أو فصل غير مبرر تحت الحمل."),
-            codeReferences = listOf("Schneider Electrical Installation Guide: https://www.se.com/eg/en/work/products/product-launch/electrical-installation-guide/", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("Schneider دليل حماية وتأريض التركيبات: https://www.electrical-installation.org/", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_residual_current_device_rcbo_elcb", "mat_mcb", "mat_rccb", "mat_rcbo")
         ),
         ExecutionStage(
@@ -190,7 +190,7 @@ object FinishingStagesExpansion2 {
             commonMistakes = listOf("إغلاق الدرايفر خلف الجبس أو تركيب شريط على سطح لا يبدد حرارته.", "تغذية شريط منخفض الجهد مباشرة من جهد الشبكة.", "إطالة الشريط دون مراجعة هبوط الجهد أو استخدام درايفر غير قابل للتعتيم مع ديمر."),
             qualityTests = listOf("قياس الجهد وفحص اللون على أول وآخر الشريط.", "اختبار التعتيم والحرارة بعد استقرار التشغيل."),
             handoverCriteria = listOf("الدرايفر مطابق لحمل الشريط ونوعه وقابل للصيانة، والإنارة منتظمة دون سخونة غير مقبولة.", "إنارة منتظمة دون توهج مزعج أو وميض مع سهولة تغيير الدرايفر.", "تثبيت آمن وإغلاق أطراف التوصيل."),
-            codeReferences = listOf("نشرات الموديل ودليل شنايدر للإنارة والحماية: https://www.se.com/eg/en/work/products/product-launch/electrical-installation-guide/", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("نشرات وحدة الإنارة والدرايفر والتحكم المختارة وبيانات التصميم الضوئي.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_led_profile_aluminum", "mat_cable_ferrules_glands", "mat_led_driver")
         ),
         ExecutionStage(
@@ -211,7 +211,7 @@ object FinishingStagesExpansion2 {
             commonMistakes = listOf("استخدام ثقب أكبر من إطار الكشاف أو تركيب جهاز ثقيل في اللوح دون تدعيم.", "تغذية شريط منخفض الجهد مباشرة من جهد الشبكة.", "إطالة الشريط دون مراجعة هبوط الجهد أو استخدام درايفر غير قابل للتعتيم مع ديمر."),
             qualityTests = listOf("تشغيل كل مفتاح ومشهد والتعتيم.", "فحص تثبيت وحرارة وملاءمة إضاءة سطح العمل."),
             handoverCriteria = listOf("مواضع وزوايا الإنارة ومشاهد التحكم تعمل وفق العينة، مع توافق الديمر وعدم وميض غير مقبول.", "إنارة منتظمة دون توهج مزعج أو وميض مع سهولة تغيير الدرايفر.", "تثبيت آمن وإغلاق أطراف التوصيل."),
-            codeReferences = listOf("نشرات الموديل ودليل شنايدر للإنارة والحماية: https://www.se.com/eg/en/work/products/product-launch/electrical-installation-guide/", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("نشرات وحدة الإنارة والدرايفر والتحكم المختارة وبيانات التصميم الضوئي.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_anti_glare_downlights", "mat_led_dimmer")
         )
     )

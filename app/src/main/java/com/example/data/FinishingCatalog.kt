@@ -135,13 +135,7 @@ object FinishingCatalog {
     val checklistItems: List<QualityCheckItem> = FinishingChecklistsData.checkItems.map { check ->
         val stage = stages.first { it.id == check.stageId }
         check.copy(
-            method = when (check.phase) {
-                InspectionPhase.BEFORE -> stage.prerequisites
-                InspectionPhase.DURING -> stage.technicalRequirements.joinToString("\n")
-                InspectionPhase.AFTER -> stage.qualityTests.joinToString("\n")
-            },
-            acceptanceCriterion = stage.handoverCriteria.joinToString("\n"),
-            technicalReference = stage.codeReferences.joinToString("\n")
+            technicalReference = check.technicalReference + "\n" + stage.codeReferences.joinToString("\n")
         )
     } +
         stages.filter { stage -> FinishingChecklistsData.checkItems.none { it.stageId == stage.id } }

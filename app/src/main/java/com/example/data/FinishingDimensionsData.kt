@@ -13,7 +13,7 @@ object FinishingDimensionsData {
             applicationCondition = "يقاس رأسياً من ظهر بلاط التشطيب النهائي للوحدة، وينقل لجميع الغرف والأبواب",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "المرجع الأساسي لضبط جميع مناسيب الأبواب والشبابيك والكهرباء والسباكة والأسقف المعلقة؛ أي خطأ في الشرب يخرب مناسيب الشقة بالكامل. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "انقل المرجع الثابت المعتمد لجميع الغرف وسجل علاقته بمنسوب التشطيب؛ لا تغير المرجع بين البنود."
         ),
         TechnicalDimension(
             id = "dim_door_rough_opening",
@@ -24,7 +24,7 @@ object FinishingDimensionsData {
             applicationCondition = "يقاس بين أكتاف الطوب المصمت الصافية، والارتفاع من ظهر الخرسانة المسلحة قبل الردم",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "عرض الفتحة بالمباني = عرض ضلفة الباب المعماري الصافي + 10 سم (لحساب سمك قائمي الحلق الزفر 5 سم + 5 سم للمحارة والفوم والخلوص). لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "الفتحة من المقاس الخارجي للحلق وخلوص تركيبه. راجع ارتفاعها من التشطيب النهائي مع حساب طبقات الأرضية، ولا تُفرض زيادة 10 سم لكل الأبواب."
         ),
         TechnicalDimension(
             id = "dim_lintel_bearing",
@@ -35,7 +35,7 @@ object FinishingDimensionsData {
             applicationCondition = "يعتمد على البحر والحمل ونوع القاطع ومقاومة المباني؛ لا يحدد تسليح موحد لكل الفتحات",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "ركوب العتب أقل من 15 سم يسبب شروخاً قطرية مائلة عند زوايا الفتحات بسبب تركيز الإجهادات فوق الطوب. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "طول المساند ومقطع وتسليح العتب من التصميم ونوع المباني؛ لا يُقبل أو يرفض برقم 15 أو 20 سم عام."
         ),
         TechnicalDimension(
             id = "dim_plaster_thickness",
@@ -46,7 +46,7 @@ object FinishingDimensionsData {
             applicationCondition = "في حال زاد البياض عن 3 سم يلزم التدبيس بشبك فايبر أو سلك بقلاوة مجلفن ومسامير صلب",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "السقف الخرساني لا يسمح بزيادة سمك البياض فيه عن 1.5 سم نهائياً لتفادي خطر سقوط كتل البياض بالوزن الذاتي. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "راجع حد سمك الطبقة والخلفية والربط والوزن خاصة بالسقف؛ الشبك لا يجيز زيادة السمك بلا تفصيلة."
         ),
         TechnicalDimension(
             id = "dim_boag_spacing",
@@ -57,7 +57,7 @@ object FinishingDimensionsData {
             applicationCondition = "لتسهيل مس المونة بالقدة الألومنيوم 2.5م بين الوترين دون ترييح بالمنتصف",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "تربيع الغرف بالبؤج (الأكسات والأوتار) يتم بتطابق وترين متساويين في الغرفة بنسبة خطأ صفر. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "راجع الشاقولية والاستواء والتعامد والأضلاع قبل مقارنة القطرين؛ لا تعتمد عبارة تفاوت محدد."
         ),
         TechnicalDimension(
             id = "dim_floor_drain_slope",
@@ -68,7 +68,7 @@ object FinishingDimensionsData {
             applicationCondition = "باتجاه البيبة (الجاليتراب) في الحمامات، ونحو مزاريب الصرف في الأسطح والشرفات",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "الميول الأقل من 1% تسبب ركود برك المياه؛ والميول الأكبر من 2% تسبب شعوراً بعدم الاتزان وانزلاق الأواني والأجهزة. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "قِس فرق المنسوب والمسافة واتجاه التصريف؛ اختبر بعد المعالجة ضمن إجراء السطح. لا تفرض مجال 1–2% لكل المواقع."
         ),
         TechnicalDimension(
             id = "dim_shower_mixer",
@@ -79,7 +79,7 @@ object FinishingDimensionsData {
             applicationCondition = "البارد على اليمين والساخن على اليسار دائماً واستواء أفقي تام",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "استخدم مسطرة ضبط مخارج الخلاط الحديدية أثناء التثبيت بالمونة لضمان عدم حدوث أي ميل أو خطأ في المسافة 15 سم. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "استخدم قالب موديل الخلاط واضبط محاوره وبروزه على وش التشطيب؛ مسافة 15 سم تخص الموديلات المطابقة لها."
         ),
         TechnicalDimension(
             id = "dim_washbasin_roughin",
@@ -90,7 +90,7 @@ object FinishingDimensionsData {
             applicationCondition = "المسافة بين مخرجي تغذية البارد والساخن لحوض الحمام 10-12 سم",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "منسوب الحوض النهائي المعلق يكون 80-85 سم من أرضية التشطيب. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "حوض سطح أو معلق أو داخل خزانة يحتاج تفصيلته الخاصة؛ راجع مكان السيفون وخلوص الأرفف والأدراج."
         ),
         TechnicalDimension(
             id = "dim_plumbing_drain_slopes",
@@ -101,7 +101,7 @@ object FinishingDimensionsData {
             applicationCondition = "لمواسير الـ PVC الصرف الصحي بالانحدار الهيدروليكي الطبيعي",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "الميول الأقل من 1% تسبب ترسب المواد الصلبة وانسداد الماسورة؛ والميول الأكبر من 3% تجعل المياه تجري بسرعة وتترك الفضلات الصلبة خلفها فتسد الخط. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "حدد الميل من القطر والتصرف والمسار والتهوية. افحص مناسيب الخط نفسه؛ لا تعتمد تعميم أن كل ميل أكبر من 3% يترك الفضلات."
         ),
         TechnicalDimension(
             id = "dim_wall_hung_wc_height",
@@ -112,7 +112,7 @@ object FinishingDimensionsData {
             applicationCondition = "لراحة الجلوس للبالغين، مع ضبط التيش الصلب للشاسيه قبل صب أرضية الحمام",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "يجب مراجعة سمك طبقة السيراميك والدفان قبل تثبيت شاسيه الدفن حتى لا تصبح القاعدة منخفضة جداً أو مرتفعة بشكل معلق. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "راجع الجهاز والشاسيه والتشطيب النهائي واحتياجات المستخدم قبل تثبيت المسامير أو غلق الكسوة."
         ),
         TechnicalDimension(
             id = "dim_light_switch",
@@ -123,7 +123,7 @@ object FinishingDimensionsData {
             applicationCondition = "من منسوب أرضية التشطيب النهائي، على مسافة 15-20 سم من حافة فتحة الباب من جهة المقبض",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "يجب أن يكون المفتاح في متناول يد الداخل من الباب مباشرة دون الحاجة للالتفاف أو البحث خلف الضلفة. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "راجع اتجاه فتح الباب وسهولة الوصول؛ لا تحدد الموضع من ارتفاع عام دون الأثاث والاستخدام."
         ),
         TechnicalDimension(
             id = "dim_power_socket",
@@ -134,7 +134,7 @@ object FinishingDimensionsData {
             applicationCondition = "من منسوب أرضية التشطيب النهائي في غرف النوم والصالات والممرات",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "برايز غرف النوم بجوار السرير تحدد على منسوب 65-70 سم لتكون أعلى من الكمودينو والسرير مباشرة. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "راجع الأثاث الفعلي وطول المقابس والأسلاك وسهولة الاستخدام؛ لا يُفرض منسوب كمودينو واحد لكل غرفة."
         ),
         TechnicalDimension(
             id = "dim_kitchen_counter_socket",
@@ -145,7 +145,7 @@ object FinishingDimensionsData {
             applicationCondition = "فوق كاونتر المطبخ (ارتفاع الرخام 90 سم + 25 سم خلوص للأجهزة)",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "تجنب وضع البرايز خلف حوض المطبخ أو البوتاجاز مباشرة؛ يجب أن تبعد مسافة 30 سم أفقياً عن أي مصدر مياه أو لهب. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "راجع مناطق البلل والحرارة والحماية المطلوبة بالمخطط؛ مسافة أفقية واحدة لا تثبت صلاحية وضع البريزة."
         ),
         TechnicalDimension(
             id = "dim_wire_cross_sections",
@@ -156,7 +156,7 @@ object FinishingDimensionsData {
             applicationCondition = "نحاس نقي معتمد مع قواطع حماية متناسبة (10A للإنارة، 16A للبرايز، 20-32A للأحمال الثقيلة)",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "يجب تمديد سلك تأريض حماية مستقل (Earth 2.5-4 مم2 بلون أصفر في أخضر) لكافة البرايز والأحمال الثقيلة. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "موصل الحماية يختار مع الدائرة وطريقة حسابه وتحمل تيار العطل والحماية الميكانيكية؛ لا يعمم 2.5–4 مم² لكل حمل."
         ),
         TechnicalDimension(
             id = "dim_ac_roughin_heights",
@@ -167,7 +167,7 @@ object FinishingDimensionsData {
             applicationCondition = "مع مراعاة ترك مسافة لا تقل عن 15 سم خلوص حر بين أعلى التكييف وسقف الجبس بورد لسحب الهواء",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "يجب أن يكون مخرج الصرف منخفضاً عن مخرج الفريون بـ 15-20 سم لضمان انحدار الخرطوم الداخلي دون تنقيط. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "راجع قالب الوحدة وإمكان انحدار الخرطوم وصيانتها؛ لا تعمم فرقًا ثابتًا بين مخرج الصرف وخطوط التبريد."
         ),
         TechnicalDimension(
             id = "dim_floor_package_thickness",
@@ -178,7 +178,7 @@ object FinishingDimensionsData {
             applicationCondition = "تقاس من ظهر الخرسانة المسلحة حتى سطح بلاط التشطيب النهائي",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "إذا زاد عمق الردم عن 15 سم بسبب هبوط الخرسانة، يحظر ملؤه بالرمل الثقيل؛ يجب استخدام خرسانة رغوية خفيفة لتفادي زيادة الأحمال الميتة على السقف. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "احسب سمك ووزن طبقات الأرضية الفعلية وتحقق من قدرة تحملها؛ اختيار الردم الخفيف لا يعتمد على تجاوز 15 سم وحده."
         ),
         TechnicalDimension(
             id = "dim_tile_expansion_joints",
@@ -189,7 +189,7 @@ object FinishingDimensionsData {
             applicationCondition = "للبورسلين المقصوص ليزر والأرضيات الكبيرة بمناخ مصر الحار",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "تركيب البورسلين زيرو فواصل يؤدي إلى تطبيل وانفجار البلاط وكسره صيفاً عند أول موجة حرارة. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "عراميس الروبة ليست فواصل الحركة؛ نفذ توزيع وعرض وحشو كل نوع حسب البلاط والموقع والنظام."
         ),
         TechnicalDimension(
             id = "dim_gypsum_grid_spacing",
@@ -200,7 +200,7 @@ object FinishingDimensionsData {
             applicationCondition = "لألواح جبس بورد سمك 12.5 مم مع قطاعات صاج مجلفن سمك 0.55-0.60 مم",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "في الحمامات والمطابخ يفضل تقليل تباعد الأوميجا إلى 50 سم لزيادة جساءة السقف ومقاومة الرطوبة. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "الأحمال والبحور وعدد الألواح ونظام التعليق تحدد التباعد؛ مقاومة الرطوبة لا تتحقق بتقليل المسافة وحده."
         ),
         TechnicalDimension(
             id = "dim_curtain_pelmet_box",
@@ -211,7 +211,7 @@ object FinishingDimensionsData {
             applicationCondition = "أمام جميع نوافذ وتراسات غرف النوم والاستقبال المجهزة بستائر قماشية",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "إذا كان الشباك مجهزاً بشتر ألومنيوم (شيش حصير)، يجب زيادة عرض بيت الستارة إلى 25 سم لضمان عدم ملامسة الستارة لذراع أو مفتاح الشتر. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "راجع عدد المسارات وطيات القماش وبروز الشتر والموتور وإمكان الصيانة بعينة قطاع فعلية."
         ),
         TechnicalDimension(
             id = "dim_kitchen_cabinet_heights",
@@ -222,7 +222,7 @@ object FinishingDimensionsData {
             applicationCondition = "لراحة حركة الذراعين أثناء الطهي وغسيل الأواني طبقاً لمعايير الأرجونوميكس",
             referenceType = DimensionRefType.BEST_PRACTICE,
             referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "ارتفاع الشفاط البلت إن فوق شعلة البوتاجاز: 65-70 سم لبوتاجاز الغاز و60 سم للبوتاجاز الكهربائي الإندكشن. لا تُستخدم القيم الشائعة بديلاً عن التصميم."
+            practicalNotes = "ارتفاع الشفاط وخلوص الموقد والتهوية من دليلي الجهازين ونوع الوقود؛ لا تعتمد ارتفاعًا عامًا للمطابخ."
         )
     )
 }

@@ -22,7 +22,7 @@ object FinishingStagesExpansion5 {
             commonMistakes = listOf("حشر إطار في فتحة ضيقة أو تثبيت الزجاج دون بلوكات.", "تركيب زجاج ملاصق للمعدن أو عكس اتجاه بلوكات التحميل.", "سد تصريف الشباك أو شد إطار معوج لإدخاله في فتحة خاطئة."),
             qualityTests = listOf("القطريات والرأسية وحركة الضلفة.", "اختبار التصريف والختم حول الإطار."),
             handoverCriteria = listOf("وحدة الزجاج مثبتة فوق كعوبها بجوانات سليمة، ولا تلامس المعدن أو تسد منافذ الصرف.", "إطار مستقيم وزجاج سليم وصرف فعال دون تسريب.", "نهايات سيلانت مستمرة وتشغيل كامل للإكسسوارات."),
-            codeReferences = listOf("REHAU أدلة أنظمة الشبابيك: https://window.rehau.com/uk-en/rehau-specifier-guide-download", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("دليل قطاع النافذة والزجاج والجوانات ومثبتات الإطار المستخدم.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_weatherstripping_and_epdm_gaskets", "mat_low_expansion_foam", "mat_window_glazing_blocks")
         ),
         ExecutionStage(
@@ -43,7 +43,7 @@ object FinishingStagesExpansion5 {
             commonMistakes = listOf("سد كل فتحة بالسيلانت لعلاج تسريب دون معرفة مسار المياه.", "تركيب زجاج ملاصق للمعدن أو عكس اتجاه بلوكات التحميل.", "سد تصريف الشباك أو شد إطار معوج لإدخاله في فتحة خاطئة."),
             qualityTests = listOf("حركة وقفل واختبار ماء.", "فحص سلامة الزجاج والجوانات والفرش."),
             handoverCriteria = listOf("الشباك يعمل ويقفل بإحكام ويجتاز اختبار الماء المعتمد، دون سد صرف القطاع بالسيليكون.", "إطار مستقيم وزجاج سليم وصرف فعال دون تسريب.", "نهايات سيلانت مستمرة وتشغيل كامل للإكسسوارات."),
-            codeReferences = listOf("REHAU أدلة أنظمة الشبابيك: https://window.rehau.com/uk-en/rehau-specifier-guide-download", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("دليل قطاع النافذة والزجاج والجوانات ومثبتات الإطار المستخدم.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_weatherstripping_and_epdm_gaskets", "mat_backer_rod")
         ),
         ExecutionStage(
@@ -64,7 +64,7 @@ object FinishingStagesExpansion5 {
             commonMistakes = listOf("خلط معدنَيْن يسببان تآكلًا دون عزل أو تعليق لوح على محارة.", "تطبيق واجهة على سطح مبتل أو تحت شمس ورياح خارج حدود المنتج.", "تثبيت كسوة على محارة ضعيفة أو دفن مخرج صرف وراء الكسوة."),
             qualityTests = listOf("فحص المثبتات واختباراتها وفق خطة المصمم.", "مراجعة الفواصل وتصريف المياه ونهايات الواجهة."),
             handoverCriteria = listOf("مثبتات الكسوة واستقامتها وفواصلها وارتكازها مطابقة للتصميم دون الاعتماد على مونة التشطيب.", "لا سقوط أو شروخ أو تسريب مع تفصيل صحيح للحواف والفواصل.", "تطابق العينة واللون وسلامة المثبتات."),
-            codeReferences = listOf("وثائق أنظمة الكسوات Cosentino ونشرات مادة الواجهة: https://www.cosentino.com/professional/technical-documentation/", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("نظام الواجهة وبيانات الكسوة والتثبيت والحركة والتصريف بالمشروع.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_marble_stainless_brackets", "mat_cement_board", "mat_chemical_anchor")
         ),
         ExecutionStage(
@@ -85,7 +85,7 @@ object FinishingStagesExpansion5 {
             commonMistakes = listOf("فاصل جميل الشكل لكنه ملتصق بثلاثة أوجه أو عتبة بميل للداخل.", "تطبيق واجهة على سطح مبتل أو تحت شمس ورياح خارج حدود المنتج.", "تثبيت كسوة على محارة ضعيفة أو دفن مخرج صرف وراء الكسوة."),
             qualityTests = listOf("اختبار ماء عند الفتحات والبروزات.", "فحص الختم والنهايات وتصريف الواجهة."),
             handoverCriteria = listOf("الحواف والوزرات والفلاشينج وفواصل الحركة تحافظ على مسار خروج الماء وتمنع دخوله خلف الكسوة.", "لا سقوط أو شروخ أو تسريب مع تفصيل صحيح للحواف والفواصل.", "تطابق العينة واللون وسلامة المثبتات."),
-            codeReferences = listOf("وثائق أنظمة الكسوات Cosentino ونشرات مادة الواجهة: https://www.cosentino.com/professional/technical-documentation/", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("نظام الواجهة وبيانات الكسوة والتثبيت والحركة والتصريف بالمشروع.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_polyurethane_joint_and_crack_sealant", "mat_stone_nonstaining_sealant", "mat_backer_rod")
         ),
         ExecutionStage(
@@ -106,7 +106,7 @@ object FinishingStagesExpansion5 {
             commonMistakes = listOf("إلغاء فراغ تهوية جهاز لزيادة مساحة التخزين أو تثبيت خزانة في البياض فقط.", "تثبيت خزائن علوية في طبقة بياض أو لوح جبس غير مدعم.", "تغيير مكان فتحة جهاز بعد تصنيع الحجر أو تعليق الحوض بالسيليكون وحده."),
             qualityTests = listOf("مناسيب وثبات الوحدات.", "فتح الأدراج والضلف وتركيب الأجهزة بالقوالب."),
             handoverCriteria = listOf("الوحدات ثابتة ومستوية، وكل ضلفة ودرج وجهاز له خلوص وتشغيل وصيانة مناسبون.", "خزائن ثابتة ومناسيب منتظمة وفتحات أجهزة صحيحة.", "كاونتر مدعوم ووصلات محمية ومحابس قابلة للوصول."),
-            codeReferences = listOf("Blum تعليمات التجميع: https://www.blum.com/us/en/products/hingesystems/clip-top/assembly/ ؛ Cosentino وثائق الكاونترات: https://www.cosentino.com/professional/technical-documentation/", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("رسومات الخزائن وأدلة الأجهزة والكاونتر والإكسسوارات المركبة.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_kitchen_hpl_counter", "mat_cabinet_hinges_runners")
         ),
         ExecutionStage(
@@ -127,7 +127,7 @@ object FinishingStagesExpansion5 {
             commonMistakes = listOf("بروز حجر بلا دعم أو وصلة كهرباء لا يمكن فصلها وصيانتها.", "تثبيت خزائن علوية في طبقة بياض أو لوح جبس غير مدعم.", "تغيير مكان فتحة جهاز بعد تصنيع الحجر أو تعليق الحوض بالسيليكون وحده."),
             qualityTests = listOf("اختبار حوض ممتلئ وصرفه دون تسرب.", "تشغيل الأجهزة وفحص التهوية ووصول المحابس."),
             handoverCriteria = listOf("الكاونتر والحوض مدعومان ووصلاتهما محكمة، والأجهزة تعمل بخدمات وتهوية ملائمتين.", "خزائن ثابتة ومناسيب منتظمة وفتحات أجهزة صحيحة.", "كاونتر مدعوم ووصلات محمية ومحابس قابلة للوصول."),
-            codeReferences = listOf("Blum تعليمات التجميع: https://www.blum.com/us/en/products/hingesystems/clip-top/assembly/ ؛ Cosentino وثائق الكاونترات: https://www.cosentino.com/professional/technical-documentation/", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("رسومات الخزائن وأدلة الأجهزة والكاونتر والإكسسوارات المركبة.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_brass_angle_valve_filter", "mat_basin_trap", "mat_sink_support")
         ),
         ExecutionStage(
@@ -148,7 +148,7 @@ object FinishingStagesExpansion5 {
             commonMistakes = listOf("حصر الشريط خلف الدهان أو دلايل غير متوازية.", "توصيل اتجاهي الموتور معًا أو تجاوز حمله.", "غلق صندوق الصيانة بالجبس أو السيليكون نهائيًا."),
             qualityTests = listOf("المشوار الكامل وثبات المحور.", "إمكانية الصيانة وعدم احتكاك الشرائح."),
             handoverCriteria = listOf("الستارة تتحرك بسلاسة دون احتكاك، وآلية الرفع والأدلة والقفل تعمل بأمان.", "حركة هادئة ومنتظمة ونهايات مشوار صحيحة.", "يمكن صيانة الموتور دون تكسير التشطيب."),
-            codeReferences = listOf("Somfy مصر أدلة التركيب والتشغيل: https://www.somfy.com.eg/en-eg/assistance/downloads", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("Somfy أدلة المواتير: https://www.somfy.com.eg/en-eg/assistance/downloads ؛ العزم ودورة التشغيل من الموديل.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_roller_shutter_somfy", "mat_shutter_manual_parts")
         ),
         ExecutionStage(
@@ -169,7 +169,7 @@ object FinishingStagesExpansion5 {
             commonMistakes = listOf("ضبط النهايات قبل اكتمال الستارة أو تغذية الاتجاهين في الوقت نفسه.", "توصيل اتجاهي الموتور معًا أو تجاوز حمله.", "غلق صندوق الصيانة بالجبس أو السيليكون نهائيًا."),
             qualityTests = listOf("كل وسائل التحكم ونهاية المشوار.", "سلامة الكابل والتثبيت ووصول الموتور."),
             handoverCriteria = listOf("حدود حركة المحرك وحمايته والتحكم والإيقاف تعمل وفق موديل النظام.", "حركة هادئة ومنتظمة ونهايات مشوار صحيحة.", "يمكن صيانة الموتور دون تكسير التشطيب."),
-            codeReferences = listOf("Somfy مصر أدلة التركيب والتشغيل: https://www.somfy.com.eg/en-eg/assistance/downloads", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("Somfy أدلة المواتير: https://www.somfy.com.eg/en-eg/assistance/downloads ؛ العزم ودورة التشغيل من الموديل.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_roller_shutter_somfy")
         ),
         ExecutionStage(
@@ -190,7 +190,7 @@ object FinishingStagesExpansion5 {
             commonMistakes = listOf("تغطية عيب لحام بالمعجون أو دهان فوق زيوت أو قشور صدأ.", "اعتبار الاستانلس 304 مناسبًا لكل بيئة ساحلية دون مراجعة.", "سد وصلة لحام أو مثبّت غير صالح بالمعجون بدل إصلاحه."),
             qualityTests = listOf("الأبعاد واللحام والتثبيت.", "تحضير السطح وسماكات الدهان حسب النظام."),
             handoverCriteria = listOf("قطاعات ولحامات وأبعاد ونظام حماية المعدن مطابقة للعينة والتفاصيل دون حواف جارحة.", "تثبيت متين دون حواف جارحة أو اهتزاز غير مقبول.", "تشطيب معدن وحماية ضد التآكل ملائمان للبيئة."),
-            codeReferences = listOf("مخططات تثبيت الدرابزين ونشرة الأنكر المختار؛ أنظمة التثبيت سيكا: https://egy.sika.com/en/construction/grouting-fixing.html", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("تصميم الدرابزين والمثبتات والزجاج؛ BSSA خواص المغناطيس: https://bssa.org.uk/bssa_articles/magnetic-properties-of-stainless-steel/", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_stainless_handrail_304", "mat_metal_protective_coating")
         ),
         ExecutionStage(
@@ -211,7 +211,7 @@ object FinishingStagesExpansion5 {
             commonMistakes = listOf("تحميل قائم على الحجر وحده أو شد كبشة زجاج دون جوان مناسب.", "اعتبار الاستانلس 304 مناسبًا لكل بيئة ساحلية دون مراجعة.", "سد وصلة لحام أو مثبّت غير صالح بالمعجون بدل إصلاحه."),
             qualityTests = listOf("العزم والتثبيت والحمل وفق التصميم.", "الاستقامة والحواف وسلامة الزجاج."),
             handoverCriteria = listOf("الدرابزين والمثبتات ينجحان في فحوص التصميم وثباته، والاستانلس خالٍ من تلوث الحديد.", "تثبيت متين دون حواف جارحة أو اهتزاز غير مقبول.", "تشطيب معدن وحماية ضد التآكل ملائمان للبيئة."),
-            codeReferences = listOf("مخططات تثبيت الدرابزين ونشرة الأنكر المختار؛ أنظمة التثبيت سيكا: https://egy.sika.com/en/construction/grouting-fixing.html", "الرسومات والمواصفات المعتمدة للمشروع؛ لا يُنسب رقم للكود دون التحقق من البند والإصدار."),
+            codeReferences = listOf("تصميم الدرابزين والمثبتات والزجاج؛ BSSA خواص المغناطيس: https://bssa.org.uk/bssa_articles/magnetic-properties-of-stainless-steel/", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
             relatedMaterialIds = listOf("mat_stainless_handrail_304", "mat_chemical_anchor")
         )
     )
