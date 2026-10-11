@@ -43,6 +43,6 @@ Calculator and report screens, navigation and view-model logic are removed. The 
 
 ## Verification
 
-Pure catalog tests check coverage, stable IDs, complete phase fields, ordering, actual counts and bidirectional links. Existing repository tests cover lookup and Arabic search. GitHub Actions compiles the debug app and runs unit tests with the existing build configuration. The CI debug key is temporary and cannot update an AI Studio-signed installation.
+Pure catalog tests check coverage, stable IDs, complete phase fields, ordering, actual counts and bidirectional links. Existing repository tests cover lookup and Arabic search. Robolectric SDK 36 needs a Java 21 test runner, so CI uses JDK 21 while leaving the app's Java 11 compatibility and signing settings unchanged. GitHub Actions compiles the debug app and runs unit tests with the existing build configuration. The CI debug key is temporary and cannot update an AI Studio-signed installation.
 
 Visual/device verification is a separate check: confirm the same colors/fonts/cards, Arabic rendering, long-text scrolling, category tabs, search, bookmarks, and every stage/material link on a running Android build. The existing application ID and signing configuration remain unchanged.

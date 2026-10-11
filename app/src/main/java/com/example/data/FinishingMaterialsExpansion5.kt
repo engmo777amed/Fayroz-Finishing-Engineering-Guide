@@ -7,7 +7,7 @@ object FinishingMaterialsExpansion5 {
         MaterialCard(
             id = "mat_chemical_anchor", categoryIds = listOf(16, 23, 26),
             marketNameAr = "أنكر كيميائي ومثبتات ميكانيكية معتمدة", technicalNameAr = "Post-installed fixing system",
-            tradeNames = listOf("أنكر كيميائي مع سيخ مناسب", "أنكر ميكانيكي مصنف للخلفية"), classification = "أنكر كيميائي ومثبتات ميكانيكية معتمدة",
+            tradeNames = emptyList(), classification = "أنكر كيميائي ومثبتات ميكانيكية معتمدة",
             definitionAndFunction = "تثبيت أحمال في خرسانة أو خلفية محددة وفق تصميم ومقننات المثبت.", componentsAndProperties = "الحمل والعمق والحافة والتباعد والخرسانة المتشققة والرطوبة من تصميم ونشرة المنتج.",
             availableTypes = listOf("أنكر كيميائي مع سيخ مناسب", "أنكر ميكانيكي مصنف للخلفية"), dimensionsAndSpecs = "الحمل والعمق والحافة والتباعد والخرسانة المتشققة والرطوبة من تصميم ونشرة المنتج.",
             qualityGrades = "منتج محدد بشهادته وصلاحيته؛ لا يعتبر مسمارًا عامًا لكل خلفية.", standardSpecs = "منتج محدد بشهادته وصلاحيته؛ لا يعتبر مسمارًا عامًا لكل خلفية.",
@@ -24,7 +24,7 @@ object FinishingMaterialsExpansion5 {
         MaterialCard(
             id = "mat_facade_basecoat_mesh", categoryIds = listOf(5, 23),
             marketNameAr = "طبقة أساسية وشبك واجهة من نظام متوافق", technicalNameAr = "Reinforced facade basecoat system",
-            tradeNames = listOf("طبقة أساس لنظام عزل خارجي", "مونة وشبك تجهيز كسوة محددة"), classification = "طبقة أساسية وشبك واجهة من نظام متوافق",
+            tradeNames = emptyList(), classification = "طبقة أساسية وشبك واجهة من نظام متوافق",
             definitionAndFunction = "طبقة تجهيز مسلحة بشبك ضمن نظام دهان أو عزل خارجي معتمد.", componentsAndProperties = "المونة والشبك والتراكب وحول الفتحات والسماكة من النظام، لا من سعر متر الشبك.",
             availableTypes = listOf("طبقة أساس لنظام عزل خارجي", "مونة وشبك تجهيز كسوة محددة"), dimensionsAndSpecs = "المونة والشبك والتراكب وحول الفتحات والسماكة من النظام، لا من سعر متر الشبك.",
             qualityGrades = "شبك مقاوم للقلويات ونظام يجيز الخلفية.", standardSpecs = "شبك مقاوم للقلويات ونظام يجيز الخلفية.",
@@ -41,7 +41,7 @@ object FinishingMaterialsExpansion5 {
         MaterialCard(
             id = "mat_cabinet_hinges_runners", categoryIds = listOf(24),
             marketNameAr = "مفصلات ومجاري أدراج المطبخ", technicalNameAr = "Cabinet hinges and drawer runners",
-            tradeNames = listOf("مفصلة بزاوية فتح محددة", "مجاري أدراج بحمولة معروفة", "غلق هادئ وفق النظام"), classification = "مفصلات ومجاري أدراج المطبخ",
+            tradeNames = emptyList(), classification = "مفصلات ومجاري أدراج المطبخ",
             definitionAndFunction = "قطع الحركة وضبط الضلف والأدراج حسب وزنها وأبعادها.", componentsAndProperties = "سمك اللوح والمقاسات والحمل ومسافات التخريم والخلوص من الموديل.",
             availableTypes = listOf("مفصلة بزاوية فتح محددة", "مجاري أدراج بحمولة معروفة", "غلق هادئ وفق النظام"), dimensionsAndSpecs = "سمك اللوح والمقاسات والحمل ومسافات التخريم والخلوص من الموديل.",
             qualityGrades = "مكونات مطابقة وليست قطعًا من عائلات غير متوافقة.", standardSpecs = "مكونات مطابقة وليست قطعًا من عائلات غير متوافقة.",
@@ -58,7 +58,7 @@ object FinishingMaterialsExpansion5 {
         MaterialCard(
             id = "mat_sink_support", categoryIds = listOf(8, 24),
             marketNameAr = "حوامل تثبيت الحوض وشريط حماية الحواف", technicalNameAr = "Sink mounting and edge sealing",
-            tradeNames = listOf("كلبسات حوض", "حوامل حوض سفلي", "ختم متوافق مع السطح"), classification = "حوامل تثبيت الحوض وشريط حماية الحواف",
+            tradeNames = emptyList(), classification = "حوامل تثبيت الحوض وشريط حماية الحواف",
             definitionAndFunction = "نظام يحمل وزن الحوض والماء ويحمي فتحة الكاونتر أو الخزانة من البلل.", componentsAndProperties = "التثبيت يناسب خامة الكاونتر ووزن الجهاز وقالب الحوض.",
             availableTypes = listOf("كلبسات حوض", "حوامل حوض سفلي", "ختم متوافق مع السطح"), dimensionsAndSpecs = "التثبيت يناسب خامة الكاونتر ووزن الجهاز وقالب الحوض.",
             qualityGrades = "حوامل وختم من نظام الجهاز أو تفصيلة معتمدة.", standardSpecs = "حوامل وختم من نظام الجهاز أو تفصيلة معتمدة.",
@@ -75,7 +75,7 @@ object FinishingMaterialsExpansion5 {
         MaterialCard(
             id = "mat_shutter_manual_parts", categoryIds = listOf(25),
             marketNameAr = "شريط وآلية تشغيل ومحور الشتر اليدوي", technicalNameAr = "Manual roller shutter mechanism",
-            tradeNames = listOf("محور وحوامل", "بكرة وشريط", "دلايل ونهايات نظام"), classification = "شريط وآلية تشغيل ومحور الشتر اليدوي",
+            tradeNames = emptyList(), classification = "شريط وآلية تشغيل ومحور الشتر اليدوي",
             definitionAndFunction = "مجموعة رفع الستارة اليدوية وتوجيهها وحملها.", componentsAndProperties = "المقاسات والحمل ومسار الشريط طبق نوع الستارة والفتحة.",
             availableTypes = listOf("محور وحوامل", "بكرة وشريط", "دلايل ونهايات نظام"), dimensionsAndSpecs = "المقاسات والحمل ومسار الشريط طبق نوع الستارة والفتحة.",
             qualityGrades = "قطع متوافقة وحواف لا تقطع الشريط.", standardSpecs = "قطع متوافقة وحواف لا تقطع الشريط.",
@@ -92,7 +92,7 @@ object FinishingMaterialsExpansion5 {
         MaterialCard(
             id = "mat_metal_protective_coating", categoryIds = listOf(23, 26),
             marketNameAr = "برايمر ودهان حماية معدن", technicalNameAr = "Protective coating system for metal",
-            tradeNames = listOf("نظام للحديد", "نظام لمعدن مجلفن بعد تحضير مناسب", "نظام لبيئة ساحلية حسب التصميم"), classification = "برايمر ودهان حماية معدن",
+            tradeNames = emptyList(), classification = "برايمر ودهان حماية معدن",
             definitionAndFunction = "نظام طبقات يحمي معدنًا محددًا ضمن بيئة استخدام معينة.", componentsAndProperties = "تحضير الخلفية والسماكة والطبقات والبيئة من المنتج، لا عدد أوجه شكلي.",
             availableTypes = listOf("نظام للحديد", "نظام لمعدن مجلفن بعد تحضير مناسب", "نظام لبيئة ساحلية حسب التصميم"), dimensionsAndSpecs = "تحضير الخلفية والسماكة والطبقات والبيئة من المنتج، لا عدد أوجه شكلي.",
             qualityGrades = "نظام متوافق ونشرة سماكات وتطبيق.", standardSpecs = "نظام متوافق ونشرة سماكات وتطبيق.",
@@ -109,7 +109,7 @@ object FinishingMaterialsExpansion5 {
         MaterialCard(
             id = "mat_backer_rod", categoryIds = listOf(16, 22, 23, 27),
             marketNameAr = "حبل حشو فواصل فوم", technicalNameAr = "Sealant backer rod",
-            tradeNames = listOf("خلوي مغلق", "أنواع أخرى يجيزها نظام الختم"), classification = "حبل حشو فواصل فوم",
+            tradeNames = emptyList(), classification = "حبل حشو فواصل فوم",
             definitionAndFunction = "يضبط عمق السيلانت ويمنع التصاقه بقاع فاصل الحركة.", componentsAndProperties = "النوع والقطر والضغط المناسبان للفاصل والمنتج.",
             availableTypes = listOf("خلوي مغلق", "أنواع أخرى يجيزها نظام الختم"), dimensionsAndSpecs = "النوع والقطر والضغط المناسبان للفاصل والمنتج.",
             qualityGrades = "متوافق ولا يسبب بقعًا أو فقاقيع.", standardSpecs = "متوافق ولا يسبب بقعًا أو فقاقيع.",
@@ -126,7 +126,7 @@ object FinishingMaterialsExpansion5 {
         MaterialCard(
             id = "mat_mirror_adhesive", categoryIds = listOf(24, 28),
             marketNameAr = "لاصق مرايا معتمد", technicalNameAr = "Mirror-compatible adhesive",
-            tradeNames = listOf("لاصق مخصص للمرايا", "نظام حوامل مع ختم متوافق"), classification = "لاصق مرايا معتمد",
+            tradeNames = emptyList(), classification = "لاصق مرايا معتمد",
             definitionAndFunction = "ربط مرآة بخلفية مناسبة دون مهاجمة الطبقة العاكسة.", componentsAndProperties = "وزن المرآة وخامتها وخلفيتها وطريقة الدعم من المنتج والمصنع.",
             availableTypes = listOf("لاصق مخصص للمرايا", "نظام حوامل مع ختم متوافق"), dimensionsAndSpecs = "وزن المرآة وخامتها وخلفيتها وطريقة الدعم من المنتج والمصنع.",
             qualityGrades = "تصريح توافق مع المرايا وعينة بلا بقع.", standardSpecs = "تصريح توافق مع المرايا وعينة بلا بقع.",
@@ -143,7 +143,7 @@ object FinishingMaterialsExpansion5 {
         MaterialCard(
             id = "mat_surface_protection", categoryIds = listOf(16, 17, 18, 22, 28, 30),
             marketNameAr = "حماية أرضيات وشريط حماية تشطيب", technicalNameAr = "Temporary finish protection",
-            tradeNames = listOf("غطاء أرضية مناسب للحمل", "شريط منخفض الالتصاق للسطح المحدد", "حماية حواف"), classification = "حماية أرضيات وشريط حماية تشطيب",
+            tradeNames = emptyList(), classification = "حماية أرضيات وشريط حماية تشطيب",
             definitionAndFunction = "مواد تمنع الخدش والتلوث أثناء باقي الأعمال دون إتلاف التشطيب نفسه.", componentsAndProperties = "التوافق مع الدهان والحجر والخشب ومدة ترك الشريط واحتياج تنفس السطح.",
             availableTypes = listOf("غطاء أرضية مناسب للحمل", "شريط منخفض الالتصاق للسطح المحدد", "حماية حواف"), dimensionsAndSpecs = "التوافق مع الدهان والحجر والخشب ومدة ترك الشريط واحتياج تنفس السطح.",
             qualityGrades = "لا يترك صبغة أو غراء ولا يحبس رطوبة مضرة.", standardSpecs = "لا يترك صبغة أو غراء ولا يحبس رطوبة مضرة.",
@@ -160,7 +160,7 @@ object FinishingMaterialsExpansion5 {
         MaterialCard(
             id = "mat_moisture_meter", categoryIds = listOf(2, 3, 6, 17, 18, 29, 30),
             marketNameAr = "جهاز قياس رطوبة مناسب للخامة", technicalNameAr = "Material moisture testing instrument",
-            tradeNames = listOf("جهاز مقارنة غير إتلافي", "قياس بمسامير لخامات محددة", "طريقة اختبار معتمدة للخلفية"), classification = "جهاز قياس رطوبة مناسب للخامة",
+            tradeNames = emptyList(), classification = "جهاز قياس رطوبة مناسب للخامة",
             definitionAndFunction = "يساعد تقييم جفاف الخلفية بالطريقة التي تناسب مادتها والتشطيب التالي.", componentsAndProperties = "المقياس وحدوده ومعايرته تختلف مع الخامة؛ القراءة ليست نسبة مطلقة واحدة لكل سطح.",
             availableTypes = listOf("جهاز مقارنة غير إتلافي", "قياس بمسامير لخامات محددة", "طريقة اختبار معتمدة للخلفية"), dimensionsAndSpecs = "المقياس وحدوده ومعايرته تختلف مع الخامة؛ القراءة ليست نسبة مطلقة واحدة لكل سطح.",
             qualityGrades = "دليل واضح ومعايرة أو تحقق وفق المصنع.", standardSpecs = "دليل واضح ومعايرة أو تحقق وفق المصنع.",

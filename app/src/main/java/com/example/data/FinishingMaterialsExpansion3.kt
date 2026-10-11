@@ -7,7 +7,7 @@ object FinishingMaterialsExpansion3 {
         MaterialCard(
             id = "mat_rj45_keystone_patchpanel", categoryIds = listOf(12),
             marketNameAr = "كيستون ووش داتا وباتش بانل", technicalNameAr = "Structured cabling termination components",
-            tradeNames = listOf("كيستون UTP", "كيستون شيلد", "باتش بانل حسب عدد النقاط"), classification = "كيستون ووش داتا وباتش بانل",
+            tradeNames = emptyList(), classification = "كيستون ووش داتا وباتش بانل",
             definitionAndFunction = "أطراف إنهاء كابلات البيانات عند الغرفة والراك.", componentsAndProperties = "فئة وقطر الموصل وتوافق شيلد الكابل مع نظام التأريض طبق التصميم.",
             availableTypes = listOf("كيستون UTP", "كيستون شيلد", "باتش بانل حسب عدد النقاط"), dimensionsAndSpecs = "فئة وقطر الموصل وتوافق شيلد الكابل مع نظام التأريض طبق التصميم.",
             qualityGrades = "فئة موثقة ومكونات متوافقة.", standardSpecs = "فئة موثقة ومكونات متوافقة.",
@@ -24,7 +24,7 @@ object FinishingMaterialsExpansion3 {
         MaterialCard(
             id = "mat_poe_switch", categoryIds = listOf(12),
             marketNameAr = "سويتش شبكة PoE", technicalNameAr = "Power over Ethernet network switch",
-            tradeNames = listOf("منافذ PoE بمقننات مختلفة", "سويتش مُدار أو غير مُدار"), classification = "سويتش شبكة PoE",
+            tradeNames = emptyList(), classification = "سويتش شبكة PoE",
             definitionAndFunction = "يوصل البيانات والطاقة لأجهزة متوافقة عبر كابل شبكة مناسب.", componentsAndProperties = "قدرة المنفذ والقدرة الإجمالية وعدد الأجهزة ومتطلبات الشبكة والتهوية.",
             availableTypes = listOf("منافذ PoE بمقننات مختلفة", "سويتش مُدار أو غير مُدار"), dimensionsAndSpecs = "قدرة المنفذ والقدرة الإجمالية وعدد الأجهزة ومتطلبات الشبكة والتهوية.",
             qualityGrades = "بيانات قدرة فعلية وتوافق مع الأجهزة.", standardSpecs = "بيانات قدرة فعلية وتوافق مع الأجهزة.",
@@ -41,7 +41,7 @@ object FinishingMaterialsExpansion3 {
         MaterialCard(
             id = "mat_cctv_camera_nvr", categoryIds = listOf(12),
             marketNameAr = "كاميرا مراقبة وجهاز تسجيل NVR", technicalNameAr = "IP camera and network video recorder",
-            tradeNames = listOf("كاميرا داخلية وخارجية", "جهاز تسجيل بسعات قنوات وتخزين مختلفة"), classification = "كاميرا مراقبة وجهاز تسجيل NVR",
+            tradeNames = emptyList(), classification = "كاميرا مراقبة وجهاز تسجيل NVR",
             definitionAndFunction = "تصوير وتسجيل واسترجاع وفق مجال رؤية ومدة حفظ محددين.", componentsAndProperties = "عدسة ومجال رؤية وإضاءة ليلية وحماية بيئية وتوافق التسجيل.",
             availableTypes = listOf("كاميرا داخلية وخارجية", "جهاز تسجيل بسعات قنوات وتخزين مختلفة"), dimensionsAndSpecs = "عدسة ومجال رؤية وإضاءة ليلية وحماية بيئية وتوافق التسجيل.",
             qualityGrades = "دعم وبيانات واضحة ومصدر أصلي وإعدادات مؤمنة.", standardSpecs = "دعم وبيانات واضحة ومصدر أصلي وإعدادات مؤمنة.",
@@ -58,7 +58,7 @@ object FinishingMaterialsExpansion3 {
         MaterialCard(
             id = "mat_ac_condensate_pipe", categoryIds = listOf(7, 13),
             marketNameAr = "ماسورة صرف تكثيف التكييف", technicalNameAr = "Condensate drain system",
-            tradeNames = listOf("خط بالجاذبية", "مضخة تكثيف حسب الحاجة"), classification = "ماسورة صرف تكثيف التكييف",
+            tradeNames = emptyList(), classification = "ماسورة صرف تكثيف التكييف",
             definitionAndFunction = "تصرف ماء الوحدة دون تسرب أو رجوع روائح أو تكثيف خارجي.", componentsAndProperties = "القطر والميل والعزل ومانع الروائح من نظام الجهاز وطول المسار.",
             availableTypes = listOf("خط بالجاذبية", "مضخة تكثيف حسب الحاجة"), dimensionsAndSpecs = "القطر والميل والعزل ومانع الروائح من نظام الجهاز وطول المسار.",
             qualityGrades = "وصلة محكمة مع إمكانية تنظيف ووصول للمضخة.", standardSpecs = "وصلة محكمة مع إمكانية تنظيف ووصول للمضخة.",
@@ -75,7 +75,7 @@ object FinishingMaterialsExpansion3 {
         MaterialCard(
             id = "mat_ac_mounts", categoryIds = listOf(13),
             marketNameAr = "حوامل تكييف وقواعد مانعة للاهتزاز", technicalNameAr = "HVAC supports and vibration isolation",
-            tradeNames = listOf("حامل وحدة خارجية", "تعليق دكت", "قاعدة عزل اهتزاز مصممة"), classification = "حوامل تكييف وقواعد مانعة للاهتزاز",
+            tradeNames = emptyList(), classification = "حوامل تكييف وقواعد مانعة للاهتزاز",
             definitionAndFunction = "تحمل الوحدة أو الدكت وتنقل الحمل لقاعدة مناسبة مع معالجة الاهتزاز.", componentsAndProperties = "الوزن ونوع الحمل والتثبيت والبيئة والخلوص طبق الموديل والتصميم.",
             availableTypes = listOf("حامل وحدة خارجية", "تعليق دكت", "قاعدة عزل اهتزاز مصممة"), dimensionsAndSpecs = "الوزن ونوع الحمل والتثبيت والبيئة والخلوص طبق الموديل والتصميم.",
             qualityGrades = "حماية تآكل وقدرة حمل معلومة.", standardSpecs = "حماية تآكل وقدرة حمل معلومة.",
@@ -92,7 +92,7 @@ object FinishingMaterialsExpansion3 {
         MaterialCard(
             id = "mat_firestop_system", categoryIds = listOf(5, 14, 19, 23),
             marketNameAr = "نظام سد اختراقات الحريق Firestop", technicalNameAr = "Tested penetration sealing system",
-            tradeNames = listOf("سيلانت مع لوح أو صوف نظام", "طوق ماسورة بلاستيك", "تفاصيل مواسير وكابلات معتمدة"), classification = "نظام سد اختراقات الحريق Firestop",
+            tradeNames = emptyList(), classification = "نظام سد اختراقات الحريق Firestop",
             definitionAndFunction = "مجموعة مواد وتفاصيل تحد انتقال النار والدخان في اختراقات الحوائط والأسقف المصنفة.", componentsAndProperties = "التصنيف لنظام مختبر يطابق الفتحة والخدمة والخلفية، وليس اسم العبوة وحده.",
             availableTypes = listOf("سيلانت مع لوح أو صوف نظام", "طوق ماسورة بلاستيك", "تفاصيل مواسير وكابلات معتمدة"), dimensionsAndSpecs = "التصنيف لنظام مختبر يطابق الفتحة والخدمة والخلفية، وليس اسم العبوة وحده.",
             qualityGrades = "شهادة وتفصيلة اختبار مطابقة للحالة.", standardSpecs = "شهادة وتفصيلة اختبار مطابقة للحالة.",
@@ -109,7 +109,7 @@ object FinishingMaterialsExpansion3 {
         MaterialCard(
             id = "mat_fire_alarm_devices", categoryIds = listOf(14),
             marketNameAr = "كاشف دخان أو حرارة ونقطة نداء وإنذار", technicalNameAr = "Fire detection and alarm devices",
-            tradeNames = listOf("كاشف دخان", "كاشف حرارة", "نقطة نداء يدوية", "صافرة أو وحدة إنذار"), classification = "كاشف دخان أو حرارة ونقطة نداء وإنذار",
+            tradeNames = emptyList(), classification = "كاشف دخان أو حرارة ونقطة نداء وإنذار",
             definitionAndFunction = "كشف وإعلان حدث حريق ضمن نظام متوافق ومخططات معتمدة.", componentsAndProperties = "نوع الجهاز والعنوان والموقع والارتفاع والبيئة من التصميم والمصنع.",
             availableTypes = listOf("كاشف دخان", "كاشف حرارة", "نقطة نداء يدوية", "صافرة أو وحدة إنذار"), dimensionsAndSpecs = "نوع الجهاز والعنوان والموقع والارتفاع والبيئة من التصميم والمصنع.",
             qualityGrades = "اعتماد وتوافق مع اللوحة وتوفر أدوات الاختبار.", standardSpecs = "اعتماد وتوافق مع اللوحة وتوفر أدوات الاختبار.",
@@ -126,7 +126,7 @@ object FinishingMaterialsExpansion3 {
         MaterialCard(
             id = "mat_cementitious_grout", categoryIds = listOf(15, 16),
             marketNameAr = "روبة أسمنتية لفواصل البلاط", technicalNameAr = "Cementitious tile grout",
-            tradeNames = listOf("ألوان وتصنيفات مختلفة", "أنواع لفواصل بعروض محددة"), classification = "روبة أسمنتية لفواصل البلاط",
+            tradeNames = emptyList(), classification = "روبة أسمنتية لفواصل البلاط",
             definitionAndFunction = "مادة ملء الفواصل الثابتة بين البلاطات وليست بديلًا عن العزل المائي.", componentsAndProperties = "عرض الفاصل وتوافق الحجر والبلل واللون وزمن التنظيف من المنتج.",
             availableTypes = listOf("ألوان وتصنيفات مختلفة", "أنواع لفواصل بعروض محددة"), dimensionsAndSpecs = "عرض الفاصل وتوافق الحجر والبلل واللون وزمن التنظيف من المنتج.",
             qualityGrades = "دفعة لون موحدة وعبوة غير متحجرة.", standardSpecs = "دفعة لون موحدة وعبوة غير متحجرة.",
@@ -143,7 +143,7 @@ object FinishingMaterialsExpansion3 {
         MaterialCard(
             id = "mat_tile_spacers", categoryIds = listOf(15),
             marketNameAr = "صلبان وفواصل رص البلاط", technicalNameAr = "Tile spacing accessories",
-            tradeNames = listOf("صلبان", "فواصل مستقيمة", "فواصل مع نظام تسوية متوافق"), classification = "صلبان وفواصل رص البلاط",
+            tradeNames = emptyList(), classification = "صلبان وفواصل رص البلاط",
             definitionAndFunction = "تحافظ على عرض العراميس أثناء التركيب؛ لا تعالج انحناء البلاطة أو الخلفية.", componentsAndProperties = "العرض يوافق البلاط والتصميم والروبة؛ أصغر فاصل ليس دائمًا الأفضل.",
             availableTypes = listOf("صلبان", "فواصل مستقيمة", "فواصل مع نظام تسوية متوافق"), dimensionsAndSpecs = "العرض يوافق البلاط والتصميم والروبة؛ أصغر فاصل ليس دائمًا الأفضل.",
             qualityGrades = "مقاس ثابت وقطع لا تنكسر داخل الفاصل بطريقة تعوق الروبة.", standardSpecs = "مقاس ثابت وقطع لا تنكسر داخل الفاصل بطريقة تعوق الروبة.",
@@ -160,7 +160,7 @@ object FinishingMaterialsExpansion3 {
         MaterialCard(
             id = "mat_stone_nonstaining_sealant", categoryIds = listOf(16, 23, 24, 27),
             marketNameAr = "سيلانت لا يسبب بقعًا للحجر الطبيعي", technicalNameAr = "Non-staining stone joint sealant",
-            tradeNames = listOf("سيليكون محايد مخصص للحجر", "منتج هجين يجيزه المصنع للحجر"), classification = "سيلانت لا يسبب بقعًا للحجر الطبيعي",
+            tradeNames = emptyList(), classification = "سيلانت لا يسبب بقعًا للحجر الطبيعي",
             definitionAndFunction = "ختم مرن مع صيغة مناسبة للحجر الحساس للتبقع.", componentsAndProperties = "التوافق مع نوع الحجر وحركة الفاصل والبيئة بعد عينة.",
             availableTypes = listOf("سيليكون محايد مخصص للحجر", "منتج هجين يجيزه المصنع للحجر"), dimensionsAndSpecs = "التوافق مع نوع الحجر وحركة الفاصل والبيئة بعد عينة.",
             qualityGrades = "تصريح بالاستخدام مع الحجر واختبار عدم التبقع.", standardSpecs = "تصريح بالاستخدام مع الحجر واختبار عدم التبقع.",

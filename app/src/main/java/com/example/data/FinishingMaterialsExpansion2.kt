@@ -7,7 +7,7 @@ object FinishingMaterialsExpansion2 {
         MaterialCard(
             id = "mat_pvc_drain_fittings", categoryIds = listOf(7),
             marketNameAr = "وصلات صرف: كوع وتيه واي وجلبة وفتحة تسليك", technicalNameAr = "Drainage PVC fittings",
-            tradeNames = listOf("أكواع بنظام الصرف", "وصلة Y", "جلبة ومسلوب", "فتحة تسليك"), classification = "وصلات صرف: كوع وتيه واي وجلبة وفتحة تسليك",
+            tradeNames = emptyList(), classification = "وصلات صرف: كوع وتيه واي وجلبة وفتحة تسليك",
             definitionAndFunction = "قطع لتجميع صرف الأجهزة وتوجيهه وإتاحة تنظيفه.", componentsAndProperties = "القطر والزاوية وفئة المواسير وطريقة الختم من تصميم الشبكة؛ وصلة صرف ليست وصلة ضغط.",
             availableTypes = listOf("أكواع بنظام الصرف", "وصلة Y", "جلبة ومسلوب", "فتحة تسليك"), dimensionsAndSpecs = "القطر والزاوية وفئة المواسير وطريقة الختم من تصميم الشبكة؛ وصلة صرف ليست وصلة ضغط.",
             qualityGrades = "قطع سليمة وشفاه مناسبة لجوان أو لاصق النظام.", standardSpecs = "قطع سليمة وشفاه مناسبة لجوان أو لاصق النظام.",
@@ -24,7 +24,7 @@ object FinishingMaterialsExpansion2 {
         MaterialCard(
             id = "mat_pipe_support_insulation", categoryIds = listOf(7, 13),
             marketNameAr = "أفيز تعليق وعازل مواسير", technicalNameAr = "Pipe support and insulation",
-            tradeNames = listOf("أفيز ثابت", "دليل حركة", "عازل خلوي مغلق", "عازل لنظام حرارة محدد"), classification = "أفيز تعليق وعازل مواسير",
+            tradeNames = emptyList(), classification = "أفيز تعليق وعازل مواسير",
             definitionAndFunction = "تثبيت المواسير مع السماح بالحركة المطلوبة وحمايتها من التكثيف أو فقد الحرارة.", componentsAndProperties = "تباعد الأفيز وسمك العازل من القطر والحرارة ونظام الماسورة؛ نوع العازل يوافق الاستخدام.",
             availableTypes = listOf("أفيز ثابت", "دليل حركة", "عازل خلوي مغلق", "عازل لنظام حرارة محدد"), dimensionsAndSpecs = "تباعد الأفيز وسمك العازل من القطر والحرارة ونظام الماسورة؛ نوع العازل يوافق الاستخدام.",
             qualityGrades = "حامل مقاوم للتآكل ولا يجرح الماسورة؛ وصلات عازل محكمة.", standardSpecs = "حامل مقاوم للتآكل ولا يجرح الماسورة؛ وصلات عازل محكمة.",
@@ -41,7 +41,7 @@ object FinishingMaterialsExpansion2 {
         MaterialCard(
             id = "mat_basin_trap", categoryIds = listOf(7, 8, 24),
             marketNameAr = "سيفون حوض مطبخ أو حمام", technicalNameAr = "Basin and sink trap",
-            tradeNames = listOf("سيفون أنبوبي", "سيفون زجاجة", "مجموعة مطبخ متعددة المداخل حسب التصميم"), classification = "سيفون حوض مطبخ أو حمام",
+            tradeNames = emptyList(), classification = "سيفون حوض مطبخ أو حمام",
             definitionAndFunction = "وصلة تحت الحوض تحتفظ بحاجز ماء يمنع خروج روائح الصرف.", componentsAndProperties = "القطر وحجم مانع الماء ومخرج الجهاز وإمكانية الفك والتنظيف حسب النظام.",
             availableTypes = listOf("سيفون أنبوبي", "سيفون زجاجة", "مجموعة مطبخ متعددة المداخل حسب التصميم"), dimensionsAndSpecs = "القطر وحجم مانع الماء ومخرج الجهاز وإمكانية الفك والتنظيف حسب النظام.",
             qualityGrades = "جوانات سليمة وقطع قابلة للصيانة دون تسريب.", standardSpecs = "جوانات سليمة وقطع قابلة للصيانة دون تسريب.",
@@ -58,7 +58,7 @@ object FinishingMaterialsExpansion2 {
         MaterialCard(
             id = "mat_thermostatic_mixer", categoryIds = listOf(8),
             marketNameAr = "خلاط حراري للتحكم في درجة المياه", technicalNameAr = "Thermostatic mixing valve",
-            tradeNames = listOf("خلاط ظاهر", "وحدة دفن بواجهة متوافقة"), classification = "خلاط حراري للتحكم في درجة المياه",
+            tradeNames = emptyList(), classification = "خلاط حراري للتحكم في درجة المياه",
             definitionAndFunction = "خلط ساخن وبارد بدرجة مضبوطة ضمن ظروف ضغط وحرارة يحددها الجهاز.", componentsAndProperties = "توافق ضغط وحرارة التغذية وترتيب الساخن والبارد حسب الموديل.",
             availableTypes = listOf("خلاط ظاهر", "وحدة دفن بواجهة متوافقة"), dimensionsAndSpecs = "توافق ضغط وحرارة التغذية وترتيب الساخن والبارد حسب الموديل.",
             qualityGrades = "نشرة تشغيل وخدمة وقطع غيار متاحة.", standardSpecs = "نشرة تشغيل وخدمة وقطع غيار متاحة.",
@@ -75,7 +75,7 @@ object FinishingMaterialsExpansion2 {
         MaterialCard(
             id = "mat_mcb", categoryIds = listOf(9, 10),
             marketNameAr = "قاطع أوتوماتيك MCB", technicalNameAr = "Miniature circuit breaker",
-            tradeNames = listOf("قطب واحد أو متعدد", "منحنيات فصل مناسبة للحمل"), classification = "قاطع أوتوماتيك MCB",
+            tradeNames = emptyList(), classification = "قاطع أوتوماتيك MCB",
             definitionAndFunction = "يحمي الدائرة من زيادة الحمل والقصر ضمن مقنناته؛ لا يؤدي وحده وظيفة حماية التسرب الأرضي.", componentsAndProperties = "التيار والمنحنى وقدرة القطع وعدد الأقطاب من تصميم الدائرة وتيار القصر المتوقع.",
             availableTypes = listOf("قطب واحد أو متعدد", "منحنيات فصل مناسبة للحمل"), dimensionsAndSpecs = "التيار والمنحنى وقدرة القطع وعدد الأقطاب من تصميم الدائرة وتيار القصر المتوقع.",
             qualityGrades = "منتج أصلي بمعايير معلومة وقابلية تركيب مع نظام اللوحة.", standardSpecs = "منتج أصلي بمعايير معلومة وقابلية تركيب مع نظام اللوحة.",
@@ -92,7 +92,7 @@ object FinishingMaterialsExpansion2 {
         MaterialCard(
             id = "mat_rccb", categoryIds = listOf(10),
             marketNameAr = "قاطع تفاضلي RCCB", technicalNameAr = "Residual current circuit breaker",
-            tradeNames = listOf("أنواع حساسية حسب طبيعة الحمل", "أقطاب ومقننات مختلفة"), classification = "قاطع تفاضلي RCCB",
+            tradeNames = emptyList(), classification = "قاطع تفاضلي RCCB",
             definitionAndFunction = "يفصل عند فرق تيار التسرب المحدد، ويحتاج حماية حمل وقصر مناسبة معه.", componentsAndProperties = "نوع التيار المتبقي والحساسية والتيار المقنن وتنسيق الحماية من التصميم.",
             availableTypes = listOf("أنواع حساسية حسب طبيعة الحمل", "أقطاب ومقننات مختلفة"), dimensionsAndSpecs = "نوع التيار المتبقي والحساسية والتيار المقنن وتنسيق الحماية من التصميم.",
             qualityGrades = "تصنيف واضح ومنتج أصلي ومطابقة نظام التغذية.", standardSpecs = "تصنيف واضح ومنتج أصلي ومطابقة نظام التغذية.",
@@ -109,7 +109,7 @@ object FinishingMaterialsExpansion2 {
         MaterialCard(
             id = "mat_rcbo", categoryIds = listOf(10),
             marketNameAr = "قاطع تفاضلي مع حماية حمل وقصر RCBO", technicalNameAr = "Residual current breaker with overcurrent protection",
-            tradeNames = listOf("تكوينات أقطاب مختلفة", "أنواع حماية تسرب حسب الحمل"), classification = "قاطع تفاضلي مع حماية حمل وقصر RCBO",
+            tradeNames = emptyList(), classification = "قاطع تفاضلي مع حماية حمل وقصر RCBO",
             definitionAndFunction = "يجمع حماية التيار المتبقي والحمل الزائد والقصر للدائرة ضمن نوعه ومقنناته.", componentsAndProperties = "المقنن وقدرة القطع ومنحنى الفصل ونوع RCD والانتقائية من التصميم.",
             availableTypes = listOf("تكوينات أقطاب مختلفة", "أنواع حماية تسرب حسب الحمل"), dimensionsAndSpecs = "المقنن وقدرة القطع ومنحنى الفصل ونوع RCD والانتقائية من التصميم.",
             qualityGrades = "بيانات كاملة ومنتج أصلي من نظام اللوحة.", standardSpecs = "بيانات كاملة ومنتج أصلي من نظام اللوحة.",
@@ -126,7 +126,7 @@ object FinishingMaterialsExpansion2 {
         MaterialCard(
             id = "mat_cable_ferrules_glands", categoryIds = listOf(9, 10, 11),
             marketNameAr = "أطراف كبس وجلب دخول كابلات", technicalNameAr = "Ferrules, cable lugs and glands",
-            tradeNames = listOf("طرف سلك مرن", "عروة كابل", "جلاند مناسب للغلاف والحماية"), classification = "أطراف كبس وجلب دخول كابلات",
+            tradeNames = emptyList(), classification = "أطراف كبس وجلب دخول كابلات",
             definitionAndFunction = "قطع لإنهاء الموصل وتثبيت وحماية دخوله للوحة أو العلبة.", componentsAndProperties = "المقطع وشكل طرف الجهاز وقطر الكابل ودرجة حماية الدخول حسب التطبيق.",
             availableTypes = listOf("طرف سلك مرن", "عروة كابل", "جلاند مناسب للغلاف والحماية"), dimensionsAndSpecs = "المقطع وشكل طرف الجهاز وقطر الكابل ودرجة حماية الدخول حسب التطبيق.",
             qualityGrades = "طرف مناسب للنحاس أو الألومنيوم وأداة كبس مصممة له.", standardSpecs = "طرف مناسب للنحاس أو الألومنيوم وأداة كبس مصممة له.",
@@ -143,7 +143,7 @@ object FinishingMaterialsExpansion2 {
         MaterialCard(
             id = "mat_led_driver", categoryIds = listOf(11),
             marketNameAr = "درايفر ليد ثابت جهد أو ثابت تيار", technicalNameAr = "LED power supply / driver",
-            tradeNames = listOf("ثابت جهد لشريط متوافق", "ثابت تيار لكشاف متوافق", "قابل للتعتيم بتقنية محددة"), classification = "درايفر ليد ثابت جهد أو ثابت تيار",
+            tradeNames = emptyList(), classification = "درايفر ليد ثابت جهد أو ثابت تيار",
             definitionAndFunction = "يحول التغذية لقيم تناسب شريط أو كشاف ليد محدد.", componentsAndProperties = "الجهد أو التيار والقدرة ودرجة الحماية والحرارة وتوافق الديمر حسب الحمل.",
             availableTypes = listOf("ثابت جهد لشريط متوافق", "ثابت تيار لكشاف متوافق", "قابل للتعتيم بتقنية محددة"), dimensionsAndSpecs = "الجهد أو التيار والقدرة ودرجة الحماية والحرارة وتوافق الديمر حسب الحمل.",
             qualityGrades = "بيانات كاملة وحماية حرارية ومصدر أصلي.", standardSpecs = "بيانات كاملة وحماية حرارية ومصدر أصلي.",
@@ -160,7 +160,7 @@ object FinishingMaterialsExpansion2 {
         MaterialCard(
             id = "mat_led_dimmer", categoryIds = listOf(11, 12),
             marketNameAr = "ديمر ووحدة تحكم إنارة", technicalNameAr = "Lighting dimmer and controller",
-            tradeNames = listOf("ديمر قطع طور", "تحكم منخفض الجهد", "تحكم رقمي حسب النظام"), classification = "ديمر ووحدة تحكم إنارة",
+            tradeNames = emptyList(), classification = "ديمر ووحدة تحكم إنارة",
             definitionAndFunction = "تحكم في شدة أو مشاهد الإضاءة بنظام يطابق الدرايفر والحمل.", componentsAndProperties = "نوع الإشارة والحمل الأدنى والأقصى وتوافق الدرايفر؛ ليس كل ليد قابلًا للتعتيم.",
             availableTypes = listOf("ديمر قطع طور", "تحكم منخفض الجهد", "تحكم رقمي حسب النظام"), dimensionsAndSpecs = "نوع الإشارة والحمل الأدنى والأقصى وتوافق الدرايفر؛ ليس كل ليد قابلًا للتعتيم.",
             qualityGrades = "قائمة توافق أو تجربة مجموعة كاملة.", standardSpecs = "قائمة توافق أو تجربة مجموعة كاملة.",

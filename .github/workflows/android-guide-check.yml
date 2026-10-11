@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: '21'
       - uses: android-actions/setup-android@v4
         with:
           log-accepted-android-sdk-licenses: false
@@ -26,6 +26,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v6
         with:
           gradle-version: '9.3.1'
+          cache-read-only: false
       - name: Create temporary CI debug key
         run: |
           if [ ! -f debug.keystore ]; then

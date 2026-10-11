@@ -7,7 +7,7 @@ object FinishingMaterialsExpansion4 {
         MaterialCard(
             id = "mat_stone_sealer_cleaner", categoryIds = listOf(16, 24, 28),
             marketNameAr = "منظف وحماية سطح للحجر", technicalNameAr = "Stone cleaner and impregnating sealer",
-            tradeNames = listOf("منظف متوافق", "سيلر اختراقي حسب الحجر", "أنظمة تشطيب أخرى معتمدة"), classification = "منظف وحماية سطح للحجر",
+            tradeNames = emptyList(), classification = "منظف وحماية سطح للحجر",
             definitionAndFunction = "تنظيف أو تقليل امتصاص البقع حسب طبيعة الحجر؛ ليس غطاءً لعزل تسرب خلفه.", componentsAndProperties = "اختيار حسب الامتصاص والتشطيب ولون الحجر وبيئة الاستخدام.",
             availableTypes = listOf("منظف متوافق", "سيلر اختراقي حسب الحجر", "أنظمة تشطيب أخرى معتمدة"), dimensionsAndSpecs = "اختيار حسب الامتصاص والتشطيب ولون الحجر وبيئة الاستخدام.",
             qualityGrades = "نشرة واختبار عينة دون تغيير غير مقبول للون أو اللمعة.", standardSpecs = "نشرة واختبار عينة دون تغيير غير مقبول للون أو اللمعة.",
@@ -24,7 +24,7 @@ object FinishingMaterialsExpansion4 {
         MaterialCard(
             id = "mat_floor_underlay", categoryIds = listOf(5, 17),
             marketNameAr = "بطانة أرضية عائمة", technicalNameAr = "Laminate or vinyl underlay",
-            tradeNames = listOf("بطانة HDF", "بطانة SPC معتمدة", "بطانة مدمج بها حاجز رطوبة"), classification = "بطانة أرضية عائمة",
+            tradeNames = emptyList(), classification = "بطانة أرضية عائمة",
             definitionAndFunction = "طبقة تحت نظام أرضية محدد لتحسين الأداء والاتصال بالخلفية.", componentsAndProperties = "السماكة ومقاومة الانضغاط وتوافق تدفئة الأرضية وحاجز الرطوبة من النظام.",
             availableTypes = listOf("بطانة HDF", "بطانة SPC معتمدة", "بطانة مدمج بها حاجز رطوبة"), dimensionsAndSpecs = "السماكة ومقاومة الانضغاط وتوافق تدفئة الأرضية وحاجز الرطوبة من النظام.",
             qualityGrades = "موافقة مصنع الأرضية؛ لا يفترض أن البطانة الأسمك أفضل.", standardSpecs = "موافقة مصنع الأرضية؛ لا يفترض أن البطانة الأسمك أفضل.",
@@ -41,7 +41,7 @@ object FinishingMaterialsExpansion4 {
         MaterialCard(
             id = "mat_wall_primer", categoryIds = listOf(18),
             marketNameAr = "سيلر وبرايمر حوائط", technicalNameAr = "Interior wall primer",
-            tradeNames = listOf("برايمر أسمنتي السطح حسب المنتج", "برايمر للجبس", "عازل بقع مخصص"), classification = "سيلر وبرايمر حوائط",
+            tradeNames = emptyList(), classification = "سيلر وبرايمر حوائط",
             definitionAndFunction = "طبقة تحضير تضبط امتصاص وتماسك الخلفية قبل نظام الدهان.", componentsAndProperties = "نوع الخلفية والرطوبة والتخفيف وزمن إعادة الطلاء من المنتج.",
             availableTypes = listOf("برايمر أسمنتي السطح حسب المنتج", "برايمر للجبس", "عازل بقع مخصص"), dimensionsAndSpecs = "نوع الخلفية والرطوبة والتخفيف وزمن إعادة الطلاء من المنتج.",
             qualityGrades = "توافق مع الدهان ونشرة واضحة.", standardSpecs = "توافق مع الدهان ونشرة واضحة.",
@@ -58,7 +58,7 @@ object FinishingMaterialsExpansion4 {
         MaterialCard(
             id = "mat_finish_wall_paint", categoryIds = listOf(18),
             marketNameAr = "دهان حوائط نهائي", technicalNameAr = "Decorative interior finish paint",
-            tradeNames = listOf("مطفي", "نصف لامع", "أنواع بدرجات تحمل غسيل مختلفة"), classification = "دهان حوائط نهائي",
+            tradeNames = emptyList(), classification = "دهان حوائط نهائي",
             definitionAndFunction = "طبقة اللون والملمس المناسبة للاستخدام والتنظيف بعد تحضير الخلفية.", componentsAndProperties = "نوع الرابطة واللمعة واللون ومعدل التغطية والتخفيف من المنتج.",
             availableTypes = listOf("مطفي", "نصف لامع", "أنواع بدرجات تحمل غسيل مختلفة"), dimensionsAndSpecs = "نوع الرابطة واللمعة واللون ومعدل التغطية والتخفيف من المنتج.",
             qualityGrades = "دفعة معروفة واختيار حسب استخدام الغرفة لا اللون فقط.", standardSpecs = "دفعة معروفة واختيار حسب استخدام الغرفة لا اللون فقط.",
@@ -75,7 +75,7 @@ object FinishingMaterialsExpansion4 {
         MaterialCard(
             id = "mat_drywall_joint_compound_tape", categoryIds = listOf(19),
             marketNameAr = "معجون وشريط فواصل جبس بورد", technicalNameAr = "Drywall joint treatment system",
-            tradeNames = listOf("معجون شك", "معجون جاهز يجف", "شريط ورق أو نوع معتمد"), classification = "معجون وشريط فواصل جبس بورد",
+            tradeNames = emptyList(), classification = "معجون وشريط فواصل جبس بورد",
             definitionAndFunction = "مواد لمعالجة وصلات الألواح ورؤوس المسامير ضمن نظام متوافق.", componentsAndProperties = "نوع الحافة ومستوى التشطيب وتوافق المعجون والشريط من النظام.",
             availableTypes = listOf("معجون شك", "معجون جاهز يجف", "شريط ورق أو نوع معتمد"), dimensionsAndSpecs = "نوع الحافة ومستوى التشطيب وتوافق المعجون والشريط من النظام.",
             qualityGrades = "مواد أصلية للوظيفة دون خلط بمصيص عادي.", standardSpecs = "مواد أصلية للوظيفة دون خلط بمصيص عادي.",
@@ -92,7 +92,7 @@ object FinishingMaterialsExpansion4 {
         MaterialCard(
             id = "mat_cement_board", categoryIds = listOf(4, 19, 23),
             marketNameAr = "لوح أسمنتي للمناطق أو الواجهات المعتمدة", technicalNameAr = "Cement board substrate",
-            tradeNames = listOf("داخلي للمناطق المبتلة حسب النظام", "خارجي ضمن نظام واجهة"), classification = "لوح أسمنتي للمناطق أو الواجهات المعتمدة",
+            tradeNames = emptyList(), classification = "لوح أسمنتي للمناطق أو الواجهات المعتمدة",
             definitionAndFunction = "لوح خلفية لنظام تشطيب يختار حسب البلل والتحميل والواجهة.", componentsAndProperties = "سماكة وشاسيه ومثبتات وفواصل وعزل من نظام محدد؛ اللوح وحده لا يجعل الفراغ مقاومًا للماء.",
             availableTypes = listOf("داخلي للمناطق المبتلة حسب النظام", "خارجي ضمن نظام واجهة"), dimensionsAndSpecs = "سماكة وشاسيه ومثبتات وفواصل وعزل من نظام محدد؛ اللوح وحده لا يجعل الفراغ مقاومًا للماء.",
             qualityGrades = "تصنيف مناسب وملحقات متوافقة.", standardSpecs = "تصنيف مناسب وملحقات متوافقة.",
@@ -109,7 +109,7 @@ object FinishingMaterialsExpansion4 {
         MaterialCard(
             id = "mat_decor_adhesive", categoryIds = listOf(20),
             marketNameAr = "لاصق تركيب ووصلات كرانيش وبانوهات", technicalNameAr = "Decorative profile adhesive",
-            tradeNames = listOf("لاصق حائط", "لاصق وصلة", "مادة معالجة حافة متوافقة"), classification = "لاصق تركيب ووصلات كرانيش وبانوهات",
+            tradeNames = emptyList(), classification = "لاصق تركيب ووصلات كرانيش وبانوهات",
             definitionAndFunction = "مواد ربط تناسب خامة الديكور والخلفية؛ قد يختلف لاصق الوصلات عن لاصق التثبيت.", componentsAndProperties = "المنتج من نظام الديكور وملائم للوزن والبيئة.",
             availableTypes = listOf("لاصق حائط", "لاصق وصلة", "مادة معالجة حافة متوافقة"), dimensionsAndSpecs = "المنتج من نظام الديكور وملائم للوزن والبيئة.",
             qualityGrades = "لا يذيب الفوم أو يسبب بقعًا ويتوافق مع الدهان.", standardSpecs = "لا يذيب الفوم أو يسبب بقعًا ويتوافق مع الدهان.",
@@ -126,7 +126,7 @@ object FinishingMaterialsExpansion4 {
         MaterialCard(
             id = "mat_low_expansion_foam", categoryIds = listOf(21, 22, 25),
             marketNameAr = "فوم تركيب قليل التمدد", technicalNameAr = "Low-expansion mounting foam",
-            tradeNames = listOf("فوم مسدس", "تركيبات وخلفيات حسب المنتج"), classification = "فوم تركيب قليل التمدد",
+            tradeNames = emptyList(), classification = "فوم تركيب قليل التمدد",
             definitionAndFunction = "ملء وعزل فراغات ضمن نظام إطار أو حلق؛ ليس تثبيتًا إنشائيًا مستقلًا.", componentsAndProperties = "درجة التمدد والخلفية والحرارة والرطوبة المطلوبة وحماية الفوم من الشمس.",
             availableTypes = listOf("فوم مسدس", "تركيبات وخلفيات حسب المنتج"), dimensionsAndSpecs = "درجة التمدد والخلفية والحرارة والرطوبة المطلوبة وحماية الفوم من الشمس.",
             qualityGrades = "منتج مناسب للنوافذ والحلوق حيث يطلب النظام.", standardSpecs = "منتج مناسب للنوافذ والحلوق حيث يطلب النظام.",
@@ -143,7 +143,7 @@ object FinishingMaterialsExpansion4 {
         MaterialCard(
             id = "mat_door_closer_fireseal", categoryIds = listOf(14, 21),
             marketNameAr = "غالق باب وجوانات باب حريق حسب النظام", technicalNameAr = "Door closer and certified fire-door seals",
-            tradeNames = listOf("غالق باب", "جوان دخان", "شريط انتفاخ حراري مصنف"), classification = "غالق باب وجوانات باب حريق حسب النظام",
+            tradeNames = emptyList(), classification = "غالق باب وجوانات باب حريق حسب النظام",
             definitionAndFunction = "ملحقات تشغيل وختم تدخل ضمن طقم الباب المعتمد عند اشتراط الحريق أو الدخان.", componentsAndProperties = "التوافق مع شهادة الباب ووزنه واتجاهه وعرضه واحتياج الإغلاق.",
             availableTypes = listOf("غالق باب", "جوان دخان", "شريط انتفاخ حراري مصنف"), dimensionsAndSpecs = "التوافق مع شهادة الباب ووزنه واتجاهه وعرضه واحتياج الإغلاق.",
             qualityGrades = "طقم معتمد لا يستبدل بقطعة تشبهه فقط.", standardSpecs = "طقم معتمد لا يستبدل بقطعة تشبهه فقط.",
@@ -160,7 +160,7 @@ object FinishingMaterialsExpansion4 {
         MaterialCard(
             id = "mat_window_glazing_blocks", categoryIds = listOf(22),
             marketNameAr = "بلوكات ارتكاز زجاج وجوان EPDM", technicalNameAr = "Glazing packers and gaskets",
-            tradeNames = listOf("بلوك تحميل", "بلوك توزيع", "جوانات مقاطع مطابقة"), classification = "بلوكات ارتكاز زجاج وجوان EPDM",
+            tradeNames = emptyList(), classification = "بلوكات ارتكاز زجاج وجوان EPDM",
             definitionAndFunction = "قطع تفصل الزجاج عن الإطار وتحمل وزنه وتختمه وفق نظام الشباك.", componentsAndProperties = "المقاس والصلابة والموضع حسب النظام ونوع الضلفة والزجاج.",
             availableTypes = listOf("بلوك تحميل", "بلوك توزيع", "جوانات مقاطع مطابقة"), dimensionsAndSpecs = "المقاس والصلابة والموضع حسب النظام ونوع الضلفة والزجاج.",
             qualityGrades = "توافق وعدم هجرة أو تشوه يضر الزجاج.", standardSpecs = "توافق وعدم هجرة أو تشوه يضر الزجاج.",

@@ -7,7 +7,7 @@ object FinishingMaterialsExpansion1 {
         MaterialCard(
             id = "mat_clean_sand", categoryIds = listOf(1, 3, 6, 15),
             marketNameAr = "رمل مونة نظيف ومتدرج", technicalNameAr = "Fine aggregate for mortar",
-            tradeNames = listOf("رمل طبيعي معتمد", "رمل تكسير مناسب بعد اعتماد تدرجه"), classification = "رمل مونة نظيف ومتدرج",
+            tradeNames = emptyList(), classification = "رمل مونة نظيف ومتدرج",
             definitionAndFunction = "رمل مناسب للمباني والمحارة والتسوية، يحدد تدرجه ونظافته نوع المونة المطلوبة.", componentsAndProperties = "التدرج ونسبة الناعم والأملاح طبق مواصفة المونة؛ اسم «رمل حرش» وحده ليس مواصفة.",
             availableTypes = listOf("رمل طبيعي معتمد", "رمل تكسير مناسب بعد اعتماد تدرجه"), dimensionsAndSpecs = "التدرج ونسبة الناعم والأملاح طبق مواصفة المونة؛ اسم «رمل حرش» وحده ليس مواصفة.",
             qualityGrades = "خلو من الطين والمواد العضوية والأملاح الضارة مع تدرج مقبول.", standardSpecs = "خلو من الطين والمواد العضوية والأملاح الضارة مع تدرج مقبول.",
@@ -24,7 +24,7 @@ object FinishingMaterialsExpansion1 {
         MaterialCard(
             id = "mat_clean_mix_water", categoryIds = listOf(1, 3, 4, 6, 15, 18, 27),
             marketNameAr = "مياه خلط ومعالجة نظيفة", technicalNameAr = "Mixing and curing water",
-            tradeNames = listOf("مياه نظيفة من مصدر معتمد", "مياه أخرى بعد اختبار واعتماد"), classification = "مياه خلط ومعالجة نظيفة",
+            tradeNames = emptyList(), classification = "مياه خلط ومعالجة نظيفة",
             definitionAndFunction = "مياه لا تحتوي على ملوثات تؤثر في الأسمنت أو المادة الجاهزة أو لون التشطيب.", componentsAndProperties = "نوع ونظافة وكمية المياه تتبع المنتج؛ مياه الخلط ليست مياه الغسيل الملوثة ببواقي المونة.",
             availableTypes = listOf("مياه نظيفة من مصدر معتمد", "مياه أخرى بعد اختبار واعتماد"), dimensionsAndSpecs = "نوع ونظافة وكمية المياه تتبع المنتج؛ مياه الخلط ليست مياه الغسيل الملوثة ببواقي المونة.",
             qualityGrades = "مصدر معلوم وعبوة قياس نظيفة؛ الاختبار عند الشك في الأملاح أو الملوثات.", standardSpecs = "مصدر معلوم وعبوة قياس نظيفة؛ الاختبار عند الشك في الأملاح أو الملوثات.",
@@ -41,7 +41,7 @@ object FinishingMaterialsExpansion1 {
         MaterialCard(
             id = "mat_bonding_primer", categoryIds = listOf(2, 3, 6, 15),
             marketNameAr = "برايمر ومادة ربط للمونة", technicalNameAr = "Substrate bonding primer",
-            tradeNames = listOf("برايمر للسطح الماص", "برايمر للسطح غير الماص", "مادة ربط أسمنتية بوليمرية حسب النظام"), classification = "برايمر ومادة ربط للمونة",
+            tradeNames = emptyList(), classification = "برايمر ومادة ربط للمونة",
             definitionAndFunction = "طبقة تحسن الالتصاق أو تضبط امتصاص الخلفية قبل نظام تشطيب محدد.", componentsAndProperties = "يجب أن تطابق الخلفية والطبقة التالية وزمن التغطية؛ الأسماء التجارية ليست مواد متطابقة.",
             availableTypes = listOf("برايمر للسطح الماص", "برايمر للسطح غير الماص", "مادة ربط أسمنتية بوليمرية حسب النظام"), dimensionsAndSpecs = "يجب أن تطابق الخلفية والطبقة التالية وزمن التغطية؛ الأسماء التجارية ليست مواد متطابقة.",
             qualityGrades = "نشرة توضح التوافق وطريقة التطبيق والمدة بين الطبقات.", standardSpecs = "نشرة توضح التوافق وطريقة التطبيق والمدة بين الطبقات.",
@@ -58,7 +58,7 @@ object FinishingMaterialsExpansion1 {
         MaterialCard(
             id = "mat_repair_mortar", categoryIds = listOf(2, 3, 6, 23),
             marketNameAr = "مونة إصلاح جاهزة", technicalNameAr = "Repair mortar",
-            tradeNames = listOf("مونة إصلاح أسمنتية بوليمرية", "مونة تسوية سطحية", "مونة إنشائية معتمدة لوظيفتها"), classification = "مونة إصلاح جاهزة",
+            tradeNames = emptyList(), classification = "مونة إصلاح جاهزة",
             definitionAndFunction = "مونة لإصلاح فراغات أو أجزاء متضررة ضمن حدود سماكة وخلفية محددة.", componentsAndProperties = "مقاومة وسماكة واتجاه التطبيق من النشرة؛ إصلاح الخرسانة الإنشائية يحتاج تقييمًا وتصميمًا عند اللزوم.",
             availableTypes = listOf("مونة إصلاح أسمنتية بوليمرية", "مونة تسوية سطحية", "مونة إنشائية معتمدة لوظيفتها"), dimensionsAndSpecs = "مقاومة وسماكة واتجاه التطبيق من النشرة؛ إصلاح الخرسانة الإنشائية يحتاج تقييمًا وتصميمًا عند اللزوم.",
             qualityGrades = "تصنيف واضح للوظيفة وصلاحية وعبوة سليمة.", standardSpecs = "تصنيف واضح للوظيفة وصلاحية وعبوة سليمة.",
@@ -75,7 +75,7 @@ object FinishingMaterialsExpansion1 {
         MaterialCard(
             id = "mat_waterproof_corner_tape", categoryIds = listOf(4, 8, 15),
             marketNameAr = "شريط وأركان عزل الحمام", technicalNameAr = "Waterproofing joint tape and collars",
-            tradeNames = listOf("شريط زاوية", "ركن داخلي وخارجي جاهز", "طوق اختراق ماسورة"), classification = "شريط وأركان عزل الحمام",
+            tradeNames = emptyList(), classification = "شريط وأركان عزل الحمام",
             definitionAndFunction = "قطع مرنة لربط العزل عند الزوايا والفواصل والمواسير.", componentsAndProperties = "تختار من النظام المتوافق مع مادة العزل وحركة الفاصل وقطر الاختراق.",
             availableTypes = listOf("شريط زاوية", "ركن داخلي وخارجي جاهز", "طوق اختراق ماسورة"), dimensionsAndSpecs = "تختار من النظام المتوافق مع مادة العزل وحركة الفاصل وقطر الاختراق.",
             qualityGrades = "مرونة وسلامة دون قطع مع إثبات توافقها مع العزل.", standardSpecs = "مرونة وسلامة دون قطع مع إثبات توافقها مع العزل.",
@@ -92,7 +92,7 @@ object FinishingMaterialsExpansion1 {
         MaterialCard(
             id = "mat_drain_waterproof_flange", categoryIds = listOf(4, 7, 8, 15),
             marketNameAr = "بيبة بفلنشة ربط العزل", technicalNameAr = "Bonding flange floor drain",
-            tradeNames = listOf("مصرف نقطي بفلنشة", "مصرف خطي بنظام عزل متوافق"), classification = "بيبة بفلنشة ربط العزل",
+            tradeNames = emptyList(), classification = "بيبة بفلنشة ربط العزل",
             definitionAndFunction = "مصرف يتيح اتصال العزل بالمصرف نفسه بدل ترك فراغ مخفي عند الحافة.", componentsAndProperties = "الفلنشة وارتفاع الغطاء وسعة التصريف ومانع الروائح حسب المشروع ونظام البلاط.",
             availableTypes = listOf("مصرف نقطي بفلنشة", "مصرف خطي بنظام عزل متوافق"), dimensionsAndSpecs = "الفلنشة وارتفاع الغطاء وسعة التصريف ومانع الروائح حسب المشروع ونظام البلاط.",
             qualityGrades = "اتصال موثق بين العزل والمصرف مع إمكانية تنظيف السيفون.", standardSpecs = "اتصال موثق بين العزل والمصرف مع إمكانية تنظيف السيفون.",
@@ -109,7 +109,7 @@ object FinishingMaterialsExpansion1 {
         MaterialCard(
             id = "mat_vapor_barrier", categoryIds = listOf(5, 17, 19),
             marketNameAr = "حاجز بخار أو غشاء منع رطوبة حسب النظام", technicalNameAr = "Vapour control layer / moisture barrier",
-            tradeNames = listOf("حاجز بخار لنظام عزل", "غشاء رطوبة تحت أرضية عائمة"), classification = "حاجز بخار أو غشاء منع رطوبة حسب النظام",
+            tradeNames = emptyList(), classification = "حاجز بخار أو غشاء منع رطوبة حسب النظام",
             definitionAndFunction = "غشاء يحد انتقال البخار أو الرطوبة في موضع محسوب داخل تركيب السطح أو الأرضية.", componentsAndProperties = "الوظيفة والموضع ونفاذية البخار وتراكب الوصلات حسب دراسة النظام؛ ليست كل الأغشية متبادلة.",
             availableTypes = listOf("حاجز بخار لنظام عزل", "غشاء رطوبة تحت أرضية عائمة"), dimensionsAndSpecs = "الوظيفة والموضع ونفاذية البخار وتراكب الوصلات حسب دراسة النظام؛ ليست كل الأغشية متبادلة.",
             qualityGrades = "منتج مصنف لوظيفته وشريط وصلات متوافق.", standardSpecs = "منتج مصنف لوظيفته وشريط وصلات متوافق.",
@@ -126,7 +126,7 @@ object FinishingMaterialsExpansion1 {
         MaterialCard(
             id = "mat_acoustic_sealant_strip", categoryIds = listOf(5, 19),
             marketNameAr = "شريط فصل ومعجون ختم صوتي", technicalNameAr = "Acoustic perimeter sealing system",
-            tradeNames = listOf("شريط تحت مسار القاطع", "سيلانت صوتي مرن", "نظام صوت وحريق معتمد"), classification = "شريط فصل ومعجون ختم صوتي",
+            tradeNames = emptyList(), classification = "شريط فصل ومعجون ختم صوتي",
             definitionAndFunction = "مواد لغلق تسرب الهواء وفصل التقاء القاطع أو السقف بالمحيط.", componentsAndProperties = "اختيار حسب تركيب القاطع ومتطلبات الصوت والحريق وحركة الفاصل.",
             availableTypes = listOf("شريط تحت مسار القاطع", "سيلانت صوتي مرن", "نظام صوت وحريق معتمد"), dimensionsAndSpecs = "اختيار حسب تركيب القاطع ومتطلبات الصوت والحريق وحركة الفاصل.",
             qualityGrades = "توافق مع الألواح والخلفية وشهادة أداء حيث تُطلب.", standardSpecs = "توافق مع الألواح والخلفية وشهادة أداء حيث تُطلب.",
@@ -143,7 +143,7 @@ object FinishingMaterialsExpansion1 {
         MaterialCard(
             id = "mat_self_leveling_underlayment", categoryIds = listOf(6, 17),
             marketNameAr = "مونة تسوية ذاتية للأرضيات", technicalNameAr = "Self-leveling cementitious underlayment",
-            tradeNames = listOf("أسمنتية للداخل", "أنواع لخلفيات واستخدامات أخرى بنشرة محددة"), classification = "مونة تسوية ذاتية للأرضيات",
+            tradeNames = emptyList(), classification = "مونة تسوية ذاتية للأرضيات",
             definitionAndFunction = "مادة لضبط خلفية أرضية ضمن حدود سماكة قبل تركيب تشطيب مناسب.", componentsAndProperties = "السماكة ونوع الخلفية والبرايمر وموعد التغطية حسب المنتج؛ ليست مادة لعمل ميول مصرف.",
             availableTypes = listOf("أسمنتية للداخل", "أنواع لخلفيات واستخدامات أخرى بنشرة محددة"), dimensionsAndSpecs = "السماكة ونوع الخلفية والبرايمر وموعد التغطية حسب المنتج؛ ليست مادة لعمل ميول مصرف.",
             qualityGrades = "عبوة سليمة وتصنيف مطابق للخلفية والسمك.", standardSpecs = "عبوة سليمة وتصنيف مطابق للخلفية والسمك.",
@@ -160,7 +160,7 @@ object FinishingMaterialsExpansion1 {
         MaterialCard(
             id = "mat_ppr_fittings", categoryIds = listOf(7),
             marketNameAr = "وصلات تغذية PPR: كوع وتيه وجلبة ومسلوب", technicalNameAr = "PP-R socket fusion fittings",
-            tradeNames = listOf("كوع وتيه وجلبة", "مسلوب", "وصلة بقلاوظ معدني", "يونـيون حسب النظام"), classification = "وصلات تغذية PPR: كوع وتيه وجلبة ومسلوب",
+            tradeNames = emptyList(), classification = "وصلات تغذية PPR: كوع وتيه وجلبة ومسلوب",
             definitionAndFunction = "قطع تغيير اتجاه وتفريع وربط المواسير الملحومة من النظام نفسه.", componentsAndProperties = "القطر والمادة وفئة التشغيل والتوافق مع الماسورة والماء الساخن طبق التصميم والمصنع.",
             availableTypes = listOf("كوع وتيه وجلبة", "مسلوب", "وصلة بقلاوظ معدني", "يونـيون حسب النظام"), dimensionsAndSpecs = "القطر والمادة وفئة التشغيل والتوافق مع الماسورة والماء الساخن طبق التصميم والمصنع.",
             qualityGrades = "كتابة مصنع ومقاس واضحان دون تشوه؛ تطابق نظام اللحام.", standardSpecs = "كتابة مصنع ومقاس واضحان دون تشوه؛ تطابق نظام اللحام.",
