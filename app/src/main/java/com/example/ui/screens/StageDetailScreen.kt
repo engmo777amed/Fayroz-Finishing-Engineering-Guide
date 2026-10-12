@@ -127,7 +127,7 @@ fun StageDetailScreen(
                                 contentAlignment = Alignment.Center
                             ) {
                                 Text(textKey = "ui.StageDetailScreen.1",
-                                    text = "${stage.stageNumber}",
+                                    fieldKey = "stage|${stage.id}|stageNumber", text = "${stage.stageNumber}",
                                     color = FayrozNavy,
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 15.sp
@@ -143,7 +143,7 @@ fun StageDetailScreen(
                         }
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(textKey = "ui.StageDetailScreen.3",
-                            text = stage.objective,
+                            fieldKey = "stage|${stage.id}|objective", text = stage.objective,
                             style = MaterialTheme.typography.bodyMedium,
                             color = Color.White
                         )
@@ -159,7 +159,7 @@ fun StageDetailScreen(
                     accentColor = FayrozTurquoise
                 ) {
                     Text(textKey = "ui.StageDetailScreen.4",
-                        text = stage.prerequisites,
+                        fieldKey = "stage|${stage.id}|prerequisites", text = stage.prerequisites,
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )
@@ -179,8 +179,8 @@ fun StageDetailScreen(
                         color = MaterialTheme.colorScheme.primary,
                         fontSize = 13.sp
                     )
-                    stage.requiredMaterials.forEach { mat ->
-                        Text(textKey = "ui.StageDetailScreen.6",
+                    stage.requiredMaterials.forEachIndexed { editIndexRequiredMaterials, mat ->
+                        Text(fieldKey = "stage|${stage.id}|requiredMaterials|${editIndexRequiredMaterials}", textKey = "ui.StageDetailScreen.6",
                             text = "• $mat",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurface
@@ -220,7 +220,7 @@ fun StageDetailScreen(
                                     Spacer(modifier = Modifier.width(6.dp))
                                     Column(modifier = Modifier.weight(1f)) {
                                         Text(textKey = "ui.StageDetailScreen.8",
-                                            text = mCard.marketNameAr,
+                                            fieldKey = "material|${mCard.id}|marketNameAr", text = mCard.marketNameAr,
                                             fontWeight = FontWeight.Bold,
                                             fontSize = 12.sp,
                                             color = MaterialTheme.colorScheme.onSurface
@@ -249,8 +249,8 @@ fun StageDetailScreen(
                         color = MaterialTheme.colorScheme.primary,
                         fontSize = 13.sp
                     )
-                    stage.toolsNeeded.forEach { tool ->
-                        Text(textKey = "ui.StageDetailScreen.11",
+                    stage.toolsNeeded.forEachIndexed { editIndexToolsNeeded, tool ->
+                        Text(fieldKey = "stage|${stage.id}|toolsNeeded|${editIndexToolsNeeded}", textKey = "ui.StageDetailScreen.11",
                             text = "• $tool",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurface
@@ -266,8 +266,8 @@ fun StageDetailScreen(
                     icon = Icons.Default.Construction,
                     accentColor = FayrozTurquoiseLight
                 ) {
-                    stage.executionSteps.forEach { step ->
-                        Text(textKey = "ui.StageDetailScreen.12",
+                    stage.executionSteps.forEachIndexed { editIndexExecutionSteps, step ->
+                        Text(fieldKey = "stage|${stage.id}|executionSteps|${editIndexExecutionSteps}", textKey = "ui.StageDetailScreen.12",
                             text = step,
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurface,
@@ -285,7 +285,7 @@ fun StageDetailScreen(
                     accentColor = FayrozGold
                 ) {
                     Text(textKey = "ui.StageDetailScreen.13",
-                        text = stage.dimensionsAndSlopes,
+                        fieldKey = "stage|${stage.id}|dimensionsAndSlopes", text = stage.dimensionsAndSlopes,
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )
@@ -300,7 +300,7 @@ fun StageDetailScreen(
                     accentColor = FayrozTurquoise
                 ) {
                     Text(textKey = "ui.StageDetailScreen.14",
-                        text = stage.mixesAndRatios,
+                        fieldKey = "stage|${stage.id}|mixesAndRatios", text = stage.mixesAndRatios,
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )
@@ -315,7 +315,7 @@ fun StageDetailScreen(
                     accentColor = FayrozTurquoiseLight
                 ) {
                     Text(textKey = "ui.StageDetailScreen.15",
-                        text = stage.mepCoordination,
+                        fieldKey = "stage|${stage.id}|mepCoordination", text = stage.mepCoordination,
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )
@@ -329,7 +329,7 @@ fun StageDetailScreen(
                     icon = Icons.Default.Lightbulb,
                     accentColor = FayrozGold
                 ) {
-                    stage.siteTips.forEach { tip ->
+                    stage.siteTips.forEachIndexed { editIndexSiteTips, tip ->
                         Box(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -338,7 +338,7 @@ fun StageDetailScreen(
                                 .background(FayrozGold.copy(alpha = 0.1f))
                                 .padding(10.dp)
                         ) {
-                            Text(textKey = "ui.StageDetailScreen.16",
+                            Text(fieldKey = "stage|${stage.id}|siteTips|${editIndexSiteTips}", textKey = "ui.StageDetailScreen.16",
                                 text = tip,
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurface
@@ -355,7 +355,7 @@ fun StageDetailScreen(
                     icon = Icons.Default.Warning,
                     accentColor = Color(0xFFEF4444)
                 ) {
-                    stage.commonMistakes.forEach { mistake ->
+                    stage.commonMistakes.forEachIndexed { editIndexCommonMistakes, mistake ->
                         Box(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -364,7 +364,7 @@ fun StageDetailScreen(
                                 .background(Color(0xFFEF4444).copy(alpha = 0.1f))
                                 .padding(10.dp)
                         ) {
-                            Text(textKey = "ui.StageDetailScreen.17",
+                            Text(fieldKey = "stage|${stage.id}|commonMistakes|${editIndexCommonMistakes}", textKey = "ui.StageDetailScreen.17",
                                 text = "⚠️ $mistake",
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurface
@@ -393,8 +393,8 @@ fun StageDetailScreen(
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.primary
                         )
-                        stage.technicalRequirements.forEach { requirement ->
-                            Text(textKey = "ui.StageDetailScreen.20",
+                        stage.technicalRequirements.forEachIndexed { editIndexTechnicalRequirements, requirement ->
+                            Text(fieldKey = "stage|${stage.id}|technicalRequirements|${editIndexTechnicalRequirements}", textKey = "ui.StageDetailScreen.20",
                                 text = "• $requirement",
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurface
@@ -402,8 +402,8 @@ fun StageDetailScreen(
                         }
                         Spacer(modifier = Modifier.height(8.dp))
                     }
-                    stage.qualityTests.forEach { test ->
-                        Text(textKey = "ui.StageDetailScreen.21",
+                    stage.qualityTests.forEachIndexed { editIndexQualityTests, test ->
+                        Text(fieldKey = "stage|${stage.id}|qualityTests|${editIndexQualityTests}", textKey = "ui.StageDetailScreen.21",
                             text = "✓ $test",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurface
@@ -417,8 +417,8 @@ fun StageDetailScreen(
                         color = MaterialTheme.colorScheme.primary,
                         fontSize = 13.sp
                     )
-                    stage.handoverCriteria.forEach { crit ->
-                        Text(textKey = "ui.StageDetailScreen.23",
+                    stage.handoverCriteria.forEachIndexed { editIndexHandoverCriteria, crit ->
+                        Text(fieldKey = "stage|${stage.id}|handoverCriteria|${editIndexHandoverCriteria}", textKey = "ui.StageDetailScreen.23",
                             text = "✓ $crit",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurface
@@ -434,8 +434,8 @@ fun StageDetailScreen(
                     icon = Icons.Default.MenuBook,
                     accentColor = FayrozNavyCard
                 ) {
-                    stage.codeReferences.forEach { code ->
-                        Text(textKey = "ui.StageDetailScreen.24",
+                    stage.codeReferences.forEachIndexed { editIndexCodeReferences, code ->
+                        Text(fieldKey = "stage|${stage.id}|codeReferences|${editIndexCodeReferences}", textKey = "ui.StageDetailScreen.24",
                             text = "📜 $code",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurface

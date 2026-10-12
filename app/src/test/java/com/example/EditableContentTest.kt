@@ -102,4 +102,23 @@ class EditableContentTest {
         compose.onNodeWithText("بطاقة قابلة للفتح").performTouchInput { click() }
         compose.runOnIdle { assertEquals(1, clicks) }
     }
+
+    @Test fun identicalWordingCanBeEditedIndependentlyByFieldId() {
+        val store = EditableContentStore(context)
+        val pair = store.records.flatMap { it.fields }.filter { it.key.startsWith("stage|") && it.original.length in 5..120 }
+            .groupBy { it.original }.values.first { it.size >= 2 }.take(2)
+        compose.setContent { FayrozTheme { CompositionLocalProvider(LocalContentStore provides store) {
+            androidx.compose.foundation.layout.Column {
+                EditableText(pair[0].original, fieldKey = pair[0].key)
+                EditableText(pair[1].original, fieldKey = pair[1].key)
+            }
+        } } }
+        compose.onAllNodesWithText(pair[0].original)[0].performTouchInput { longClick() }
+        compose.onNode(hasSetTextAction()).performTextClearance()
+        compose.onNode(hasSetTextAction()).performTextInput("تعديل الحقل الأول وحده")
+        compose.onNodeWithText("حفظ").performClick()
+        compose.onNodeWithText("تعديل الحقل الأول وحده").assertExists()
+        compose.onNodeWithText(pair[1].original).assertExists()
+        assertFalse(store.isEdited(pair[1].key))
+    }
 }

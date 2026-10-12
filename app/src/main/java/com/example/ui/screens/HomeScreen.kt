@@ -589,7 +589,7 @@ fun CategoryRowCard(
                 contentAlignment = Alignment.Center
             ) {
                 Text(textKey = "ui.HomeScreen.17",
-                    text = "${category.id}",
+                    fieldKey = "category|${category.id}|id", text = "${category.id}",
                     color = FayrozTurquoiseLight,
                     fontWeight = FontWeight.Bold,
                     fontSize = 14.sp
@@ -606,7 +606,7 @@ fun CategoryRowCard(
                     )
                     Spacer(modifier = Modifier.width(6.dp))
                     Text(textKey = "ui.HomeScreen.19",
-                        text = category.titleAr,
+                        fieldKey = "category|${category.id}|titleAr", text = category.titleAr,
                         style = MaterialTheme.typography.titleSmall,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onSurface,
@@ -617,7 +617,7 @@ fun CategoryRowCard(
                 }
                 Spacer(modifier = Modifier.height(2.dp))
                 Text(textKey = "ui.HomeScreen.20",
-                    text = category.summaryAr,
+                    fieldKey = "category|${category.id}|summaryAr", text = category.summaryAr,
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     maxLines = 2,

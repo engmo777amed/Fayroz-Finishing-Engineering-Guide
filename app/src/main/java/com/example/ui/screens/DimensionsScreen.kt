@@ -143,7 +143,7 @@ fun DimensionsScreen(
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
                                 Text(textKey = "ui.DimensionsScreen.2",
-                                    text = dim.itemTitle,
+                                    fieldKey = "dimension|${dim.id}|itemTitle", text = dim.itemTitle,
                                     style = MaterialTheme.typography.titleMedium,
                                     fontWeight = FontWeight.Bold,
                                     color = MaterialTheme.colorScheme.onSurface,
@@ -156,7 +156,7 @@ fun DimensionsScreen(
                                         .padding(horizontal = 8.dp, vertical = 4.dp)
                                 ) {
                                     Text(textKey = "ui.DimensionsScreen.3",
-                                        text = dim.standardValue,
+                                        fieldKey = "dimension|${dim.id}|standardValue", text = dim.standardValue,
                                         color = FayrozNavyCard,
                                         fontWeight = FontWeight.Bold,
                                         fontSize = 12.sp
@@ -169,14 +169,14 @@ fun DimensionsScreen(
 
                             Spacer(modifier = Modifier.height(6.dp))
                             Text(textKey = "ui.DimensionsScreen.4",
-                                text = "ظروف التطبيق: ${dim.applicationCondition}",
+                                fieldKey = "dimension|${dim.id}|applicationCondition", text = "ظروف التطبيق: ${dim.applicationCondition}",
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurface
                             )
 
                             Spacer(modifier = Modifier.height(4.dp))
                             Text(textKey = "ui.DimensionsScreen.5",
-                                text = "التفاوت المسموح: ${dim.tolerance}",
+                                fieldKey = "dimension|${dim.id}|tolerance", text = "التفاوت المسموح: ${dim.tolerance}",
                                 fontSize = 12.sp,
                                 color = FayrozTurquoiseLight,
                                 fontWeight = FontWeight.Medium
@@ -184,7 +184,7 @@ fun DimensionsScreen(
 
                             Spacer(modifier = Modifier.height(4.dp))
                             Text(textKey = "ui.DimensionsScreen.6",
-                                text = "المصدر والمرجع: ${dim.referenceSource}",
+                                fieldKey = "dimension|${dim.id}|referenceSource", text = "المصدر والمرجع: ${dim.referenceSource}",
                                 fontSize = 11.sp,
                                 color = MaterialTheme.colorScheme.primary
                             )
@@ -198,7 +198,7 @@ fun DimensionsScreen(
                                     .padding(8.dp)
                             ) {
                                 Text(textKey = "ui.DimensionsScreen.7",
-                                    text = "💡 ملاحظات الموقع: ${dim.practicalNotes}",
+                                    fieldKey = "dimension|${dim.id}|practicalNotes", text = "💡 ملاحظات الموقع: ${dim.practicalNotes}",
                                     style = MaterialTheme.typography.bodySmall,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant
                                 )

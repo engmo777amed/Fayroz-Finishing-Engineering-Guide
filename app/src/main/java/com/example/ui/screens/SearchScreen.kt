@@ -168,7 +168,7 @@ fun SearchScreen(
                         item { SectionHeader(title = "الصور المجسمة", count = results.figures.size) }
                         items(results.figures, key = { "figure:${it.id}" }) { figure ->
                             Card(onClick = { onNavigate(Screen.PracticalGuide(figure.categoryIds.first(), figure.title)) }, modifier = Modifier.fillMaxWidth()) {
-                                Text(figure.title, Modifier.padding(14.dp), textKey = "search.figure.${figure.id}")
+                                Text(fieldKey = "figure|${figure.id}|title", text = figure.title, modifier = Modifier.padding(14.dp), textKey = "search.figure.${figure.id}")
                             }
                         }
                     }
@@ -252,13 +252,13 @@ fun SearchScreen(
                             ) {
                                 Column(modifier = Modifier.padding(12.dp)) {
                                     Text(textKey = "ui.SearchScreen.8",
-                                        text = stage.titleAr,
+                                        fieldKey = "stage|${stage.id}|titleAr", text = stage.titleAr,
                                         style = MaterialTheme.typography.titleSmall,
                                         fontWeight = FontWeight.Bold,
                                         color = MaterialTheme.colorScheme.onSurface
                                     )
                                     Text(textKey = "ui.SearchScreen.9",
-                                        text = stage.objective,
+                                        fieldKey = "stage|${stage.id}|objective", text = stage.objective,
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                                         maxLines = 1,
@@ -346,13 +346,13 @@ fun SearchScreen(
                                 ) {
                                     Column(modifier = Modifier.weight(1f)) {
                                         Text(textKey = "ui.SearchScreen.14",
-                                            text = dim.itemTitle,
+                                            fieldKey = "dimension|${dim.id}|itemTitle", text = dim.itemTitle,
                                             style = MaterialTheme.typography.titleSmall,
                                             fontWeight = FontWeight.Bold,
                                             color = MaterialTheme.colorScheme.onSurface
                                         )
                                         Text(textKey = "ui.SearchScreen.15",
-                                            text = dim.referenceSource,
+                                            fieldKey = "dimension|${dim.id}|referenceSource", text = dim.referenceSource,
                                             fontSize = 11.sp,
                                             color = MaterialTheme.colorScheme.onSurfaceVariant
                                         )
@@ -364,7 +364,7 @@ fun SearchScreen(
                                             .padding(horizontal = 8.dp, vertical = 4.dp)
                                     ) {
                                         Text(textKey = "ui.SearchScreen.16",
-                                            text = dim.standardValue,
+                                            fieldKey = "dimension|${dim.id}|standardValue", text = dim.standardValue,
                                             fontWeight = FontWeight.Bold,
                                             color = FayrozGold,
                                             fontSize = 12.sp

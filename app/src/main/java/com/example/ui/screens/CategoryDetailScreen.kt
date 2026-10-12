@@ -264,7 +264,7 @@ fun StageCardItem(
                     contentAlignment = Alignment.Center
                 ) {
                     Text(textKey = "ui.CategoryDetailScreen.3",
-                        text = "${stage.stageNumber}",
+                        fieldKey = "stage|${stage.id}|stageNumber", text = "${stage.stageNumber}",
                         color = FayrozTurquoise,
                         fontWeight = FontWeight.Bold,
                         fontSize = 14.sp
@@ -272,7 +272,7 @@ fun StageCardItem(
                 }
                 Spacer(modifier = Modifier.width(10.dp))
                 Text(textKey = "ui.CategoryDetailScreen.4",
-                    text = stage.titleAr,
+                    fieldKey = "stage|${stage.id}|titleAr", text = stage.titleAr,
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface,
@@ -284,7 +284,7 @@ fun StageCardItem(
 
             Spacer(modifier = Modifier.height(8.dp))
             Text(textKey = "ui.CategoryDetailScreen.5",
-                text = stage.objective,
+                fieldKey = "stage|${stage.id}|objective", text = stage.objective,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 maxLines = 2,
@@ -368,13 +368,13 @@ fun MaterialCardItem(
             ) {
                 Column(modifier = Modifier.weight(1f)) {
                     Text(textKey = "ui.CategoryDetailScreen.7",
-                        text = material.marketNameAr,
+                        fieldKey = "material|${material.id}|marketNameAr", text = material.marketNameAr,
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onSurface
                     )
                     Text(textKey = "ui.CategoryDetailScreen.8",
-                        text = material.technicalNameAr,
+                        fieldKey = "material|${material.id}|technicalNameAr", text = material.technicalNameAr,
                         style = MaterialTheme.typography.labelSmall,
                         color = FayrozTurquoiseLight
                     )
@@ -388,7 +388,7 @@ fun MaterialCardItem(
 
             Spacer(modifier = Modifier.height(8.dp))
             Text(textKey = "ui.CategoryDetailScreen.9",
-                text = material.definitionAndFunction,
+                fieldKey = "material|${material.id}|definitionAndFunction", text = material.definitionAndFunction,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 maxLines = 2,
@@ -446,7 +446,7 @@ fun InspectionsTabContent(
                         }
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(textKey = "ui.CategoryDetailScreen.11",
-                            text = item.titleAr,
+                            fieldKey = "check|${item.id}|titleAr", text = item.titleAr,
                             style = MaterialTheme.typography.titleSmall,
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.onSurface
@@ -454,13 +454,13 @@ fun InspectionsTabContent(
                     }
                     Spacer(modifier = Modifier.height(6.dp))
                     Text(textKey = "ui.CategoryDetailScreen.12",
-                        text = "طريقة الفحص: ${item.method}",
+                        fieldKey = "check|${item.id}|method", text = "طريقة الفحص: ${item.method}",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurface
                     )
                     Spacer(modifier = Modifier.height(6.dp))
                     Text(textKey = "ui.CategoryDetailScreen.13",
-                        text = "معيار القبول: ${item.acceptanceCriterion}",
+                        fieldKey = "check|${item.id}|acceptanceCriterion", text = "معيار القبول: ${item.acceptanceCriterion}",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -511,7 +511,7 @@ fun DefectsTabContent(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Text(textKey = "ui.CategoryDetailScreen.15",
-                            text = defect.titleAr,
+                            fieldKey = "defect|${defect.id}|titleAr", text = defect.titleAr,
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.onSurface,
@@ -521,13 +521,13 @@ fun DefectsTabContent(
                     }
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(textKey = "ui.CategoryDetailScreen.16",
-                        text = "الاسم الدارج: ${defect.marketName}",
+                        fieldKey = "defect|${defect.id}|marketName", text = "الاسم الدارج: ${defect.marketName}",
                         style = MaterialTheme.typography.labelSmall,
                         color = FayrozGold
                     )
                     Spacer(modifier = Modifier.height(6.dp))
                     Text(textKey = "ui.CategoryDetailScreen.17",
-                        text = defect.description,
+                        fieldKey = "defect|${defect.id}|description", text = defect.description,
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         maxLines = 2,
@@ -579,7 +579,7 @@ fun DimensionsTabContent(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Text(textKey = "ui.CategoryDetailScreen.19",
-                            text = dim.itemTitle,
+                            fieldKey = "dimension|${dim.id}|itemTitle", text = dim.itemTitle,
                             style = MaterialTheme.typography.titleSmall,
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.onSurface,
@@ -592,7 +592,7 @@ fun DimensionsTabContent(
                                 .padding(horizontal = 8.dp, vertical = 3.dp)
                         ) {
                             Text(textKey = "ui.CategoryDetailScreen.20",
-                                text = dim.standardValue,
+                                fieldKey = "dimension|${dim.id}|standardValue", text = dim.standardValue,
                                 color = FayrozGold,
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 12.sp
@@ -601,19 +601,19 @@ fun DimensionsTabContent(
                     }
                     Spacer(modifier = Modifier.height(6.dp))
                     Text(textKey = "ui.CategoryDetailScreen.21",
-                        text = "شرط التطبيق: ${dim.applicationCondition}",
+                        fieldKey = "dimension|${dim.id}|applicationCondition", text = "شرط التطبيق: ${dim.applicationCondition}",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(textKey = "ui.CategoryDetailScreen.22",
-                        text = "التفاوت المسموح: ${dim.tolerance}",
+                        fieldKey = "dimension|${dim.id}|tolerance", text = "التفاوت المسموح: ${dim.tolerance}",
                         fontSize = 11.sp,
                         color = FayrozTurquoiseLight
                     )
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(textKey = "ui.CategoryDetailScreen.23",
-                        text = "المرجع: ${dim.referenceSource}",
+                        fieldKey = "dimension|${dim.id}|referenceSource", text = "المرجع: ${dim.referenceSource}",
                         fontSize = 10.sp,
                         color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
                     )

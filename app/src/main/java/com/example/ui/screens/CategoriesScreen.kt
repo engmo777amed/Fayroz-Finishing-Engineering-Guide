@@ -183,7 +183,7 @@ fun FullCategoryCard(
                     contentAlignment = Alignment.Center
                 ) {
                     Text(textKey = "ui.CategoriesScreen.2",
-                        text = "${category.id}",
+                        fieldKey = "category|${category.id}|id", text = "${category.id}",
                         color = FayrozTurquoiseLight,
                         fontWeight = FontWeight.Bold,
                         fontSize = 13.sp
@@ -207,7 +207,7 @@ fun FullCategoryCard(
                         }
                         Spacer(modifier = Modifier.width(6.dp))
                         Text(textKey = "ui.CategoriesScreen.4",
-                            text = category.titleAr,
+                            fieldKey = "category|${category.id}|titleAr", text = category.titleAr,
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.onSurface,
@@ -216,7 +216,7 @@ fun FullCategoryCard(
                         )
                     }
                     Text(textKey = "ui.CategoriesScreen.5",
-                        text = category.titleEn,
+                        fieldKey = "category|${category.id}|titleEn", text = category.titleEn,
                         style = MaterialTheme.typography.labelSmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
                         maxLines = 1
@@ -231,7 +231,7 @@ fun FullCategoryCard(
 
             Spacer(modifier = Modifier.height(8.dp))
             Text(textKey = "ui.CategoriesScreen.6",
-                text = category.summaryAr,
+                fieldKey = "category|${category.id}|summaryAr", text = category.summaryAr,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 maxLines = 2,

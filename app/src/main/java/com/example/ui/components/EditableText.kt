@@ -42,13 +42,13 @@ fun EditableText(
     textAlign: TextAlign? = null, lineHeight: TextUnit = TextUnit.Unspecified,
     overflow: TextOverflow = TextOverflow.Clip, softWrap: Boolean = true,
     maxLines: Int = Int.MAX_VALUE, minLines: Int = 1,
-    onTextLayout: (TextLayoutResult) -> Unit = {}, textKey: String = "",
+    onTextLayout: (TextLayoutResult) -> Unit = {}, textKey: String = "", fieldKey: String = "",
     style: TextStyle = androidx.compose.material3.LocalTextStyle.current
 ) {
     val store = LocalContentStore.current
     val scope = LocalRecordScope.current
     val revision = store?.revision?.collectAsState()?.value ?: 0
-    val target = remember(store, scope, text, textKey, revision) { store?.target(text, scope, textKey) }
+    val target = remember(store, scope, text, textKey, fieldKey, revision) { store?.field(fieldKey) ?: store?.target(text, scope, textKey) }
     var editing by remember(target?.key) { mutableStateOf(false) }
     val displayed = if (store != null && target != null) {
         if (target.key.startsWith("ui|")) store.value(target.key, text)

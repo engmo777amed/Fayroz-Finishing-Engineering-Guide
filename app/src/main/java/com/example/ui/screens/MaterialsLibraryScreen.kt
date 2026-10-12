@@ -218,13 +218,13 @@ fun FullMaterialListCard(
             ) {
                 Column(modifier = Modifier.weight(1f)) {
                     Text(textKey = "ui.MaterialsLibraryScreen.4",
-                        text = material.marketNameAr,
+                        fieldKey = "material|${material.id}|marketNameAr", text = material.marketNameAr,
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onSurface
                     )
                     Text(textKey = "ui.MaterialsLibraryScreen.5",
-                        text = material.technicalNameAr,
+                        fieldKey = "material|${material.id}|technicalNameAr", text = material.technicalNameAr,
                         style = MaterialTheme.typography.labelSmall,
                         color = FayrozTurquoiseLight
                     )
@@ -238,7 +238,7 @@ fun FullMaterialListCard(
 
             Spacer(modifier = Modifier.height(6.dp))
             Text(textKey = "ui.MaterialsLibraryScreen.6",
-                text = material.definitionAndFunction,
+                fieldKey = "material|${material.id}|definitionAndFunction", text = material.definitionAndFunction,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 maxLines = 2
@@ -257,7 +257,7 @@ fun FullMaterialListCard(
 
             Spacer(modifier = Modifier.height(6.dp))
             Text(textKey = "ui.MaterialsLibraryScreen.7",
-                text = "المواصفة: ${material.standardSpecs}",
+                fieldKey = "material|${material.id}|standardSpecs", text = "المواصفة: ${material.standardSpecs}",
                 fontSize = 11.sp,
                 color = FayrozGold,
                 maxLines = 1

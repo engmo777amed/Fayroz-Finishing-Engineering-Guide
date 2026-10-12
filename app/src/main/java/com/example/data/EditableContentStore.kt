@@ -55,7 +55,9 @@ class EditableContentStore(context: Context) {
     }
     fun text(kind: String, id: String, field: String, original: String) = value("$kind|$id|$field", original)
     fun texts(kind: String, id: String, field: String, original: List<String>) = original.mapIndexed { i, s -> value("$kind|$id|$field|$i", s) }
-    private fun normalized(s: String) = s.trim().replace(Regex("^[•·\\u0007]\\s*"), "").replace(Regex("^\\d+[.)]\\s*"), "").trim()
+    private val fieldsByKey by lazy { records.flatMap { it.fields }.associateBy { it.key } }
+    fun field(key: String): EditableField? = fieldsByKey[key]
+    private fun normalized(s: String) = s.trim().removePrefix("✓ ").removePrefix("⚠️ ").removePrefix("📜 ").replace(Regex("^[•·\\u0007]\\s*"), "").replace(Regex("^\\d+[.)]\\s*"), "").trim()
     private var lookupRevision = -1
     private var fieldLookup: Map<String, List<EditableField>> = emptyMap()
     fun target(text: String, scope: String, uiKey: String): EditableField {
@@ -68,7 +70,7 @@ class EditableContentStore(context: Context) {
             }.groupBy({ it.first }, { it.second })
             lookupRevision = _revision.value
         }
-        val match = scoped.firstOrNull(::matches) ?: fieldLookup[needle]?.singleOrNull()
+        val match = scoped.filter(::matches).singleOrNull() ?: fieldLookup[needle]?.singleOrNull()
         if (match != null) return match
         val identity = if (uiKey.isNotBlank()) uiKey + "|" + MessageDigest.getInstance("SHA-256").digest(text.toByteArray()).take(8).joinToString("") { "%02x".format(it) } else MessageDigest.getInstance("SHA-256").digest(text.toByteArray()).joinToString("") { "%02x".format(it) }
         return EditableField("ui|$scope|$identity", "النص المعروض", text)

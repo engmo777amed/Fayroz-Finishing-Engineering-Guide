@@ -51,9 +51,9 @@ fun PracticalGuideScreen(categoryId: Int?, viewModel: FinishingViewModel, onNavi
                 CompositionLocalProvider(LocalRecordScope provides "guide|${entry.id}") {
                     Card(Modifier.fillMaxWidth()) {
                         Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                            Text(entry.title, style = MaterialTheme.typography.titleMedium)
-                            Text(entry.body, style = MaterialTheme.typography.bodyMedium)
-                            Text(entry.source, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary)
+                            Text(fieldKey = "guide|${entry.id}|title", text = entry.title, style = MaterialTheme.typography.titleMedium)
+                            Text(fieldKey = "guide|${entry.id}|body", text = entry.body, style = MaterialTheme.typography.bodyMedium)
+                            Text(fieldKey = "guide|${entry.id}|source", text = entry.source, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary)
                             if (categoryId == null) TextButton(onClick = { onNavigate(Screen.CategoryDetail(entry.categoryId)) }) { Text("فتح البند", textKey = "guide.open.category") }
                         }
                     }
@@ -69,13 +69,13 @@ fun FigureCard(figure: TechnicalFigure) {
     CompositionLocalProvider(LocalRecordScope provides "figure|${figure.id}") {
         Card(Modifier.fillMaxWidth().testTag("figure_${figure.id}")) {
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text(figure.title, modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp), style = MaterialTheme.typography.titleMedium)
+                Text(fieldKey = "figure|${figure.id}|title", text = figure.title, modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp), style = MaterialTheme.typography.titleMedium)
                 FigureImage(figure, Modifier.fillMaxWidth().aspectRatio(4f / 3f).testTag("figure_image_${figure.id}").clickable { expanded = true })
                 Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    figure.labels.forEach { Text(it, style = MaterialTheme.typography.bodyMedium) }
-                    Text(figure.caption, style = MaterialTheme.typography.bodyMedium)
-                    Text(figure.limits, style = MaterialTheme.typography.bodySmall)
-                    Text(figure.sourceUrl, color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.bodySmall)
+                    figure.labels.forEachIndexed { index, label -> Text(text = label, fieldKey = "figure|${figure.id}|labels|$index", style = MaterialTheme.typography.bodyMedium) }
+                    Text(fieldKey = "figure|${figure.id}|caption", text = figure.caption, style = MaterialTheme.typography.bodyMedium)
+                    Text(fieldKey = "figure|${figure.id}|limits", text = figure.limits, style = MaterialTheme.typography.bodySmall)
+                    Text(fieldKey = "figure|${figure.id}|sourceUrl", text = figure.sourceUrl, color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.bodySmall)
                 }
             }
         }
@@ -99,7 +99,7 @@ fun FigureCard(figure: TechnicalFigure) {
                         }, contentAlignment = Alignment.Center) {
                             FigureImage(figure, Modifier.fillMaxWidth().aspectRatio(4f / 3f).graphicsLayer { scaleX = scale; scaleY = scale; translationX = offsetX; translationY = offsetY })
                         }
-                        Text(figure.limits, Modifier.padding(12.dp), style = MaterialTheme.typography.bodySmall)
+                        Text(fieldKey = "figure|${figure.id}|limits", text = figure.limits, modifier = Modifier.padding(12.dp), style = MaterialTheme.typography.bodySmall)
                     }
                 }
             }
@@ -114,7 +114,7 @@ private fun FigureImage(figure: TechnicalFigure, modifier: Modifier) {
     Box(modifier.background(Color(0xFFEAE8E3))) {
         Image(bitmap, contentDescription = figure.title, contentScale = ContentScale.Fit, modifier = Modifier.fillMaxSize())
         Surface(Modifier.align(Alignment.BottomCenter).fillMaxWidth(), color = Color.White.copy(alpha = 0.94f)) {
-            Text(figure.dimensionText, Modifier.padding(10.dp), color = Color(0xFF152F43), style = MaterialTheme.typography.labelMedium)
+            Text(fieldKey = "figure|${figure.id}|dimensionText", text = figure.dimensionText, modifier = Modifier.padding(10.dp), color = Color(0xFF152F43), style = MaterialTheme.typography.labelMedium)
         }
     }
 }

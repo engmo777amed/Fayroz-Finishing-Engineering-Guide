@@ -123,14 +123,14 @@ fun MaterialDetailScreen(
                             fontWeight = FontWeight.Bold
                         )
                         Text(textKey = "ui.MaterialDetailScreen.2",
-                            text = material.marketNameAr,
+                            fieldKey = "material|${material.id}|marketNameAr", text = material.marketNameAr,
                             style = MaterialTheme.typography.titleLarge,
                             color = Color.White,
                             fontWeight = FontWeight.Bold
                         )
                         Spacer(modifier = Modifier.height(4.dp))
                         Text(textKey = "ui.MaterialDetailScreen.3",
-                            text = "الاسم العلمي/الفني: ${material.technicalNameAr}",
+                            fieldKey = "material|${material.id}|technicalNameAr", text = "الاسم العلمي/الفني: ${material.technicalNameAr}",
                             style = MaterialTheme.typography.bodySmall,
                             color = FayrozGold
                         )
@@ -158,7 +158,7 @@ fun MaterialDetailScreen(
                         horizontalArrangement = Arrangement.spacedBy(6.dp),
                         verticalArrangement = Arrangement.spacedBy(6.dp)
                     ) {
-                        material.egyptianBrands.forEach { brand ->
+                        material.egyptianBrands.forEachIndexed { editIndexEgyptianBrands, brand ->
                             EgyptianBrandChip(brand)
                         }
                     }
@@ -173,7 +173,7 @@ fun MaterialDetailScreen(
                     accentColor = FayrozTurquoiseLight
                 ) {
                     Text(textKey = "ui.MaterialDetailScreen.5",
-                        text = material.definitionAndFunction,
+                        fieldKey = "material|${material.id}|definitionAndFunction", text = material.definitionAndFunction,
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )
@@ -191,14 +191,14 @@ fun MaterialDetailScreen(
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(textKey = "ui.MaterialDetailScreen.8",
-                        text = "المميزات والعيوب: ${material.prosAndCons}",
+                        fieldKey = "material|${material.id}|prosAndCons", text = "المميزات والعيوب: ${material.prosAndCons}",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )
 
                     Spacer(modifier = Modifier.height(6.dp))
                     Text(textKey = "ui.MaterialDetailScreen.9",
-                        text = "المكونات والخصائص: ${material.componentsAndProperties}",
+                        fieldKey = "material|${material.id}|componentsAndProperties", text = "المكونات والخصائص: ${material.componentsAndProperties}",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -219,13 +219,13 @@ fun MaterialDetailScreen(
                         fontSize = 13.sp
                     )
                     Text(textKey = "ui.MaterialDetailScreen.11",
-                        text = material.dimensionsAndSpecs,
+                        fieldKey = "material|${material.id}|dimensionsAndSpecs", text = material.dimensionsAndSpecs,
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(textKey = "ui.MaterialDetailScreen.12",
-                        text = "درجات الجودة: ${material.qualityGrades}",
+                        fieldKey = "material|${material.id}|qualityGrades", text = "درجات الجودة: ${material.qualityGrades}",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )
@@ -238,7 +238,7 @@ fun MaterialDetailScreen(
                         fontSize = 13.sp
                     )
                     Text(textKey = "ui.MaterialDetailScreen.14",
-                        text = material.standardSpecs,
+                        fieldKey = "material|${material.id}|standardSpecs", text = material.standardSpecs,
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )
@@ -260,7 +260,7 @@ fun MaterialDetailScreen(
                             .padding(10.dp)
                     ) {
                         Text(textKey = "ui.MaterialDetailScreen.15",
-                            text = material.counterfeitDetection,
+                            fieldKey = "material|${material.id}|counterfeitDetection", text = material.counterfeitDetection,
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurface,
                             fontWeight = FontWeight.Medium
@@ -277,7 +277,7 @@ fun MaterialDetailScreen(
                     accentColor = FayrozTurquoise
                 ) {
                     Text(textKey = "ui.MaterialDetailScreen.16",
-                        text = material.installationMethod,
+                        fieldKey = "material|${material.id}|installationMethod", text = material.installationMethod,
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )
@@ -288,8 +288,8 @@ fun MaterialDetailScreen(
                         color = MaterialTheme.colorScheme.primary,
                         fontSize = 13.sp
                     )
-                    material.installationTools.forEach { tool ->
-                        Text(textKey = "ui.MaterialDetailScreen.18",
+                    material.installationTools.forEachIndexed { editIndexInstallationTools, tool ->
+                        Text(fieldKey = "material|${material.id}|installationTools|${editIndexInstallationTools}", textKey = "ui.MaterialDetailScreen.18",
                             text = "• $tool",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurface
@@ -306,7 +306,7 @@ fun MaterialDetailScreen(
                     accentColor = FayrozGold
                 ) {
                     Text(textKey = "ui.MaterialDetailScreen.19",
-                        text = material.storageAndHandling,
+                        fieldKey = "material|${material.id}|storageAndHandling", text = material.storageAndHandling,
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )
@@ -320,8 +320,8 @@ fun MaterialDetailScreen(
                     icon = Icons.Default.CheckCircle,
                     accentColor = FayrozTurquoiseLight
                 ) {
-                    material.inspectionAndAcceptance.forEach { item ->
-                        Text(textKey = "ui.MaterialDetailScreen.20",
+                    material.inspectionAndAcceptance.forEachIndexed { editIndexInspectionAndAcceptance, item ->
+                        Text(fieldKey = "material|${material.id}|inspectionAndAcceptance|${editIndexInspectionAndAcceptance}", textKey = "ui.MaterialDetailScreen.20",
                             text = "✓ $item",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurface,
@@ -339,14 +339,14 @@ fun MaterialDetailScreen(
                     accentColor = FayrozGold
                 ) {
                     Text(textKey = "ui.MaterialDetailScreen.21",
-                        text = "العمر الافتراضي التقديري: ${material.lifespan}",
+                        fieldKey = "material|${material.id}|lifespan", text = "العمر الافتراضي التقديري: ${material.lifespan}",
                         fontWeight = FontWeight.Bold,
                         color = FayrozTurquoiseLight,
                         fontSize = 13.sp
                     )
                     Spacer(modifier = Modifier.height(6.dp))
                     Text(textKey = "ui.MaterialDetailScreen.22",
-                        text = "تعليمات الصيانة: ${material.maintenanceInstructions}",
+                        fieldKey = "material|${material.id}|maintenanceInstructions", text = "تعليمات الصيانة: ${material.maintenanceInstructions}",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurface
                     )
@@ -357,8 +357,8 @@ fun MaterialDetailScreen(
                         color = Color(0xFFEF4444),
                         fontSize = 13.sp
                     )
-                    material.commonMisuses.forEach { err ->
-                        Text(textKey = "ui.MaterialDetailScreen.24",
+                    material.commonMisuses.forEachIndexed { editIndexCommonMisuses, err ->
+                        Text(fieldKey = "material|${material.id}|commonMisuses|${editIndexCommonMisuses}", textKey = "ui.MaterialDetailScreen.24",
                             text = "• $err",
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurface
@@ -375,7 +375,7 @@ fun MaterialDetailScreen(
                         icon = Icons.Default.PlayArrow,
                         accentColor = FayrozTurquoise
                     ) {
-                        material.relatedStageIds.forEach { sId ->
+                        material.relatedStageIds.forEachIndexed { editIndexRelatedStageIds, sId ->
                             val linkedStage = repository.getStageById(sId)
                             if (linkedStage != null) {
                                 Box(
