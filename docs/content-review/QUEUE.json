@@ -146,5 +146,11 @@
       "status": "queued",
       "report": "docs/content-review/BATCH13.md"
     }
-  ]
+  ],
+  "automation_id": "6acd4374ab308191b2a650afcc1d1968",
+  "validation": {
+    "previous_code_commit": "25b77e673bd471eed3185ea52f6a15ae9782e114",
+    "run_id": 38304636420,
+    "status": "check_latest_code_before_advancing"
+  }
 }
