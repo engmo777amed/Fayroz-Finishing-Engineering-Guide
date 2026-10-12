@@ -8,9 +8,9 @@
     "combine_once_after_all_batches": true
   },
   "next_batch": 2,
-  "last_completed_batch": 0,
-  "current_batch": 1,
-  "status": "awaiting_ci",
+  "last_completed_batch": 1,
+  "current_batch": 2,
+  "status": "in_progress",
   "batches": [
     {
       "id": 1,
@@ -20,8 +20,10 @@
         3
       ],
       "title": "المباني وتجهيز الأسطح والمحارة",
-      "status": "awaiting_ci",
-      "report": "docs/content-review/BATCH01.md"
+      "status": "completed",
+      "report": "docs/content-review/BATCH01.md",
+      "validated_commit": "985f089fed26ad78449a704f0d2779bcf5c581ae",
+      "ci_run": 38305031169
     },
     {
       "id": 2,
@@ -31,7 +33,7 @@
         6
       ],
       "title": "العزل والميول",
-      "status": "queued",
+      "status": "in_progress",
       "report": "docs/content-review/BATCH02.md"
     },
     {
@@ -149,8 +151,13 @@
   ],
   "automation_id": "6acd4374ab308191b2a650afcc1d1968",
   "validation": {
-    "previous_code_commit": "25b77e673bd471eed3185ea52f6a15ae9782e114",
-    "run_id": 38304636420,
-    "status": "check_latest_code_before_advancing"
+    "code_commit": "985f089fed26ad78449a704f0d2779bcf5c581ae",
+    "run_id": 38305031169,
+    "status": "success"
+  },
+  "active_run": {
+    "batch": 2,
+    "started_at": "2026-10-12T20:37:55.052Z",
+    "lease_minutes": 50
   }
 }
