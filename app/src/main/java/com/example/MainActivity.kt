@@ -70,6 +70,10 @@ fun FayrozAppRoot(
             currentScreen is Screen.MaterialsLibrary ||
             currentScreen is Screen.TroubleshootingList
 
+    CompositionLocalProvider(
+        LocalContentStore provides viewModel.repository.textStore,
+        LocalEditorOpen provides { viewModel.navigateTo(Screen.ContentEditor) }
+    ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         bottomBar = {
@@ -182,6 +186,7 @@ fun FayrozAppRoot(
             }
             }
         }
+    }
     }
 }
 
