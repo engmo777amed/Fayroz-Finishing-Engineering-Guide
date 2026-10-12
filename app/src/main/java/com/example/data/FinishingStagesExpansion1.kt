@@ -43,7 +43,7 @@ object FinishingStagesExpansion1 {
             commonMistakes = listOf("إخفاء شرخ متحرك بمعجون جامد أو غسيل الأملاح ثم دهان مباشر.", "وضع مادة رابطة فوق أتربة أو دهان مفكك.", "اعتبار كل شرخ سطحيًا وإخفاؤه بشبك دون تشخيص."),
             qualityTests = listOf("متابعة الجفاف وعدم رجوع الأملاح.", "عينة التصاق فوق موضع الإصلاح."),
             handoverCriteria = listOf("مصدر البلل معالج ونتيجة اختبار الخدمة مقبولة.", "الخلفية مستقرة ولا تظهر أملاح جديدة أو طبقة مفككة."),
-            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "British Gypsum — Plaster systems، تحديث22/05/2025، ص6–8؛ شرح لنظام Thistle فقط: https://www.british-gypsum.com/documents/white-book/british-gypsum-wb-plaster-systems.pdf"),
+            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "British Gypsum — Plaster systems، تحديث 22/05/2025، ص 6–8؛ شرح لنظام Thistle فقط: https://www.british-gypsum.com/documents/white-book/british-gypsum-wb-plaster-systems.pdf"),
             relatedMaterialIds = listOf("mat_repair_mortar", "mat_moisture_meter")
         ),
         ExecutionStage(
@@ -64,7 +64,7 @@ object FinishingStagesExpansion1 {
             commonMistakes = listOf("وضع طرطشة على دهان لامع أو اعتبار أي أديبوند صالحًا لكل الخلفيات.", "وضع مادة رابطة فوق أتربة أو دهان مفكك.", "اعتبار كل شرخ سطحيًا وإخفاؤه بشبك دون تشخيص."),
             qualityTests = listOf("اختبار تماسك الخلفية وعينة الطبقات الجديدة.", "فحص جفاف أو لزوجة البرايمر قبل الطبقة التالية حسب المنتج."),
             handoverCriteria = listOf("لا انفصال بالعينة بعد معالجة النظام، والطبقات متوافقة مع الخلفية.", "المادة وطريقة تجهيزها وتوقيت تغطيتها محددة وقابلة للتكرار."),
-            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "Sika مصر — SikaEmaco SBR 2، قسم التطبيق: https://egy.sika.com/en/construction/concrete-repair/admixtures-for-site-batchmortars/sikaemaco-sbr-2.html", "British Gypsum — Plaster systems، تحديث22/05/2025، ص6–8؛ شرح لنظام Thistle فقط: https://www.british-gypsum.com/documents/white-book/british-gypsum-wb-plaster-systems.pdf"),
+            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "Sika مصر — SikaEmaco SBR 2، قسم التطبيق: https://egy.sika.com/en/construction/concrete-repair/admixtures-for-site-batchmortars/sikaemaco-sbr-2.html", "British Gypsum — Plaster systems، تحديث 22/05/2025، ص 6–8؛ شرح لنظام Thistle فقط: https://www.british-gypsum.com/documents/white-book/british-gypsum-wb-plaster-systems.pdf"),
             relatedMaterialIds = listOf("mat_fiber_mesh_160", "mat_bonding_primer")
         ),
         ExecutionStage(
@@ -85,7 +85,7 @@ object FinishingStagesExpansion1 {
             commonMistakes = listOf("ملء تطبيل فوق طبقة مفككة أو فرد سمك كبير مرة واحدة.", "استعمال مونة بدأت تشك ثم تليينها بمياه.", "غلق فاصل حركة بالمونة أو تركيب شبك مرتخٍ فوق فاصل مواد مختلفة."),
             qualityTests = listOf("فحص استواء وتماسك الرقعة بعد المعالجة.", "متابعة الشرخ والرطوبة قبل الدهان."),
             handoverCriteria = listOf("الرقعة متماسكة ولا يتكرر سبب العيب عند إعادة الفحص.", "الحواف والملمس والاستواء مناسبون للتشطيب التالي."),
-            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "Weber مصر — DRY MORTAR 300، نشرة 04.24، ص1–2: https://www.middleeast.weber/files/sodamco/2024-05/TDS_DRY_MORTAR_300-Egypt.pdf"),
+            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "Weber مصر — DRY MORTAR 300، نشرة 04.24، ص 1–2: https://www.middleeast.weber/files/sodamco/2024-05/TDS_DRY_MORTAR_300-Egypt.pdf"),
             relatedMaterialIds = listOf("mat_ready_mix_plaster", "mat_fiber_mesh_160", "mat_repair_mortar")
         ),
         ExecutionStage(

@@ -295,7 +295,7 @@ object FinishingStagesReview2 {
             commonMistakes = listOf("دهان برايمر فوق زيت أو أتربة أو طبقة منفصلة."),
             qualityTests = listOf("فحص نظافة وقوة الخلفية وعينة الالتصاق."),
             handoverCriteria = listOf("السطح نظيف ومتماسك ومجهز لنوع الطبقة التالية.", "تجربة التجهيز والربط مقبولة قبل تعميم التنفيذ."),
-            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "Weber مصر — DRY MORTAR 300، نشرة 04.24، ص1–2: https://www.middleeast.weber/files/sodamco/2024-05/TDS_DRY_MORTAR_300-Egypt.pdf"),
+            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "Weber مصر — DRY MORTAR 300، نشرة 04.24، ص 1–2: https://www.middleeast.weber/files/sodamco/2024-05/TDS_DRY_MORTAR_300-Egypt.pdf"),
             relatedMaterialIds = listOf("mat_bonding_primer", "mat_wall_primer")
         ),
         ExecutionStage(
@@ -316,7 +316,7 @@ object FinishingStagesReview2 {
             commonMistakes = listOf("غلق الرطوبة بمعجون أو دهان قبل إصلاح المصدر."),
             qualityTests = listOf("مقارنة صور وقراءات متتابعة واختبار مصدر الماء ثم فحص جفاف السطح."),
             handoverCriteria = listOf("سبب العيب وخطة علاجه محددان؛ لا يُعتمد الإصلاح بالمظهر فقط.", "لا توجد حركة مستمرة أو تسريب غير معالج قبل بدء التشطيب."),
-            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "British Gypsum — Plaster systems، تحديث22/05/2025، ص6–8؛ شرح لنظام Thistle فقط: https://www.british-gypsum.com/documents/white-book/british-gypsum-wb-plaster-systems.pdf"),
+            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "British Gypsum — Plaster systems، تحديث 22/05/2025، ص 6–8؛ شرح لنظام Thistle فقط: https://www.british-gypsum.com/documents/white-book/british-gypsum-wb-plaster-systems.pdf"),
             relatedMaterialIds = listOf("mat_repair_mortar", "mat_moisture_meter")
         ),
         ExecutionStage(
@@ -337,7 +337,7 @@ object FinishingStagesReview2 {
             commonMistakes = listOf("غلق المجرى قبل اختبار المواسير أو إضافة جبس عشوائي لتسريع الشك."),
             qualityTests = listOf("فحص الغلق بالقدة والطرق الخفيف مع مراجعة صور الخدمات."),
             handoverCriteria = listOf("اختبار الخدمة موثق قبل الغلق.", "المجرى ممتلئ ومتوافق مع المحارة، دون طبقة مفككة أو فاصل حركة مغلق."),
-            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "Weber مصر — DRY MORTAR 300، نشرة 04.24، ص1–2: https://www.middleeast.weber/files/sodamco/2024-05/TDS_DRY_MORTAR_300-Egypt.pdf"),
+            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "Weber مصر — DRY MORTAR 300، نشرة 04.24، ص 1–2: https://www.middleeast.weber/files/sodamco/2024-05/TDS_DRY_MORTAR_300-Egypt.pdf"),
             relatedMaterialIds = listOf("mat_repair_mortar", "mat_fiber_mesh_160")
         ),
         ExecutionStage(
@@ -358,7 +358,7 @@ object FinishingStagesReview2 {
             commonMistakes = listOf("تليين مونة بدأت تشك أو تعديل خلطة جاهزة بإضافات غير مسموحة."),
             qualityTests = listOf("عينة ومراجعة خلط وسمك وقدة وطرق بعد المعالجة."),
             handoverCriteria = listOf("الخلطة قابلة للتكرار ومطابقة لاعتماد الصنف والعينة.", "المونة متجانسة وتستخدم داخل زمن تشغيلها دون إعادة تليين بعد الشك."),
-            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "Weber مصر — DRY MORTAR 300، نشرة 04.24، ص1–2: https://www.middleeast.weber/files/sodamco/2024-05/TDS_DRY_MORTAR_300-Egypt.pdf"),
+            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "Weber مصر — DRY MORTAR 300، نشرة 04.24، ص 1–2: https://www.middleeast.weber/files/sodamco/2024-05/TDS_DRY_MORTAR_300-Egypt.pdf"),
             relatedMaterialIds = listOf("mat_drymix_plaster", "mat_review_38")
         ),
         ExecutionStage(
@@ -379,7 +379,7 @@ object FinishingStagesReview2 {
             commonMistakes = listOf("تنفيذ ضهارة أو معجون ضعيف تحت لاصق البلاط."),
             qualityTests = listOf("قدة ورأسية وعينة توافق مع طبقات العزل واللاصق."),
             handoverCriteria = listOf("الخلفية مناسبة للموضع وللطبقات التالية بنظام معتمد.", "المحارة مستقرة وتفاوتها يسمح بتنفيذ سمك اللاصق المحدد."),
-            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "British Gypsum — Plaster systems، تحديث22/05/2025، ص6–8؛ شرح لنظام Thistle فقط: https://www.british-gypsum.com/documents/white-book/british-gypsum-wb-plaster-systems.pdf"),
+            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "British Gypsum — Plaster systems، تحديث 22/05/2025، ص 6–8؛ شرح لنظام Thistle فقط: https://www.british-gypsum.com/documents/white-book/british-gypsum-wb-plaster-systems.pdf"),
             relatedMaterialIds = listOf("mat_drymix_plaster", "mat_bonding_primer")
         )
     )

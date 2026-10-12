@@ -22,7 +22,7 @@ object FinishingStagesReview3 {
             commonMistakes = listOf("علاج التطبيل بدهان مادة على وجه المحارة أو إخفاء الشرخ النشط."),
             qualityTests = listOf("قدة مناسبة وطرق خفيف وفحص الشروخ بعد الجفاف."),
             handoverCriteria = listOf("سبب العيب وخطة الإصلاح واضحان؛ لا يُختزل العلاج في معجون أو دهان.", "لا تغطية لشرخ نشط أو طبقة معرضة للسقوط."),
-            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "Weber مصر — DRY MORTAR 300، نشرة 04.24، ص1–2: https://www.middleeast.weber/files/sodamco/2024-05/TDS_DRY_MORTAR_300-Egypt.pdf"),
+            codeReferences = listOf("اعتماد المشروع المطلوب: نوع الخلفية، نظام المحارة، السمك وعدد الطبقات، ملمس التشطيب، وطريقة وحدود قياس الاستواء والرأسية.", "Weber مصر — DRY MORTAR 300، نشرة 04.24، ص 1–2: https://www.middleeast.weber/files/sodamco/2024-05/TDS_DRY_MORTAR_300-Egypt.pdf"),
             relatedMaterialIds = listOf("mat_repair_mortar", "mat_fiber_mesh_160")
         ),
         ExecutionStage(

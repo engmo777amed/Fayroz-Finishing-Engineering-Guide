@@ -29,7 +29,8 @@ class Batch01ReviewTest {
         val masonry = FinishingCatalog.stages.single { it.id == "stage_masonry_02" }
         assertFalse(masonry.handoverCriteria.any { it.contains("التشحيط محكم ومضغوط") })
         val separation = FinishingDefectsData.defects.single { it.id == "def_masonry_column_separation" }
-        assertFalse(separation.preventionMethod.contains("أوتاد"))
+        assertTrue(separation.preventionMethod.contains("لا تستخدم الحشر"))
+        assertFalse(separation.preventionMethod.contains("إلزامياً"))
         val plaster = FinishingCatalog.materials.single { it.id == "mat_drymix_plaster" }
         assertTrue(plaster.dimensionsAndSpecs.contains("DRY MORTAR 300"))
         assertTrue(plaster.dimensionsAndSpecs.contains("لهذا الصنف فقط"))

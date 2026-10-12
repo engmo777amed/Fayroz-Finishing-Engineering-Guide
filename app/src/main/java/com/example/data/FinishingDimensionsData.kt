@@ -8,7 +8,7 @@ object FinishingDimensionsData {
             id = "dim_sherb_level",
             categoryId = 1,
             itemTitle = "خط الشرب: المرجع الثابت للمناسيب",
-            standardValue = "خط معلوم العلاقة بمنسوب التشطيب؛ اختيار+1.00م مثال تنظيمي فقط.",
+            standardValue = "خط معلوم العلاقة بمنسوب التشطيب؛ اختيار+1.00 م مثال تنظيمي فقط.",
             tolerance = "حدد حد القبول وطريقة وطول القياس في مواصفة المشروع قبل التنفيذ؛ لا توجد سماحية عامة لكل الأنظمة.",
             applicationCondition = "اربط الخط بمنسوب الأرضية النهائي وانقله إلى نقاط محمية يمكن الرجوع إليها.",
             referenceType = DimensionRefType.BEST_PRACTICE,
@@ -43,9 +43,9 @@ object FinishingDimensionsData {
             itemTitle = "سمك المحارة وحدود الطبقة",
             standardValue = "قِس فرق الخلفية أولًا ثم راجع سمك كل طبقة وحدود نظام المحارة.",
             tolerance = "حدد حد القبول وطريقة وطول القياس في مواصفة المشروع قبل التنفيذ؛ لا توجد سماحية عامة لكل الأنظمة.",
-            applicationCondition = "مثال DRY MORTAR300 مصر، نشرة04.24 ص2:10–20مم للطبقة؛ لا يعمم على غيره.",
+            applicationCondition = "مثال DRY MORTAR 300 مصر، نشرة 04.24 ص 2:10–20 مم للطبقة؛ لا يعمم على غيره.",
             referenceType = DimensionRefType.BEST_PRACTICE,
-            referenceSource = "Weber مصر — DRY MORTAR 300، نشرة 04.24، ص1–2: https://www.middleeast.weber/files/sodamco/2024-05/TDS_DRY_MORTAR_300-Egypt.pdf",
+            referenceSource = "Weber مصر — DRY MORTAR 300، نشرة 04.24، ص 1–2: https://www.middleeast.weber/files/sodamco/2024-05/TDS_DRY_MORTAR_300-Egypt.pdf",
             practicalNotes = "عند تجاوز الحد اعتمد معالجة الخلفية أو نظام طبقات وتثبيت مناسبًا؛ شبك الفايبر ليس بديلًا تلقائيًا عن حامل محارة معدني."
         ),
         TechnicalDimension(
