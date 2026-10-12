@@ -52,6 +52,7 @@ class TechnicalContentRegressionTest {
         val rail = stage("stage_metal_01")
         assertFalse(rail.qualityTests.any { it.contains("100 كجم") })
         val door = FinishingDimensionsData.dimensions.single { it.id == "dim_door_rough_opening" }
-        assertTrue(door.practicalNotes.contains("الحلق"))
+        assertTrue(door.practicalNotes.contains("حلق"))
+        assertTrue(door.applicationCondition.contains("التشطيب النهائي"))
     }
 }
