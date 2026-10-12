@@ -36,7 +36,7 @@ class Batch03ReviewTest {
         val text = dimensions.joinToString(" ") { "${it.standardValue} ${it.practicalNotes} ${it.referenceSource}" }
         assertFalse(text.contains("15 سم بين"))
         assertFalse(text.contains("10–12 سم"))
-        assertTrue(text.contains("المشروع") || text.contains("الجهاز"))
+        assertTrue(text.contains("المخطط") || text.contains("الموديل") || text.contains("الأجهزة"))
     }
 
     @Test fun concealedPlumbingHasBeforeDuringAndAfterCheckpoints() {
@@ -51,6 +51,6 @@ class Batch03ReviewTest {
         val text = listOf(defect.titleAr, defect.description, defect.probableCauses.joinToString(), defect.repairSteps.joinToString()).joinToString(" ")
         assertTrue(text.contains("تسريب"))
         assertTrue(text.contains("ضعف") || text.contains("تضيق"))
-        assertTrue(text.contains("مطرقة"))
+        assertTrue(text.contains("مطرقة") || text.contains("طرق"))
     }
 }

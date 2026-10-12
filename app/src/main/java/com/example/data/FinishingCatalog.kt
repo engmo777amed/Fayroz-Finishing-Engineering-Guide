@@ -139,11 +139,12 @@ object FinishingCatalog {
             technicalReference = check.technicalReference + "\n" + stage.codeReferences.joinToString("\n")
         )
     } +
-        stages.filter { stage -> FinishingChecklistsData.checkItems.none { it.stageId == stage.id } }
-            .flatMap { stage ->
-                if (stage.categoryId in 1..3) Batch01Checkpoints.forStage(stage)
+        stages.flatMap { stage ->
+                val originalPhases = FinishingChecklistsData.checkItems.filter { it.stageId == stage.id }.map { it.phase }.toSet()
+                if (stage.categoryId == 7) Batch03Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
+                else if (originalPhases.isNotEmpty()) emptyList()
+                else if (stage.categoryId in 1..3) Batch01Checkpoints.forStage(stage)
                 else if (stage.categoryId in 4..6) Batch02Checkpoints.forStage(stage)
-                else if (stage.categoryId == 7) Batch03Checkpoints.forStage(stage)
                 else listOf(QualityCheckItem(
                     id = "check_guide_${stage.id}", categoryId = stage.categoryId, stageId = stage.id,
                     titleAr = stage.titleAr, phase = InspectionPhase.AFTER,
