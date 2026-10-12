@@ -7,10 +7,10 @@
     "review_and_implement_all_batches": true,
     "combine_once_after_all_batches": true
   },
-  "next_batch": 2,
-  "last_completed_batch": 1,
-  "current_batch": 2,
-  "status": "awaiting_ci",
+  "next_batch": 3,
+  "last_completed_batch": 2,
+  "current_batch": null,
+  "status": "in_progress",
   "batches": [
     {
       "id": 1,
@@ -33,8 +33,10 @@
         6
       ],
       "title": "العزل والميول",
-      "status": "awaiting_ci",
-      "report": "docs/content-review/BATCH02.md"
+      "status": "completed",
+      "report": "docs/content-review/BATCH02.md",
+      "validated_commit": "7484909ebfead98a93cd3f27f2d9c97b401b04e2",
+      "ci_run": 38307674349
     },
     {
       "id": 3,
@@ -151,8 +153,8 @@
   ],
   "automation_id": "6acd4374ab308191b2a650afcc1d1968",
   "validation": {
-    "code_commit": "985f089fed26ad78449a704f0d2779bcf5c581ae",
-    "run_id": 38305031169,
+    "code_commit": "7484909ebfead98a93cd3f27f2d9c97b401b04e2",
+    "run_id": 38307674349,
     "status": "success"
   },
   "active_run": null,
