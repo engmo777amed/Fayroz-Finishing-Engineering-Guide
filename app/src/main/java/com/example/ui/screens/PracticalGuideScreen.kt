@@ -53,7 +53,7 @@ fun PracticalGuideScreen(categoryId: Int?, viewModel: FinishingViewModel, onNavi
                         Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             Text(fieldKey = "guide|${entry.id}|title", text = entry.title, style = MaterialTheme.typography.titleMedium)
                             Text(fieldKey = "guide|${entry.id}|body", text = entry.body, style = MaterialTheme.typography.bodyMedium)
-                            Text(fieldKey = "guide|${entry.id}|source", text = entry.source, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary)
+                            ReferenceText(text = entry.source, fieldKey = "guide|${entry.id}|source", textKey = "guide.source")
                             if (categoryId == null) TextButton(onClick = { onNavigate(Screen.CategoryDetail(entry.categoryId)) }) { Text("فتح البند", textKey = "guide.open.category") }
                         }
                     }
@@ -75,7 +75,7 @@ fun FigureCard(figure: TechnicalFigure) {
                     figure.labels.forEachIndexed { index, label -> Text(text = label, fieldKey = "figure|${figure.id}|labels|$index", style = MaterialTheme.typography.bodyMedium) }
                     Text(fieldKey = "figure|${figure.id}|caption", text = figure.caption, style = MaterialTheme.typography.bodyMedium)
                     Text(fieldKey = "figure|${figure.id}|limits", text = figure.limits, style = MaterialTheme.typography.bodySmall)
-                    Text(fieldKey = "figure|${figure.id}|sourceUrl", text = figure.sourceUrl, color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.bodySmall)
+                    ReferenceText(text = figure.sourceUrl, fieldKey = "figure|${figure.id}|sourceUrl", textKey = "figure.source")
                 }
             }
         }

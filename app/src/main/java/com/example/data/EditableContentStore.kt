@@ -93,7 +93,7 @@ class EditableContentStore(context: Context) {
             "preventionMethod" to "الوقاية", "handoverRetest" to "إعادة الفحص", "itemTitle" to "البند", "standardValue" to "القيمة والشرط", "tolerance" to "التفاوت",
             "applicationCondition" to "شروط التطبيق", "referenceSource" to "المصدر", "practicalNotes" to "ملاحظات التنفيذ", "method" to "طريقة الفحص",
             "toolUsed" to "أداة الفحص", "acceptanceCriterion" to "معيار القبول", "technicalReference" to "المرجع الفني", "body" to "الشرح", "caption" to "شرح الصورة",
-            "labels" to "الأجزاء الظاهرة", "limits" to "حدود التطبيق", "source" to "المصدر"
+            "sourceUrl" to "رابط مرجع الصورة", "dimensionText" to "الأبعاد وشروطها", "labels" to "الأجزاء الظاهرة", "limits" to "حدود التطبيق", "source" to "المصدر"
         )
     }
 }

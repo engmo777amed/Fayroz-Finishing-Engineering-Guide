@@ -415,6 +415,13 @@ fun DefectDetailScreen(
                         color = MaterialTheme.colorScheme.onSurface
                     )
                 }
+                if (defect.categoryId in 1..3) {
+                    DetailSectionCard(title = "المراجع وحدود التطبيق", icon = Icons.Default.CheckCircle, accentColor = FayrozTurquoise) {
+                        com.example.data.Batch01References.forCategory(defect.categoryId).forEachIndexed { index, reference ->
+                            com.example.ui.components.ReferenceText(reference, textKey = "batch01.defect.${defect.id}.source.$index")
+                        }
+                    }
+                }
                 Spacer(modifier = Modifier.height(20.dp))
             }
         }

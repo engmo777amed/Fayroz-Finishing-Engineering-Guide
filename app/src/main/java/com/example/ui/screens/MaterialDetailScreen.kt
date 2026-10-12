@@ -237,10 +237,9 @@ fun MaterialDetailScreen(
                         color = MaterialTheme.colorScheme.primary,
                         fontSize = 13.sp
                     )
-                    Text(textKey = "ui.MaterialDetailScreen.14",
-                        fieldKey = "material|${material.id}|standardSpecs", text = material.standardSpecs,
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurface
+                    com.example.ui.components.ReferenceText(
+                        text = material.standardSpecs, fieldKey = "material|${material.id}|standardSpecs",
+                        textKey = "ui.MaterialDetailScreen.14"
                     )
                 }
             }

@@ -465,11 +465,8 @@ fun InspectionsTabContent(
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     Spacer(modifier = Modifier.height(4.dp))
-                    Text(textKey = "ui.CategoryDetailScreen.14",
-                        text = "الأداة: ${item.toolUsed} • المرجع: ${item.technicalReference}",
-                        fontSize = 11.sp,
-                        color = FayrozTurquoiseLight
-                    )
+                    Text(fieldKey = "check|${item.id}|toolUsed", textKey = "check.tool", text = "أداة الفحص: ${item.toolUsed}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    com.example.ui.components.ReferenceText(text = item.technicalReference, fieldKey = "check|${item.id}|technicalReference", textKey = "check.reference")
                 }
             }
         }

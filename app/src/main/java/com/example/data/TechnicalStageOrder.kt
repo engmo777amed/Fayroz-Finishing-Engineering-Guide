@@ -2,7 +2,9 @@ package com.example.data
 
 object TechnicalStageOrder {
     val preparation = mapOf(
-        1 to listOf("stage_masonry_01"),
+        1 to listOf("stage_masonry_01", "stage_review_32", "stage_review_33", "stage_review_34", "stage_review_35", "stage_masonry_02", "stage_review_36", "stage_masonry_03"),
+        2 to listOf("stage_review_38", "stage_prep_02", "stage_review_37", "stage_prep_01", "stage_review_39", "stage_prep_03"),
+        3 to listOf("stage_review_40", "stage_review_41", "stage_plaster_01", "stage_plaster_02", "stage_plaster_05", "stage_plaster_03", "stage_plaster_04", "stage_plaster_06", "stage_plaster_07", "stage_review_42", "stage_plaster_08"),
         4 to listOf("stage_review_43"),
         5 to listOf("stage_review_48"),
         6 to listOf("stage_review_51"),

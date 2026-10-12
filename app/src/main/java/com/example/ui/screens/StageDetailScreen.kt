@@ -135,7 +135,7 @@ fun StageDetailScreen(
                             }
                             Spacer(modifier = Modifier.width(10.dp))
                             Text(textKey = "ui.StageDetailScreen.2",
-                                text = "الهدف الهندسي من المرحلة:",
+                                text = "الخلاصة العملية:",
                                 style = MaterialTheme.typography.titleSmall,
                                 color = FayrozTurquoiseLight,
                                 fontWeight = FontWeight.Bold
@@ -151,10 +151,10 @@ fun StageDetailScreen(
                 }
             }
 
-            // Prerequisites (الأعمال الواجب الانتهاء منها قبل البدء)
+            // Prerequisites (قبل ما تبدأ)
             item {
                 DetailSectionCard(
-                    title = "الأعمال الواجب الانتهاء منها قبل البدء",
+                    title = "قبل ما تبدأ",
                     icon = Icons.Default.CheckCircle,
                     accentColor = FayrozTurquoise
                 ) {
@@ -295,7 +295,7 @@ fun StageDetailScreen(
             // Mixes & Ratios (السماكات والخلطات والمعدلات)
             item {
                 DetailSectionCard(
-                    title = "الخلطات والنسب والمعدلات المسموح بها",
+                    title = "الخلط والجرعات وشروط الاستخدام",
                     icon = Icons.Default.Science,
                     accentColor = FayrozTurquoise
                 ) {
@@ -322,10 +322,10 @@ fun StageDetailScreen(
                 }
             }
 
-            // Site Tips & Tricks (نصائح وتريكات التنفيذ من واقع المواقع)
+            // Site Tips & Tricks (نصائح تنفيذ مهمة)
             item {
                 DetailSectionCard(
-                    title = "نصائح وتريكات التنفيذ من واقع المواقع",
+                    title = "نصائح تنفيذ مهمة",
                     icon = Icons.Default.Lightbulb,
                     accentColor = FayrozGold
                 ) {
@@ -435,10 +435,9 @@ fun StageDetailScreen(
                     accentColor = FayrozNavyCard
                 ) {
                     stage.codeReferences.forEachIndexed { editIndexCodeReferences, code ->
-                        Text(fieldKey = "stage|${stage.id}|codeReferences|${editIndexCodeReferences}", textKey = "ui.StageDetailScreen.24",
-                            text = "📜 $code",
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurface
+                        com.example.ui.components.ReferenceText(
+                            text = code, fieldKey = "stage|${stage.id}|codeReferences|${editIndexCodeReferences}",
+                            textKey = "ui.StageDetailScreen.24"
                         )
                     }
                 }

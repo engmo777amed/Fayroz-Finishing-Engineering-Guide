@@ -140,15 +140,15 @@ object FinishingCatalog {
         )
     } +
         stages.filter { stage -> FinishingChecklistsData.checkItems.none { it.stageId == stage.id } }
-            .map { stage ->
-                QualityCheckItem(
+            .flatMap { stage ->
+                if (stage.categoryId in 1..3) Batch01Checkpoints.forStage(stage) else listOf(QualityCheckItem(
                     id = "check_guide_${stage.id}", categoryId = stage.categoryId, stageId = stage.id,
                     titleAr = stage.titleAr, phase = InspectionPhase.AFTER,
                     method = stage.qualityTests.joinToString("\n"),
                     toolUsed = stage.toolsNeeded.joinToString(" • "),
                     acceptanceCriterion = stage.handoverCriteria.joinToString("\n"),
                     technicalReference = stage.codeReferences.joinToString("\n")
-                )
+                ))
             }
 
     val categories: List<FinishingCategory> = FinishingCategoriesData.categories.map { category ->
