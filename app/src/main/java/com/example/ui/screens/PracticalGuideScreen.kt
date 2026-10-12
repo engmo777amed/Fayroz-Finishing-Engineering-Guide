@@ -70,7 +70,7 @@ fun FigureCard(figure: TechnicalFigure) {
         Card(Modifier.fillMaxWidth().testTag("figure_${figure.id}")) {
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Text(figure.title, modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp), style = MaterialTheme.typography.titleMedium)
-                FigureImage(figure, Modifier.fillMaxWidth().aspectRatio(4f / 3f).clickable { expanded = true })
+                FigureImage(figure, Modifier.fillMaxWidth().aspectRatio(4f / 3f).testTag("figure_image_${figure.id}").clickable { expanded = true })
                 Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     figure.labels.forEach { Text(it, style = MaterialTheme.typography.bodyMedium) }
                     Text(figure.caption, style = MaterialTheme.typography.bodyMedium)

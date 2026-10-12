@@ -67,4 +67,13 @@ class NavigationStateTest {
         compose.waitForIdle()
         compose.onNodeWithTag("cat_tab_1").assertIsSelected()
     }
+
+    @Test fun bundledCutawayOpensOfflineAndClosesAfterEnlarging() {
+        val figure = com.example.data.TechnicalIllustrations.figures.single { it.id == "wet_floor" }
+        start(Screen.PracticalGuide(4, figure.title))
+        compose.onNodeWithTag("figure_image_wet_floor").performScrollTo().performClick()
+        compose.onNodeWithText("إغلاق").assertIsDisplayed().performClick()
+        compose.onNodeWithText("إغلاق").assertDoesNotExist()
+        compose.onNodeWithText(figure.dimensionText).assertExists()
+    }
 }
