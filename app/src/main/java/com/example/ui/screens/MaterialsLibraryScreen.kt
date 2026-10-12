@@ -36,7 +36,8 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.material3.Text
+import com.example.ui.components.EditableText as Text
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -66,11 +67,12 @@ fun MaterialsLibraryScreen(
     onNavigate: (Screen) -> Unit,
     onBack: () -> Unit
 ) {
+    val contentRevision = viewModel.repository.textStore.revision.collectAsState().value
     val repository = viewModel.repository
     var query by rememberSaveable { mutableStateOf("") }
     var selectedCategoryId by rememberSaveable { mutableStateOf<Int?>(null) }
 
-    val filteredMaterials = remember(query, selectedCategoryId) {
+    val filteredMaterials = remember(contentRevision, query, selectedCategoryId) {
         var list = repository.allMaterials
         if (selectedCategoryId != null) {
             list = list.filter { it.categoryIds.contains(selectedCategoryId!!) }
@@ -111,7 +113,7 @@ fun MaterialsLibraryScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .testTag("materials_search_input"),
-                placeholder = { Text("ابحث بالاسم السوقي أو الشركة (PPR، السويدي، جوتن...)") },
+                placeholder = { Text(textKey = "ui.MaterialsLibraryScreen.1", text = "ابحث بالاسم السوقي أو الشركة (PPR، السويدي، جوتن...)") },
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Default.Search,
@@ -145,7 +147,7 @@ fun MaterialsLibraryScreen(
                     FilterChip(
                         selected = selectedCategoryId == null,
                         onClick = { selectedCategoryId = null },
-                        label = { Text("الكل (${repository.allMaterials.size})") },
+                        label = { Text(textKey = "ui.MaterialsLibraryScreen.2", text = "الكل (${repository.allMaterials.size})") },
                         colors = FilterChipDefaults.filterChipColors(
                             selectedContainerColor = FayrozTurquoise,
                             selectedLabelColor = Color.White
@@ -158,7 +160,7 @@ fun MaterialsLibraryScreen(
                         FilterChip(
                             selected = selectedCategoryId == cat.id,
                             onClick = { selectedCategoryId = if (selectedCategoryId == cat.id) null else cat.id },
-                            label = { Text("${cat.titleAr} ($catMatsCount)") },
+                            label = { Text(textKey = "ui.MaterialsLibraryScreen.3", text = "${cat.titleAr} ($catMatsCount)") },
                             colors = FilterChipDefaults.filterChipColors(
                                 selectedContainerColor = FayrozTurquoise,
                                 selectedLabelColor = Color.White
@@ -214,13 +216,13 @@ fun FullMaterialListCard(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text(
+                    Text(textKey = "ui.MaterialsLibraryScreen.4",
                         text = material.marketNameAr,
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onSurface
                     )
-                    Text(
+                    Text(textKey = "ui.MaterialsLibraryScreen.5",
                         text = material.technicalNameAr,
                         style = MaterialTheme.typography.labelSmall,
                         color = FayrozTurquoiseLight
@@ -234,7 +236,7 @@ fun FullMaterialListCard(
             }
 
             Spacer(modifier = Modifier.height(6.dp))
-            Text(
+            Text(textKey = "ui.MaterialsLibraryScreen.6",
                 text = material.definitionAndFunction,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -253,7 +255,7 @@ fun FullMaterialListCard(
             }
 
             Spacer(modifier = Modifier.height(6.dp))
-            Text(
+            Text(textKey = "ui.MaterialsLibraryScreen.7",
                 text = "المواصفة: ${material.standardSpecs}",
                 fontSize = 11.sp,
                 color = FayrozGold,

@@ -113,9 +113,10 @@ object FinishingCatalog {
 
     val stages: List<ExecutionStage> = stagesWithNotes.groupBy { it.categoryId }
         .toSortedMap().values.flatMap { categoryStages ->
-            val categoryOrder = order[categoryStages.first().categoryId]
+            val categoryId = categoryStages.first().categoryId
+            val categoryOrder = ((order[categoryId] ?: emptyList()) + (TechnicalStageOrder.preparation[categoryId] ?: emptyList())).distinct()
             categoryStages.sortedBy { stage ->
-                categoryOrder?.indexOf(stage.id)?.takeIf { it >= 0 } ?: stage.stageNumber
+                categoryOrder.indexOf(stage.id).takeIf { it >= 0 } ?: (1000 + stage.stageNumber)
             }.mapIndexed { index, stage ->
                 val linked = rawMaterials.filter { material ->
                     material.relatedStageIds.any { (aliases[it] ?: it) == stage.id }

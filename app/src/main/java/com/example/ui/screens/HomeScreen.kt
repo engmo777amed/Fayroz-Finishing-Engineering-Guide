@@ -41,7 +41,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
+import com.example.ui.components.EditableText as Text
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -76,6 +77,7 @@ fun HomeScreen(
     viewModel: FinishingViewModel,
     onNavigate: (Screen) -> Unit
 ) {
+    val contentRevision = viewModel.repository.textStore.revision.collectAsState().value
     val repository = viewModel.repository
 
     Column(
@@ -141,7 +143,7 @@ fun HomeScreen(
                                         .background(FayrozGold)
                                         .padding(horizontal = 6.dp, vertical = 2.dp)
                                 ) {
-                                    Text(
+                                    Text(textKey = "ui.HomeScreen.1",
                                         text = "FAYROZ QA/QC",
                                         color = FayrozNavyDark,
                                         fontSize = 10.sp,
@@ -149,7 +151,7 @@ fun HomeScreen(
                                     )
                                 }
                                 Spacer(modifier = Modifier.width(8.dp))
-                                Text(
+                                Text(textKey = "ui.HomeScreen.2",
                                     text = "30 قسماً لأعمال التشطيبات",
                                     color = FayrozTurquoiseLight,
                                     fontSize = 12.sp,
@@ -157,19 +159,25 @@ fun HomeScreen(
                                 )
                             }
                             Spacer(modifier = Modifier.height(4.dp))
-                            Text(
+                            Text(textKey = "ui.HomeScreen.3",
                                 text = "دليل مهندس الموقع لأعمال التشطيبات",
                                 style = MaterialTheme.typography.titleLarge,
                                 color = Color.White,
                                 fontWeight = FontWeight.Bold
                             )
-                            Text(
+                            Text(textKey = "ui.HomeScreen.4",
                                 text = "مراحل تنفيذ وخامات واختبارات استلام للموقع",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = Color.White.copy(alpha = 0.85f)
                             )
                         }
                     }
+                }
+            }
+
+            item {
+                androidx.compose.material3.FilledTonalButton(onClick = { onNavigate(Screen.PracticalGuide()) }, modifier = Modifier.fillMaxWidth().testTag("home_practical_guide")) {
+                    Text("الصور المجسّمة والدليل العملي", textKey = "home.practical.guide")
                 }
             }
 
@@ -196,7 +204,7 @@ fun HomeScreen(
                             tint = FayrozTurquoise
                         )
                         Spacer(modifier = Modifier.width(10.dp))
-                        Text(
+                        Text(textKey = "ui.HomeScreen.5",
                             text = "ابحث بالاسم السوقي (بؤجة، تطبيل، PPR، سيلر، علبة ماجيك)...",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
@@ -278,7 +286,7 @@ fun HomeScreen(
                                         .background(FayrozGold)
                                         .padding(horizontal = 6.dp, vertical = 2.dp)
                                 ) {
-                                    Text(
+                                    Text(textKey = "ui.HomeScreen.6",
                                         text = "مكتبة مستقلة شاملة",
                                         color = FayrozNavyDark,
                                         fontSize = 9.sp,
@@ -286,7 +294,7 @@ fun HomeScreen(
                                     )
                                 }
                                 Spacer(modifier = Modifier.width(6.dp))
-                                Text(
+                                Text(textKey = "ui.HomeScreen.7",
                                     text = "قطع وتأسيس الكهرباء والإضاءة",
                                     style = MaterialTheme.typography.titleMedium,
                                     color = Color.White,
@@ -294,7 +302,7 @@ fun HomeScreen(
                                 )
                             }
                             Spacer(modifier = Modifier.height(3.dp))
-                            Text(
+                            Text(textKey = "ui.HomeScreen.8",
                                 text = "دليل المواسير، البواطات، الأسلاك، القواطع، اللقم، والإنارة الذكية بالسوق المصري",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = Color.White.copy(alpha = 0.85f),
@@ -367,13 +375,13 @@ fun HomeScreen(
                         }
                         Spacer(modifier = Modifier.width(12.dp))
                         Column(modifier = Modifier.weight(1f)) {
-                            Text(
+                            Text(textKey = "ui.HomeScreen.9",
                                 text = "مصفوفة التغطية الهندسية الشاملة",
                                 style = MaterialTheme.typography.titleSmall,
                                 color = Color.White,
                                 fontWeight = FontWeight.Bold
                             )
-                            Text(
+                            Text(textKey = "ui.HomeScreen.10",
                                 text = "${repository.allCategories.size} قسماً • ${repository.allStages.size} مرحلة • ${repository.allMaterials.size} خامة",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = Color.White.copy(alpha = 0.75f)
@@ -404,7 +412,7 @@ fun HomeScreen(
                         .padding(vertical = 10.dp),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(
+                    Text(textKey = "ui.HomeScreen.11",
                         text = "عرض كافة أقسام التشطيبات الـ 30 ←",
                         color = FayrozTurquoise,
                         fontWeight = FontWeight.Bold,
@@ -466,7 +474,7 @@ fun PrimaryEntranceCard(
                         .background(accentColor.copy(alpha = 0.12f))
                         .padding(horizontal = 6.dp, vertical = 2.dp)
                 ) {
-                    Text(
+                    Text(textKey = "ui.HomeScreen.12",
                         text = badgeText,
                         color = accentColor,
                         fontSize = 9.sp,
@@ -475,7 +483,7 @@ fun PrimaryEntranceCard(
                 }
             }
             Spacer(modifier = Modifier.height(10.dp))
-            Text(
+            Text(textKey = "ui.HomeScreen.13",
                 text = title,
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
@@ -484,7 +492,7 @@ fun PrimaryEntranceCard(
                 overflow = TextOverflow.Ellipsis
             )
             Spacer(modifier = Modifier.height(2.dp))
-            Text(
+            Text(textKey = "ui.HomeScreen.14",
                 text = subtitle,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -532,7 +540,7 @@ fun SecondaryToolCard(
                 )
             }
             Spacer(modifier = Modifier.height(6.dp))
-            Text(
+            Text(textKey = "ui.HomeScreen.15",
                 text = title,
                 style = MaterialTheme.typography.labelLarge,
                 fontWeight = FontWeight.Bold,
@@ -540,7 +548,7 @@ fun SecondaryToolCard(
                 maxLines = 2,
                 overflow = TextOverflow.Ellipsis
             )
-            Text(
+            Text(textKey = "ui.HomeScreen.16",
                 text = subtitle,
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -579,7 +587,7 @@ fun CategoryRowCard(
                     .background(FayrozNavyCard),
                 contentAlignment = Alignment.Center
             ) {
-                Text(
+                Text(textKey = "ui.HomeScreen.17",
                     text = "${category.id}",
                     color = FayrozTurquoiseLight,
                     fontWeight = FontWeight.Bold,
@@ -589,14 +597,14 @@ fun CategoryRowCard(
             Spacer(modifier = Modifier.width(12.dp))
             Column(modifier = Modifier.weight(1f)) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(
+                    Text(textKey = "ui.HomeScreen.18",
                         text = category.code,
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
                         color = FayrozGold
                     )
                     Spacer(modifier = Modifier.width(6.dp))
-                    Text(
+                    Text(textKey = "ui.HomeScreen.19",
                         text = category.titleAr,
                         style = MaterialTheme.typography.titleSmall,
                         fontWeight = FontWeight.Bold,
@@ -607,7 +615,7 @@ fun CategoryRowCard(
                     )
                 }
                 Spacer(modifier = Modifier.height(2.dp))
-                Text(
+                Text(textKey = "ui.HomeScreen.20",
                     text = category.summaryAr,
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,

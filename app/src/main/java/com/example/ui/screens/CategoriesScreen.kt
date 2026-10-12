@@ -27,7 +27,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.material3.Text
+import com.example.ui.components.EditableText as Text
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -58,6 +59,7 @@ fun CategoriesScreen(
     onNavigate: (Screen) -> Unit,
     onBack: () -> Unit
 ) {
+    val contentRevision = viewModel.repository.textStore.revision.collectAsState().value
     val repository = viewModel.repository
     var filterText by rememberSaveable { mutableStateOf("") }
 
@@ -99,7 +101,7 @@ fun CategoriesScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .testTag("categories_search_input"),
-                placeholder = { Text("تصفية الأقسام (مباني، محارة، سباكة، رخام، دهانات...)") },
+                placeholder = { Text(textKey = "ui.CategoriesScreen.1", text = "تصفية الأقسام (مباني، محارة، سباكة، رخام، دهانات...)") },
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Default.Search,
@@ -179,7 +181,7 @@ fun FullCategoryCard(
                         .background(FayrozNavyCard),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(
+                    Text(textKey = "ui.CategoriesScreen.2",
                         text = "${category.id}",
                         color = FayrozTurquoiseLight,
                         fontWeight = FontWeight.Bold,
@@ -195,7 +197,7 @@ fun FullCategoryCard(
                                 .background(FayrozGold.copy(alpha = 0.15f))
                                 .padding(horizontal = 5.dp, vertical = 1.dp)
                         ) {
-                            Text(
+                            Text(textKey = "ui.CategoriesScreen.3",
                                 text = category.code,
                                 color = FayrozGold,
                                 fontSize = 9.sp,
@@ -203,7 +205,7 @@ fun FullCategoryCard(
                             )
                         }
                         Spacer(modifier = Modifier.width(6.dp))
-                        Text(
+                        Text(textKey = "ui.CategoriesScreen.4",
                             text = category.titleAr,
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.Bold,
@@ -212,7 +214,7 @@ fun FullCategoryCard(
                             overflow = TextOverflow.Ellipsis
                         )
                     }
-                    Text(
+                    Text(textKey = "ui.CategoriesScreen.5",
                         text = category.titleEn,
                         style = MaterialTheme.typography.labelSmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
@@ -227,7 +229,7 @@ fun FullCategoryCard(
             }
 
             Spacer(modifier = Modifier.height(8.dp))
-            Text(
+            Text(textKey = "ui.CategoriesScreen.6",
                 text = category.summaryAr,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -251,7 +253,7 @@ fun FullCategoryCard(
 
 @Composable
 fun SmallStatBadge(text: String, color: Color) {
-    Text(
+    Text(textKey = "ui.CategoriesScreen.7",
         text = text,
         fontSize = 10.sp,
         fontWeight = FontWeight.Medium,

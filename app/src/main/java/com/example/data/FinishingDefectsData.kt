@@ -3,7 +3,7 @@ package com.example.data
 import com.example.model.*
 
 object FinishingDefectsData {
-    val defects = listOf(
+    private val originalDefects = listOf(
         TroubleshootingDefect(
             id = "def_ceramic_hollow",
             categoryId = 15,
@@ -260,4 +260,5 @@ object FinishingDefectsData {
             handoverRetest = "أعد اختبار الماء بنفس الإجراء والظروف المعتمدين، مع فحص التصريف والضلف وعدم وجود دخول ماء غير مقبول."
         )
     )
+    val defects = originalDefects + FinishingAdditionalDefects.defects
 }

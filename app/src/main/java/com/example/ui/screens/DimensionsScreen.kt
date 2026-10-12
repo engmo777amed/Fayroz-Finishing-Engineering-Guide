@@ -24,7 +24,8 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.material3.Text
+import com.example.ui.components.EditableText as Text
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -54,10 +55,11 @@ fun DimensionsScreen(
     onNavigate: (Screen) -> Unit,
     onBack: () -> Unit
 ) {
+    val contentRevision = viewModel.repository.textStore.revision.collectAsState().value
     val repository = viewModel.repository
     var query by rememberSaveable { mutableStateOf("") }
 
-    val filteredDimensions = remember(query) {
+    val filteredDimensions = remember(contentRevision, query) {
         if (query.isBlank()) {
             repository.allDimensions
         } else {
@@ -95,7 +97,7 @@ fun DimensionsScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .testTag("dimensions_search_input"),
-                placeholder = { Text("ابحث في المقاسات (مفتاح، دش، شرب، ميول، أسلاك...)") },
+                placeholder = { Text(textKey = "ui.DimensionsScreen.1", text = "ابحث في المقاسات (مفتاح، دش، شرب، ميول، أسلاك...)") },
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Default.Search,
@@ -140,7 +142,7 @@ fun DimensionsScreen(
                                 horizontalArrangement = Arrangement.SpaceBetween,
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
-                                Text(
+                                Text(textKey = "ui.DimensionsScreen.2",
                                     text = dim.itemTitle,
                                     style = MaterialTheme.typography.titleMedium,
                                     fontWeight = FontWeight.Bold,
@@ -153,7 +155,7 @@ fun DimensionsScreen(
                                         .background(FayrozGold)
                                         .padding(horizontal = 8.dp, vertical = 4.dp)
                                 ) {
-                                    Text(
+                                    Text(textKey = "ui.DimensionsScreen.3",
                                         text = dim.standardValue,
                                         color = FayrozNavyCard,
                                         fontWeight = FontWeight.Bold,
@@ -166,14 +168,14 @@ fun DimensionsScreen(
                             DimensionRefBadge(dim.referenceType)
 
                             Spacer(modifier = Modifier.height(6.dp))
-                            Text(
+                            Text(textKey = "ui.DimensionsScreen.4",
                                 text = "ظروف التطبيق: ${dim.applicationCondition}",
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurface
                             )
 
                             Spacer(modifier = Modifier.height(4.dp))
-                            Text(
+                            Text(textKey = "ui.DimensionsScreen.5",
                                 text = "التفاوت المسموح: ${dim.tolerance}",
                                 fontSize = 12.sp,
                                 color = FayrozTurquoiseLight,
@@ -181,7 +183,7 @@ fun DimensionsScreen(
                             )
 
                             Spacer(modifier = Modifier.height(4.dp))
-                            Text(
+                            Text(textKey = "ui.DimensionsScreen.6",
                                 text = "المصدر والمرجع: ${dim.referenceSource}",
                                 fontSize = 11.sp,
                                 color = MaterialTheme.colorScheme.primary
@@ -195,7 +197,7 @@ fun DimensionsScreen(
                                     .background(MaterialTheme.colorScheme.surfaceVariant)
                                     .padding(8.dp)
                             ) {
-                                Text(
+                                Text(textKey = "ui.DimensionsScreen.7",
                                     text = "💡 ملاحظات الموقع: ${dim.practicalNotes}",
                                     style = MaterialTheme.typography.bodySmall,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -226,7 +228,7 @@ fun DimensionRefBadge(type: DimensionRefType) {
             .background(bg)
             .padding(horizontal = 6.dp, vertical = 2.dp)
     ) {
-        Text(
+        Text(textKey = "ui.DimensionsScreen.8",
             text = type.titleAr,
             color = fg,
             fontSize = 10.sp,

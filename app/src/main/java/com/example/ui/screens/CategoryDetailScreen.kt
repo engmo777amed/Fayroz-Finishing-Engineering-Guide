@@ -39,7 +39,7 @@ import androidx.compose.material3.ScrollableTabRow
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRowDefaults
 import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
-import androidx.compose.material3.Text
+import com.example.ui.components.EditableText as Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -81,16 +81,17 @@ fun CategoryDetailScreen(
     onNavigate: (Screen) -> Unit,
     onBack: () -> Unit
 ) {
+    val contentRevision = viewModel.repository.textStore.revision.collectAsState().value
     val repository = viewModel.repository
     val category = repository.getCategoryById(categoryId) ?: return
 
     var selectedTab by rememberSaveable(categoryId) { mutableIntStateOf(initialTab) }
     val tabStates = rememberSaveableStateHolder()
-    val stages = remember(categoryId) { repository.getStagesByCategoryId(categoryId) }
-    val materials = remember(categoryId) { repository.getMaterialsByCategoryId(categoryId) }
-    val checkItems = remember(categoryId) { repository.getChecklistItemsByCategoryId(categoryId) }
-    val defects = remember(categoryId) { repository.getDefectsByCategoryId(categoryId) }
-    val dimensions = remember(categoryId) { repository.getDimensionsByCategoryId(categoryId) }
+    val stages = remember(contentRevision, categoryId) { repository.getStagesByCategoryId(categoryId) }
+    val materials = remember(contentRevision, categoryId) { repository.getMaterialsByCategoryId(categoryId) }
+    val checkItems = remember(contentRevision, categoryId) { repository.getChecklistItemsByCategoryId(categoryId) }
+    val defects = remember(contentRevision, categoryId) { repository.getDefectsByCategoryId(categoryId) }
+    val dimensions = remember(contentRevision, categoryId) { repository.getDimensionsByCategoryId(categoryId) }
 
     val tabs = remember(stages.size, materials.size, checkItems.size, defects.size, dimensions.size) {
         listOf(
@@ -129,6 +130,10 @@ fun CategoryDetailScreen(
             }
         )
 
+        androidx.compose.material3.TextButton(onClick = { onNavigate(Screen.PracticalGuide(categoryId)) }, modifier = Modifier.fillMaxWidth().testTag("category_practical_guide")) {
+            Text("صور وشرح عملي لهذا البند", textKey = "category.practical.guide")
+        }
+
         ScrollableTabRow(
             selectedTabIndex = selectedTab,
             containerColor = FayrozNavy,
@@ -149,7 +154,7 @@ fun CategoryDetailScreen(
                     selected = selectedTab == index,
                     onClick = { selectedTab = index },
                     text = {
-                        Text(
+                        Text(textKey = "ui.CategoryDetailScreen.tab.$index",
                             text = tabTitle,
                             fontSize = 12.sp,
                             fontWeight = if (selectedTab == index) FontWeight.Bold else FontWeight.Normal,
@@ -208,7 +213,7 @@ fun StagesTabContent(
     ) {
         item {
             Spacer(modifier = Modifier.height(10.dp))
-            Text(
+            Text(textKey = "ui.CategoryDetailScreen.2",
                 text = "مراحل التنفيذ الميدانية؛ اختَر ما ينطبق على النظام المعتمد واتبع الأعمال السابقة لكل مرحلة:",
                 style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -257,7 +262,7 @@ fun StageCardItem(
                         .background(FayrozTurquoise.copy(alpha = 0.15f)),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(
+                    Text(textKey = "ui.CategoryDetailScreen.3",
                         text = "${stage.stageNumber}",
                         color = FayrozTurquoise,
                         fontWeight = FontWeight.Bold,
@@ -265,7 +270,7 @@ fun StageCardItem(
                     )
                 }
                 Spacer(modifier = Modifier.width(10.dp))
-                Text(
+                Text(textKey = "ui.CategoryDetailScreen.4",
                     text = stage.titleAr,
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
@@ -277,7 +282,7 @@ fun StageCardItem(
             }
 
             Spacer(modifier = Modifier.height(8.dp))
-            Text(
+            Text(textKey = "ui.CategoryDetailScreen.5",
                 text = stage.objective,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -291,7 +296,7 @@ fun StageCardItem(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(
+                Text(textKey = "ui.CategoryDetailScreen.6",
                     text = "عرض التفاصيل الهندسية (${stage.executionSteps.size} خطوات) ←",
                     color = FayrozTurquoise,
                     fontSize = 12.sp,
@@ -358,13 +363,13 @@ fun MaterialCardItem(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text(
+                    Text(textKey = "ui.CategoryDetailScreen.7",
                         text = material.marketNameAr,
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onSurface
                     )
-                    Text(
+                    Text(textKey = "ui.CategoryDetailScreen.8",
                         text = material.technicalNameAr,
                         style = MaterialTheme.typography.labelSmall,
                         color = FayrozTurquoiseLight
@@ -378,7 +383,7 @@ fun MaterialCardItem(
             }
 
             Spacer(modifier = Modifier.height(8.dp))
-            Text(
+            Text(textKey = "ui.CategoryDetailScreen.9",
                 text = material.definitionAndFunction,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -426,7 +431,7 @@ fun InspectionsTabContent(
                                 .background(FayrozGold.copy(alpha = 0.15f))
                                 .padding(horizontal = 6.dp, vertical = 2.dp)
                         ) {
-                            Text(
+                            Text(textKey = "ui.CategoryDetailScreen.10",
                                 text = item.phase.titleAr,
                                 fontSize = 10.sp,
                                 fontWeight = FontWeight.Bold,
@@ -434,7 +439,7 @@ fun InspectionsTabContent(
                             )
                         }
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text(
+                        Text(textKey = "ui.CategoryDetailScreen.11",
                             text = item.titleAr,
                             style = MaterialTheme.typography.titleSmall,
                             fontWeight = FontWeight.Bold,
@@ -442,19 +447,19 @@ fun InspectionsTabContent(
                         )
                     }
                     Spacer(modifier = Modifier.height(6.dp))
-                    Text(
+                    Text(textKey = "ui.CategoryDetailScreen.12",
                         text = "طريقة الفحص: ${item.method}",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurface
                     )
                     Spacer(modifier = Modifier.height(6.dp))
-                    Text(
+                    Text(textKey = "ui.CategoryDetailScreen.13",
                         text = "معيار القبول: ${item.acceptanceCriterion}",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     Spacer(modifier = Modifier.height(4.dp))
-                    Text(
+                    Text(textKey = "ui.CategoryDetailScreen.14",
                         text = "الأداة: ${item.toolUsed} • المرجع: ${item.technicalReference}",
                         fontSize = 11.sp,
                         color = FayrozTurquoiseLight
@@ -499,7 +504,7 @@ fun DefectsTabContent(
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text(
+                        Text(textKey = "ui.CategoryDetailScreen.15",
                             text = defect.titleAr,
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.Bold,
@@ -509,13 +514,13 @@ fun DefectsTabContent(
                         SeverityBadge(defect.severity)
                     }
                     Spacer(modifier = Modifier.height(4.dp))
-                    Text(
+                    Text(textKey = "ui.CategoryDetailScreen.16",
                         text = "الاسم الدارج: ${defect.marketName}",
                         style = MaterialTheme.typography.labelSmall,
                         color = FayrozGold
                     )
                     Spacer(modifier = Modifier.height(6.dp))
-                    Text(
+                    Text(textKey = "ui.CategoryDetailScreen.17",
                         text = defect.description,
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -523,7 +528,7 @@ fun DefectsTabContent(
                         overflow = TextOverflow.Ellipsis
                     )
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(
+                    Text(textKey = "ui.CategoryDetailScreen.18",
                         text = "طريقة العلاج: ${defect.repairSteps.firstOrNull() ?: ""}",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.primary,
@@ -567,7 +572,7 @@ fun DimensionsTabContent(
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text(
+                        Text(textKey = "ui.CategoryDetailScreen.19",
                             text = dim.itemTitle,
                             style = MaterialTheme.typography.titleSmall,
                             fontWeight = FontWeight.Bold,
@@ -580,7 +585,7 @@ fun DimensionsTabContent(
                                 .background(FayrozGold.copy(alpha = 0.15f))
                                 .padding(horizontal = 8.dp, vertical = 3.dp)
                         ) {
-                            Text(
+                            Text(textKey = "ui.CategoryDetailScreen.20",
                                 text = dim.standardValue,
                                 color = FayrozGold,
                                 fontWeight = FontWeight.Bold,
@@ -589,19 +594,19 @@ fun DimensionsTabContent(
                         }
                     }
                     Spacer(modifier = Modifier.height(6.dp))
-                    Text(
+                    Text(textKey = "ui.CategoryDetailScreen.21",
                         text = "شرط التطبيق: ${dim.applicationCondition}",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     Spacer(modifier = Modifier.height(4.dp))
-                    Text(
+                    Text(textKey = "ui.CategoryDetailScreen.22",
                         text = "التفاوت المسموح: ${dim.tolerance}",
                         fontSize = 11.sp,
                         color = FayrozTurquoiseLight
                     )
                     Spacer(modifier = Modifier.height(4.dp))
-                    Text(
+                    Text(textKey = "ui.CategoryDetailScreen.23",
                         text = "المرجع: ${dim.referenceSource}",
                         fontSize = 10.sp,
                         color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
@@ -623,7 +628,7 @@ fun EmptyTabNotice(message: String) {
             .padding(24.dp),
         contentAlignment = Alignment.Center
     ) {
-        Text(
+        Text(textKey = "ui.CategoryDetailScreen.24",
             text = message,
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant

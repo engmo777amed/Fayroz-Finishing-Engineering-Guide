@@ -23,20 +23,75 @@ data class SearchResult(
 }
 
 class FinishingRepository(context: Context) {
+    val textStore = EditableContentStore(context)
     private val db = AppDatabase.getDatabase(context)
     private val bookmarkDao = db.bookmarkDao()
 
-    val allCategories: List<FinishingCategory> = FinishingCatalog.categories
+    private var allCategoriesVersion = -1
+    private var allCategoriesCache: List<FinishingCategory> = emptyList()
+    val allCategories: List<FinishingCategory> get() {
+        val version = textStore.revision.value
+        if (allCategoriesVersion != version) {
+            allCategoriesCache = FinishingCatalog.categories.map { textStore.apply(it) }
+            allCategoriesVersion = version
+        }
+        return allCategoriesCache
+    }
 
-    val allStages: List<ExecutionStage> = FinishingCatalog.stages
+    private var allStagesVersion = -1
+    private var allStagesCache: List<ExecutionStage> = emptyList()
+    val allStages: List<ExecutionStage> get() {
+        val version = textStore.revision.value
+        if (allStagesVersion != version) {
+            allStagesCache = FinishingCatalog.stages.map { textStore.apply(it) }
+            allStagesVersion = version
+        }
+        return allStagesCache
+    }
 
-    val allMaterials: List<MaterialCard> = FinishingCatalog.materials
+    private var allMaterialsVersion = -1
+    private var allMaterialsCache: List<MaterialCard> = emptyList()
+    val allMaterials: List<MaterialCard> get() {
+        val version = textStore.revision.value
+        if (allMaterialsVersion != version) {
+            allMaterialsCache = FinishingCatalog.materials.map { textStore.apply(it) }
+            allMaterialsVersion = version
+        }
+        return allMaterialsCache
+    }
 
-    val allDefects: List<TroubleshootingDefect> = FinishingDefectsData.defects
+    private var allDefectsVersion = -1
+    private var allDefectsCache: List<TroubleshootingDefect> = emptyList()
+    val allDefects: List<TroubleshootingDefect> get() {
+        val version = textStore.revision.value
+        if (allDefectsVersion != version) {
+            allDefectsCache = FinishingDefectsData.defects.map { textStore.apply(it) }
+            allDefectsVersion = version
+        }
+        return allDefectsCache
+    }
 
-    val allChecklistItems: List<QualityCheckItem> = FinishingCatalog.checklistItems
+    private var allChecklistItemsVersion = -1
+    private var allChecklistItemsCache: List<QualityCheckItem> = emptyList()
+    val allChecklistItems: List<QualityCheckItem> get() {
+        val version = textStore.revision.value
+        if (allChecklistItemsVersion != version) {
+            allChecklistItemsCache = FinishingCatalog.checklistItems.map { textStore.apply(it) }
+            allChecklistItemsVersion = version
+        }
+        return allChecklistItemsCache
+    }
 
-    val allDimensions: List<TechnicalDimension> = FinishingDimensionsData.dimensions
+    private var allDimensionsVersion = -1
+    private var allDimensionsCache: List<TechnicalDimension> = emptyList()
+    val allDimensions: List<TechnicalDimension> get() {
+        val version = textStore.revision.value
+        if (allDimensionsVersion != version) {
+            allDimensionsCache = FinishingDimensionsData.dimensions.map { textStore.apply(it) }
+            allDimensionsVersion = version
+        }
+        return allDimensionsCache
+    }
 
     // Categories
     fun getCategoryById(id: Int): FinishingCategory? =

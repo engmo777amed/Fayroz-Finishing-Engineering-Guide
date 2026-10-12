@@ -19,7 +19,7 @@ class TechnicalContentRegressionTest {
 
     @Test fun eachDefectHasItsOwnDiagnosisAndRetest() {
         val defects = FinishingDefectsData.defects
-        assertEquals(15, defects.size)
+        assertTrue(defects.size >= 30)
         assertEquals(defects.size, defects.map { it.rootCauseDiagnosis }.distinct().size)
         assertEquals(defects.size, defects.map { it.handoverRetest }.distinct().size)
         val ppr = defects.single { it.id == "def_plumbing_joint_leak" }

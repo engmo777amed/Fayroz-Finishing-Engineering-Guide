@@ -21,6 +21,11 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.ui.FinishingViewModel
 import com.example.ui.Screen
 import com.example.ui.components.FayrozBottomNav
+import com.example.ui.screens.ContentEditorScreen
+import com.example.ui.screens.PracticalGuideScreen
+import com.example.ui.components.LocalContentStore
+import com.example.ui.components.LocalRecordScope
+import com.example.ui.components.LocalEditorOpen
 import com.example.ui.screens.BookmarksScreen
 import com.example.ui.screens.CategoriesScreen
 import com.example.ui.screens.CategoryDetailScreen
@@ -83,8 +88,15 @@ fun FayrozAppRoot(
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
+            CompositionLocalProvider(
+                LocalContentStore provides viewModel.repository.textStore,
+                LocalRecordScope provides currentScreen.editScope(),
+                LocalEditorOpen provides { viewModel.navigateTo(Screen.ContentEditor) }
+            ) {
             screenStates.SaveableStateProvider(currentScreen.stateKey()) {
             when (val screen = currentScreen) {
+                is Screen.ContentEditor -> ContentEditorScreen(viewModel) { viewModel.navigateBack() }
+                is Screen.PracticalGuide -> PracticalGuideScreen(screen.categoryId, viewModel, { viewModel.navigateTo(it) }) { viewModel.navigateBack() }
                 is Screen.Home -> {
                     HomeScreen(
                         viewModel = viewModel,
@@ -168,6 +180,7 @@ fun FayrozAppRoot(
                 }
             }
             }
+            }
         }
     }
 }
@@ -178,4 +191,12 @@ internal fun Screen.stateKey(): String = when (this) {
     is Screen.MaterialDetail -> "material:$materialId"
     is Screen.DefectDetail -> "defect:$defectId"
     else -> this.toString()
+}
+
+private fun Screen.editScope(): String = when(this) {
+    is Screen.StageDetail -> "stage|$stageId"
+    is Screen.MaterialDetail -> "material|$materialId"
+    is Screen.DefectDetail -> "defect|$defectId"
+    is Screen.CategoryDetail -> "category|$categoryId"
+    else -> ""
 }

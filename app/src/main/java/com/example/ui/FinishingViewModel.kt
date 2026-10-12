@@ -32,6 +32,8 @@ sealed class Screen {
     data object DimensionsList : Screen()
     data object Search : Screen()
     data object Bookmarks : Screen()
+    data object ContentEditor : Screen()
+    data class PracticalGuide(val categoryId: Int? = null) : Screen()
 }
 
 class FinishingViewModel(application: Application) : AndroidViewModel(application) {
@@ -73,6 +75,10 @@ class FinishingViewModel(application: Application) : AndroidViewModel(applicatio
 
     private val _searchResults = MutableStateFlow(SearchResult(emptyList(), emptyList(), emptyList(), emptyList(), emptyList()))
     val searchResults = _searchResults.asStateFlow()
+
+    init {
+        viewModelScope.launch { repository.textStore.revision.collect { updateSearchQuery(_searchQuery.value) } }
+    }
 
     fun updateSearchQuery(query: String) {
         _searchQuery.value = query

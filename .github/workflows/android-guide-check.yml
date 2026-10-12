@@ -49,8 +49,8 @@ jobs:
           old = 'applicationId = "com.aistudio.fayrozguide.kpzmva"'
           assert content.count(old) == 1
           content = content.replace(old, 'applicationId = "com.aistudio.fayrozguide.kpzmva.preview"')
-          content = content.replace('versionName = "1.0"', 'versionName = "1.3-preview"')
-          content = content.replace('versionCode = 1', 'versionCode = 3')
+          content = content.replace('versionName = "1.0"', 'versionName = "1.4-preview"')
+          content = content.replace('versionCode = 1', 'versionCode = 4')
           build.write_text(content)
           strings = Path("app/src/main/res/values/strings.xml")
           content, count = re.subn(r'(<string name="app_name">).*?(</string>)', r'\1FAYROZ Guide - Test\2', strings.read_text())
@@ -64,9 +64,9 @@ jobs:
           test "$(apkanalyzer manifest application-id "$APK")" = "com.aistudio.fayrozguide.kpzmva.preview"
           "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose --print-certs "$APK"
           mkdir -p delivery
-          cp "$APK" delivery/FAYROZ-Finishing-Guide-v1.3-test.apk
+          cp "$APK" delivery/FAYROZ-Finishing-Guide-v1.4-test.apk
           cd delivery
-          sha256sum FAYROZ-Finishing-Guide-v1.3-test.apk > SHA256.txt
+          sha256sum FAYROZ-Finishing-Guide-v1.4-test.apk > SHA256.txt
       - name: Preserve installable APK
         uses: actions/upload-artifact@v4
         with:

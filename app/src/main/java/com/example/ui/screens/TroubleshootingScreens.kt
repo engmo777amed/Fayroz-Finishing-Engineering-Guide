@@ -39,7 +39,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.material3.Text
+import com.example.ui.components.EditableText as Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -72,10 +72,11 @@ fun TroubleshootingListScreen(
     onNavigate: (Screen) -> Unit,
     onBack: () -> Unit
 ) {
+    val contentRevision = viewModel.repository.textStore.revision.collectAsState().value
     val repository = viewModel.repository
     var query by rememberSaveable { mutableStateOf("") }
 
-    val filteredDefects = remember(query) {
+    val filteredDefects = remember(contentRevision, query) {
         if (query.isBlank()) {
             repository.allDefects
         } else {
@@ -112,7 +113,7 @@ fun TroubleshootingListScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .testTag("defects_search_input"),
-                placeholder = { Text("ابحث عن عيب (تطبيل، شروخ، تقشير، تسريب...)") },
+                placeholder = { Text(textKey = "ui.TroubleshootingScreens.1", text = "ابحث عن عيب (تطبيل، شروخ، تقشير، تسريب...)") },
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Default.Search,
@@ -158,7 +159,7 @@ fun TroubleshootingListScreen(
                                 horizontalArrangement = Arrangement.SpaceBetween,
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
-                                Text(
+                                Text(textKey = "ui.TroubleshootingScreens.2",
                                     text = defect.titleAr,
                                     style = MaterialTheme.typography.titleMedium,
                                     fontWeight = FontWeight.Bold,
@@ -168,13 +169,13 @@ fun TroubleshootingListScreen(
                                 SeverityBadge(defect.severity)
                             }
                             Spacer(modifier = Modifier.height(4.dp))
-                            Text(
+                            Text(textKey = "ui.TroubleshootingScreens.3",
                                 text = "المصطلح الدارج: ${defect.marketName}",
                                 style = MaterialTheme.typography.labelSmall,
                                 color = FayrozGold
                             )
                             Spacer(modifier = Modifier.height(6.dp))
-                            Text(
+                            Text(textKey = "ui.TroubleshootingScreens.4",
                                 text = defect.description,
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -187,7 +188,7 @@ fun TroubleshootingListScreen(
                                 horizontalArrangement = Arrangement.SpaceBetween,
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
-                                Text(
+                                Text(textKey = "ui.TroubleshootingScreens.5",
                                     text = "عرض التشخيص الهندسي وخطوات الإصلاح ←",
                                     color = FayrozTurquoise,
                                     fontSize = 12.sp,
@@ -217,6 +218,7 @@ fun DefectDetailScreen(
     onNavigate: (Screen) -> Unit,
     onBack: () -> Unit
 ) {
+    val contentRevision = viewModel.repository.textStore.revision.collectAsState().value
     val repository = viewModel.repository
     val defect = repository.getDefectById(defectId) ?: return
 
@@ -267,7 +269,7 @@ fun DefectDetailScreen(
                             horizontalArrangement = Arrangement.SpaceBetween,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Text(
+                            Text(textKey = "ui.TroubleshootingScreens.6",
                                 text = defect.titleAr,
                                 style = MaterialTheme.typography.titleLarge,
                                 color = Color.White,
@@ -277,14 +279,14 @@ fun DefectDetailScreen(
                             SeverityBadge(defect.severity)
                         }
                         Spacer(modifier = Modifier.height(6.dp))
-                        Text(
+                        Text(textKey = "ui.TroubleshootingScreens.7",
                             text = "الاسم بالموقع: ${defect.marketName}",
                             style = MaterialTheme.typography.bodySmall,
                             color = FayrozGold,
                             fontWeight = FontWeight.Bold
                         )
                         Spacer(modifier = Modifier.height(8.dp))
-                        Text(
+                        Text(textKey = "ui.TroubleshootingScreens.8",
                             text = defect.description,
                             style = MaterialTheme.typography.bodyMedium,
                             color = Color.White.copy(alpha = 0.9f)
@@ -301,7 +303,7 @@ fun DefectDetailScreen(
                     accentColor = FayrozTurquoise
                 ) {
                     defect.detectionSigns.forEach { sign ->
-                        Text(
+                        Text(textKey = "ui.TroubleshootingScreens.9",
                             text = "👁 $sign",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurface,
@@ -319,7 +321,7 @@ fun DefectDetailScreen(
                     accentColor = Color(0xFFEF4444)
                 ) {
                     defect.probableCauses.forEach { cause ->
-                        Text(
+                        Text(textKey = "ui.TroubleshootingScreens.10",
                             text = "• $cause",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurface,
@@ -343,7 +345,7 @@ fun DefectDetailScreen(
                             .background(FayrozGold.copy(alpha = 0.12f))
                             .padding(10.dp)
                     ) {
-                        Text(
+                        Text(textKey = "ui.TroubleshootingScreens.11",
                             text = defect.rootCauseDiagnosis,
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurface,
@@ -361,7 +363,7 @@ fun DefectDetailScreen(
                     accentColor = FayrozTurquoiseLight
                 ) {
                     defect.repairSteps.forEach { step ->
-                        Text(
+                        Text(textKey = "ui.TroubleshootingScreens.12",
                             text = step,
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurface,
@@ -369,14 +371,14 @@ fun DefectDetailScreen(
                         )
                     }
                     Spacer(modifier = Modifier.height(10.dp))
-                    Text(
+                    Text(textKey = "ui.TroubleshootingScreens.13",
                         text = "الخامات المستخدمة في المعالجة والإصلاح:",
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.primary,
                         fontSize = 13.sp
                     )
                     defect.repairMaterials.forEach { mat ->
-                        Text(
+                        Text(textKey = "ui.TroubleshootingScreens.14",
                             text = "🔧 $mat",
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -392,7 +394,7 @@ fun DefectDetailScreen(
                     icon = Icons.Default.Shield,
                     accentColor = FayrozTurquoise
                 ) {
-                    Text(
+                    Text(textKey = "ui.TroubleshootingScreens.15",
                         text = defect.preventionMethod,
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
@@ -407,7 +409,7 @@ fun DefectDetailScreen(
                     icon = Icons.Default.CheckCircle,
                     accentColor = FayrozGold
                 ) {
-                    Text(
+                    Text(textKey = "ui.TroubleshootingScreens.16",
                         text = defect.handoverRetest,
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface

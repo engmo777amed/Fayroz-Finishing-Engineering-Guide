@@ -13,7 +13,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
-import androidx.compose.material3.Text
+import com.example.ui.components.EditableText as Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -47,7 +47,7 @@ fun FayrozBottomNav(
             selected = isHome,
             onClick = { onNavigate(Screen.Home) },
             icon = { Icon(Icons.Default.Home, contentDescription = "الرئيسية") },
-            label = { Text("الرئيسية", fontSize = 11.sp) },
+            label = { Text(textKey = "ui.FayrozBottomNav.1", text = "الرئيسية", fontSize = 11.sp) },
             colors = NavigationBarItemDefaults.colors(
                 selectedIconColor = FayrozNavy,
                 selectedTextColor = FayrozTurquoiseLight,
@@ -62,7 +62,7 @@ fun FayrozBottomNav(
             selected = isStages,
             onClick = { onNavigate(Screen.CategoriesList) },
             icon = { Icon(Icons.Default.Category, contentDescription = "المراحل") },
-            label = { Text("المراحل", fontSize = 11.sp) },
+            label = { Text(textKey = "ui.FayrozBottomNav.2", text = "المراحل", fontSize = 11.sp) },
             colors = NavigationBarItemDefaults.colors(
                 selectedIconColor = FayrozNavy,
                 selectedTextColor = FayrozTurquoiseLight,
@@ -77,7 +77,7 @@ fun FayrozBottomNav(
             selected = isMaterials,
             onClick = { onNavigate(Screen.MaterialsLibrary) },
             icon = { Icon(Icons.Default.Inventory2, contentDescription = "الخامات") },
-            label = { Text("الخامات", fontSize = 11.sp) },
+            label = { Text(textKey = "ui.FayrozBottomNav.3", text = "الخامات", fontSize = 11.sp) },
             colors = NavigationBarItemDefaults.colors(
                 selectedIconColor = FayrozNavy,
                 selectedTextColor = FayrozTurquoiseLight,
@@ -92,7 +92,7 @@ fun FayrozBottomNav(
             selected = isDefects,
             onClick = { onNavigate(Screen.TroubleshootingList) },
             icon = { Icon(Icons.Default.Warning, contentDescription = "العيوب") },
-            label = { Text("العيوب", fontSize = 11.sp) },
+            label = { Text(textKey = "ui.FayrozBottomNav.4", text = "العيوب", fontSize = 11.sp) },
             colors = NavigationBarItemDefaults.colors(
                 selectedIconColor = FayrozNavy,
                 selectedTextColor = FayrozTurquoiseLight,

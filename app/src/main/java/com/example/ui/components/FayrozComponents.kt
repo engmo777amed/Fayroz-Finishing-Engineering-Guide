@@ -19,12 +19,13 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.BookmarkBorder
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
+import com.example.ui.components.EditableText as Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -58,6 +59,7 @@ fun FayrozTopBar(
     isBookmarked: Boolean = false,
     onToggleBookmark: (() -> Unit)? = null
 ) {
+    val openEditor = LocalEditorOpen.current
     Surface(
         modifier = Modifier.fillMaxWidth(),
         color = FayrozNavy,
@@ -89,7 +91,7 @@ fun FayrozTopBar(
                         .border(1.dp, FayrozTurquoise.copy(alpha = 0.5f), RoundedCornerShape(8.dp)),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(
+                    Text(textKey = "ui.FayrozComponents.1",
                         text = "F",
                         color = FayrozGold,
                         fontWeight = FontWeight.Bold,
@@ -104,7 +106,7 @@ fun FayrozTopBar(
                     .weight(1f)
                     .padding(horizontal = 4.dp)
             ) {
-                Text(
+                Text(textKey = "ui.FayrozComponents.2",
                     text = title,
                     style = MaterialTheme.typography.titleMedium,
                     color = Color.White,
@@ -112,7 +114,7 @@ fun FayrozTopBar(
                     overflow = TextOverflow.Ellipsis
                 )
                 if (!subtitle.isNullOrBlank()) {
-                    Text(
+                    Text(textKey = "ui.FayrozComponents.3",
                         text = subtitle,
                         style = MaterialTheme.typography.bodySmall,
                         color = FayrozTurquoiseLight,
@@ -120,6 +122,10 @@ fun FayrozTopBar(
                         overflow = TextOverflow.Ellipsis
                     )
                 }
+            }
+
+            IconButton(onClick = openEditor, modifier = Modifier.size(40.dp).testTag("open_content_editor")) {
+                Icon(Icons.Default.Edit, contentDescription = "تعديل المحتوى", tint = FayrozGold)
             }
 
             if (onToggleBookmark != null) {
@@ -180,7 +186,7 @@ fun StatusBadge(status: InspectionStatus) {
             .border(1.dp, fg.copy(alpha = 0.4f), RoundedCornerShape(6.dp))
             .padding(horizontal = 8.dp, vertical = 3.dp)
     ) {
-        Text(
+        Text(textKey = "ui.FayrozComponents.4",
             text = text,
             color = fg,
             fontSize = 11.sp,
@@ -205,7 +211,7 @@ fun SeverityBadge(severity: DefectSeverity) {
             .border(1.dp, fg.copy(alpha = 0.4f), RoundedCornerShape(6.dp))
             .padding(horizontal = 8.dp, vertical = 3.dp)
     ) {
-        Text(
+        Text(textKey = "ui.FayrozComponents.5",
             text = severity.titleAr,
             color = fg,
             fontSize = 11.sp,
@@ -223,7 +229,7 @@ fun EgyptianBrandChip(brand: String) {
             .border(0.8.dp, FayrozTurquoise.copy(alpha = 0.35f), RoundedCornerShape(6.dp))
             .padding(horizontal = 8.dp, vertical = 3.dp)
     ) {
-        Text(
+        Text(textKey = "ui.FayrozComponents.6",
             text = brand,
             color = FayrozTurquoiseLight,
             fontSize = 11.sp,
@@ -247,7 +253,7 @@ fun SectionHeader(title: String, icon: String? = null, count: Int? = null) {
                 .background(FayrozGold)
         )
         Spacer(modifier = Modifier.width(8.dp))
-        Text(
+        Text(textKey = "ui.FayrozComponents.7",
             text = title,
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.Bold,
@@ -261,7 +267,7 @@ fun SectionHeader(title: String, icon: String? = null, count: Int? = null) {
                     .background(MaterialTheme.colorScheme.primaryContainer)
                     .padding(horizontal = 8.dp, vertical = 2.dp)
             ) {
-                Text(
+                Text(textKey = "ui.FayrozComponents.8",
                     text = "$count",
                     fontSize = 11.sp,
                     fontWeight = FontWeight.Bold,
