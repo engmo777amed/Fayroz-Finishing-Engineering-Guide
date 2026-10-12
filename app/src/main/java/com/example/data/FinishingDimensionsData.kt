@@ -106,13 +106,13 @@ object FinishingDimensionsData {
         TechnicalDimension(
             id = "dim_wall_hung_wc_height",
             categoryId = 8,
-            itemTitle = "ارتفاع قاعدة التواليت المعلقة وشاسيه الدفن (Wall-Hung WC Height)",
-            standardValue = "من موديل الشاسيه والجهاز والتشطيب النهائي ومتطلبات المستخدم.",
-            tolerance = "حد القبول من المواصفة المعتمدة ونظام المنتج؛ يراجع بأداة ملائمة معايرة.",
-            applicationCondition = "لراحة الجلوس للبالغين، مع ضبط التيش الصلب للشاسيه قبل صب أرضية الحمام",
+            itemTitle = "منسوب ومحاور القاعدة المعلقة والشاسيه",
+            standardValue = "من قالب الشاسيه والقاعدة ومنسوب التشطيب النهائي واحتياجات المستخدم.",
+            tolerance = "حدود الموديل والمشروع؛ لا يعمم ارتفاع أو تباعد مسامير بين الأنظمة.",
+            applicationCondition = "قبل تثبيت الشاسيه وبعد تثبيت وش الأرضية والحائط النهائيين على الرسومات.",
             referenceType = DimensionRefType.BEST_PRACTICE,
-            referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "راجع الجهاز والشاسيه والتشطيب النهائي واحتياجات المستخدم قبل تثبيت المسامير أو غلق الكسوة."
+            referenceSource = "Geberit Duofix Installation Manual؛ مرجع تركيب لنظام وموديل محددين وليس اعتمادًا عامًا لكل شاسيه: https://www.geberitnorthamerica.com/_assets/local-media/instructions/972-791-00-000.pdf",
+            practicalNotes = "سجل محور الصرف والمسامير والبروز وسمك الكسوة، وجرّب القالب قبل الغلق."
         ),
         TechnicalDimension(
             id = "dim_light_switch",
@@ -161,13 +161,13 @@ object FinishingDimensionsData {
         TechnicalDimension(
             id = "dim_ac_roughin_heights",
             categoryId = 13,
-            itemTitle = "مناسيب تأسيس صرف وفريون التكييف الاسبليت (Split AC Rough-in)",
-            standardValue = "من دليل التكييف ومساحات سحب وطرد الهواء وصيانة الفلتر وميول التكثيف.",
-            tolerance = "حد القبول من المواصفة المعتمدة ونظام المنتج؛ يراجع بأداة ملائمة معايرة.",
-            applicationCondition = "مع مراعاة ترك مسافة لا تقل عن 15 سم خلوص حر بين أعلى التكييف وسقف الجبس بورد لسحب الهواء",
+            itemTitle = "موضع وحدة التكييف وخلوص الخدمة ومساراتها",
+            standardValue = "من قالب ودليل موديل الوحدة ومسار الهواء والفلتر وخط التبريد وصرف التكثيف.",
+            tolerance = "حدود الموديل والمخطط؛ لا يعمم خلوص 15 سم أو منسوب ثابت.",
+            applicationCondition = "بعد اعتماد الموديل وموقع الوحدة الداخلية والخارجية وقبل فتح الحائط أو السقف.",
             referenceType = DimensionRefType.BEST_PRACTICE,
-            referenceSource = "الرسومات والمواصفات المعتمدة ودليل المنتج؛ يتحقق من البند والإصدار قبل نسبة رقم للكود.",
-            practicalNotes = "راجع قالب الوحدة وإمكان انحدار الخرطوم وصيانتها؛ لا تعمم فرقًا ثابتًا بين مخرج الصرف وخطوط التبريد."
+            referenceSource = "Daikin FTXTM-R Installation Manual؛ مرجع تركيب وتشغيل لموديل محدد، لا يثبت أقطارًا أو ضغوطًا أو خلوصات لكل الأجهزة: https://www.daikin.eu/content/dam/document-library/installation-manuals/ac/split/ftxtm-r/FTXTM-R_Installation%20manual_3PEN697375-4_English.pdf",
+            practicalNotes = "راجع فتح الغطاء وسحب الفلتر وانحدار الصرف وأطوال الخط والوصول للصيانة بالموقع."
         ),
         TechnicalDimension(
             id = "dim_floor_package_thickness",
