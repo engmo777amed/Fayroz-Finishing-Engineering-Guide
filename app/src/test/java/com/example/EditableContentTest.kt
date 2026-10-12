@@ -33,6 +33,18 @@ class EditableContentTest {
         assertFalse(recreated.save("stage|stable|objective", "   "))
     }
 
+    @Test fun reviewArchivesChangedPointWithoutApplyingItToAnotherPoint() {
+        val key = "stage|stage_waterproofing_01|executionSteps|0"
+        val prefs = context.getSharedPreferences("fayroz_text_edits_v1", Context.MODE_PRIVATE)
+        prefs.edit().putString(key, "ملاحظتي على الخطوة القديمة").commit()
+        val store = EditableContentStore(context)
+        assertFalse(store.isEdited(key))
+        assertEquals("ملاحظتي على الخطوة القديمة", store.value("archived|$key", ""))
+        assertTrue(store.records.any { it.fields.any { field -> field.key == "archived|$key" } })
+        val recreated = EditableContentStore(context)
+        assertEquals("ملاحظتي على الخطوة القديمة", recreated.value("archived|$key", ""))
+    }
+
     @Test fun repositoryReadsEditsAndSearchUsesEditedTitles() {
         val repository = FinishingRepository(context)
         val stage = repository.allStages.first()

@@ -38,7 +38,7 @@ object FinishingMaterialsExpansion5 {
             tradeNames = listOf(),
             classification = "طبقة أساسية وشبك واجهة من نظام متوافق",
             definitionAndFunction = "طبقة تجهيز مسلحة بشبك ضمن نظام دهان أو عزل خارجي معتمد.",
-            componentsAndProperties = "المونة والشبك والتراكب وحول الفتحات والسماكة من النظام، لا من سعر متر الشبك.",
+            componentsAndProperties = "مونة وشبك ضمن نظام واجهة متوافق؛ دور الطبقة والمكونات يحدد من اعتماد التجميعة.",
             availableTypes = listOf("طبقة أساس لنظام عزل خارجي", "مونة وشبك تجهيز كسوة محددة"),
             dimensionsAndSpecs = "المونة والشبك والتراكب وحول الفتحات والسماكة من النظام، لا من سعر متر الشبك.",
             qualityGrades = "شبك مقاوم للقلويات ونظام يجيز الخلفية.",

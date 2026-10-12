@@ -11,10 +11,45 @@ data class EditableRecord(val scope: String, val kind: String, val title: String
 /** User text is separate from the bundled catalog and keyed by stable record/field IDs. */
 class EditableContentStore(context: Context) {
     private val preferences = context.applicationContext.getSharedPreferences("fayroz_text_edits_v1", Context.MODE_PRIVATE)
+    init {
+        // Final release migrates from the delivered v1.4 catalog. Intermediate CI APKs are not releases.
+        if (!preferences.getBoolean("content_review_v14_lists_migrated", false)) {
+            val groups = org.json.JSONArray(context.assets.open("content_review_edit_migration.json").bufferedReader().use { it.readText() })
+            val editor = preferences.edit()
+            val writes = linkedMapOf<String, String>()
+            for (g in 0 until groups.length()) {
+                val group = groups.getJSONObject(g)
+                val scope = group.getString("scope")
+                val old = group.getJSONArray("old").let { a -> List(a.length()) { a.getString(it) } }
+                val revised = group.getJSONArray("new").let { a -> List(a.length()) { a.getString(it) } }
+                for (index in old.indices) {
+                    val key = "$scope|$index"
+                    if (!preferences.contains(key)) continue
+                    val edit = preferences.getString(key, null) ?: continue
+                    editor.remove(key)
+                    val target = ContentReviewEditMigration.targetIndex(old, revised, index)
+                    if (target != null) writes["$scope|$target"] = edit
+                    else {
+                        // Keep ambiguous edits available in the text editor, alongside their old context.
+                        writes["archived|$key"] = edit
+                        writes["archive_context|$key"] = old[index]
+                    }
+                }
+            }
+            writes.forEach { (key, value) -> editor.putString(key, value) }
+            editor.putBoolean("content_review_v14_lists_migrated", true).commit()
+        }
+    }
     private val _revision = MutableStateFlow(0)
     val revision = _revision.asStateFlow()
     val records: List<EditableRecord> by lazy {
         buildList {
+            preferences.all.keys.filter { it.startsWith("archived|") }.sorted().forEach { key ->
+                val oldKey = key.removePrefix("archived|")
+                val contextText = preferences.getString("archive_context|$oldKey", oldKey) ?: oldKey
+                add(EditableRecord(key, "تعديلات محفوظة قبل المراجعة", contextText,
+                    listOf(EditableField(key, "تعديلك السابق — راجع سياقه قبل نقله", contextText))))
+            }
             FinishingCatalog.categories.forEach { add(record("category", it.id.toString(), "الأقسام", it.titleAr, it)) }
             FinishingCatalog.stages.forEach { add(record("stage", it.id, "المراحل", it.titleAr, it)) }
             FinishingCatalog.materials.forEach { add(record("material", it.id, "الخامات", it.marketNameAr, it)) }

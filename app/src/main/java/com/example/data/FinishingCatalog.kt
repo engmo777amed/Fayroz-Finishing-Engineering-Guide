@@ -101,7 +101,7 @@ object FinishingCatalog {
 
     // These phases prepare the substrate before the existing installation stage.
     private val order = mapOf(
-        6 to listOf("stage_screed_02", "stage_screed_01", "stage_screed_03"),
+        6 to emptyList<String>(),
         17 to listOf("stage_woodfloor_02", "stage_woodfloor_01", "stage_woodfloor_03"),
         24 to listOf("stage_kitchen_02", "stage_kitchen_01", "stage_kitchen_03"),
         26 to listOf("stage_metal_02", "stage_metal_01", "stage_metal_03"),
@@ -141,7 +141,7 @@ object FinishingCatalog {
     } +
         stages.filter { stage -> FinishingChecklistsData.checkItems.none { it.stageId == stage.id } }
             .flatMap { stage ->
-                if (stage.categoryId in 1..3) Batch01Checkpoints.forStage(stage) else listOf(QualityCheckItem(
+                if (stage.categoryId in 1..3) Batch01Checkpoints.forStage(stage) else if (stage.categoryId in 4..6) Batch02Checkpoints.forStage(stage) else listOf(QualityCheckItem(
                     id = "check_guide_${stage.id}", categoryId = stage.categoryId, stageId = stage.id,
                     titleAr = stage.titleAr, phase = InspectionPhase.AFTER,
                     method = stage.qualityTests.joinToString("\n"),

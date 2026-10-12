@@ -79,7 +79,7 @@ fun DimensionsScreen(
     ) {
         FayrozTopBar(
             title = "المقاسات والمناسيب والاشتراطات",
-            subtitle = "قاعدة البيانات الهندسية المعتمدة طبقاً للأكواد",
+            subtitle = "قيم وشروط تطبيق؛ راجع مصدر كل بند ومستندات المشروع",
             showBackButton = true,
             onBackClick = onBack,
             onSearchClick = { onNavigate(Screen.Search) }
