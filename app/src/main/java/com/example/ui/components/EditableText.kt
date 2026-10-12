@@ -50,7 +50,11 @@ fun EditableText(
     val revision = store?.revision?.collectAsState()?.value ?: 0
     val target = remember(store, scope, text, textKey, revision) { store?.target(text, scope, textKey) }
     var editing by remember(target?.key) { mutableStateOf(false) }
-    val displayed = if (store != null && target != null) store.value(target.key, text) else text
+    val displayed = if (store != null && target != null) {
+        if (target.key.startsWith("ui|")) store.value(target.key, text)
+        else if (text.contains(target.original)) text.replaceFirst(target.original, store.value(target.key, target.original))
+        else text
+    } else text
     val editModifier = if (target == null || store == null) modifier else modifier
         .semantics { onLongClick(label = "تعديل النص") { editing = true; true } }
         .pointerInput(target.key) {

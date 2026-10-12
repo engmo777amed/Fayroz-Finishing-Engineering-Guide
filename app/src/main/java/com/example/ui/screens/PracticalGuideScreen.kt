@@ -29,10 +29,10 @@ import com.example.ui.components.*
 import com.example.ui.components.EditableText as Text
 
 @Composable
-fun PracticalGuideScreen(categoryId: Int?, viewModel: FinishingViewModel, onNavigate: (Screen) -> Unit, onBack: () -> Unit) {
+fun PracticalGuideScreen(categoryId: Int?, viewModel: FinishingViewModel, onNavigate: (Screen) -> Unit, initialQuery: String = "", onBack: () -> Unit) {
     val store = viewModel.repository.textStore
     val revision = store.revision.collectAsState().value
-    var query by remember { mutableStateOf("") }
+    var query by remember { mutableStateOf(initialQuery) }
     val entries = remember(categoryId, query, revision) {
         PracticalGuideData.entries.filter { categoryId == null || it.categoryId == categoryId }.map { store.apply(it) }
             .filter { query.isBlank() || it.title.contains(query, true) || it.body.contains(query, true) }

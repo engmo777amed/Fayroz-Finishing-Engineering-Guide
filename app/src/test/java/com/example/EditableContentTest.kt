@@ -80,4 +80,26 @@ class EditableContentTest {
         assertTrue(TechnicalIllustrations.figures.single { it.id == "wet_floor" }.dimensionText.contains("3–6"))
         assertTrue(TechnicalIllustrations.figures.single { it.id == "wood_floor" }.dimensionText.contains("Quick-Step"))
     }
+
+    @Test fun globalSearchFindsFigureDimensionsAndEditedPracticalGuidance() {
+        val repository = FinishingRepository(context)
+        assertTrue(repository.search("Quick-Step").figures.any { it.id == "wood_floor" })
+        val guide = PracticalGuideData.entries.first()
+        assertTrue(repository.textStore.save("guide|${guide.id}|body", "معلومة فريدة معدلة في الدليل"))
+        assertTrue(repository.search("معلومة فريدة معدلة").guides.any { it.id == guide.id })
+    }
+
+    @Test fun ordinaryTapStillActivatesParentCard() {
+        val store = EditableContentStore(context)
+        var clicks = 0
+        compose.setContent {
+            FayrozTheme {
+                CompositionLocalProvider(LocalContentStore provides store) {
+                    androidx.compose.material3.Card(onClick = { clicks++ }) { EditableText("بطاقة قابلة للفتح", textKey = "test.parent.tap") }
+                }
+            }
+        }
+        compose.onNodeWithText("بطاقة قابلة للفتح").performTouchInput { click() }
+        compose.runOnIdle { assertEquals(1, clicks) }
+    }
 }

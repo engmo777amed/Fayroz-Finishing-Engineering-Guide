@@ -14,7 +14,7 @@ enum class InspectionStatus(val titleAr: String) {
 }
 
 enum class DefectSeverity(val titleAr: String) {
-    CRITICAL("حرج - يستوجب التكسير أو الإعادة"),
+    CRITICAL("حرج - أوقف العمل وحدد المعالجة بتقييم مختص"),
     MAJOR("رئيسي - يتطلب معالجة هندسية متخصصة"),
     MODERATE("متوسط - معالجة موضعية لأصل العيب"),
     MINOR("بسيط - معالجة ظاهرية موضعية")

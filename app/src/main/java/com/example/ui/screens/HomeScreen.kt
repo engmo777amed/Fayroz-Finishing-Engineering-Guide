@@ -564,6 +564,7 @@ fun CategoryRowCard(
     category: com.example.model.FinishingCategory,
     onClick: () -> Unit
 ) {
+    androidx.compose.runtime.CompositionLocalProvider(com.example.ui.components.LocalRecordScope provides "category|${category.id}") {
     Card(
         onClick = onClick,
         shape = RoundedCornerShape(10.dp),
@@ -629,5 +630,7 @@ fun CategoryRowCard(
                 tint = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
+    }
+
     }
 }

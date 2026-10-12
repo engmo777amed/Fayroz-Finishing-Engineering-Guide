@@ -164,6 +164,25 @@ fun SearchScreen(
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
+                    if (results.figures.isNotEmpty()) {
+                        item { SectionHeader(title = "الصور المجسمة", count = results.figures.size) }
+                        items(results.figures, key = { "figure:${it.id}" }) { figure ->
+                            Card(onClick = { onNavigate(Screen.PracticalGuide(figure.categoryIds.first(), figure.title)) }, modifier = Modifier.fillMaxWidth()) {
+                                Text(figure.title, Modifier.padding(14.dp), textKey = "search.figure.${figure.id}")
+                            }
+                        }
+                    }
+                    if (results.guides.isNotEmpty()) {
+                        item { SectionHeader(title = "الدليل العملي والحسابات", count = results.guides.size) }
+                        items(results.guides, key = { "guide:${it.id}" }) { guide ->
+                            Card(onClick = { onNavigate(Screen.PracticalGuide(guide.categoryId, guide.title)) }, modifier = Modifier.fillMaxWidth()) {
+                                Column(Modifier.padding(14.dp)) {
+                                    Text(guide.title, textKey = "search.guide.${guide.id}")
+                                    Text(guide.body, maxLines = 2, overflow = TextOverflow.Ellipsis, textKey = "search.guide.body.${guide.id}")
+                                }
+                            }
+                        }
+                    }
                     // Categories Results
                     if (results.categories.isNotEmpty()) {
                         item { SectionHeader("أقسام وبنود التشطيبات", count = results.categories.size) }

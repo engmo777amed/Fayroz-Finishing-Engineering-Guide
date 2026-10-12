@@ -96,7 +96,7 @@ fun FayrozAppRoot(
             screenStates.SaveableStateProvider(currentScreen.stateKey()) {
             when (val screen = currentScreen) {
                 is Screen.ContentEditor -> ContentEditorScreen(viewModel) { viewModel.navigateBack() }
-                is Screen.PracticalGuide -> PracticalGuideScreen(screen.categoryId, viewModel, { viewModel.navigateTo(it) }) { viewModel.navigateBack() }
+                is Screen.PracticalGuide -> PracticalGuideScreen(screen.categoryId, viewModel, { viewModel.navigateTo(it) }, screen.initialQuery) { viewModel.navigateBack() }
                 is Screen.Home -> {
                     HomeScreen(
                         viewModel = viewModel,

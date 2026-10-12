@@ -16,10 +16,12 @@ data class SearchResult(
     val materials: List<MaterialCard>,
     val defects: List<TroubleshootingDefect>,
     val dimensions: List<TechnicalDimension>,
-    val categories: List<FinishingCategory>
+    val categories: List<FinishingCategory>,
+    val guides: List<PracticalGuideEntry> = emptyList(),
+    val figures: List<TechnicalFigure> = emptyList()
 ) {
     val totalCount: Int
-        get() = stages.size + materials.size + defects.size + dimensions.size + categories.size
+        get() = stages.size + materials.size + defects.size + dimensions.size + categories.size + guides.size + figures.size
 }
 
 class FinishingRepository(context: Context) {
@@ -189,7 +191,9 @@ class FinishingRepository(context: Context) {
             materials = matchedMaterials,
             defects = matchedDefects,
             dimensions = matchedDimensions,
-            categories = matchedCategories
+            categories = matchedCategories,
+            guides = PracticalGuideData.entries.map { textStore.apply(it) }.filter { normalizeArabic(it.title + " " + it.body).contains(q) },
+            figures = TechnicalIllustrations.figures.map { textStore.apply(it) }.filter { normalizeArabic(it.title + " " + it.caption + " " + it.dimensionText + " " + it.labels.joinToString()).contains(q) }
         )
     }
 

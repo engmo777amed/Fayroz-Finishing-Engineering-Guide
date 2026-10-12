@@ -33,7 +33,7 @@ sealed class Screen {
     data object Search : Screen()
     data object Bookmarks : Screen()
     data object ContentEditor : Screen()
-    data class PracticalGuide(val categoryId: Int? = null) : Screen()
+    data class PracticalGuide(val categoryId: Int? = null, val initialQuery: String = "") : Screen()
 }
 
 class FinishingViewModel(application: Application) : AndroidViewModel(application) {

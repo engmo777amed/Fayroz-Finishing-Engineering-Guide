@@ -196,6 +196,7 @@ fun FullMaterialListCard(
     material: MaterialCard,
     onClick: () -> Unit
 ) {
+    androidx.compose.runtime.CompositionLocalProvider(com.example.ui.components.LocalRecordScope provides "material|${material.id}") {
     Card(
         onClick = onClick,
         shape = RoundedCornerShape(12.dp),
@@ -262,5 +263,7 @@ fun FullMaterialListCard(
                 maxLines = 1
             )
         }
+    }
+
     }
 }

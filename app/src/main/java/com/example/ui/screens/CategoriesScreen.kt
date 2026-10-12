@@ -155,6 +155,7 @@ fun FullCategoryCard(
     checklistsCount: Int = category.checklistsCount,
     onClick: () -> Unit
 ) {
+    androidx.compose.runtime.CompositionLocalProvider(com.example.ui.components.LocalRecordScope provides "category|${category.id}") {
     Card(
         onClick = onClick,
         shape = RoundedCornerShape(12.dp),
@@ -248,6 +249,8 @@ fun FullCategoryCard(
                 SmallStatBadge("الفحص: $checklistsCount", FayrozTurquoiseLight)
             }
         }
+    }
+
     }
 }
 
