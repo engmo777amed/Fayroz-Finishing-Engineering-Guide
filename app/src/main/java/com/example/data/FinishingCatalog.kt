@@ -141,7 +141,10 @@ object FinishingCatalog {
     } +
         stages.filter { stage -> FinishingChecklistsData.checkItems.none { it.stageId == stage.id } }
             .flatMap { stage ->
-                if (stage.categoryId in 1..3) Batch01Checkpoints.forStage(stage) else if (stage.categoryId in 4..6) Batch02Checkpoints.forStage(stage) else listOf(QualityCheckItem(
+                if (stage.categoryId in 1..3) Batch01Checkpoints.forStage(stage)
+                else if (stage.categoryId in 4..6) Batch02Checkpoints.forStage(stage)
+                else if (stage.categoryId == 7) Batch03Checkpoints.forStage(stage)
+                else listOf(QualityCheckItem(
                     id = "check_guide_${stage.id}", categoryId = stage.categoryId, stageId = stage.id,
                     titleAr = stage.titleAr, phase = InspectionPhase.AFTER,
                     method = stage.qualityTests.joinToString("\n"),
@@ -160,3 +163,4 @@ object FinishingCatalog {
         )
     }
 }
+

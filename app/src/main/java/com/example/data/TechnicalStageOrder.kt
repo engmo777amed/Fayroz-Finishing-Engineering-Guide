@@ -8,7 +8,13 @@ object TechnicalStageOrder {
         4 to listOf("stage_review_43", "stage_waterproofing_01", "stage_review_47", "stage_review_45", "stage_waterproofing_02", "stage_waterproofing_03", "stage_review_44", "stage_review_46", "stage_waterproofing_04"),
         5 to listOf("stage_review_48", "stage_review_50", "stage_review_49", "stage_thermal_01", "stage_thermal_02", "stage_thermal_03"),
         6 to listOf("stage_review_52", "stage_review_51", "stage_screed_02", "stage_screed_01", "stage_review_54", "stage_screed_03", "stage_review_53"),
-        7 to listOf("stage_review_6", "stage_review_7", "stage_review_8", "stage_review_16", "stage_review_17"),
+        7 to listOf(
+            "stage_review_6", "stage_review_10", "stage_review_11", "stage_review_12", "stage_review_13", "stage_review_14",
+            "stage_review_7", "stage_review_8", "stage_review_9", "stage_plumbing_01", "stage_review_15", "stage_review_16",
+            "stage_review_17", "stage_review_18", "stage_plumbing_02", "stage_review_19", "stage_review_20",
+            "stage_review_21", "stage_review_22", "stage_review_23", "stage_review_24", "stage_review_25",
+            "stage_review_26", "stage_review_27", "stage_plumbing_03"
+        ),
         8 to listOf("stage_review_28"),
         9 to listOf("stage_review_55"),
         16 to listOf("stage_review_73"),
@@ -19,3 +25,4 @@ object TechnicalStageOrder {
         29 to listOf("stage_review_110")
     )
 }
+

@@ -415,9 +415,15 @@ fun DefectDetailScreen(
                         color = MaterialTheme.colorScheme.onSurface
                     )
                 }
-                if (defect.categoryId in 1..6) {
+                if (defect.categoryId in 1..7) {
                     DetailSectionCard(title = "المراجع وحدود التطبيق", icon = Icons.Default.CheckCircle, accentColor = FayrozTurquoise) {
-                        (if (defect.categoryId in 1..3) com.example.data.Batch01References.forCategory(defect.categoryId) else com.example.data.Batch02References.forCategory(defect.categoryId)).forEachIndexed { index, reference ->
+                        val references = when (defect.categoryId) {
+                            in 1..3 -> com.example.data.Batch01References.forCategory(defect.categoryId)
+                            in 4..6 -> com.example.data.Batch02References.forCategory(defect.categoryId)
+                            7 -> com.example.data.Batch03References.forCategory(defect.categoryId)
+                            else -> emptyList()
+                        }
+                        references.forEachIndexed { index, reference ->
                             com.example.ui.components.ReferenceText(reference, textKey = "batch01.defect.${defect.id}.source.$index")
                         }
                     }
@@ -427,3 +433,4 @@ fun DefectDetailScreen(
         }
     }
 }
+

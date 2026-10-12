@@ -1,0 +1,26 @@
+{
+  "batch": 3,
+  "category_ids": [7],
+  "changed_records": {
+    "ExecutionStage": 25,
+    "MaterialCard": 43,
+    "TechnicalDimension": 3,
+    "QualityCheckItem": 2,
+    "TroubleshootingDefect": 1
+  },
+  "total_changed_records": 74,
+  "off_scope_records": [],
+  "removed_ids": [],
+  "category_id_sets_preserved": true,
+  "protected_shared_materials_unchanged": [
+    "mat_drain_waterproof_flange",
+    "mat_cement_waterproofing_2k",
+    "mat_backwater_sewer_check_valve"
+  ],
+  "list_migration": {
+    "baseline": "delivered-v1.4",
+    "batch03_changed_scopes": 247,
+    "manifest_total_scopes": 703
+  },
+  "physical_device_tested": false
+}
