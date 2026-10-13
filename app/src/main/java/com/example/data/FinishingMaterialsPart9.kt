@@ -32,7 +32,7 @@ object FinishingMaterialsPart9 {
         ),
         MaterialCard(
             id = "mat_polyurethane_joint_and_crack_sealant",
-            categoryIds = listOf(18, 14, 22),
+            categoryIds = listOf(18, 22),
             marketNameAr = "معجون سيكافليكس وبولي يوريثان لمعالجة الشروخ وفواصل التمدد (Polyurethane Joint Sealant)",
             technicalNameAr = "One-Component High-Performance Moisture-Curing Elastic Polyurethane Construction Joint Sealant",
             tradeNames = listOf("سيكافليكس معجون شروخ وبولي يوريثان إنشائي (Sikaflex Construction / 11FC)", "معجون فواصل تمدد وهبوط عالي المرونة سوسيج وخرطوشة", "سيلانت بولي يوريثان لعلاج شروخ الحوائط والخرسانات المتحركة", "ماستيك فواصل شبابيك الألومنيوم والخرسانة المسلحة"),
@@ -84,7 +84,7 @@ object FinishingMaterialsPart9 {
         ),
         MaterialCard(
             id = "mat_concealed_toilet_cistern_flushing_system",
-            categoryIds = listOf(13, 14),
+            categoryIds = listOf(13),
             marketNameAr = "شاسيه قاعدة معلقة وصندوق طرد دفن",
             technicalNameAr = "Concealed cistern and wall-hung WC frame system",
             tradeNames = listOf("شاسيه قاعدة معلقة", "صندوق طرد دفن مع إطار", "طقم زر متوافق مع الخزان"),

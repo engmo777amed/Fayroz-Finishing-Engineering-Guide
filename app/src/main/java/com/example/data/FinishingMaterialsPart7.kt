@@ -58,7 +58,7 @@ object FinishingMaterialsPart7 {
         ),
         MaterialCard(
             id = "mat_drywall_inspection_access_panel",
-            categoryIds = listOf(17, 12, 7),
+            categoryIds = listOf(17, 7),
             marketNameAr = "باب كشف للصيانة",
             technicalNameAr = "Service access panel",
             tradeNames = listOf("باب كشف جبس بورد ألومنيوم مخفي", "فتحة صيانة تكييف كونسيلد ومحابس سباكة", "باب كشف تاتش بمغناطيس وضغطة (Push to Open)", "أبواب كشف كناوف وإيجي فريم 40×40 و 60×60"),

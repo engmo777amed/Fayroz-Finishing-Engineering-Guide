@@ -10,7 +10,7 @@
   "next_batch": 6,
   "last_completed_batch": 5,
   "current_batch": 6,
-  "status": "in_progress",
+  "status": "awaiting_ci",
   "batches": [
     {
       "id": 1,
@@ -81,7 +81,7 @@
         14
       ],
       "title": "الأنظمة الخاصة",
-      "status": "in_progress",
+      "status": "awaiting_ci",
       "report": "docs/content-review/BATCH06.md"
     },
     {
@@ -163,12 +163,7 @@
     "run_id": 38355564394,
     "status": "success"
   },
-  "active_run": {
-    "batch": 6,
-    "started_at": "2026-10-13T06:25:00Z",
-    "lease_minutes": 50,
-    "purpose": "Review and implement categories 12 and 14"
-  },
+  "active_run": null,
   "final_build_instructions": "docs/content-review/FINAL_BUILD.md",
   "edit_migration": {
     "baseline": "delivered-v1.4",

@@ -6,7 +6,7 @@ object FinishingMaterialsPart5 {
     val materials = listOf(
         MaterialCard(
             id = "mat_roller_shutter_somfy",
-            categoryIds = listOf(25, 22, 12),
+            categoryIds = listOf(25, 22),
             marketNameAr = "شرائح شتر ألومنيوم محقونة فوم ومواتير سومفي الفرنسية (الشيش الحصير)",
             technicalNameAr = "Insulated Foam-Filled Aluminum Roller Shutter Slats & Somfy Tubular Electric Motors",
             tradeNames = listOf("شيش حصير شتر ألومنيوم", "موتور شتر سومفي فرنسي أصلي (Somfy)", "شتر ألومنيوم زنكونيا وزنكليوم", "شتر حماية مصفح ضد السرقة (Extruded)"),
