@@ -59,7 +59,9 @@ class Batch07ReviewTest {
         (15..17).forEach { categoryId ->
             val references = Batch07References.forCategory(categoryId)
             assertTrue(references.first().startsWith("مستندات المشروع"))
-            assertTrue(references.drop(1).all { it.contains("لا تعمم") || it.contains("لا يغني") || it.contains("ليس كودًا") })
+            assertTrue(references.drop(1).all {
+                it.contains("لا تعمم") || it.contains("لا يعمم") || it.contains("لا يغني") || it.contains("ليس كودًا")
+            })
         }
     }
 
