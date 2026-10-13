@@ -426,6 +426,7 @@ fun DefectDetailScreen(
                             12, 14 -> com.example.data.Batch06References.forCategory(defect.categoryId)
                             in 15..17 -> com.example.data.Batch07References.forCategory(defect.categoryId)
                             in 18..20 -> com.example.data.Batch08References.forCategory(defect.categoryId)
+                            21, 24 -> com.example.data.Batch09References.forCategory(defect.categoryId)
                             else -> emptyList()
                         }
                         references.forEachIndexed { index, reference ->

@@ -10,7 +10,7 @@
   "next_batch": 9,
   "last_completed_batch": 8,
   "current_batch": 9,
-  "status": "in_progress",
+  "status": "awaiting_ci",
   "batches": [
     {
       "id": 1,
@@ -119,7 +119,7 @@
         24
       ],
       "title": "النجارة والتجهيزات الثابتة",
-      "status": "in_progress",
+      "status": "awaiting_ci",
       "report": "docs/content-review/BATCH09.md"
     },
     {
