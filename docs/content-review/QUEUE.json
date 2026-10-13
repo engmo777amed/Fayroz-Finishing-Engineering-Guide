@@ -7,10 +7,10 @@
     "review_and_implement_all_batches": true,
     "combine_once_after_all_batches": true
   },
-  "next_batch": 5,
-  "last_completed_batch": 4,
-  "current_batch": 5,
-  "status": "awaiting_ci",
+  "next_batch": 6,
+  "last_completed_batch": 5,
+  "current_batch": null,
+  "status": "ready",
   "batches": [
     {
       "id": 1,
@@ -69,8 +69,10 @@
         11
       ],
       "title": "الكهرباء والإنارة",
-      "status": "awaiting_ci",
-      "report": "docs/content-review/BATCH05.md"
+      "status": "completed",
+      "report": "docs/content-review/BATCH05.md",
+      "validated_commit": "a7da49c722b9b109db5f2076790e7ea55438ef3c",
+      "ci_run": 38355564394
     },
     {
       "id": 6,
@@ -157,8 +159,8 @@
   ],
   "automation_id": "6acd4374ab308191b2a650afcc1d1968",
   "validation": {
-    "code_commit": "49b04e732dc67112798214d52c964ddfd8f44584",
-    "run_id": 38325406505,
+    "code_commit": "a7da49c722b9b109db5f2076790e7ea55438ef3c",
+    "run_id": 38355564394,
     "status": "success"
   },
   "active_run": null,
