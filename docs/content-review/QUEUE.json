@@ -10,7 +10,7 @@
   "next_batch": 5,
   "last_completed_batch": 4,
   "current_batch": 5,
-  "status": "in_progress",
+  "status": "awaiting_ci",
   "batches": [
     {
       "id": 1,
@@ -69,7 +69,7 @@
         11
       ],
       "title": "الكهرباء والإنارة",
-      "status": "in_progress",
+      "status": "awaiting_ci",
       "report": "docs/content-review/BATCH05.md"
     },
     {
@@ -161,11 +161,7 @@
     "run_id": 38325406505,
     "status": "success"
   },
-  "active_run": {
-    "batch": 5,
-    "started_at": "2026-10-13T05:53:00Z",
-    "lease_minutes": 50
-  },
+  "active_run": null,
   "final_build_instructions": "docs/content-review/FINAL_BUILD.md",
   "edit_migration": {
     "baseline": "delivered-v1.4",

@@ -141,7 +141,8 @@ object FinishingCatalog {
     } +
         stages.flatMap { stage ->
                 val originalPhases = FinishingChecklistsData.checkItems.filter { it.stageId == stage.id }.map { it.phase }.toSet()
-                if (stage.categoryId in setOf(8, 13)) Batch04Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
+                if (stage.categoryId in 9..11) Batch05Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
+                else if (stage.categoryId in setOf(8, 13)) Batch04Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
                 else if (stage.categoryId == 7) Batch03Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
                 else if (originalPhases.isNotEmpty()) emptyList()
                 else if (stage.categoryId in 1..3) Batch01Checkpoints.forStage(stage)

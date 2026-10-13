@@ -16,7 +16,9 @@ object TechnicalStageOrder {
             "stage_review_26", "stage_review_27", "stage_plumbing_03"
         ),
         8 to listOf("stage_review_28", "stage_sanitary_01", "stage_review_30", "stage_review_29", "stage_sanitary_02", "stage_sanitary_03", "stage_review_31"),
-        9 to listOf("stage_review_55"),
+        9 to listOf("stage_review_55", "stage_review_56", "stage_electric_01", "stage_electric_02", "stage_review_57", "stage_electric_03"),
+        10 to listOf("stage_review_58", "stage_review_59", "stage_review_60", "stage_panel_01", "stage_panel_02", "stage_panel_03"),
+        11 to listOf("stage_review_62", "stage_lighting_01", "stage_lighting_02", "stage_lighting_03", "stage_review_61"),
         13 to listOf("stage_review_65", "stage_hvac_01", "stage_hvac_02", "stage_hvac_03", "stage_review_66", "stage_review_67"),
         16 to listOf("stage_review_73"),
         18 to listOf("stage_review_78"),
