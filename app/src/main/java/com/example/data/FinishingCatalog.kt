@@ -109,7 +109,9 @@ object FinishingCatalog {
         19 to listOf("stage_review_85", "stage_gypsum_01", "stage_gypsum_02", "stage_gypsum_03", "stage_review_84"),
         20 to listOf("stage_review_86", "stage_decor_03", "stage_decor_02", "stage_decor_01"),
         21 to listOf("stage_review_87", "stage_carpentry_01", "stage_review_88", "stage_review_89", "stage_carpentry_02", "stage_carpentry_03"),
+        22 to listOf("stage_review_90", "stage_review_91", "stage_review_92", "stage_aluminum_01", "stage_aluminum_02", "stage_aluminum_03"),
         24 to listOf("stage_kitchen_01", "stage_review_99", "stage_kitchen_02", "stage_review_100", "stage_kitchen_03", "stage_review_101"),
+        25 to listOf("stage_review_102", "stage_shutter_02", "stage_shutter_03", "stage_review_103", "stage_shutter_01"),
         26 to listOf("stage_metal_02", "stage_metal_01", "stage_metal_03"),
         27 to listOf("stage_adhesives_03", "stage_adhesives_01", "stage_adhesives_02"),
         29 to listOf("stage_qa_tests_02", "stage_qa_tests_01", "stage_qa_tests_03")
@@ -147,7 +149,8 @@ object FinishingCatalog {
     } +
         stages.flatMap { stage ->
                 val originalPhases = FinishingChecklistsData.checkItems.filter { it.stageId == stage.id }.map { it.phase }.toSet()
-                if (stage.categoryId in setOf(21, 24)) Batch09Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
+                if (stage.categoryId in setOf(22, 25)) Batch10Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
+                else if (stage.categoryId in setOf(21, 24)) Batch09Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
                 else if (stage.categoryId in 18..20) Batch08Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
                 else if (stage.categoryId in 15..17) Batch07Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
                 else if (stage.categoryId in setOf(12, 14)) Batch06Checkpoints.forStage(stage).filter { it.phase !in originalPhases }

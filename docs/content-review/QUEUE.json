@@ -10,7 +10,7 @@
   "next_batch": 10,
   "last_completed_batch": 9,
   "current_batch": 10,
-  "status": "in_progress",
+  "status": "awaiting_ci",
   "batches": [
     {
       "id": 1,
@@ -131,7 +131,7 @@
         25
       ],
       "title": "الشبابيك والشتر",
-      "status": "in_progress",
+      "status": "awaiting_ci",
       "report": "docs/content-review/BATCH10.md"
     },
     {

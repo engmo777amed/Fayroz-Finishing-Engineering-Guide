@@ -147,15 +147,15 @@ object FinishingStagesReview6 {
             siteTips = listOf("صور مواقع الوصلات والتثبيت ونتيجة الفحص قبل تغطيتها؛ احتفظ ببيانات المنتجات المستخدمة في الشتر والشيش وموقع الصندوق وخدمة المحور."),
             commonMistakes = listOf("تقفيل صندوق يمنع نزع الموتور أو دلايل غير متوازية."),
             qualityTests = listOf("تجربة كامل المشوار وفتح الصندوق والحماية المطلوبة."),
-            handoverCriteria = listOf("تجربة كامل المشوار وفتح الصندوق والحماية المطلوبة.؛ سجّل النتيجة وقارنها بالمخطط أو حد المنتج قبل القبول.", "عدم وجود العيب الآتي: تقفيل صندوق يمنع نزع الموتور أو دلايل غير متوازية."),
-            codeReferences = listOf("Somfy أدلة المواتير: https://www.somfy.com.eg/en-eg/assistance/downloads ؛ العزم ودورة التشغيل من الموديل.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
+            handoverCriteria = listOf("الصندوق والدلايل والمحور قابلة للفحص والصيانة، والمشوار كامل دون احتكاك أو خروج شرائح، وطريقة الطوارئ موثقة عند وجودها."),
+            codeReferences = Batch10References.forCategory(25),
             relatedMaterialIds = listOf("mat_roller_shutter_somfy", "mat_review_109", "mat_review_110")
         ),
         ExecutionStage(
             id = "stage_review_103",
             categoryId = 25,
             stageNumber = 203,
-            titleAr = "مسارات الستائر اليدوية والكهربائية وبيوت الستارة",
+            titleAr = "مسار مستقل: الستائر الداخلية وبيوت الستارة",
             objective = "حركة ستائر مع مساحة كافية وفك ممكن للموتور والمسار.",
             prerequisites = "نوع الستارة وطبقاتها ومقاس المسار وتغذية الموتور.",
             requiredMaterials = listOf("مسار ستائر", "موتور ستارة"),
@@ -168,8 +168,8 @@ object FinishingStagesReview6 {
             siteTips = listOf("صور مواقع الوصلات والتثبيت ونتيجة الفحص قبل تغطيتها؛ احتفظ ببيانات المنتجات المستخدمة في مسارات الستائر اليدوية والكهربائية وبيوت الستارة."),
             commonMistakes = listOf("تحميل ستارة ثقيلة على الجبس أو حبس موتور خلف تقفيلة دائمة."),
             qualityTests = listOf("تجربة الفتح والغلق مع عدم احتكاك القماش والوصول للموتور."),
-            handoverCriteria = listOf("تجربة الفتح والغلق مع عدم احتكاك القماش والوصول للموتور.؛ سجّل النتيجة وقارنها بالمخطط أو حد المنتج قبل القبول.", "عدم وجود العيب الآتي: تحميل ستارة ثقيلة على الجبس أو حبس موتور خلف تقفيلة دائمة."),
-            codeReferences = listOf("Somfy أدلة المواتير: https://www.somfy.com.eg/en-eg/assistance/downloads ؛ العزم ودورة التشغيل من الموديل.", "وثق اسم المنتج وإصدار نشرته؛ الأرقام الخاصة به لا تُنسب تلقائيًا إلى الكود المصري."),
+            handoverCriteria = listOf("المسار مثبت في تدعيم صالح، والقماش يتحرك بلا احتكاك، والتغذية والتحكم يعملان، ويمكن فك المسار أو الموتور دون تكسير دائم."),
+            codeReferences = Batch10References.forCategory(25),
             relatedMaterialIds = listOf("mat_review_111", "mat_review_112")
         ),
         ExecutionStage(
