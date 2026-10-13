@@ -64,9 +64,14 @@ class Batch10ReviewTest {
         }
     }
 
-    @Test fun noUniversalDimensionOrUnrelatedIllustrationIsPresented() {
+    @Test fun noUniversalDimensionAndWindowFigureIsNotReusedForShutters() {
         assertTrue(FinishingDimensionsData.dimensions.none { it.categoryId in setOf(22, 25) })
-        assertTrue(TechnicalIllustrations.figures.none { figure -> figure.categoryIds.any { it in setOf(22, 25) } })
+        val window = TechnicalIllustrations.figures.single { it.id == "window" }
+        assertTrue(22 in window.categoryIds)
+        assertFalse(25 in window.categoryIds)
+        assertTrue(window.limits.contains("صورة تعليمية"))
+        assertTrue(window.limits.contains("لا يُستخرج"))
+        assertTrue(TechnicalIllustrations.figures.none { 25 in it.categoryIds })
     }
 
     @Test fun defectsDiagnoseAndDoNotMandateUniversalSillDrop() {
