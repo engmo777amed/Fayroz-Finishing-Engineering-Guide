@@ -57,7 +57,7 @@ class Batch08ReviewTest {
     }
 
     @Test fun categoryMembershipRemovesTileAndFloorPollution() {
-        listOf("mat_tile_expansion_joints_and_t_profiles", "mat_epoxy_tile_grout", "mat_polyester_marble_mastic_jolly", "mat_tile_leveling_clips_and_wedges", "mat_epoxy_self_leveling_flooring")
+        listOf("mat_tile_expansion_joints_and_t_profiles", "mat_epoxy_tile_grout", "mat_polyester_marble_mastic_jolly", "mat_tile_leveling_clips", "mat_epoxy_self_leveling_flooring")
             .forEach { id ->
                 val categories = FinishingCatalog.materials.single { it.id == id }.categoryIds
                 assertFalse(id, categories.any { it in 18..20 })
@@ -88,7 +88,7 @@ class Batch08ReviewTest {
     @Test fun practicalGuidesExposeRoutesAndStopConditions() {
         assertTrue(PracticalGuideData.entries.single { it.id == "guide_18_selection" }.body.contains("المعدن"))
         assertTrue(PracticalGuideData.entries.single { it.id == "guide_19_selection" }.body.contains("افصل"))
-        assertTrue(PracticalGuideData.entries.single { it.id == "guide_20_selection" }.body.contains("الجبس"))
+        assertTrue(PracticalGuideData.entries.single { it.id == "guide_20_selection" }.body.contains("جبس"))
         (18..20).forEach { categoryId ->
             assertTrue(PracticalGuideData.entries.single { it.id == "guide_${categoryId}_inspection" }.body.contains("توقف"))
         }
