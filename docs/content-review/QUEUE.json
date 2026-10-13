@@ -9,8 +9,8 @@
   },
   "next_batch": 11,
   "last_completed_batch": 10,
-  "current_batch": null,
-  "status": "ready",
+  "current_batch": 11,
+  "status": "in_progress",
   "batches": [
     {
       "id": 1,
@@ -143,7 +143,7 @@
         26
       ],
       "title": "الواجهات والأعمال المعدنية",
-      "status": "queued",
+      "status": "in_progress",
       "report": "docs/content-review/BATCH11.md"
     },
     {
@@ -173,7 +173,11 @@
     "run_id": 38478674390,
     "status": "success"
   },
-  "active_run": null,
+  "active_run": {
+    "batch": 11,
+    "base_commit": "f578678c1e2692a4f55e933a19e27c741ead4334",
+    "started_at": "2026-10-13T23:31:00Z"
+  },
   "final_build_instructions": "docs/content-review/FINAL_BUILD.md",
   "edit_migration": {
     "baseline": "delivered-v1.4",
