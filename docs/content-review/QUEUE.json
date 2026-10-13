@@ -9,8 +9,8 @@
   },
   "next_batch": 7,
   "last_completed_batch": 6,
-  "current_batch": null,
-  "status": "ready",
+  "current_batch": 7,
+  "status": "in_progress",
   "batches": [
     {
       "id": 1,
@@ -94,7 +94,7 @@
         17
       ],
       "title": "الأرضيات والحجر",
-      "status": "queued",
+      "status": "in_progress",
       "report": "docs/content-review/BATCH07.md"
     },
     {
@@ -165,7 +165,11 @@
     "run_id": 38388558969,
     "status": "success"
   },
-  "active_run": null,
+  "active_run": {
+    "batch": 7,
+    "base_commit": "e5206d2aa7ab5475702f4037779cd2954cf53238",
+    "started_at": "2026-10-13T12:05:00Z"
+  },
   "final_build_instructions": "docs/content-review/FINAL_BUILD.md",
   "edit_migration": {
     "baseline": "delivered-v1.4",
