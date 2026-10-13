@@ -23,8 +23,13 @@ class EditableContentStore(context: Context) {
                 // Relationship lists are not user-editable text. Older review manifests may
                 // contain their numeric values, so exclude them before reading string arrays.
                 if (scope.endsWith("|categoryIds")) continue
-                val old = group.getJSONArray("old").let { a -> List(a.length()) { a.getString(it) } }
-                val revised = group.getJSONArray("new").let { a -> List(a.length()) { a.getString(it) } }
+                val oldArray = group.getJSONArray("old")
+                val revisedArray = group.getJSONArray("new")
+                if ((0 until oldArray.length()).any { oldArray.get(it) !is String } ||
+                    (0 until revisedArray.length()).any { revisedArray.get(it) !is String }
+                ) continue
+                val old = List(oldArray.length()) { oldArray.getString(it) }
+                val revised = List(revisedArray.length()) { revisedArray.getString(it) }
                 for (index in old.indices) {
                     val key = "$scope|$index"
                     if (!preferences.contains(key)) continue
