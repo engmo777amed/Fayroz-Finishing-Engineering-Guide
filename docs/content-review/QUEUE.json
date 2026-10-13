@@ -9,8 +9,8 @@
   },
   "next_batch": 10,
   "last_completed_batch": 9,
-  "current_batch": null,
-  "status": "ready",
+  "current_batch": 10,
+  "status": "in_progress",
   "batches": [
     {
       "id": 1,
@@ -131,7 +131,7 @@
         25
       ],
       "title": "الشبابيك والشتر",
-      "status": "queued",
+      "status": "in_progress",
       "report": "docs/content-review/BATCH10.md"
     },
     {
@@ -171,7 +171,11 @@
     "run_id": 38473576012,
     "status": "success"
   },
-  "active_run": null,
+  "active_run": {
+    "batch": 10,
+    "base_commit": "f61795f4fef8eb83971d1eddadf39bd47cc1a9cd",
+    "started_at": "2026-10-13T22:20:00Z"
+  },
   "final_build_instructions": "docs/content-review/FINAL_BUILD.md",
   "edit_migration": {
     "baseline": "delivered-v1.4",
