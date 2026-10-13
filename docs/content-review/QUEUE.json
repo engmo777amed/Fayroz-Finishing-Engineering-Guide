@@ -10,7 +10,7 @@
   "next_batch": 11,
   "last_completed_batch": 10,
   "current_batch": 11,
-  "status": "in_progress",
+  "status": "awaiting_ci",
   "batches": [
     {
       "id": 1,
@@ -143,7 +143,7 @@
         26
       ],
       "title": "الواجهات والأعمال المعدنية",
-      "status": "in_progress",
+      "status": "awaiting_ci",
       "report": "docs/content-review/BATCH11.md"
     },
     {
