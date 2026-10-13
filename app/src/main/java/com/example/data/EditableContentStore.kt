@@ -20,6 +20,9 @@ class EditableContentStore(context: Context) {
             for (g in 0 until groups.length()) {
                 val group = groups.getJSONObject(g)
                 val scope = group.getString("scope")
+                // Relationship lists are not user-editable text. Older review manifests may
+                // contain their numeric values, so exclude them before reading string arrays.
+                if (scope.endsWith("|categoryIds")) continue
                 val old = group.getJSONArray("old").let { a -> List(a.length()) { a.getString(it) } }
                 val revised = group.getJSONArray("new").let { a -> List(a.length()) { a.getString(it) } }
                 for (index in old.indices) {

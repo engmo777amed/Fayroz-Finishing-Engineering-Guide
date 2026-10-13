@@ -36,7 +36,7 @@ class ExampleUnitTest {
             assertEquals(FinishingCatalog.checklistItems.count { it.categoryId == category.id }, category.checklistsCount)
         }
         assertEquals("stage_woodfloor_02", FinishingCatalog.stages.first { it.categoryId == 17 }.id)
-        assertEquals("stage_kitchen_02", FinishingCatalog.stages.first { it.categoryId == 24 }.id)
+        assertEquals("stage_kitchen_01", FinishingCatalog.stages.first { it.categoryId == 24 }.id)
     }
 
     @Test fun everyPhaseContainsAllGuideSections() {

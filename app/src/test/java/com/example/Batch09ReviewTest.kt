@@ -53,14 +53,17 @@ class Batch09ReviewTest {
         listOf(21, 24).forEach { categoryId ->
             val references = Batch09References.forCategory(categoryId)
             assertTrue(references.first().startsWith("مستندات المشروع"))
-            assertTrue(references.drop(1).all { it.contains("لا تعمم") || it.contains("لا يعمم") })
+            assertTrue(references.drop(1).all {
+                it.contains("لا تعمم") || it.contains("لا يعمم") || it.contains("لا يثبت اعتماد")
+            })
         }
     }
 
     @Test fun kitchenDimensionDependsOnUsersAndActualAppliances() {
         val dimension = FinishingDimensionsData.dimensions.single { it.id == "dim_kitchen_cabinet_heights" }
         assertTrue(dimension.itemTitle.contains("المستخدم"))
-        assertTrue(dimension.applicationCondition.contains("أكواد الأجهزة"))
+        assertTrue(dimension.applicationCondition.contains("اعتماد الأجهزة"))
+        assertTrue(dimension.referenceSource.contains("أكواد الأجهزة"))
         assertFalse(dimension.standardValue.contains("90"))
     }
 
