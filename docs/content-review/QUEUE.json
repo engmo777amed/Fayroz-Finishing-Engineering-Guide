@@ -7,10 +7,10 @@
     "review_and_implement_all_batches": true,
     "combine_once_after_all_batches": true
   },
-  "next_batch": 7,
-  "last_completed_batch": 6,
-  "current_batch": 7,
-  "status": "awaiting_ci",
+  "next_batch": 8,
+  "last_completed_batch": 7,
+  "current_batch": null,
+  "status": "ready",
   "batches": [
     {
       "id": 1,
@@ -94,8 +94,10 @@
         17
       ],
       "title": "الأرضيات والحجر",
-      "status": "awaiting_ci",
-      "report": "docs/content-review/BATCH07.md"
+      "status": "completed",
+      "report": "docs/content-review/BATCH07.md",
+      "validated_commit": "80acea50e1671c66cd26dda6113efeff6fc5a5b6",
+      "ci_run": 38398550230
     },
     {
       "id": 8,
@@ -161,8 +163,8 @@
   ],
   "automation_id": "6acd4374ab308191b2a650afcc1d1968",
   "validation": {
-    "code_commit": "8f1a2f3a05a5e0b4ffde25e965e7ab3eabd17506",
-    "run_id": 38388558969,
+    "code_commit": "80acea50e1671c66cd26dda6113efeff6fc5a5b6",
+    "run_id": 38398550230,
     "status": "success"
   },
   "active_run": null,
