@@ -102,7 +102,9 @@ object FinishingCatalog {
     // These phases prepare the substrate before the existing installation stage.
     private val order = mapOf(
         6 to emptyList<String>(),
-        17 to listOf("stage_woodfloor_02", "stage_woodfloor_01", "stage_woodfloor_03"),
+        15 to listOf("stage_review_70", "stage_tiles_02", "stage_flooring_01", "stage_review_71", "stage_review_72", "stage_tiles_03"),
+        16 to listOf("stage_review_73", "stage_review_75", "stage_review_74", "stage_marble_01", "stage_marble_02", "stage_marble_03"),
+        17 to listOf("stage_woodfloor_02", "stage_woodfloor_01", "stage_review_76", "stage_review_77", "stage_woodfloor_03"),
         24 to listOf("stage_kitchen_02", "stage_kitchen_01", "stage_kitchen_03"),
         26 to listOf("stage_metal_02", "stage_metal_01", "stage_metal_03"),
         27 to listOf("stage_adhesives_03", "stage_adhesives_01", "stage_adhesives_02"),
@@ -141,7 +143,8 @@ object FinishingCatalog {
     } +
         stages.flatMap { stage ->
                 val originalPhases = FinishingChecklistsData.checkItems.filter { it.stageId == stage.id }.map { it.phase }.toSet()
-                if (stage.categoryId in setOf(12, 14)) Batch06Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
+                if (stage.categoryId in 15..17) Batch07Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
+                else if (stage.categoryId in setOf(12, 14)) Batch06Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
                 else if (stage.categoryId in 9..11) Batch05Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
                 else if (stage.categoryId in setOf(8, 13)) Batch04Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
                 else if (stage.categoryId == 7) Batch03Checkpoints.forStage(stage).filter { it.phase !in originalPhases }

@@ -58,7 +58,7 @@ object FinishingMaterialsPart6 {
         ),
         MaterialCard(
             id = "mat_anti_glare_downlights",
-            categoryIds = listOf(10, 16),
+            categoryIds = listOf(10),
             marketNameAr = "كشافات داون لايت",
             technicalNameAr = "Recessed LED downlights",
             tradeNames = listOf("سبوت لايت ليد غاطس ديب مانع للتوهج", "كشاف COB عميق 7 واط و 10 واط", "سبوت لايت معماري فريم لس (Frameless)", "سبوتات فينوس ويالوك وإضاءات فيلبس مع درايفر ترياك Dimmable"),

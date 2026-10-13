@@ -6,7 +6,7 @@ object FinishingMaterialsPart7 {
     val materials = listOf(
         MaterialCard(
             id = "mat_drywall_screws_and_hangers",
-            categoryIds = listOf(17, 18),
+            categoryIds = listOf(18),
             marketNameAr = "براغي ومسامير سن صاج مصلب سوداء 2.5 و 3.5 سم ومسامير تك وتيش التعليق (Drywall Screws & Suspension Rods)",
             technicalNameAr = "Phosphate Coated Hardened Bugle Head Drywall Screws, Self-Drilling Tek Screws, and M6 Threaded Suspension Rods",
             tradeNames = listOf("مسامير سن صاج سوداء 2.5 و 3.5 سم كناوف", "مسامير تك مجلفنة ذاتية التثقيب (Tek Screws)", "تيش تعليق ملولب 6 مم مجلفن مع صواميل وردات", "فيشر صلب وبوليت تعليق خرساني (Drop-in Anchors)"),
@@ -32,7 +32,7 @@ object FinishingMaterialsPart7 {
         ),
         MaterialCard(
             id = "mat_shadowline_profile_w_angle",
-            categoryIds = listOf(17, 18),
+            categoryIds = listOf(18),
             marketNameAr = "زوايا ظل ومجرى ظل صاج وألومنيوم شادو لاين (Shadowline Profiles & W-Shadow Angle)",
             technicalNameAr = "Architectural Aluminum & Galvanized Steel W-Shadowline Perimeter Angles 15x15mm & Z-Bead Profiles",
             tradeNames = listOf("زاوية شادو لاين جبس بورد 1.5×1.5 سم", "بروفايل مجرى ظل ديكوري محيطي", "زاوية W لمحيط الأسقف الجبسية", "بروفايل شادو لاين ألومنيوم مع ممر ليد مخفي"),
@@ -58,7 +58,7 @@ object FinishingMaterialsPart7 {
         ),
         MaterialCard(
             id = "mat_drywall_inspection_access_panel",
-            categoryIds = listOf(17, 7),
+            categoryIds = listOf(7),
             marketNameAr = "باب كشف للصيانة",
             technicalNameAr = "Service access panel",
             tradeNames = listOf("باب كشف جبس بورد ألومنيوم مخفي", "فتحة صيانة تكييف كونسيلد ومحابس سباكة", "باب كشف تاتش بمغناطيس وضغطة (Push to Open)", "أبواب كشف كناوف وإيجي فريم 40×40 و 60×60"),

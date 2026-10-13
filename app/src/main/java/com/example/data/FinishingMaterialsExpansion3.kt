@@ -188,7 +188,7 @@ object FinishingMaterialsExpansion3 {
         ),
         MaterialCard(
             id = "mat_cementitious_grout",
-            categoryIds = listOf(15, 16),
+            categoryIds = listOf(15),
             marketNameAr = "روبة أسمنتية لفواصل البلاط",
             technicalNameAr = "Cementitious tile grout",
             tradeNames = listOf(),
