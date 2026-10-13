@@ -59,12 +59,13 @@ class Batch07ReviewTest {
         (15..17).forEach { categoryId ->
             val references = Batch07References.forCategory(categoryId)
             assertTrue(references.first().startsWith("مستندات المشروع"))
-            assertTrue(references.drop(1).all { it.contains("لا تعمم") || it.contains("لا يغني") })
+            assertTrue(references.drop(1).all { it.contains("لا تعمم") || it.contains("لا يغني") || it.contains("ليس كودًا") })
         }
     }
 
     @Test fun practicalGuidesExposeAlternativeRoutes() {
-        assertTrue(PracticalGuideData.entries.single { it.id == "guide_15_selection" }.body.contains("مسارات"))
+        val tile = PracticalGuideData.entries.single { it.id == "guide_15_selection" }.body
+        assertTrue(tile.contains("لاصق فوق تسوية") && tile.contains("نظام خاص"))
         assertTrue(PracticalGuideData.entries.single { it.id == "guide_16_selection" }.body.contains("افصل"))
         assertTrue(PracticalGuideData.entries.single { it.id == "guide_17_selection" }.body.contains("LVT"))
     }
