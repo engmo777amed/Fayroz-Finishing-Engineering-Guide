@@ -10,7 +10,7 @@
   "next_batch": 8,
   "last_completed_batch": 7,
   "current_batch": 8,
-  "status": "in_progress",
+  "status": "awaiting_ci",
   "batches": [
     {
       "id": 1,
@@ -107,7 +107,7 @@
         20
       ],
       "title": "الدهانات والأسقف والديكور",
-      "status": "in_progress",
+      "status": "awaiting_ci",
       "report": "docs/content-review/BATCH08.md"
     },
     {
@@ -167,11 +167,7 @@
     "run_id": 38398550230,
     "status": "success"
   },
-  "active_run": {
-    "batch": 8,
-    "base_commit": "c2c658af7621312a1e4bb6d7f9a864bdc3acfbde",
-    "started_at": "2026-10-13T13:40:00Z"
-  },
+  "active_run": null,
   "final_build_instructions": "docs/content-review/FINAL_BUILD.md",
   "edit_migration": {
     "baseline": "delivered-v1.4",

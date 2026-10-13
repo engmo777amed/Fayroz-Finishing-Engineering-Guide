@@ -6,7 +6,7 @@ object FinishingMaterialsPart9 {
     val materials = listOf(
         MaterialCard(
             id = "mat_epoxy_self_leveling_flooring",
-            categoryIds = listOf(18, 20),
+            categoryIds = listOf(17),
             marketNameAr = "إيبوكسي أرضيات ذاتي الاستواء ومونة تسوية إيبوكسية (Self-Leveling Epoxy Flooring System)",
             technicalNameAr = "وفق إجراء الاستلام Solids High-Build Solvent-Free Self-Leveling Epoxy Resin & Hardener Floor Screed System",
             tradeNames = listOf("دهان إيبوكسي أرضيات خالي من المذيبات ثلاثي المركب", "سيلف ليفيلينج إيبوكسي للمستودعات ومواقف السيارات والمعامل", "كيمابوكسي 150 وسيكافلور 263/264 للأرضيات", "مونا إيبوكسية ذاتية التسوية مقاومة للكيماويات والاحتكاك"),
@@ -32,7 +32,7 @@ object FinishingMaterialsPart9 {
         ),
         MaterialCard(
             id = "mat_polyurethane_joint_and_crack_sealant",
-            categoryIds = listOf(18, 22),
+            categoryIds = listOf(22),
             marketNameAr = "معجون سيكافليكس وبولي يوريثان لمعالجة الشروخ وفواصل التمدد (Polyurethane Joint Sealant)",
             technicalNameAr = "One-Component High-Performance Moisture-Curing Elastic Polyurethane Construction Joint Sealant",
             tradeNames = listOf("سيكافليكس معجون شروخ وبولي يوريثان إنشائي (Sikaflex Construction / 11FC)", "معجون فواصل تمدد وهبوط عالي المرونة سوسيج وخرطوشة", "سيلانت بولي يوريثان لعلاج شروخ الحوائط والخرسانات المتحركة", "ماستيك فواصل شبابيك الألومنيوم والخرسانة المسلحة"),
@@ -58,7 +58,7 @@ object FinishingMaterialsPart9 {
         ),
         MaterialCard(
             id = "mat_tile_leveling_clips_and_wedges",
-            categoryIds = listOf(19, 20),
+            categoryIds = listOf(15),
             marketNameAr = "كلبسات تسوية البورسلين وإسفين الكلبس والزرادية (Tile Leveling System Clips & Wedges)",
             technicalNameAr = "High-Tensile Polypropylene Disposable Tile Leveling Clips, Reusable Wedges & Tension Plier Kit",
             tradeNames = listOf("كلبسات تسوية وتوحيد عراميس البورسلين والرخام", "صلايب كلبسات كلبشات السيراميك مع الأسافين (Clips and Wedges System)", "طقم ليفيلينج البورسلين مع كماشة الضغط الميكانيكية", "صلايب تسوية بلاط كبيرة المقاس مانعة للريجة والشروخ"),

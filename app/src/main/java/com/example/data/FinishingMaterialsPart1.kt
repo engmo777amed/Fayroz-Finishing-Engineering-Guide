@@ -84,7 +84,7 @@ object FinishingMaterialsPart1 {
         ),
         MaterialCard(
             id = "mat_fiber_mesh_160",
-            categoryIds = listOf(2, 3, 19, 23),
+            categoryIds = listOf(2, 3, 23),
             marketNameAr = "شبك فايبر مقاوم للقلويات للمحارة",
             technicalNameAr = "Alkali-Resistant Fiberglass Mesh 160 g/m²",
             tradeNames = listOf("شبك فايبر محارة", "شبك الفواصل فايبر جلاس", "شبك دراي ميكس وكناوف الفايبر"),

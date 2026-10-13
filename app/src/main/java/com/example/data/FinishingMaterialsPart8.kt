@@ -58,7 +58,7 @@ object FinishingMaterialsPart8 {
         ),
         MaterialCard(
             id = "mat_polyester_marble_mastic_jolly",
-            categoryIds = listOf(20, 19),
+            categoryIds = listOf(16),
             marketNameAr = "معجون رخام جولدن وجولي إيطالي شفاف مع المنشف هاردنر (Polyester Marble Mastic & Hardener)",
             technicalNameAr = "High-Bond Two-Component Polyester Resin Marble Mastic & Liquid Benzoyl Peroxide Hardener",
             tradeNames = listOf("معجون رخام إيطالي جولي وسينتو (Jolly Mastic)", "غراء لصق وترميم الرخام والجرانيت", "كلة رخام بيضاء وشفافة مع الأنبوبة المنشف", "معجون تلميع وحشو مسامات الرخام الطبيعي تينكس وماستيك"),
