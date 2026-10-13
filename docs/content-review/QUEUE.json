@@ -3,30 +3,169 @@
   "repository": "engmo777amed/Fayroz-Finishing-Engineering-Guide",
   "branch": "codex/content-review-batches",
   "base_commit": "056c91240ab8e870b66b7c71d1ac3c4bc46ce262",
-  "approvals": {"review_and_implement_all_batches": true, "combine_once_after_all_batches": true},
-  "next_batch": 4,
-  "last_completed_batch": 3,
-  "current_batch": 4,
-  "status": "awaiting_ci",
+  "approvals": {
+    "review_and_implement_all_batches": true,
+    "combine_once_after_all_batches": true
+  },
+  "next_batch": 5,
+  "last_completed_batch": 4,
+  "current_batch": null,
+  "status": "idle",
   "batches": [
-    {"id": 1, "categories": [1,2,3], "title": "المباني وتجهيز الأسطح والمحارة", "status": "completed", "report": "docs/content-review/BATCH01.md", "validated_commit": "985f089fed26ad78449a704f0d2779bcf5c581ae", "ci_run": 38305031169},
-    {"id": 2, "categories": [4,5,6], "title": "العزل والميول", "status": "completed", "report": "docs/content-review/BATCH02.md", "validated_commit": "7484909ebfead98a93cd3f27f2d9c97b401b04e2", "ci_run": 38307674349},
-    {"id": 3, "categories": [7], "title": "تأسيس السباكة", "status": "completed", "report": "docs/content-review/BATCH03.md", "validated_commit": "e1a6705ebde6ddc125cffe5521c2acd4a623ae40", "ci_run": 38320895337},
-    {"id": 4, "categories": [8,13], "title": "الأجهزة الصحية والتكييف", "status": "awaiting_ci", "report": "docs/content-review/BATCH04.md"},
-    {"id": 5, "categories": [9,10,11], "title": "الكهرباء والإنارة", "status": "queued", "report": "docs/content-review/BATCH05.md"},
-    {"id": 6, "categories": [12,14], "title": "الأنظمة الخاصة", "status": "queued", "report": "docs/content-review/BATCH06.md"},
-    {"id": 7, "categories": [15,16,17], "title": "الأرضيات والحجر", "status": "queued", "report": "docs/content-review/BATCH07.md"},
-    {"id": 8, "categories": [18,19,20], "title": "الدهانات والأسقف والديكور", "status": "queued", "report": "docs/content-review/BATCH08.md"},
-    {"id": 9, "categories": [21,24], "title": "النجارة والتجهيزات الثابتة", "status": "queued", "report": "docs/content-review/BATCH09.md"},
-    {"id": 10, "categories": [22,25], "title": "الشبابيك والشتر", "status": "queued", "report": "docs/content-review/BATCH10.md"},
-    {"id": 11, "categories": [23,26], "title": "الواجهات والأعمال المعدنية", "status": "queued", "report": "docs/content-review/BATCH11.md"},
-    {"id": 12, "categories": [27,28], "title": "اللصق والفواصل والتقفيلات", "status": "queued", "report": "docs/content-review/BATCH12.md"},
-    {"id": 13, "categories": [29,30], "title": "الجودة والتسليم", "status": "queued", "report": "docs/content-review/BATCH13.md"}
+    {
+      "id": 1,
+      "categories": [
+        1,
+        2,
+        3
+      ],
+      "title": "المباني وتجهيز الأسطح والمحارة",
+      "status": "completed",
+      "report": "docs/content-review/BATCH01.md",
+      "validated_commit": "985f089fed26ad78449a704f0d2779bcf5c581ae",
+      "ci_run": 38305031169
+    },
+    {
+      "id": 2,
+      "categories": [
+        4,
+        5,
+        6
+      ],
+      "title": "العزل والميول",
+      "status": "completed",
+      "report": "docs/content-review/BATCH02.md",
+      "validated_commit": "7484909ebfead98a93cd3f27f2d9c97b401b04e2",
+      "ci_run": 38307674349
+    },
+    {
+      "id": 3,
+      "categories": [
+        7
+      ],
+      "title": "تأسيس السباكة",
+      "status": "completed",
+      "report": "docs/content-review/BATCH03.md",
+      "validated_commit": "e1a6705ebde6ddc125cffe5521c2acd4a623ae40",
+      "ci_run": 38320895337
+    },
+    {
+      "id": 4,
+      "categories": [
+        8,
+        13
+      ],
+      "title": "الأجهزة الصحية والتكييف",
+      "status": "completed",
+      "report": "docs/content-review/BATCH04.md",
+      "validated_commit": "49b04e732dc67112798214d52c964ddfd8f44584",
+      "ci_run": 38325406505
+    },
+    {
+      "id": 5,
+      "categories": [
+        9,
+        10,
+        11
+      ],
+      "title": "الكهرباء والإنارة",
+      "status": "queued",
+      "report": "docs/content-review/BATCH05.md"
+    },
+    {
+      "id": 6,
+      "categories": [
+        12,
+        14
+      ],
+      "title": "الأنظمة الخاصة",
+      "status": "queued",
+      "report": "docs/content-review/BATCH06.md"
+    },
+    {
+      "id": 7,
+      "categories": [
+        15,
+        16,
+        17
+      ],
+      "title": "الأرضيات والحجر",
+      "status": "queued",
+      "report": "docs/content-review/BATCH07.md"
+    },
+    {
+      "id": 8,
+      "categories": [
+        18,
+        19,
+        20
+      ],
+      "title": "الدهانات والأسقف والديكور",
+      "status": "queued",
+      "report": "docs/content-review/BATCH08.md"
+    },
+    {
+      "id": 9,
+      "categories": [
+        21,
+        24
+      ],
+      "title": "النجارة والتجهيزات الثابتة",
+      "status": "queued",
+      "report": "docs/content-review/BATCH09.md"
+    },
+    {
+      "id": 10,
+      "categories": [
+        22,
+        25
+      ],
+      "title": "الشبابيك والشتر",
+      "status": "queued",
+      "report": "docs/content-review/BATCH10.md"
+    },
+    {
+      "id": 11,
+      "categories": [
+        23,
+        26
+      ],
+      "title": "الواجهات والأعمال المعدنية",
+      "status": "queued",
+      "report": "docs/content-review/BATCH11.md"
+    },
+    {
+      "id": 12,
+      "categories": [
+        27,
+        28
+      ],
+      "title": "اللصق والفواصل والتقفيلات",
+      "status": "queued",
+      "report": "docs/content-review/BATCH12.md"
+    },
+    {
+      "id": 13,
+      "categories": [
+        29,
+        30
+      ],
+      "title": "الجودة والتسليم",
+      "status": "queued",
+      "report": "docs/content-review/BATCH13.md"
+    }
   ],
   "automation_id": "6acd4374ab308191b2a650afcc1d1968",
-  "validation": {"code_commit": null, "run_id": null, "status": "pending"},
-  "active_run": {"batch": 4, "started_at": "2026-10-12T23:29:00Z", "lease_minutes": 50},
+  "validation": {
+    "code_commit": "49b04e732dc67112798214d52c964ddfd8f44584",
+    "run_id": 38325406505,
+    "status": "success"
+  },
+  "active_run": null,
   "final_build_instructions": "docs/content-review/FINAL_BUILD.md",
-  "edit_migration": {"baseline": "delivered-v1.4", "manifest": "app/src/main/assets/content_review_edit_migration.json", "note": "Regenerate complete old-v1.4 to final list manifest before release; do not distribute intermediate CI APKs."}
+  "edit_migration": {
+    "baseline": "delivered-v1.4",
+    "manifest": "app/src/main/assets/content_review_edit_migration.json",
+    "note": "Regenerate complete old-v1.4 to final list manifest before release; do not distribute intermediate CI APKs."
+  }
 }
-
