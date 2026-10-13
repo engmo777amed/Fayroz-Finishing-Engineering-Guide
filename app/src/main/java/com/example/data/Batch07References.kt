@@ -15,7 +15,7 @@ object Batch07References {
     private val floors = listOf(
         "مستندات المشروع: جدول الأرضيات، نوع المنتج ورقم الموديل، الركيزة واختبار الرطوبة، التدفئة الأرضية إن وجدت، الطبقة السفلية واللاصق، الانتقالات والحماية وخطة التسليم.",
         "Quick-Step — Laminate Installation؛ مثال مصنع لنظام لامينيت كليك محدد، وحدوده وطبقته السفلية لا تعمم على HDF أو SPC أو باركيه من مورد آخر: https://int.quick-step.com/en/laminate/installation",
-        "Interface — LVT Installation Instructions، Rev. 06/01/2025؛ مثال مصنع لفينيل LVT محدد يربط القبول باختبار الركيزة والرطوبة واللاصق والحماية: https://www.interface.com/content/dam/interfaceinc/interface/technical/ams/installation-instructions/wc_am-lvtinstallinstructions-ams-11-2020.pdf"
+        "Interface — LVT Installation Instructions، Rev. 06/01/2025؛ مثال مصنع لفينيل LVT محدد يربط القبول باختبار الركيزة والرطوبة واللاصق والحماية، ولا يعمم على كل LVT: https://www.interface.com/content/dam/interfaceinc/interface/technical/ams/installation-instructions/wc_am-lvtinstallinstructions-ams-11-2020.pdf"
     )
 
     fun forCategory(categoryId: Int): List<String> = when (categoryId) {
