@@ -146,7 +146,7 @@ object FinishingStagesRemaining {
             mepCoordination = "راجع التقاطعات مع القدرة ومسارات الحريق والتكييف، وافصل أو احمِ حسب التفصيلة المعتمدة لا بالاجتهاد.",
             siteTips = listOf("صور الترقيم والمسارات قبل الغلق؛ كلمة نحاس على العبوة لا تغني عن كود الصنف ومستند المورد."),
             commonMistakes = listOf("السحب داخل خرطوم مزدحم أو بجوار قدرة دون تنسيق، أو ترك أطراف بلا ترقيم."),
-            qualityTests = listOf("مطابقة الصنف والترقيم والمسار.", "فحص أولي للاستمرارية وسلامة الغلاف قبل الإنهاء."),
+            qualityTests = listOf("مطابقة الصنف والترقيم والمسار.", "فحص أولي لأداء المسار: الاستمرارية وسلامة الغلاف قبل الإنهاء."),
             handoverCriteria = listOf("كل كابل معروف الطرفين والصنف والمسار، سليم ظاهريًا وجاهز للإنهاء والاختبار المحدد."),
             codeReferences = listOf("مستندات المشروع: مخطط النقاط والمسارات والراك والتغذية، جدول المنافذ والأجهزة، متطلبات الأداء وPoE والتخزين، وخطة الاختبار والتسليم.", "Fluke Networks يفرق بين فحص التوصيل والتأهيل واعتماد الوصلة؛ اختر مستوى الاختبار المطلوب بالعقد: https://www.flukenetworks.com/knowledge-base/cableiq/verification-qualification-and-certification", "ONVIF؛ توافق الكاميرا والمسجل يثبت بملف تعريف ومنتجات متوافقة محددة، لا بالشعار وحده: https://www.onvif.org/conformant-products/"),
             relatedMaterialIds = listOf("mat_cat6_utp_cable", "mat_review_55", "mat_review_56")
