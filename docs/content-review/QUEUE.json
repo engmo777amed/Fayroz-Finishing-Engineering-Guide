@@ -9,8 +9,8 @@
   },
   "next_batch": 9,
   "last_completed_batch": 8,
-  "current_batch": null,
-  "status": "ready",
+  "current_batch": 9,
+  "status": "in_progress",
   "batches": [
     {
       "id": 1,
@@ -119,7 +119,7 @@
         24
       ],
       "title": "النجارة والتجهيزات الثابتة",
-      "status": "queued",
+      "status": "in_progress",
       "report": "docs/content-review/BATCH09.md"
     },
     {
@@ -169,7 +169,11 @@
     "run_id": 38432544892,
     "status": "success"
   },
-  "active_run": null,
+  "active_run": {
+    "batch": 9,
+    "base_commit": "4626f6ccbf12ea5df3fbf7ffd273b96988741ea4",
+    "started_at": "2026-10-13T17:42:00Z"
+  },
   "final_build_instructions": "docs/content-review/FINAL_BUILD.md",
   "edit_migration": {
     "baseline": "delivered-v1.4",
