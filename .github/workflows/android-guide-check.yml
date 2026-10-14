@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: guide-check-${{ github.ref }}
   cancel-in-progress: true
@@ -27,6 +28,20 @@ jobs:
         with:
           gradle-version: '9.3.1'
           cache-read-only: false
+      - name: Inspect available preview key cache metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          url = "https://api.github.com/repos/" + os.environ["GITHUB_REPOSITORY"] + "/actions/caches?key=fayroz-preview-debug-key-v1&per_page=100"
+          request = urllib.request.Request(url, headers={"Authorization": "Bearer " + os.environ["GH_TOKEN"], "Accept": "application/vnd.github+json"})
+          with urllib.request.urlopen(request) as response:
+              data = json.load(response)
+          print("Preview cache entries:", data["total_count"])
+          for entry in data["actions_caches"]:
+              print(json.dumps({key: entry.get(key) for key in ("id", "ref", "key", "created_at", "last_accessed_at", "size_in_bytes")}))
+          PY
       - name: Reuse preview signing key
         uses: actions/cache@v4
         with:
@@ -35,7 +50,7 @@ jobs:
       - name: Create temporary CI debug key
         run: |
           if [ ! -f debug.keystore ]; then
-            if [ "$GITHUB_REF" = "refs/heads/codex/finishing-content-2026-10-11" ]; then
+            if [ "$GITHUB_REF" = "refs/heads/codex/finishing-content-2026-10-11" ] || [ "$GITHUB_HEAD_REF" = "codex/finishing-content-2026-10-11" ]; then
               echo "Original preview signing key is missing; refusing an incompatible update."
               exit 1
             fi
@@ -68,7 +83,7 @@ jobs:
           test "$(apkanalyzer manifest application-id "$APK")" = "com.aistudio.fayrozguide.kpzmva.preview"
           "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose --print-certs "$APK"
           test "$(apkanalyzer manifest version-code "$APK")" = "5"
-          if [ "$GITHUB_REF" = "refs/heads/codex/finishing-content-2026-10-11" ]; then
+          if [ "$GITHUB_REF" = "refs/heads/codex/finishing-content-2026-10-11" ] || [ "$GITHUB_HEAD_REF" = "codex/finishing-content-2026-10-11" ]; then
             CERT=$("$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --print-certs "$APK" | sed -n 's/Signer #1 certificate SHA-256 digest: //p')
             test "$CERT" = "fc13f6eaa79e0beb6dcfd67dc05fd8b954aa6513316bef6d83a6d6f39bce18f5"
           fi

@@ -10,7 +10,7 @@
   "next_batch": null,
   "last_completed_batch": 13,
   "current_batch": null,
-  "status": "final_integration_awaiting_ci",
+  "status": "blocked_signing",
   "batches": [
     {
       "id": 1,
@@ -188,7 +188,7 @@
   },
   "final_review": {
     "migration_groups": 1908,
-    "status": "integration_and_release_ci",
+    "status": "integration_passed_signing_blocked",
     "next_steps": [
       "verify migration and integration CI",
       "finish cross-system integration tests",
@@ -196,6 +196,14 @@
       "verify and deliver APK and ZIP"
     ],
     "migration_validated_commit": "bf7ca6acf82235caf0f9669f273df9b32a331275",
-    "migration_ci_run": 38536584485
+    "migration_ci_run": 38536584485,
+    "integration_commit": "e31f7fe476cb6e48674f488d89bc210287463bd0",
+    "integration_ci_run": 38536860765,
+    "expected_certificate": "fc13f6eaa79e0beb6dcfd67dc05fd8b954aa6513316bef6d83a6d6f39bce18f5",
+    "observed_certificates": {
+      "original_push": "0fe4b356ea9222ce99b010f1fd66c5e410fd541875d9a522d1bd60ca4759641f",
+      "original_pr1": "eed302100162b0d21e926e59eba87faf012459ed7cd0c3880af62e28e3edd102"
+    },
+    "required_to_resume": "Original v1.4 preview private signing keystore matching expected certificate"
   }
 }
