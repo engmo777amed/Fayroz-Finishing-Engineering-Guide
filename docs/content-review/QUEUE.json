@@ -7,10 +7,10 @@
     "review_and_implement_all_batches": true,
     "combine_once_after_all_batches": true
   },
-  "next_batch": 12,
-  "last_completed_batch": 11,
-  "current_batch": 12,
-  "status": "awaiting_ci",
+  "next_batch": 13,
+  "last_completed_batch": 12,
+  "current_batch": null,
+  "status": "ready",
   "batches": [
     {
       "id": 1,
@@ -155,8 +155,10 @@
         28
       ],
       "title": "اللصق والفواصل والتقفيلات",
-      "status": "awaiting_ci",
-      "report": "docs/content-review/BATCH12.md"
+      "status": "completed",
+      "report": "docs/content-review/BATCH12.md",
+      "validated_commit": "68bddfca10de1d44658e5146bd37bb71197dc6d5",
+      "ci_run": 38514087357
     },
     {
       "id": 13,
@@ -171,15 +173,11 @@
   ],
   "automation_id": "6acd4374ab308191b2a650afcc1d1968",
   "validation": {
-    "code_commit": "acee2f7b7bfcb1bf90788244452d6fa5f7600394",
-    "run_id": 38505347667,
+    "code_commit": "68bddfca10de1d44658e5146bd37bb71197dc6d5",
+    "run_id": 38514087357,
     "status": "success"
   },
-  "active_run": {
-    "batch": 12,
-    "base_commit": "56df1be4ede52c6df95ee37ba99d7f7945730626",
-    "started_at": "2026-10-14T04:43:24Z"
-  },
+  "active_run": null,
   "final_build_instructions": "docs/content-review/FINAL_BUILD.md",
   "edit_migration": {
     "baseline": "delivered-v1.4",
