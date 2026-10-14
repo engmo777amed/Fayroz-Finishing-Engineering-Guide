@@ -7,10 +7,10 @@
     "review_and_implement_all_batches": true,
     "combine_once_after_all_batches": true
   },
-  "next_batch": 11,
-  "last_completed_batch": 10,
-  "current_batch": 11,
-  "status": "awaiting_ci",
+  "next_batch": 12,
+  "last_completed_batch": 11,
+  "current_batch": null,
+  "status": "ready",
   "batches": [
     {
       "id": 1,
@@ -143,8 +143,10 @@
         26
       ],
       "title": "الواجهات والأعمال المعدنية",
-      "status": "awaiting_ci",
-      "report": "docs/content-review/BATCH11.md"
+      "status": "completed",
+      "report": "docs/content-review/BATCH11.md",
+      "validated_commit": "acee2f7b7bfcb1bf90788244452d6fa5f7600394",
+      "ci_run": 38505347667
     },
     {
       "id": 12,
@@ -169,15 +171,11 @@
   ],
   "automation_id": "6acd4374ab308191b2a650afcc1d1968",
   "validation": {
-    "code_commit": "72e848b724794eff9b88f1ca366961174e8f8c32",
-    "run_id": 38478674390,
+    "code_commit": "acee2f7b7bfcb1bf90788244452d6fa5f7600394",
+    "run_id": 38505347667,
     "status": "success"
   },
-  "active_run": {
-    "batch": 11,
-    "base_commit": "f578678c1e2692a4f55e933a19e27c741ead4334",
-    "started_at": "2026-10-13T23:31:00Z"
-  },
+  "active_run": null,
   "final_build_instructions": "docs/content-review/FINAL_BUILD.md",
   "edit_migration": {
     "baseline": "delivered-v1.4",
