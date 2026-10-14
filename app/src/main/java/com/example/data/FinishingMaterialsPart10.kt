@@ -6,7 +6,7 @@ object FinishingMaterialsPart10 {
     val materials = listOf(
         MaterialCard(
             id = "mat_corner_bead_galvanized",
-            categoryIds = listOf(3),
+            categoryIds = listOf(3, 23),
             marketNameAr = "زوايا سوك معدنية مجلفنة للأركان والأعمدة (Corner Beads)",
             technicalNameAr = "Hot-Dip Galvanized Expanded Metal Angle / Corner Beads (50×50 mm)",
             tradeNames = listOf("زوايا سوك مجلفنة", "شبك سوك حديد مجلفن للأعمدة", "كورنر بيد بياض", "زوايا حماية الأركان السريعة"),
@@ -136,7 +136,7 @@ object FinishingMaterialsPart10 {
         ),
         MaterialCard(
             id = "mat_mussiees_gypsum_super",
-            categoryIds = listOf(3, 23),
+            categoryIds = listOf(3),
             marketNameAr = "جبس مصيص للضهارة والديكور",
             technicalNameAr = "High-Purity Plaster of Paris / Super Fine White Moulding & Finishing Gypsum",
             tradeNames = listOf("جبس مصيص سيناء الفاخر", "مصيص مريم والفرسان ناصع البياض", "جبس ضهارة وكرانيش نخب أول", "مصيص أسقف وحليات معمارية"),
