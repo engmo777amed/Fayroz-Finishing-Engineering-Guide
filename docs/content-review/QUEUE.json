@@ -9,8 +9,8 @@
   },
   "next_batch": 12,
   "last_completed_batch": 11,
-  "current_batch": null,
-  "status": "ready",
+  "current_batch": 12,
+  "status": "in_progress",
   "batches": [
     {
       "id": 1,
@@ -155,7 +155,7 @@
         28
       ],
       "title": "اللصق والفواصل والتقفيلات",
-      "status": "queued",
+      "status": "in_progress",
       "report": "docs/content-review/BATCH12.md"
     },
     {
@@ -175,7 +175,11 @@
     "run_id": 38505347667,
     "status": "success"
   },
-  "active_run": null,
+  "active_run": {
+    "batch": 12,
+    "base_commit": "56df1be4ede52c6df95ee37ba99d7f7945730626",
+    "started_at": "2026-10-14T04:43:24Z"
+  },
   "final_build_instructions": "docs/content-review/FINAL_BUILD.md",
   "edit_migration": {
     "baseline": "delivered-v1.4",
