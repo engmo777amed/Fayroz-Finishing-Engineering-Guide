@@ -7,10 +7,10 @@
     "review_and_implement_all_batches": true,
     "combine_once_after_all_batches": true
   },
-  "next_batch": 13,
-  "last_completed_batch": 12,
-  "current_batch": 13,
-  "status": "awaiting_ci",
+  "next_batch": null,
+  "last_completed_batch": 13,
+  "current_batch": null,
+  "status": "ready_for_final_review",
   "batches": [
     {
       "id": 1,
@@ -167,21 +167,19 @@
         30
       ],
       "title": "الجودة والتسليم",
-      "status": "awaiting_ci",
-      "report": "docs/content-review/BATCH13.md"
+      "status": "completed",
+      "report": "docs/content-review/BATCH13.md",
+      "validated_commit": "1ac2dbe0df141fc4a36ed8a992a19f2802bf0e35",
+      "ci_run": 38518051600
     }
   ],
   "automation_id": "6acd4374ab308191b2a650afcc1d1968",
   "validation": {
-    "code_commit": "68bddfca10de1d44658e5146bd37bb71197dc6d5",
-    "run_id": 38514087357,
+    "code_commit": "1ac2dbe0df141fc4a36ed8a992a19f2802bf0e35",
+    "run_id": 38518051600,
     "status": "success"
   },
-  "active_run": {
-    "batch": 13,
-    "base_commit": "ad79c83a5f3594c931a39f3a312115e9584d791f",
-    "started_at": "2026-10-14T05:35:16Z"
-  },
+  "active_run": null,
   "final_build_instructions": "docs/content-review/FINAL_BUILD.md",
   "edit_migration": {
     "baseline": "delivered-v1.4",
