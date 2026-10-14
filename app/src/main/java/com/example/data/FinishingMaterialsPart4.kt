@@ -58,7 +58,7 @@ object FinishingMaterialsPart4 {
         ),
         MaterialCard(
             id = "mat_polyurethane_cornice",
-            categoryIds = listOf(20, 28),
+            categoryIds = listOf(20),
             marketNameAr = "كرانيش وبانوهات بوليمر خفيفة (تسمى في السوق فيوتك أحيانًا)",
             technicalNameAr = "Lightweight polymer architectural mouldings",
             tradeNames = listOf("كرانيش بوليمر أو بولي يوريثان", "بانوهات حوائط", "حليات إضاءة مخفية حسب الموديل"),
@@ -110,7 +110,7 @@ object FinishingMaterialsPart4 {
         ),
         MaterialCard(
             id = "mat_aluminum_jumbo_profiles",
-            categoryIds = listOf(22, 28, 29),
+            categoryIds = listOf(22, 29),
             marketNameAr = "قطاعات شبابيك وأبواب ألمنيوم",
             technicalNameAr = "Architectural aluminum window and door profile system",
             tradeNames = listOf("قطاع جامبو", "قطاع PS أو BS", "قطاع مفصلي أو جرار", "قطاع بفاصل حراري"),

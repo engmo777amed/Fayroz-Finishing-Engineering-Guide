@@ -32,7 +32,7 @@ object FinishingMaterialsExpansion1 {
         ),
         MaterialCard(
             id = "mat_clean_mix_water",
-            categoryIds = listOf(1, 3, 4, 6, 15, 18, 27),
+            categoryIds = listOf(1, 3, 4, 6, 15, 18),
             marketNameAr = "مياه خلط ومعالجة نظيفة",
             technicalNameAr = "Mixing and curing water",
             tradeNames = listOf(),

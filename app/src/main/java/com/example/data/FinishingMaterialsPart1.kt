@@ -188,7 +188,7 @@ object FinishingMaterialsPart1 {
         ),
         MaterialCard(
             id = "mat_cement_waterproofing_2k",
-            categoryIds = listOf(4, 7, 27),
+            categoryIds = listOf(4, 7),
             marketNameAr = "عزل أسمنتي بوليمري ثنائي المركب",
             technicalNameAr = "Two-Component Flexible Polymer-Modified Cementitious Waterproofing Slurry",
             tradeNames = listOf("سيكاتوب سيل 107 (SikaTop Seal-107)", "كيم كوت 300 (Kem-Coat)", "سافيتو ووتر بروف 2K", "مابي مابلاستيك (Mapelastic)"),

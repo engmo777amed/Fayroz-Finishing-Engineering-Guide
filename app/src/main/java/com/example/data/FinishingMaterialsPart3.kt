@@ -136,7 +136,7 @@ object FinishingMaterialsPart3 {
         ),
         MaterialCard(
             id = "mat_hdf_flooring_ac4",
-            categoryIds = listOf(17, 27),
+            categoryIds = listOf(17),
             marketNameAr = "ألواح أرضيات كليك HDF أو SPC",
             technicalNameAr = "أرضيات عائمة متشابكة؛ HDF وSPC منتجان مختلفان",
             tradeNames = listOf("باركيه HDF كليك (Laminate)", "أرضيات SPC كليك", "ألواح ببطانة مدمجة أو منفصلة حسب الموديل"),
@@ -162,7 +162,7 @@ object FinishingMaterialsPart3 {
         ),
         MaterialCard(
             id = "mat_acrylic_putty",
-            categoryIds = listOf(18, 28),
+            categoryIds = listOf(18),
             marketNameAr = "معجون حوائط أكريليك جاهز",
             technicalNameAr = "Ready-mixed acrylic wall putty",
             tradeNames = listOf("معجون أكريليك داخلي أو خارجي حسب رقم الصنف", "معجون جاهز للتسوية"),

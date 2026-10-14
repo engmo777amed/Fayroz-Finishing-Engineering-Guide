@@ -23,10 +23,10 @@ object FinishingCategoriesData {
             titleEn = "Surface Preparation",
             iconName = "cleaning_services",
             summaryAr = "فحص الخلفية والرطوبة والشروخ، علاج السبب، تجهيز السطح وغلق مجاري الخدمات، ثم اعتماد عينة الربط قبل المحارة.",
-            stagesCount = 3,
-            materialsCount = 5,
+            stagesCount = 5,
+            materialsCount = 7,
             defectsCount = 3,
-            checklistsCount = 6
+            checklistsCount = 15
         ),
         FinishingCategory(
             id = 3,
@@ -59,8 +59,8 @@ object FinishingCategoriesData {
             titleEn = "Thermal & Acoustic Insulation",
             iconName = "shield",
             summaryAr = "ألواح البوليسترين المبثوق XPS، الصوف الصخري، الصوف الزجاجي وعزل دكتات التكييف والحوائط المزدوجة.",
-            stagesCount = 3,
-            materialsCount = 5,
+            stagesCount = 4,
+            materialsCount = 7,
             defectsCount = 3,
             checklistsCount = 6
         ),
@@ -122,7 +122,7 @@ object FinishingCategoriesData {
             stagesCount = 3,
             materialsCount = 6,
             defectsCount = 3,
-            checklistsCount = 7
+            checklistsCount = 12
         ),
         FinishingCategory(
             id = 11,
@@ -322,7 +322,7 @@ object FinishingCategoriesData {
             titleAr = "المواد اللاصقة والفواصل والسيليكون",
             titleEn = "Adhesives, Sealants & Grouts",
             iconName = "science",
-            summaryAr = "سيليكون معالج مضاد للبكتيريا، معجون البوليمر سيكا فلكس لفواصل التمدد، روبة ملء الفواصل المعالجة، ولواصق الإيبوكسي.",
+            summaryAr = "اعتماد وظيفة كل وصلة أولًا، ثم اختيار اللاصق أو الروبة أو السيلانت المتوافق، وتنفيذ فواصل الحركة بحشو خلفي ومقطع مصمم، وفحص التوافق والتبقع والمعالجة.",
             stagesCount = 3,
             materialsCount = 5,
             defectsCount = 3,
@@ -334,7 +334,7 @@ object FinishingCategoriesData {
             titleAr = "التشطيبات النهائية والأعمال التكميلية",
             titleEn = "Final Architectural Trims",
             iconName = "task_alt",
-            summaryAr = "كبائن الشاور سيكوريت 10 مم، شواش ومفاتيح الكهرباء، وشاشات الصرف الاستانلس، مصدات الأبواب، والمرايا الليد.",
+            summaryAr = "قياس واعتماد التقفيلات بعد اكتمال التشطيب، ثم تركيب زجاج الشاور الآمن والمرايا وأغطية الكهرباء والإكسسوارات وفق الحمل والركيزة والخدمات والعزل، فالتشغيل والحماية.",
             stagesCount = 3,
             materialsCount = 5,
             defectsCount = 3,
