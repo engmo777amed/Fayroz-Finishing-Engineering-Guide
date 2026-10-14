@@ -116,7 +116,8 @@ object FinishingCatalog {
         26 to listOf("stage_review_105", "stage_metal_02", "stage_review_104", "stage_metal_01", "stage_metal_03"),
         27 to listOf("stage_adhesives_01", "stage_review_106", "stage_adhesives_02", "stage_adhesives_03", "stage_review_107"),
         28 to listOf("stage_finaltrims_01", "stage_finaltrims_02", "stage_review_108", "stage_finaltrims_03"),
-        29 to listOf("stage_qa_tests_02", "stage_qa_tests_01", "stage_qa_tests_03")
+        29 to listOf("stage_review_109", "stage_review_110", "stage_qa_tests_01", "stage_qa_tests_02", "stage_qa_tests_03"),
+        30 to listOf("stage_snagging_01", "stage_snagging_02", "stage_review_111", "stage_snagging_03", "stage_review_112")
     )
 
     private val stagesWithNotes: List<ExecutionStage> = originalStages + addedStages
@@ -151,7 +152,8 @@ object FinishingCatalog {
     } +
         stages.flatMap { stage ->
                 val originalPhases = FinishingChecklistsData.checkItems.filter { it.stageId == stage.id }.map { it.phase }.toSet()
-                if (stage.categoryId in setOf(27, 28)) Batch12Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
+                if (stage.categoryId in setOf(29, 30)) Batch13Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
+                else if (stage.categoryId in setOf(27, 28)) Batch12Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
                 else if (stage.categoryId in setOf(23, 26)) Batch11Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
                 else if (stage.categoryId in setOf(22, 25)) Batch10Checkpoints.forStage(stage).filter { it.phase !in originalPhases }
                 else if (stage.categoryId in setOf(21, 24)) Batch09Checkpoints.forStage(stage).filter { it.phase !in originalPhases }

@@ -28,7 +28,8 @@ object TechnicalStageOrder {
         26 to listOf("stage_review_105"),
         27 to listOf("stage_adhesives_01", "stage_review_106", "stage_adhesives_02", "stage_adhesives_03", "stage_review_107"),
         28 to listOf("stage_finaltrims_01", "stage_finaltrims_02", "stage_review_108", "stage_finaltrims_03"),
-        29 to listOf("stage_review_110")
+        29 to listOf("stage_review_109", "stage_review_110"),
+        30 to listOf("stage_snagging_01", "stage_snagging_02", "stage_review_111", "stage_snagging_03", "stage_review_112")
     )
 }
 

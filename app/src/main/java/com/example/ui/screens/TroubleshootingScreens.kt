@@ -415,7 +415,7 @@ fun DefectDetailScreen(
                         color = MaterialTheme.colorScheme.onSurface
                     )
                 }
-                if (defect.categoryId in 1..28) {
+                if (defect.categoryId in 1..30) {
                     DetailSectionCard(title = "المراجع وحدود التطبيق", icon = Icons.Default.CheckCircle, accentColor = FayrozTurquoise) {
                         val references = when (defect.categoryId) {
                             in 1..3 -> com.example.data.Batch01References.forCategory(defect.categoryId)
@@ -430,6 +430,7 @@ fun DefectDetailScreen(
                             22, 25 -> com.example.data.Batch10References.forCategory(defect.categoryId)
                             23, 26 -> com.example.data.Batch11References.forCategory(defect.categoryId)
                             27, 28 -> com.example.data.Batch12References.forCategory(defect.categoryId)
+                            29, 30 -> com.example.data.Batch13References.forCategory(defect.categoryId)
                             else -> emptyList()
                         }
                         references.forEachIndexed { index, reference ->

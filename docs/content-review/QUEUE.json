@@ -10,7 +10,7 @@
   "next_batch": 13,
   "last_completed_batch": 12,
   "current_batch": 13,
-  "status": "in_progress",
+  "status": "awaiting_ci",
   "batches": [
     {
       "id": 1,
@@ -167,7 +167,7 @@
         30
       ],
       "title": "الجودة والتسليم",
-      "status": "in_progress",
+      "status": "awaiting_ci",
       "report": "docs/content-review/BATCH13.md"
     }
   ],
