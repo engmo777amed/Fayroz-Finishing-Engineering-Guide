@@ -10,7 +10,7 @@
   "next_batch": null,
   "last_completed_batch": 13,
   "current_batch": null,
-  "status": "ready_for_final_review",
+  "status": "final_review_awaiting_ci",
   "batches": [
     {
       "id": 1,
@@ -185,5 +185,15 @@
     "baseline": "delivered-v1.4",
     "manifest": "app/src/main/assets/content_review_edit_migration.json",
     "note": "Regenerate complete old-v1.4 to final list manifest before release; do not distribute intermediate CI APKs."
+  },
+  "final_review": {
+    "migration_groups": 1908,
+    "status": "awaiting_ci",
+    "next_steps": [
+      "verify migration and integration CI",
+      "finish cross-system integration tests",
+      "build via original PR1 signing path",
+      "verify and deliver APK and ZIP"
+    ]
   }
 }
