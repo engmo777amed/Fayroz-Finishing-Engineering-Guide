@@ -9,8 +9,8 @@
   },
   "next_batch": 13,
   "last_completed_batch": 12,
-  "current_batch": null,
-  "status": "ready",
+  "current_batch": 13,
+  "status": "in_progress",
   "batches": [
     {
       "id": 1,
@@ -167,7 +167,7 @@
         30
       ],
       "title": "الجودة والتسليم",
-      "status": "queued",
+      "status": "in_progress",
       "report": "docs/content-review/BATCH13.md"
     }
   ],
@@ -177,7 +177,11 @@
     "run_id": 38514087357,
     "status": "success"
   },
-  "active_run": null,
+  "active_run": {
+    "batch": 13,
+    "base_commit": "ad79c83a5f3594c931a39f3a312115e9584d791f",
+    "started_at": "2026-10-14T05:35:16Z"
+  },
   "final_build_instructions": "docs/content-review/FINAL_BUILD.md",
   "edit_migration": {
     "baseline": "delivered-v1.4",
