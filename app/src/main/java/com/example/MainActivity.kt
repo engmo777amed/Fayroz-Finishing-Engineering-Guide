@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.collectAsState
@@ -20,21 +21,22 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.ui.FinishingViewModel
 import com.example.ui.Screen
 import com.example.ui.components.FayrozBottomNav
+import com.example.ui.screens.ContentEditorScreen
+import com.example.ui.screens.PracticalGuideScreen
+import com.example.ui.components.LocalContentStore
+import com.example.ui.components.LocalRecordScope
+import com.example.ui.components.LocalEditorOpen
 import com.example.ui.screens.BookmarksScreen
-import com.example.ui.screens.CalculatorScreen
 import com.example.ui.screens.CategoriesScreen
 import com.example.ui.screens.CategoryDetailScreen
 import com.example.ui.screens.DefectDetailScreen
 import com.example.ui.screens.DimensionsScreen
 import com.example.ui.screens.HomeScreen
-import com.example.ui.screens.ActiveInspectionScreen
-import com.example.ui.screens.InspectionHubScreen
 import com.example.ui.screens.MaterialDetailScreen
 import com.example.ui.screens.MaterialsLibraryScreen
 import com.example.ui.screens.SearchScreen
 import com.example.ui.screens.StageDetailScreen
 import com.example.ui.screens.TroubleshootingListScreen
-import com.example.ui.screens.ViewReportScreen
 import com.example.ui.theme.FayrozTheme
 
 class MainActivity : ComponentActivity() {
@@ -56,6 +58,7 @@ fun FayrozAppRoot(
     viewModel: FinishingViewModel = viewModel()
 ) {
     val currentScreen by viewModel.currentScreen.collectAsState()
+    val screenStates = rememberSaveableStateHolder()
 
     // Handle back button for sub-screens
     BackHandler(enabled = currentScreen !is Screen.Home) {
@@ -65,9 +68,12 @@ fun FayrozAppRoot(
     val showBottomNav = currentScreen is Screen.Home ||
             currentScreen is Screen.CategoriesList ||
             currentScreen is Screen.MaterialsLibrary ||
-            currentScreen is Screen.InspectionHub ||
             currentScreen is Screen.TroubleshootingList
 
+    CompositionLocalProvider(
+        LocalContentStore provides viewModel.repository.textStore,
+        LocalEditorOpen provides { viewModel.navigateTo(Screen.ContentEditor) }
+    ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         bottomBar = {
@@ -86,7 +92,15 @@ fun FayrozAppRoot(
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
+            CompositionLocalProvider(
+                LocalContentStore provides viewModel.repository.textStore,
+                LocalRecordScope provides currentScreen.editScope(),
+                LocalEditorOpen provides { viewModel.navigateTo(Screen.ContentEditor) }
+            ) {
+            screenStates.SaveableStateProvider(currentScreen.stateKey()) {
             when (val screen = currentScreen) {
+                is Screen.ContentEditor -> ContentEditorScreen(viewModel) { viewModel.navigateBack() }
+                is Screen.PracticalGuide -> PracticalGuideScreen(screen.categoryId, viewModel, { viewModel.navigateTo(it) }, screen.initialQuery) { viewModel.navigateBack() }
                 is Screen.Home -> {
                     HomeScreen(
                         viewModel = viewModel,
@@ -154,39 +168,10 @@ fun FayrozAppRoot(
                         onBack = { viewModel.navigateBack() }
                     )
                 }
-                is Screen.InspectionHub -> {
-                    InspectionHubScreen(
-                        viewModel = viewModel,
-                        onNavigate = { viewModel.navigateTo(it) },
-                        onBack = { viewModel.navigateBack() }
-                    )
-                }
-                is Screen.ActiveInspection -> {
-                    ActiveInspectionScreen(
-                        stageId = screen.stageId,
-                        categoryId = screen.categoryId,
-                        viewModel = viewModel,
-                        onNavigate = { viewModel.navigateTo(it) },
-                        onBack = { viewModel.navigateBack() }
-                    )
-                }
-                is Screen.ViewReport -> {
-                    ViewReportScreen(
-                        reportId = screen.reportId,
-                        viewModel = viewModel,
-                        onBack = { viewModel.navigateBack() }
-                    )
-                }
                 is Screen.Search -> {
                     SearchScreen(
                         viewModel = viewModel,
                         onNavigate = { viewModel.navigateTo(it) },
-                        onBack = { viewModel.navigateBack() }
-                    )
-                }
-                is Screen.Calculator -> {
-                    CalculatorScreen(
-                        viewModel = viewModel,
                         onBack = { viewModel.navigateBack() }
                     )
                 }
@@ -198,6 +183,25 @@ fun FayrozAppRoot(
                     )
                 }
             }
+            }
+            }
         }
     }
+    }
+}
+
+internal fun Screen.stateKey(): String = when (this) {
+    is Screen.CategoryDetail -> "category:$categoryId"
+    is Screen.StageDetail -> "stage:$stageId"
+    is Screen.MaterialDetail -> "material:$materialId"
+    is Screen.DefectDetail -> "defect:$defectId"
+    else -> this.toString()
+}
+
+private fun Screen.editScope(): String = when(this) {
+    is Screen.StageDetail -> "stage|$stageId"
+    is Screen.MaterialDetail -> "material|$materialId"
+    is Screen.DefectDetail -> "defect|$defectId"
+    is Screen.CategoryDetail -> "category|$categoryId"
+    else -> ""
 }

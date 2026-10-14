@@ -30,7 +30,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.material3.Text
+import com.example.ui.components.EditableText as Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -91,7 +91,7 @@ fun SearchScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .testTag("global_search_input"),
-                placeholder = { Text("ابحث عن أي بند، خامة، مقاس، أو عيب...") },
+                placeholder = { Text(textKey = "ui.SearchScreen.1", text = "ابحث عن أي بند، خامة، مقاس، أو عيب...") },
                 leadingIcon = {
                     Icon(Icons.Default.Search, contentDescription = null, tint = FayrozTurquoise)
                 },
@@ -125,7 +125,7 @@ fun SearchScreen(
                             .clickable { viewModel.updateSearchQuery(keyword) }
                             .padding(horizontal = 10.dp, vertical = 6.dp)
                     ) {
-                        Text(
+                        Text(textKey = "ui.SearchScreen.2",
                             text = keyword,
                             fontSize = 11.sp,
                             color = FayrozTurquoiseLight,
@@ -142,7 +142,7 @@ fun SearchScreen(
                     modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(
+                    Text(textKey = "ui.SearchScreen.3",
                         text = "اكتب كلمة للبحث في مراحل التنفيذ والخامات والعيوب والمقاسات",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -153,7 +153,7 @@ fun SearchScreen(
                     modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(
+                    Text(textKey = "ui.SearchScreen.4",
                         text = "لا توجد نتائج مطابقة لكلمة \"$query\"، جرب مرادفات أخرى.",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -164,6 +164,25 @@ fun SearchScreen(
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
+                    if (results.figures.isNotEmpty()) {
+                        item { SectionHeader(title = "الصور المجسمة", count = results.figures.size) }
+                        items(results.figures, key = { "figure:${it.id}" }) { figure ->
+                            Card(onClick = { onNavigate(Screen.PracticalGuide(figure.categoryIds.first(), figure.title)) }, modifier = Modifier.fillMaxWidth()) {
+                                Text(fieldKey = "figure|${figure.id}|title", text = figure.title, modifier = Modifier.padding(14.dp), textKey = "search.figure.${figure.id}")
+                            }
+                        }
+                    }
+                    if (results.guides.isNotEmpty()) {
+                        item { SectionHeader(title = "الدليل العملي والحسابات", count = results.guides.size) }
+                        items(results.guides, key = { "guide:${it.id}" }) { guide ->
+                            Card(onClick = { onNavigate(Screen.PracticalGuide(guide.categoryId, guide.title)) }, modifier = Modifier.fillMaxWidth()) {
+                                Column(Modifier.padding(14.dp)) {
+                                    Text(guide.title, textKey = "search.guide.${guide.id}")
+                                    Text(guide.body, maxLines = 2, overflow = TextOverflow.Ellipsis, textKey = "search.guide.body.${guide.id}")
+                                }
+                            }
+                        }
+                    }
                     // Categories Results
                     if (results.categories.isNotEmpty()) {
                         item { SectionHeader("أقسام وبنود التشطيبات", count = results.categories.size) }
@@ -186,7 +205,7 @@ fun SearchScreen(
                                             .background(FayrozNavyCard),
                                         contentAlignment = Alignment.Center
                                     ) {
-                                        Text(
+                                        Text(textKey = "ui.SearchScreen.5",
                                             text = "${cat.id}",
                                             color = FayrozTurquoiseLight,
                                             fontWeight = FontWeight.Bold,
@@ -195,13 +214,13 @@ fun SearchScreen(
                                     }
                                     Spacer(modifier = Modifier.width(10.dp))
                                     Column(modifier = Modifier.weight(1f)) {
-                                        Text(
+                                        Text(textKey = "ui.SearchScreen.6",
                                             text = "${cat.code} • ${cat.titleAr}",
                                             style = MaterialTheme.typography.titleSmall,
                                             fontWeight = FontWeight.Bold,
                                             color = MaterialTheme.colorScheme.onSurface
                                         )
-                                        Text(
+                                        Text(textKey = "ui.SearchScreen.7",
                                             text = cat.summaryAr,
                                             style = MaterialTheme.typography.bodySmall,
                                             color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -232,14 +251,14 @@ fun SearchScreen(
                                 modifier = Modifier.fillMaxWidth()
                             ) {
                                 Column(modifier = Modifier.padding(12.dp)) {
-                                    Text(
-                                        text = stage.titleAr,
+                                    Text(textKey = "ui.SearchScreen.8",
+                                        fieldKey = "stage|${stage.id}|titleAr", text = stage.titleAr,
                                         style = MaterialTheme.typography.titleSmall,
                                         fontWeight = FontWeight.Bold,
                                         color = MaterialTheme.colorScheme.onSurface
                                     )
-                                    Text(
-                                        text = stage.objective,
+                                    Text(textKey = "ui.SearchScreen.9",
+                                        fieldKey = "stage|${stage.id}|objective", text = stage.objective,
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                                         maxLines = 1,
@@ -262,13 +281,13 @@ fun SearchScreen(
                                 modifier = Modifier.fillMaxWidth()
                             ) {
                                 Column(modifier = Modifier.padding(12.dp)) {
-                                    Text(
+                                    Text(textKey = "ui.SearchScreen.10",
                                         text = mat.marketNameAr,
                                         style = MaterialTheme.typography.titleSmall,
                                         fontWeight = FontWeight.Bold,
                                         color = MaterialTheme.colorScheme.onSurface
                                     )
-                                    Text(
+                                    Text(textKey = "ui.SearchScreen.11",
                                         text = "${mat.technicalNameAr} • ${mat.egyptianBrands.joinToString(", ")}",
                                         style = MaterialTheme.typography.labelSmall,
                                         color = FayrozTurquoiseLight
@@ -294,13 +313,13 @@ fun SearchScreen(
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
                                     Column(modifier = Modifier.weight(1f)) {
-                                        Text(
+                                        Text(textKey = "ui.SearchScreen.12",
                                             text = def.titleAr,
                                             style = MaterialTheme.typography.titleSmall,
                                             fontWeight = FontWeight.Bold,
                                             color = MaterialTheme.colorScheme.onSurface
                                         )
-                                        Text(
+                                        Text(textKey = "ui.SearchScreen.13",
                                             text = def.marketName,
                                             fontSize = 11.sp,
                                             color = FayrozGold
@@ -326,14 +345,14 @@ fun SearchScreen(
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
                                     Column(modifier = Modifier.weight(1f)) {
-                                        Text(
-                                            text = dim.itemTitle,
+                                        Text(textKey = "ui.SearchScreen.14",
+                                            fieldKey = "dimension|${dim.id}|itemTitle", text = dim.itemTitle,
                                             style = MaterialTheme.typography.titleSmall,
                                             fontWeight = FontWeight.Bold,
                                             color = MaterialTheme.colorScheme.onSurface
                                         )
-                                        Text(
-                                            text = dim.referenceSource,
+                                        Text(textKey = "ui.SearchScreen.15",
+                                            fieldKey = "dimension|${dim.id}|referenceSource", text = dim.referenceSource,
                                             fontSize = 11.sp,
                                             color = MaterialTheme.colorScheme.onSurfaceVariant
                                         )
@@ -344,8 +363,8 @@ fun SearchScreen(
                                             .background(FayrozGold.copy(alpha = 0.15f))
                                             .padding(horizontal = 8.dp, vertical = 4.dp)
                                     ) {
-                                        Text(
-                                            text = dim.standardValue,
+                                        Text(textKey = "ui.SearchScreen.16",
+                                            fieldKey = "dimension|${dim.id}|standardValue", text = dim.standardValue,
                                             fontWeight = FontWeight.Bold,
                                             color = FayrozGold,
                                             fontSize = 12.sp

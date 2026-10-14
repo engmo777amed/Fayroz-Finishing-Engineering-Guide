@@ -1,0 +1,23 @@
+{
+  "batch": 4,
+  "category_ids": [
+    8,
+    13
+  ],
+  "changed_records": {
+    "TroubleshootingDefect": 2,
+    "TechnicalDimension": 2,
+    "MaterialCard": 15,
+    "ExecutionStage": 13
+  },
+  "total_changed_records": 32,
+  "off_scope_records": [],
+  "removed_ids": [],
+  "new_ids": [],
+  "category_id_sets_preserved": true,
+  "list_migration": {
+    "baseline": "delivered-v1.4",
+    "manifest_total_scopes": 906
+  },
+  "physical_device_tested": false
+}

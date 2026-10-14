@@ -6,16 +6,12 @@ import androidx.lifecycle.viewModelScope
 import com.example.data.FinishingRepository
 import com.example.data.SearchResult
 import com.example.data.local.BookmarkEntity
-import com.example.data.local.InspectionReportEntity
 import com.example.model.ExecutionStage
 import com.example.model.FinishingCategory
-import com.example.model.InspectionCheckResult
-import com.example.model.InspectionStatus
 import com.example.model.MaterialCard
 import com.example.model.QualityCheckItem
 import com.example.model.TechnicalDimension
 import com.example.model.TroubleshootingDefect
-import com.example.util.FinishingCalculator
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -34,12 +30,10 @@ sealed class Screen {
     data object MaterialsLibrary : Screen()
     data object TroubleshootingList : Screen()
     data object DimensionsList : Screen()
-    data object InspectionHub : Screen()
-    data class ActiveInspection(val stageId: String, val categoryId: Int) : Screen()
-    data class ViewReport(val reportId: Long) : Screen()
     data object Search : Screen()
-    data object Calculator : Screen()
     data object Bookmarks : Screen()
+    data object ContentEditor : Screen()
+    data class PracticalGuide(val categoryId: Int? = null, val initialQuery: String = "") : Screen()
 }
 
 class FinishingViewModel(application: Application) : AndroidViewModel(application) {
@@ -82,115 +76,13 @@ class FinishingViewModel(application: Application) : AndroidViewModel(applicatio
     private val _searchResults = MutableStateFlow(SearchResult(emptyList(), emptyList(), emptyList(), emptyList(), emptyList()))
     val searchResults = _searchResults.asStateFlow()
 
+    init {
+        viewModelScope.launch { repository.textStore.revision.collect { updateSearchQuery(_searchQuery.value) } }
+    }
+
     fun updateSearchQuery(query: String) {
         _searchQuery.value = query
         _searchResults.value = repository.search(query)
-    }
-
-    // Active Inspection Checklist State
-    private val _activeInspectionItems = MutableStateFlow<List<InspectionCheckResult>>(emptyList())
-    val activeInspectionItems = _activeInspectionItems.asStateFlow()
-
-    private val _activeProjectName = MutableStateFlow("مشروع فيلا سكنية - التجمع الخامس")
-    val activeProjectName = _activeProjectName.asStateFlow()
-
-    private val _activeZoneName = MutableStateFlow("الدور الأرضي - حمام الضيوف")
-    val activeZoneName = _activeZoneName.asStateFlow()
-
-    private val _activeEngineerName = MutableStateFlow("م. مهندس الموقع")
-    val activeEngineerName = _activeEngineerName.asStateFlow()
-
-    private val _activeGeneralNotes = MutableStateFlow("")
-    val activeGeneralNotes = _activeGeneralNotes.asStateFlow()
-
-    fun setProjectName(name: String) { _activeProjectName.value = name }
-    fun setZoneName(name: String) { _activeZoneName.value = name }
-    fun setEngineerName(name: String) { _activeEngineerName.value = name }
-    fun setGeneralNotes(notes: String) { _activeGeneralNotes.value = notes }
-
-    fun startInspection(stageId: String, categoryId: Int) {
-        val rawItems = repository.getChecklistItemsByStageId(stageId)
-        val fallbackItems = if (rawItems.isEmpty()) {
-            repository.getChecklistItemsByCategoryId(categoryId)
-        } else rawItems
-
-        _activeInspectionItems.value = fallbackItems.map {
-            InspectionCheckResult(
-                checkItemId = it.id,
-                checkItemTitle = it.titleAr,
-                phaseTitle = it.phase.titleAr,
-                toolUsed = it.toolUsed,
-                criterion = it.acceptanceCriterion,
-                status = InspectionStatus.PENDING,
-                notes = ""
-            )
-        }
-        navigateTo(Screen.ActiveInspection(stageId, categoryId))
-    }
-
-    fun updateCheckItemStatus(checkItemId: String, newStatus: InspectionStatus) {
-        _activeInspectionItems.value = _activeInspectionItems.value.map {
-            if (it.checkItemId == checkItemId) it.copy(status = newStatus) else it
-        }
-    }
-
-    fun updateCheckItemNotes(checkItemId: String, notes: String) {
-        _activeInspectionItems.value = _activeInspectionItems.value.map {
-            if (it.checkItemId == checkItemId) it.copy(notes = notes) else it
-        }
-    }
-
-    fun saveCurrentReport(stageId: String, categoryId: Int, onSaved: (Long) -> Unit) {
-        viewModelScope.launch {
-            val stage = repository.getStageById(stageId)
-            val category = repository.getCategoryById(categoryId)
-            val items = _activeInspectionItems.value
-
-            val total = items.size
-            val passed = items.count { it.status == InspectionStatus.PASSED }
-            val failed = items.count { it.status == InspectionStatus.FAILED }
-            val pending = items.count { it.status == InspectionStatus.PENDING }
-            val na = items.count { it.status == InspectionStatus.NOT_APPLICABLE }
-
-            val itemsSerialized = items.joinToString(";;") {
-                "${it.checkItemTitle}::${it.status.name}::${it.criterion}::${it.toolUsed}::${it.notes}"
-            }
-
-            val entity = InspectionReportEntity(
-                projectName = _activeProjectName.value,
-                unitOrZone = _activeZoneName.value,
-                categoryId = categoryId,
-                categoryTitle = category?.titleAr ?: "قسم التشطيبات",
-                stageId = stageId,
-                stageTitle = stage?.titleAr ?: "مرحلة التنفيذ",
-                engineerName = _activeEngineerName.value,
-                inspectionDate = "2026/10/10",
-                totalItems = total,
-                passedItems = passed,
-                failedItems = failed,
-                pendingItems = pending,
-                naItems = na,
-                generalNotes = _activeGeneralNotes.value,
-                itemsJson = itemsSerialized
-            )
-
-            val id = repository.saveInspectionReport(entity)
-            onSaved(id)
-        }
-    }
-
-    // Reports Flow
-    val allReports: StateFlow<List<InspectionReportEntity>> =
-        repository.getAllInspectionReports().stateIn(
-            viewModelScope,
-            SharingStarted.Lazily,
-            emptyList()
-        )
-
-    fun deleteReport(id: Long) {
-        viewModelScope.launch {
-            repository.deleteInspectionReport(id)
-        }
     }
 
     // Bookmarks Flow
@@ -236,35 +128,4 @@ class FinishingViewModel(application: Application) : AndroidViewModel(applicatio
         }
     }
 
-    // Calculator State
-    val calcType = MutableStateFlow(0) // 0: Plaster, 1: Tiles, 2: Paint, 3: Gypsum, 4: Masonry
-    val calcAreaInput = MutableStateFlow("100")
-    val calcThicknessInput = MutableStateFlow("2.0")
-    val calcIsPorcelain = MutableStateFlow(true)
-    val calcIsRedBrick = MutableStateFlow(true)
-
-    fun calculatePlasterResult() = FinishingCalculator.calculatePlaster(
-        calcAreaInput.value.toDoubleOrNull() ?: 100.0,
-        calcThicknessInput.value.toDoubleOrNull() ?: 2.0
-    )
-
-    fun calculateTilesResult() = FinishingCalculator.calculateTiles(
-        calcAreaInput.value.toDoubleOrNull() ?: 100.0,
-        7.0,
-        calcIsPorcelain.value
-    )
-
-    fun calculatePaintResult() = FinishingCalculator.calculatePaint(
-        calcAreaInput.value.toDoubleOrNull() ?: 100.0,
-        3
-    )
-
-    fun calculateGypsumResult() = FinishingCalculator.calculateGypsum(
-        calcAreaInput.value.toDoubleOrNull() ?: 100.0
-    )
-
-    fun calculateMasonryResult() = FinishingCalculator.calculateMasonry(
-        calcAreaInput.value.toDoubleOrNull() ?: 100.0,
-        calcIsRedBrick.value
-    )
 }

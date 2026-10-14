@@ -27,11 +27,13 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.material3.Text
+import com.example.ui.components.EditableText as Text
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -57,8 +59,9 @@ fun CategoriesScreen(
     onNavigate: (Screen) -> Unit,
     onBack: () -> Unit
 ) {
+    val contentRevision = viewModel.repository.textStore.revision.collectAsState().value
     val repository = viewModel.repository
-    var filterText by remember { mutableStateOf("") }
+    var filterText by rememberSaveable { mutableStateOf("") }
 
     val filteredList = remember(filterText) {
         if (filterText.isBlank()) {
@@ -98,7 +101,7 @@ fun CategoriesScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .testTag("categories_search_input"),
-                placeholder = { Text("تصفية الأقسام (مباني، محارة، سباكة، رخام، دهانات...)") },
+                placeholder = { Text(textKey = "ui.CategoriesScreen.1", text = "تصفية الأقسام (مباني، محارة، سباكة، رخام، دهانات...)") },
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Default.Search,
@@ -117,7 +120,7 @@ fun CategoriesScreen(
             Spacer(modifier = Modifier.height(10.dp))
 
             LazyColumn(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxSize().testTag("categories_list"),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 items(filteredList) { cat ->
@@ -152,6 +155,7 @@ fun FullCategoryCard(
     checklistsCount: Int = category.checklistsCount,
     onClick: () -> Unit
 ) {
+    androidx.compose.runtime.CompositionLocalProvider(com.example.ui.components.LocalRecordScope provides "category|${category.id}") {
     Card(
         onClick = onClick,
         shape = RoundedCornerShape(12.dp),
@@ -178,8 +182,8 @@ fun FullCategoryCard(
                         .background(FayrozNavyCard),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(
-                        text = "${category.id}",
+                    Text(textKey = "ui.CategoriesScreen.2",
+                        fieldKey = "category|${category.id}|id", text = "${category.id}",
                         color = FayrozTurquoiseLight,
                         fontWeight = FontWeight.Bold,
                         fontSize = 13.sp
@@ -194,7 +198,7 @@ fun FullCategoryCard(
                                 .background(FayrozGold.copy(alpha = 0.15f))
                                 .padding(horizontal = 5.dp, vertical = 1.dp)
                         ) {
-                            Text(
+                            Text(textKey = "ui.CategoriesScreen.3",
                                 text = category.code,
                                 color = FayrozGold,
                                 fontSize = 9.sp,
@@ -202,8 +206,8 @@ fun FullCategoryCard(
                             )
                         }
                         Spacer(modifier = Modifier.width(6.dp))
-                        Text(
-                            text = category.titleAr,
+                        Text(textKey = "ui.CategoriesScreen.4",
+                            fieldKey = "category|${category.id}|titleAr", text = category.titleAr,
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.onSurface,
@@ -211,8 +215,8 @@ fun FullCategoryCard(
                             overflow = TextOverflow.Ellipsis
                         )
                     }
-                    Text(
-                        text = category.titleEn,
+                    Text(textKey = "ui.CategoriesScreen.5",
+                        fieldKey = "category|${category.id}|titleEn", text = category.titleEn,
                         style = MaterialTheme.typography.labelSmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
                         maxLines = 1
@@ -226,8 +230,8 @@ fun FullCategoryCard(
             }
 
             Spacer(modifier = Modifier.height(8.dp))
-            Text(
-                text = category.summaryAr,
+            Text(textKey = "ui.CategoriesScreen.6",
+                fieldKey = "category|${category.id}|summaryAr", text = category.summaryAr,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 maxLines = 2,
@@ -246,11 +250,13 @@ fun FullCategoryCard(
             }
         }
     }
+
+    }
 }
 
 @Composable
 fun SmallStatBadge(text: String, color: Color) {
-    Text(
+    Text(textKey = "ui.CategoriesScreen.7",
         text = text,
         fontSize = 10.sp,
         fontWeight = FontWeight.Medium,

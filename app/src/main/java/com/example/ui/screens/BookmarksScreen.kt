@@ -26,7 +26,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import com.example.ui.components.EditableText as Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -49,6 +49,7 @@ fun BookmarksScreen(
     onNavigate: (Screen) -> Unit,
     onBack: () -> Unit
 ) {
+    val contentRevision = viewModel.repository.textStore.revision.collectAsState().value
     val repository = viewModel.repository
     val bookmarks by viewModel.allBookmarks.collectAsState()
 
@@ -79,13 +80,13 @@ fun BookmarksScreen(
                         modifier = Modifier.size(48.dp)
                     )
                     Spacer(modifier = Modifier.height(10.dp))
-                    Text(
+                    Text(textKey = "ui.BookmarksScreen.1",
                         text = "لا توجد موضوعات محفوظة في المفضلة بعد",
                         style = MaterialTheme.typography.titleSmall,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onSurface
                     )
-                    Text(
+                    Text(textKey = "ui.BookmarksScreen.2",
                         text = "اضغط على أيقونة الإشارة المرجعية بأعلى أي صفحة لحفظها هنا",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -149,13 +150,13 @@ fun BookmarksScreen(
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Column(modifier = Modifier.weight(1f)) {
-                                Text(
+                                Text(textKey = "ui.BookmarksScreen.3",
                                     text = item.title,
                                     style = MaterialTheme.typography.titleSmall,
                                     fontWeight = FontWeight.Bold,
                                     color = MaterialTheme.colorScheme.onSurface
                                 )
-                                Text(
+                                Text(textKey = "ui.BookmarksScreen.4",
                                     text = "${item.categoryTitle} • ${item.subtitle}",
                                     style = MaterialTheme.typography.labelSmall,
                                     color = FayrozTurquoise

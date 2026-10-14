@@ -3,7 +3,6 @@ package com.example.data
 import android.content.Context
 import com.example.data.local.AppDatabase
 import com.example.data.local.BookmarkEntity
-import com.example.data.local.InspectionReportEntity
 import com.example.model.ExecutionStage
 import com.example.model.FinishingCategory
 import com.example.model.MaterialCard
@@ -17,39 +16,84 @@ data class SearchResult(
     val materials: List<MaterialCard>,
     val defects: List<TroubleshootingDefect>,
     val dimensions: List<TechnicalDimension>,
-    val categories: List<FinishingCategory>
+    val categories: List<FinishingCategory>,
+    val guides: List<PracticalGuideEntry> = emptyList(),
+    val figures: List<TechnicalFigure> = emptyList()
 ) {
     val totalCount: Int
-        get() = stages.size + materials.size + defects.size + dimensions.size + categories.size
+        get() = stages.size + materials.size + defects.size + dimensions.size + categories.size + guides.size + figures.size
 }
 
 class FinishingRepository(context: Context) {
+    val textStore = EditableContentStore(context)
     private val db = AppDatabase.getDatabase(context)
-    private val inspectionDao = db.inspectionDao()
     private val bookmarkDao = db.bookmarkDao()
 
-    val allCategories: List<FinishingCategory> = FinishingCategoriesData.categories
+    private var allCategoriesVersion = -1
+    private var allCategoriesCache: List<FinishingCategory> = emptyList()
+    val allCategories: List<FinishingCategory> get() {
+        val version = textStore.revision.value
+        if (allCategoriesVersion != version) {
+            allCategoriesCache = FinishingCatalog.categories.map { textStore.apply(it) }
+            allCategoriesVersion = version
+        }
+        return allCategoriesCache
+    }
 
-    val allStages: List<ExecutionStage> = 
-        FinishingStagesPart1.stages + FinishingStagesPart2.stages + FinishingStagesPart3.stages + FinishingStagesRemaining.stages
+    private var allStagesVersion = -1
+    private var allStagesCache: List<ExecutionStage> = emptyList()
+    val allStages: List<ExecutionStage> get() {
+        val version = textStore.revision.value
+        if (allStagesVersion != version) {
+            allStagesCache = FinishingCatalog.stages.map { textStore.apply(it) }
+            allStagesVersion = version
+        }
+        return allStagesCache
+    }
 
-    val allMaterials: List<MaterialCard> = 
-        FinishingMaterialsPart1.materials + 
-        FinishingMaterialsPart2.materials + 
-        FinishingMaterialsPart3.materials + 
-        FinishingMaterialsPart4.materials + 
-        FinishingMaterialsPart5.materials +
-        FinishingMaterialsPart6.materials +
-        FinishingMaterialsPart7.materials +
-        FinishingMaterialsPart8.materials +
-        FinishingMaterialsPart9.materials +
-        FinishingMaterialsPart10.materials
+    private var allMaterialsVersion = -1
+    private var allMaterialsCache: List<MaterialCard> = emptyList()
+    val allMaterials: List<MaterialCard> get() {
+        val version = textStore.revision.value
+        if (allMaterialsVersion != version) {
+            allMaterialsCache = FinishingCatalog.materials.map { textStore.apply(it) }
+            allMaterialsVersion = version
+        }
+        return allMaterialsCache
+    }
 
-    val allDefects: List<TroubleshootingDefect> = FinishingDefectsData.defects
+    private var allDefectsVersion = -1
+    private var allDefectsCache: List<TroubleshootingDefect> = emptyList()
+    val allDefects: List<TroubleshootingDefect> get() {
+        val version = textStore.revision.value
+        if (allDefectsVersion != version) {
+            allDefectsCache = FinishingDefectsData.defects.map { textStore.apply(it) }
+            allDefectsVersion = version
+        }
+        return allDefectsCache
+    }
 
-    val allChecklistItems: List<QualityCheckItem> = FinishingChecklistsData.checkItems
+    private var allChecklistItemsVersion = -1
+    private var allChecklistItemsCache: List<QualityCheckItem> = emptyList()
+    val allChecklistItems: List<QualityCheckItem> get() {
+        val version = textStore.revision.value
+        if (allChecklistItemsVersion != version) {
+            allChecklistItemsCache = FinishingCatalog.checklistItems.map { textStore.apply(it) }
+            allChecklistItemsVersion = version
+        }
+        return allChecklistItemsCache
+    }
 
-    val allDimensions: List<TechnicalDimension> = FinishingDimensionsData.dimensions
+    private var allDimensionsVersion = -1
+    private var allDimensionsCache: List<TechnicalDimension> = emptyList()
+    val allDimensions: List<TechnicalDimension> get() {
+        val version = textStore.revision.value
+        if (allDimensionsVersion != version) {
+            allDimensionsCache = FinishingDimensionsData.dimensions.map { textStore.apply(it) }
+            allDimensionsVersion = version
+        }
+        return allDimensionsCache
+    }
 
     // Categories
     fun getCategoryById(id: Int): FinishingCategory? =
@@ -67,10 +111,10 @@ class FinishingRepository(context: Context) {
         allMaterials.filter { it.categoryIds.contains(categoryId) }
 
     fun getMaterialById(id: String): MaterialCard? =
-        allMaterials.find { it.id == id }
+        allMaterials.find { it.id == FinishingCatalog.canonicalMaterialId(id) }
 
     fun getMaterialsByIds(ids: List<String>): List<MaterialCard> =
-        allMaterials.filter { ids.contains(it.id) }
+        ids.mapNotNull(::getMaterialById).distinctBy { it.id }
 
     // Checklists
     fun getChecklistItemsByCategoryId(categoryId: Int): List<QualityCheckItem> =
@@ -106,6 +150,9 @@ class FinishingRepository(context: Context) {
         val matchedStages = allStages.filter {
             normalizeArabic(it.titleAr).contains(q) ||
             normalizeArabic(it.objective).contains(q) ||
+            it.executionSteps.any { step -> normalizeArabic(step).contains(q) } ||
+            it.technicalRequirements.any { requirement -> normalizeArabic(requirement).contains(q) } ||
+            it.qualityTests.any { test -> normalizeArabic(test).contains(q) } ||
             normalizeArabic(it.dimensionsAndSlopes).contains(q) ||
             normalizeArabic(it.mixesAndRatios).contains(q) ||
             it.siteTips.any { tip -> normalizeArabic(tip).contains(q) } ||
@@ -144,7 +191,9 @@ class FinishingRepository(context: Context) {
             materials = matchedMaterials,
             defects = matchedDefects,
             dimensions = matchedDimensions,
-            categories = matchedCategories
+            categories = matchedCategories,
+            guides = PracticalGuideData.entries.map { textStore.apply(it) }.filter { normalizeArabic(it.title + " " + it.body).contains(q) },
+            figures = TechnicalIllustrations.figures.map { textStore.apply(it) }.filter { normalizeArabic(it.title + " " + it.caption + " " + it.dimensionText + " " + it.labels.joinToString()).contains(q) }
         )
     }
 
@@ -158,19 +207,6 @@ class FinishingRepository(context: Context) {
             .replace("ـ", "") // Tatweel
             .replace(Regex("[\u064B-\u065F]"), "")
     }
-
-    // Reports persistence
-    fun getAllInspectionReports(): Flow<List<InspectionReportEntity>> =
-        inspectionDao.getAllReports()
-
-    suspend fun getInspectionReportById(id: Long): InspectionReportEntity? =
-        inspectionDao.getReportById(id)
-
-    suspend fun saveInspectionReport(report: InspectionReportEntity): Long =
-        inspectionDao.insertReport(report)
-
-    suspend fun deleteInspectionReport(id: Long) =
-        inspectionDao.deleteReportById(id)
 
     // Bookmarks persistence
     fun getAllBookmarks(): Flow<List<BookmarkEntity>> =
