@@ -204,6 +204,13 @@
       "original_push": "0fe4b356ea9222ce99b010f1fd66c5e410fd541875d9a522d1bd60ca4759641f",
       "original_pr1": "eed302100162b0d21e926e59eba87faf012459ed7cd0c3880af62e28e3edd102"
     },
-    "required_to_resume": "Original v1.4 preview private signing keystore matching expected certificate"
+    "required_to_resume": "Original v1.4 preview private signing keystore matching expected certificate",
+    "cache_inspection": {
+      "run": 38538223149,
+      "entries": 2,
+      "original_certificate_found": false
+    },
+    "automation_paused": true,
+    "source_zip_sha256": "e5183b757d3c80ed70546bb7f6a02e8d04ec23d9449f94fac4c3282be9f20c7d"
   }
 }
