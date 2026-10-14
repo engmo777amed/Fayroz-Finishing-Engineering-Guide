@@ -35,6 +35,10 @@ jobs:
       - name: Create temporary CI debug key
         run: |
           if [ ! -f debug.keystore ]; then
+            if [ "$GITHUB_REF" = "refs/heads/codex/finishing-content-2026-10-11" ]; then
+              echo "Original preview signing key is missing; refusing an incompatible update."
+              exit 1
+            fi
             keytool -genkeypair -noprompt -keystore debug.keystore -storepass android -keypass android -alias androiddebugkey -dname "CN=Android Debug,O=Android,C=US" -keyalg RSA -keysize 2048 -validity 10000
           fi
       - name: Unit tests and debug compilation
@@ -49,8 +53,8 @@ jobs:
           old = 'applicationId = "com.aistudio.fayrozguide.kpzmva"'
           assert content.count(old) == 1
           content = content.replace(old, 'applicationId = "com.aistudio.fayrozguide.kpzmva.preview"')
-          content = content.replace('versionName = "1.0"', 'versionName = "1.4-preview"')
-          content = content.replace('versionCode = 1', 'versionCode = 4')
+          content = content.replace('versionName = "1.0"', 'versionName = "1.5-preview"')
+          content = content.replace('versionCode = 1', 'versionCode = 5')
           build.write_text(content)
           strings = Path("app/src/main/res/values/strings.xml")
           content, count = re.subn(r'(<string name="app_name">).*?(</string>)', r'\1FAYROZ Guide - Test\2', strings.read_text())
@@ -63,10 +67,17 @@ jobs:
           APK=app/build/outputs/apk/debug/app-debug.apk
           test "$(apkanalyzer manifest application-id "$APK")" = "com.aistudio.fayrozguide.kpzmva.preview"
           "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose --print-certs "$APK"
+          test "$(apkanalyzer manifest version-code "$APK")" = "5"
+          if [ "$GITHUB_REF" = "refs/heads/codex/finishing-content-2026-10-11" ]; then
+            CERT=$("$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --print-certs "$APK" | sed -n 's/Signer #1 certificate SHA-256 digest: //p')
+            test "$CERT" = "fc13f6eaa79e0beb6dcfd67dc05fd8b954aa6513316bef6d83a6d6f39bce18f5"
+          fi
           mkdir -p delivery
-          cp "$APK" delivery/FAYROZ-Finishing-Guide-v1.4-test.apk
+          cp "$APK" delivery/FAYROZ-Finishing-Guide-v1.5-preview.apk
+          cp docs/content-review/FINAL_REVIEW.md delivery/
+          git archive --format=zip --output=delivery/FAYROZ-Finishing-Guide-v1.5-source.zip HEAD
           cd delivery
-          sha256sum FAYROZ-Finishing-Guide-v1.4-test.apk > SHA256.txt
+          sha256sum FAYROZ-Finishing-Guide-v1.5-preview.apk FAYROZ-Finishing-Guide-v1.5-source.zip > SHA256.txt
       - name: Preserve installable APK
         uses: actions/upload-artifact@v4
         with:

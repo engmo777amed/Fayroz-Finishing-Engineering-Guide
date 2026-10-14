@@ -10,7 +10,7 @@
   "next_batch": null,
   "last_completed_batch": 13,
   "current_batch": null,
-  "status": "final_review_awaiting_ci",
+  "status": "final_integration_awaiting_ci",
   "batches": [
     {
       "id": 1,
@@ -188,12 +188,14 @@
   },
   "final_review": {
     "migration_groups": 1908,
-    "status": "awaiting_ci",
+    "status": "integration_and_release_ci",
     "next_steps": [
       "verify migration and integration CI",
       "finish cross-system integration tests",
       "build via original PR1 signing path",
       "verify and deliver APK and ZIP"
-    ]
+    ],
+    "migration_validated_commit": "bf7ca6acf82235caf0f9669f273df9b32a331275",
+    "migration_ci_run": 38536584485
   }
 }
